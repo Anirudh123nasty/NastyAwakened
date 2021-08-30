@@ -35,6 +35,10 @@ def stub():
 def name():
     return render_template("name.html")
 
+@app.route('/michael/')
+def michael():
+    return render_template('michael.html')
+
 @app.route('/greet/', methods=['GET', 'POST'])
 def greet():
     # submit button has been pushed
