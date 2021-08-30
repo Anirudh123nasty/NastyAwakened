@@ -31,9 +31,16 @@ def hawkers():
 def stub():
     return render_template("stub.html")
 
+
 @app.route('/name/')
 def name():
     return render_template("name.html")
+
+
+@app.route('/ethan/')
+def ethan():
+    return render_template("ethan.html")
+
 
 @app.route('/greet/', methods=['GET', 'POST'])
 def greet():
@@ -44,6 +51,7 @@ def greet():
             return render_template("greet.html", name=name)
     # starting and empty input default
     return render_template("greet.html", name="World")
+
 
 # runs the application on the development server
 if __name__ == "__main__":

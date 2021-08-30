@@ -1,0 +1,27 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Ethan" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here ->
+    <p>Ethan about page</p>
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+    <title>Name</title>
+    <head>
+        <style>
+            body{
+                background-image: url('https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Tennis/Galleries/5+Must-See+Tennis+Courts/San+Petrio+Tennis+Court-slide+4.jpg');
+                background-size: cover;
+                height: 100vh;
+                padding:0;
+                margin:0;
+            }
+        </style>
+    </head>
+{% endblock %}
