@@ -31,16 +31,9 @@ def hawkers():
 def stub():
     return render_template("stub.html")
 
-
 @app.route('/name/')
 def name():
     return render_template("name.html")
-
-
-@app.route('/anirudh/')
-def anirudh():
-    return render_template("anirudh.html")
-
 
 @app.route('/greet/', methods=['GET', 'POST'])
 def greet():
@@ -53,7 +46,5 @@ def greet():
     return render_template("greet.html", name="World")
 
 # runs the application on the development server
-
-
 if __name__ == "__main__":
     app.run(debug=True)
