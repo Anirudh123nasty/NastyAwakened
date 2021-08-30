@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="904a7b40-e4f8-4620-ab78-5cd1135dad4d" name="Changes" comment="Changed tab name from 'Michael' to 'Name' to show we all a commit and pushed." />
+    <list default="true" id="904a7b40-e4f8-4620-ab78-5cd1135dad4d" name="Changes" comment="Changed tab name from 'Michael' to 'Name' to show we all a commit and pushed.">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +101,7 @@
       <workItem from="1630258955083" duration="1560000" />
       <workItem from="1630261057865" duration="49000" />
       <workItem from="1630268629677" duration="1036000" />
-      <workItem from="1630350642141" duration="642000" />
+      <workItem from="1630350642141" duration="960000" />
     </task>
     <task id="LOCAL-00001" summary="Anirudh was here">
       <created>1630258838745</created>
