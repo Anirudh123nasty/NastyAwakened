@@ -1,0 +1,28 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Anirudh" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here ->
+    <p><b>This is Anirudh's page</b></p>
+{% endblock %}
+
+<!- Replaced birds with a random image -->
+
+{% block background %}
+    <title>Name</title>
+    <head>
+        <style>
+            body{
+                background-image: url('https://images.unsplash.com/photo-1621472124503-a760c1146f44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+                background-size: cover;
+                height: 100vh;
+                padding:0;
+                margin:0;
+            }
+        </style>
+    </head>
+{% endblock %}
