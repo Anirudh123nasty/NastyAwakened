@@ -39,6 +39,18 @@ def name():
 def michael():
     return render_template('michael.html')
 
+@app.route('/anirudh/')
+def anirudh():
+    return render_template('anirudh.html')
+
+@app.route('/ethan/')
+def ethan():
+    return render_template('ethan.html')
+
+@app.route('/james/')
+def james():
+    return render_template('james.html')
+
 @app.route('/greet/', methods=['GET', 'POST'])
 def greet():
     # submit button has been pushed
