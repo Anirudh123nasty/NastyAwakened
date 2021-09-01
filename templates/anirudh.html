@@ -8,9 +8,9 @@
 
 {% block background %}
     <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vanta.dots.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vanta.rings.min.js') }}"></script>
     <script>
-        VANTA.DOTS({
+        VANTA.RINGS({
             el: "body",
             mouseControls: true,
             touchControls: true,
@@ -18,9 +18,7 @@
             minHeight: 200.00,
             minWidth: 200.00,
             scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0xbb62fa,
-            color2: 0x20ffb0
+            scaleMobile: 1.00
         })
     </script>
 {% endblock %}
