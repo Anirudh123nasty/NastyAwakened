@@ -1,70 +1,24 @@
--<!-- Extending the predefined project layout -->
+<!-- Extending the predefined project layout -->
 {% extends "layouts/base.html" %}
 
 <!- This variable sets name of browser tab  -->
 {% set project = "James" %}
 
-<!- This is a replacement block for Body in base.html -->
-{% block body %}
-<!- Try building a new body here ->
-<p><b>This is James's page</b></p>
-{% endblock %}
-
-<!- Replaced birds with a random image -->
+{% set repo = "https://github.com/NastyEthan/flask_portfolio" %}
 
 {% block background %}
-<title>Name</title>
-<head>
-    <style>
-        body{
-            background-image: url('https://images.unsplash.com/photo-1621472124503-a760c1146f44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            height: 100vh;
-            padding:0;
-            margin:0;
-        }
-    </style>
-</head>
+<script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vanta.globe.min.js') }}"></script>
+<script>
+    VANTA.GLOBE({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script>
 {% endblock %}
-
-<!-- Extending the predefined project layout -->
-{% extends "layouts/base.html" %}
-
-<!- This variable sets name of browser tab  -->
-{% set project = "Greet" %}
-
-<!- This is a replacement block for Body in base.html -->
-{% block body %}
-<div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-
-    <div class="col-12">
-        <p>Hello, {{name}}!</p>
-    </div>
-
-    <div class="col-12">
-        <form action="/greet/" id="greet" method="POST" >
-            <label for="name">Type a greeting name?</label>
-            <input name="name" id="name">
-            <input type="submit" value="Greetings!">
-        </form>
-    </div>
-
-</div>
-{% endblock %}
-
-
-<!- This is turning off birds background from base.html -->
-{% block background %}
-<head>
-    <style>
-        body{
-            background-image: url('https://images.unsplash.com/photo-1512626120412-faf41adb4874?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
-            background-size: cover;
-            height: 100vh;
-            padding:0;
-            margin:0;
-        }
-    </style>
-</head>
-{% endblock %}
-
