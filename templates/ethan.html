@@ -23,16 +23,22 @@
             scaleMobile: 1.00
         })
     </script>
-    <title>Name</title>
-    <head>
-        <style>
-            body{
-                background-image: url('https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Tennis/Galleries/5+Must-See+Tennis+Courts/San+Petrio+Tennis+Court-slide+4.jpg');
-                background-size: cover;
-                height: 100vh;
-                padding:0;
-                margin:0;
-            }
-        </style>
-    </head>
+{% endblock %}
+
+{% block body %}
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+
+        <div class="col-12">
+            <p>Hello, {{name}}!</p>
+        </div>
+
+        <div class="col-12">
+            <form action="/ethan/" id="ethan" method="POST" >
+                <label for="name">Type a greeting name?</label>
+                <input name="name" id="name">
+                <input type="submit" value="Greetings!">
+            </form>
+        </div>
+
+    </div>
 {% endblock %}

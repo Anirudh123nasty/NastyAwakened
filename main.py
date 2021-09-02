@@ -49,9 +49,14 @@ def anirudh():
     # starting and empty input default
     return render_template("anirudh.html", name="World")
 
-@app.route('/ethan/')
+@app.route('/ethan/', methods=['GET', 'POST'])
 def ethan():
-    return render_template('ethan.html')
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:
+            return render_template("ethan.html", name=name)
+            # starting and empty input default
+    return render_template("ethan.html", name="World")
 
 @app.route('/james/')
 def james():
