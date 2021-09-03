@@ -1,0 +1,20 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "README" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here ->
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+    <p>README!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+    <p style="..." >Here's how to use the Dropdown.
+    The dropdown links only work if you go to `name`, `stub`, or `greet`
+    The links do not work if you go from our own about.html pages</p>
+    </div>
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}

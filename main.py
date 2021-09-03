@@ -27,9 +27,9 @@ def hawkers():
     return render_template("hawkers.html")
 
 
-@app.route('/stub/')
-def stub():
-    return render_template("stub.html")
+@app.route('/README/')
+def README():
+    return render_template("README.html")
 
 @app.route('/name/')
 def name():
