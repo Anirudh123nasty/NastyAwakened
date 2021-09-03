@@ -8,6 +8,14 @@
 | Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) |
 | James Lee | [@JL1080](https://github.com/JL1080) |
 
+## Grading
+
+PBL Points: 4/4
+
+| Requirements | Evidence |
+| - | - |
+| * | |
+
 ## Ideas:
 * Planner (School, Work, Personal)
 
