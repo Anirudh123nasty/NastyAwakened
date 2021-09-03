@@ -44,7 +44,7 @@ def michael():
     # starting and empty input default
     return render_template("michael.html", name="World")
 
-@app.route('/anirudh/')
+@app.route('/anirudh/', methods=['GET', 'POST'])
 def anirudh():
     # submit button has been pushed
     if request.form:
