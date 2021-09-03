@@ -35,9 +35,14 @@ def stub():
 def name():
     return render_template("name.html")
 
-@app.route('/michael/')
+@app.route('/michael/', methods=['GET', 'POST'])
 def michael():
-    return render_template('michael.html')
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("michael.html", name=name)
+    # starting and empty input default
+    return render_template("michael.html", name="World")
 
 @app.route('/anirudh/')
 def anirudh():
