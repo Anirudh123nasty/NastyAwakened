@@ -8,13 +8,14 @@
 | Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) |
 | James Lee | [@JL1080](https://github.com/JL1080) |
 
-## Grading
+## Table of Contents
+* in the works
 
-PBL Points: 4/4
+## Grading
 
 | Requirements | Evidence |
 | - | - |
-| * | |
+| Information is currently in the scrum board | [scrum board](https://github.com/NastyEthan/flask_portfolio/projects/1) |
 
 ## Ideas:
 * Planner (School, Work, Personal)
