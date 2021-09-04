@@ -72,15 +72,15 @@ def james():
     # starting and empty input default
     return render_template("james.html", name="World")
 
-@app.route('/greet/', methods=['GET', 'POST'])
-def greet():
+@app.route('/minilab/', methods=['GET', 'POST'])
+def minilab():
     # submit button has been pushed
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("greet.html", name=name)
+            return render_template("Minilab.html", name=name)
     # starting and empty input default
-    return render_template("greet.html", name="World")
+    return render_template("Minilab.html", name="World")
 
 # runs the application on the development server
 if __name__ == "__main__":

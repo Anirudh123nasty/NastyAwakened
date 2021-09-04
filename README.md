@@ -25,5 +25,5 @@ Have dropdown for different classes, jobs, times, etc.
 
 Pictures to match with tasks
 
-Simple set up of time slsots and several buttons for flexibility
+Simple set up of time slots and several buttons for flexibility
 
