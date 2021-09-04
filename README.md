@@ -14,7 +14,7 @@ PBL Points: 4/4
 
 | Requirements | Evidence |
 | - | - |
-| * | |
+| Information is currently in the scrum board | [scrum board](https://github.com/NastyEthan/flask_portfolio/projects/1) |
 
 ## Ideas:
 * Planner (School, Work, Personal)
