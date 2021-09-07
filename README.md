@@ -9,7 +9,17 @@
 | James Lee | [@JL1080](https://github.com/JL1080) |
 
 ## Table of Contents
-* in the works
+* Week 1
+* Week 2
+* Week 3 
+
+## Progress
+| Week | Progress | Evidence |
+| - | - | - |
+| Week 1 | Installed all the application necessary to start coding and set up the flask repository | [Repository](https://github.com/NastyEthan/flask_portfolio) |
+| Week 2 | This week we created our invidiual `.html` pages and also implemented the `greet.html` functions into our own pages | [Individual Pages](https://github.com/NastyEthan/flask_portfolio/tree/main/templates) |
+| Week 3 | N/A | N/A |
+
 
 ## Grading
 
