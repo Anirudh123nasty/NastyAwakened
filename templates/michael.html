@@ -7,32 +7,22 @@
 {% set repo = "https://github.com/NastyEthan/flask_portfolio" %}
 
 {% block body %}
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-        <p style="font-family:verdana; font-size:50px" > Michael Chen</p>
-    </div>
-
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-
-        <div class="col-12">
-            <p style="font-family:verdana; font-size:20px" > Hello, {{name}}!</p>
-        </div>
-
-        <div class="col-12">
-            <form action="/michael/" id="greet" method="POST" >
-                <label for="name">Type a greeting name</label>
-                <input name="name" id="name">
-                <input type="submit" value="Greetings!">
-            </form>
-        </div>
-
+    <div style = "left:80px; top:30px" >
+        <h1 style="font-family:'system-ui'; font-size:69px" > Michael Chen</h1>
+        <p style="font-family:'fangsong'"; > Hello {{ name }}, I am Michael, here is some of my work:</p>
+        <form action="/michael/" id="greet" method="POST" >
+            <label style="font-family:'fangsong'"; for="name">Please Enter Your Name</label>
+            <input style="font-family:'fangsong'"; name="name" id="name">
+            <input style="font-family:'fangsong'; font-weight:900"; type="submit" value="Greetings!">
+        </form>
     </div>
 {% endblock %}
 
 {% block background %}
     <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vanta.dots.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vanta.net.min.js') }}"></script>
     <script>
-        VANTA.DOTS({
+        VANTA.NET({
             el: "body",
             mouseControls: true,
             touchControls: true,
@@ -41,8 +31,8 @@
             minWidth: 200.00,
             scale: 1.00,
             scaleMobile: 1.00,
-            color: 0xbb62fa,
-            color2: 0x20ffb0
+            color: 0xe3a95a,
+            backgroundColor: 0x2d0f64
         })
     </script>
 {% endblock %}
