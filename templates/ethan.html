@@ -27,18 +27,18 @@
 
 {% block body %}
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-        <p style="font-family:verdana; font-size:50px" > Ethan Vo</p>
+        <p style="font-family:'Shree Devanagari 714'; font-size:69px" > Ethan Vo</p>
     </div>
 
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family:'Shree Devanagari 714';font-size:20px">
 
         <div class="col-12">
-            <p>Hello, {{name}}!</p>
+            <p>Hello, {{name}}! This is my about page</p>
         </div>
 
         <div class="col-12">
             <form action="/ethan/" id="greet" method="POST" >
-                <label for="name">Type a greeting name?</label>
+                <label for="name">Enter your name:</label>
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
             </form>

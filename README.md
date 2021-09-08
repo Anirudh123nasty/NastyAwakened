@@ -18,7 +18,7 @@
 | - | - | - |
 | 1 | Installed all the application necessary to start coding and set up the flask repository | [Repository](https://github.com/NastyEthan/flask_portfolio) |
 | 2 | This week we created our invidiual `.html` pages and also implemented the `greet.html` functions into our own pages | [Individual Pages](https://github.com/NastyEthan/flask_portfolio/tree/main/templates) |
-| 3 | N/A | N/A |
+| 3 | This week we added new fonts, styles, and colors to our pages | N/A |
 
 
 ## Grading
