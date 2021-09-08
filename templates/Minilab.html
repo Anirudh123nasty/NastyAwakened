@@ -4,20 +4,21 @@
 <!- This variable sets name of browser tab  -->
 {% set project = "Minilab" %}
 
+
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-        <p style="font-family:verdana; font-size:50px" > https://docs.google.com/document/d/1auhUucagVdUoHKqDXnu66FGK6qM-veyYC3wnXmTDl8s/edit?usp=sharing</p>
-        <p style="font-family:verdana; font-size:50px" > Here's the link to our Video/Journal 0</p>
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif; font-size:30px">
+        <p> Here's the link to our Video/Journal 0 </p>
+        <a href="https://kapwi.ng/c/yKfJ5MqCfP" > Tech Talk 0.*   </a>
     </div>
 
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif; font-size:30px">
 
-        <div class="col-12">
+        <div>
             <p>Hello, {{name}}!</p>
         </div>
 
-        <div class="col-12">
+        <div>
             <form action="/minilab/" id="greet" method="POST" >
                 <label for="name">Type a greeting name? </label>
                 <input name="name" id="name">
@@ -34,7 +35,7 @@
     <head>
         <style>
             body{
-                background-image: url('https://images.unsplash.com/photo-1512626120412-faf41adb4874?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+                background-image: url('https://images.unsplash.com/photo-1513151233558-d860c5398176?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
                 background-size: cover;
                 height: 100vh;
                 padding:0;
