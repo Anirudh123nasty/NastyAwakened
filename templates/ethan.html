@@ -6,7 +6,6 @@
 
 {% set repo = "https://github.com/NastyEthan/flask_portfolio" %}
 
-
 <!- This is turning off birds background from base.html -->
 {% block background %}
     <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
@@ -20,7 +19,8 @@
             minHeight: 200.00,
             minWidth: 200.00,
             scale: 1.00,
-            scaleMobile: 1.00
+            scaleMobile: 1.00,
+            color: 0xbb62fa,
         })
     </script>
 {% endblock %}

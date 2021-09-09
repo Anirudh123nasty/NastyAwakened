@@ -8,18 +8,18 @@
 
 {% block body %}
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family:'Poor Richard',serif;">
-        <p style="font-family:'Poor Richard'; font-size:200px" > James Lee</p>
+        <p style="font-family:'Poor Richard'; font-size:200px; color: #1da1f2" > James Lee</p>
     </div>
 
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: 'Poor Richard',serif;">
 
         <div class="col-12">
-            <p style="font-family:'Poor Richard'; font-size:100px" > Hello, {{name}}!</p>
+            <p style="font-family:'Poor Richard'; font-size:100px; color: #1da1f2" > Hello, {{name}}!</p>
         </div>
 
         <div class="col-12">
             <form action="/james/" id="greet" method="POST" >
-                <label for="name">Type a greeting name</label>
+                <label for="name" ;  <p style="font-family:'Poor Richard'; font-size:25px; color: #1da1f2">Type a greeting name</label>
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
             </form>
@@ -30,9 +30,9 @@
 
 {% block background %}
     <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vanta.cells.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vanta.net.min.js') }}"></script>
     <script>
-        VANTA.CELLS({
+        VANTA.NET({
             el: "body",
             mouseControls: true,
             touchControls: true,
