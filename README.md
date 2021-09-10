@@ -13,9 +13,9 @@
 * [Ethan & Anirudh](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing)
 
 ## Table of Contents
-* Week 1
-* Week 2
-* Week 3 
+* [Week 1](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-1)
+* [Week 2](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-2)
+* [Week 3](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-3) 
 
 ## Week 1
 
