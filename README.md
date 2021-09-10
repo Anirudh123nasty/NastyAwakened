@@ -41,6 +41,11 @@
 | Michael | | | |
 | James | | | |
 
+## Pair Share Journals
+### [Michael Chen and James Lee Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)
+### [Anirudh Ramachandram and Ethan Vo Journal](https://docs.google.com/document/d/1rxDS-Su8Yf-JtRhYigMewVp3HRqp1VQKlIGGpcutEeI/edit)
+
+
 ## Ideas:
 * Planner (School, Work, Personal)
 
