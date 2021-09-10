@@ -51,10 +51,10 @@
 ### Week 3 Grading
 | Name | Grade | Accomplishments (or smth like that) | Evidence |
 | - | - | - | - |
-| Ethan | | | |
-| Anirudh | | | | 
-| Michael | | | |
-| James | | | |
+| Ethan | | | || [ethan.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/ethan.html) |
+| Anirudh | | | | | [anirudh.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/anirudh.html) |
+| Michael | | | || [michael.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michael.html) |
+| James | | | || [james.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/james.html) |
 
 | Grade | Requirement | Evidence|
 | - | - | - |
