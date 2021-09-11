@@ -63,7 +63,7 @@
 | /1 | **Team Designer/Coder pair**.  Prototype layout.  Get your own STYLE, COLORS, FONTS; get your basic groove into your site.  Create these elements.  This should be consider CSS or <style> for your site. [W3 Schools](https://www.w3schools.com/w3css/defaulT.asp) can provide guidance on CSS.. Experiment with Two themes...  Try a couple of prototype experiments and get feedback from Crossover. | |
 | /1 | **Team Designer/Coder pair**.  Create location for Mini-labs, you could rename this to something for your team (aka How-its-Made, Concepts, etc).  This can have research or early concepts from your team.   Additionally this section should have embeds to Brain Write, Wireframes, Greet, and TPT3.  Evidence of research or early design. Try3x3 or 4x4 design on page. Bootstrap Grid layout | |
 | /1 | **Individual Coding**.   Review and update you home pages again.  Make sure you have a wireframe that can be linked to from your home page that shows design. | [Figma](https://www.figma.com/file/9eItLJPgtgRwK6GugaUwrl/Unique-Planner?node-id=0%3A1) |
-| /1 | **Individual Research**.   Learn about binary this week through TPT and TT.  Also, review related videos on CB and Harvard Video.  Update journal, be ready to work on Binary lab next week. | |
+| /1 | **Individual Research**.   Learn about binary this week through TPT and TT.  Also, review related videos on CB and Harvard Video.  Update journal, be ready to work on Binary lab next week. | [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing) <br /> [Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing) |
 
 ## Week 4
 
