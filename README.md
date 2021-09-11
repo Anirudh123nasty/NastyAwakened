@@ -1,12 +1,12 @@
 # Nasty Group README
 
 ## Team Members
-| Name | Github Profile |
-| - | - |
-| Michael Chen | [@Michaelc179](https://github.com/Michaelc179) |  
-| Ethan Vo | [@NastyEthan](https://github.com/NastyEthan) |
-| Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) |
-| James Lee | [@JL1080](https://github.com/JL1080) |
+| Name | Github Profile | Issues | Scrum Board | Commits |
+| - | - | - | - | - | 
+| Michael Chen | [@Michaelc179](https://github.com/Michaelc179) |  [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AMichaelc179) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3Amichaelc179) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=michaelc179)
+| Ethan Vo | [@NastyEthan](https://github.com/NastyEthan) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3ANastyEthan) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3ANastyEthan) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=NastyEthan)
+| Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AAnirudh123nasty) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AAnirudh123nasty) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=Anirudh123nasty)
+| James Lee | [@JL1080](https://github.com/JL1080) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AJL1080) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AJL1080) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=JL1080) |
 
 ## Journals
 * [Michael & James](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)
@@ -16,6 +16,7 @@
 * [Week 1](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-1)
 * [Week 2](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-2)
 * [Week 3](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-3) 
+* [Ideation](https://github.com/NastyEthan/flask_portfolio#ideas)
 
 ## Week 1
 
@@ -49,20 +50,39 @@
 | Changed the aesthetics (fonts, color, size) of each of our html pages | [Individual Pages](https://github.com/NastyEthan/flask_portfolio/tree/main/templates) |
 
 ### Week 3 Grading
-| Name | Grade | Accomplishments (or smth like that) | Evidence |
+| Name | Grade | Work | Evidence |
 | - | - | - | - |
-| Ethan | | | || [ethan.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/ethan.html) |
-| Anirudh | | | | | [anirudh.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/anirudh.html) |
-| Michael | | | || [michael.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michael.html) |
-| James | | | || [james.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/james.html) |
+| Ethan | | | [ethan.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/ethan.html) |
+| Anirudh | | | [anirudh.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/anirudh.html) |
+| Michael | | | [michael.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michael.html) |
+| James | | | [james.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/james.html) |
 
 | Grade | Requirement | Evidence|
 | - | - | - |
 | /1 | **Scrum Master/Tester**.  Clean up code, README, Scrum Board.   Make sure everything that is in the project is of use and applicable.  Think about how HTML files are organized, Refactor/Rename code to make sure it is properly ordered.  In addition be sure to review Sprint Process within team.| |
 | /1 | **Team Designer/Coder pair**.  Prototype layout.  Get your own STYLE, COLORS, FONTS; get your basic groove into your site.  Create these elements.  This should be consider CSS or <style> for your site. [W3 Schools](https://www.w3schools.com/w3css/defaulT.asp) can provide guidance on CSS.. Experiment with Two themes...  Try a couple of prototype experiments and get feedback from Crossover. | |
 | /1 | **Team Designer/Coder pair**.  Create location for Mini-labs, you could rename this to something for your team (aka How-its-Made, Concepts, etc).  This can have research or early concepts from your team.   Additionally this section should have embeds to Brain Write, Wireframes, Greet, and TPT3.  Evidence of research or early design. Try3x3 or 4x4 design on page. Bootstrap Grid layout | |
-| /1 | **Individual Coding**.   Review and update you home pages again.  Make sure you have a wireframe that can be linked to from your home page that shows design.  Review embedding and design concept here (Links to an external site.) | |
+| /1 | **Individual Coding**.   Review and update you home pages again.  Make sure you have a wireframe that can be linked to from your home page that shows design. | [Figma](https://www.figma.com/file/9eItLJPgtgRwK6GugaUwrl/Unique-Planner?node-id=0%3A1) |
 | /1 | **Individual Research**.   Learn about binary this week through TPT and TT.  Also, review related videos on CB and Harvard Video.  Update journal, be ready to work on Binary lab next week. | |
+
+## Week 4
+
+### Week 4 Progress
+| Progress | Evidence |
+| - | - |
+| N/A | N/A |
+
+### Week 4 Grading
+| Name | Grade | Work | Evidence |
+| - | - | - | - |
+| Ethan | | | || |
+| Anirudh | | | | | |
+| Michael | | | || |
+| James | | | || |
+
+| Grade | Requirement | Evidence |
+| - | - | - |
+| /# | | | | 
 
 ## Ideas:
 * Planner (School, Work, Personal)
