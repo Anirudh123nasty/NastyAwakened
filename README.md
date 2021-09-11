@@ -4,12 +4,12 @@
 * [ScrumBoard](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AJL1080)
 
 ## Team Members
-| Name | Github Profile | Issues | Scrum Board | Commits |
-| - | - | - | - | - | 
-| Michael Chen | [@Michaelc179](https://github.com/Michaelc179) |  [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AMichaelc179) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3Amichaelc179) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=michaelc179)
-| Ethan Vo | [@NastyEthan](https://github.com/NastyEthan) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3ANastyEthan) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3ANastyEthan) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=NastyEthan)
-| Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AAnirudh123nasty) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AAnirudh123nasty) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=Anirudh123nasty)
-| James Lee | [@JL1080](https://github.com/JL1080) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AJL1080) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AJL1080) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=JL1080) |
+| Name | Github Profile | Issues | Scrum Board | Commits | MiniLab |
+| - | - | - | - | - | -|
+| Michael Chen | [@Michaelc179](https://github.com/Michaelc179) |  [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AMichaelc179) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3Amichaelc179) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=michaelc179) | [michael.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michael.html)
+| Ethan Vo | [@NastyEthan](https://github.com/NastyEthan) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3ANastyEthan) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3ANastyEthan) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=NastyEthan) |[ethan.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/ethan.html) |
+| Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AAnirudh123nasty) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AAnirudh123nasty) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=Anirudh123nasty) | [anirudh.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/anirudh.html) |
+| James Lee | [@JL1080](https://github.com/JL1080) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AJL1080) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AJL1080) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=JL1080) | [james.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/james.html) |
 
 ## Journals
 * [Michael & James](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)
