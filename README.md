@@ -55,7 +55,7 @@
 | Anirudh |8/8 | Successfully changed text font, size and color. Contributed to brainwrite, journal, and wireframe. Helped set up code from minilab.html. Experimented with other customizations| [anirudh.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/anirudh.html) |
 | Michael |8/8 | Successfully changed text font, size and color. Contriguted to brainwrite, journal, and wireframe. Helped format README and update. Experimented wiht other customizations. Added new table while experimenting. Helped debug other member's code. | [michael.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michael.html) |
 | James |8/8 | Successfully changed text font, size and color. Contributed to journal, wireframe, and brainwrite. Helped work with backgrounds for other group members along with customizing text color. Experimented with font changes. Worked with binary code. | [james.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/james.html) |
-| Group | 8/8 | Successfully met requirements for text customizations on each page. Updated brainwrite and contributed to journal. Helped other group members with background customizations and text colors. Updated README along with new formatting. |
+| Group | 8/8 | Successfully met requirements for text customizations on each page. Updated brainwrite and contributed to journal. Helped other group members with background customizations and text colors. Updated README along with new formatting. | [Individual Pages](https://github.com/NastyEthan/flask_portfolio/tree/main/templates) |
 
 | Grade | Requirement | Evidence|
 | - | - | - |
