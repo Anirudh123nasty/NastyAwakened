@@ -65,15 +65,14 @@ def minilab():
     # starting and empty input default
     return render_template("Minilab.html", name="World")
 
-@app.route('/binary/')
+@app.route('/binary/', methods=['GET', 'POST'])
 def binary():
-    return render_template("binary.html")
     if request.form:
-        bit = request.form.get("bit")
-        if len(name) != 0:  # input field has content
-            return render_template("binary.html", bit=bit)
+        bits = request.form.get("bits")
+        if len(bits) != 0:  # input field has content
+            return render_template("binary.html", bits=int(bits))
     # starting and empty input default
-    return render_template("binary.html", bit="test")
+    return render_template("binary.html", bits=8)
 
 # runs the application on the development server
 if __name__ == "__main__":
