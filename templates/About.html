@@ -1,16 +1,22 @@
 <!- This variable sets name of browser tab  -->
+{% extends "layouts/base.html" %}
+
+{% block background %}
+{% endblock %}
+    {% block body %}
+
 {% set project = "About" %}
 
-<h1>About Us</h1>
-
-<div class="container">
-    <div class="row">
+        <h1 style="font-family:'Georgia';left:80px; top:30px; font-size:69px" >About Us</h1>
+        <br />
+        <div class="container">
+            <div class="row">
         <div class="col-sm-2 offset-sm-1">
-            <img src="/static/assets/michaelprofile.gif" alt="Michael's picture" style="align-items: center;width: 200px; height: 200px;" >
+            <img src="/static/assets/michaelprofile.gif" alt="Michael's picture" style="width: 200px; height: 200px;" >
             <a href="/michael/"> Michael Chen </a>
         </div>
         <div class="col-sm-2">
-            <img src="/static/assets/ethanprofile.jpg" alt="Ethan's picture" style="text-align: left; width: 200px; height: 200px;">
+            <img src="/static/assets/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px;">
             <a href="/ethan/"> Ethan Vo </a>
         </div>
         <div class="col-sm-2">
@@ -23,3 +29,4 @@
         </div>
     </div>
 </div>
+    {% endblock %}
