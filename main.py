@@ -75,6 +75,10 @@ def binary():
     # starting and empty input default
     return render_template("binary.html", bit="test")
 
+@app.route('/About/')
+def About():
+    return render_template("About.html")
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
