@@ -1,7 +1,8 @@
 # Nasty Group README
 
-## ScrumBoard Link
+## ScrumBoard Link and Contributors Link
 * [ScrumBoard](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AJL1080)
+* [Contributors](https://github.com/NastyEthan/flask_portfolio/graphs/contributors)
 
 ## Team Members
 | Name | Github Profile | Issues | Scrum Board | Commits | MiniLab |

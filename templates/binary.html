@@ -7,7 +7,7 @@
            use HTML Input Form in Frontend, ie toward top of Page
            send initial value and updated values to form via Python render_template -->
 <!-- Hack: use 8 as default -->
-{% set BITS = 8 %}
+{% set BITS = bits %} <!-- # of bulbs -->
 {% set MAX = ((2 ** BITS) - 1) %}
 
 <!-- Hack: Set bulbs and pass as variables via Python render_template
@@ -78,7 +78,7 @@
       butt.innerHTML = "{{ msgTurnOff }}";
     }
     // Binary numbers
-    const binary = getBits();
+    const binary = getBits()
     setConversions(binary);
   }
   // add is positive integer, subtract is negative integer
@@ -110,7 +110,15 @@
   }
 </script>
 
+
 <h1 class="text-center">Binary Math with Conversions</h1>
+
+<form class="text-center" action="/binary/" id="bits" method="POST" >
+    <label for="bits">Please Enter A Value For the Number of Bits</label>
+    <input name="bits">
+    <input style="font-weight:900"; type="submit" value="Go!">
+</form>
+
 <div class="container">
   <div class="row justify-content-md-center">
 
