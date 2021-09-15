@@ -74,6 +74,7 @@
 ### Week 4 Progress
 | Progress | Evidence |
 | - | - |
+| Created a new scrumboard for Week 4 | [Week 4 Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/2) |
 | N/A | N/A |
 
 ### Week 4 Grading
