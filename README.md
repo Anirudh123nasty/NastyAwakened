@@ -19,7 +19,9 @@
 ## Table of Contents
 * [Week 1](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-1)
 * [Week 2](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-2)
-* [Week 3](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-3) 
+* [Week 3](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-3)
+* [Week 4](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-4) 
+
 
 ## Week 1
 
@@ -75,7 +77,7 @@
 | Progress | Evidence |
 | - | - |
 | Created a new scrumboard for Week 4 | [Week 4 Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/2) |
-| N/A | N/A |
+| Added binary.html and experimented with different hacks | [binary.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/binary.html) |
 
 ### Week 4 Grading
 | Name | Grade | Work | Evidence |
