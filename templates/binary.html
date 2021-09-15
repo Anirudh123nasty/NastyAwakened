@@ -30,6 +30,7 @@
     }
     return bits;
   }
+
   // setter for DOM values
   function setConversions(binary) {
     document.getElementById('binary').innerHTML = binary;
@@ -39,10 +40,13 @@
     document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
     // DOM assignment to Decimal conversion
     document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString(10);
-    /* Hack: show ASCII printable character(s) for each 8 bits
-     DOM assignment by converting decimal https://www.w3schools.com/jsref/jsref_fromcharcode.asp
-     below ASCII for more ideas of where to make changes
-     */
+    // DOM assigment to ASCII conversion
+    let ascii = String.fromCharCode(parseInt(parseInt(binary, 2).toString(10)));
+    document.getElementById('ASCII').innerHTML = ascii;
+      /* Hack: show ASCII printable character(s) for each 8 bits
+       DOM assignment by converting decimal https://www.w3schools.com/jsref/jsref_fromcharcode.asp
+       below ASCII for more ideas of where to make changes
+       */
   }
 
   // algorithm to convert decimal to base using division and remainder
@@ -81,6 +85,9 @@
     const binary = getBits()
     setConversions(binary);
   }
+
+  //ASCII STUFFS
+
   // add is positive integer, subtract is negative integer
   function add(n) {
     let binary = getBits();
@@ -95,6 +102,7 @@
     binary = decimal_2_base(decimal, 2);
     // update conversions
     setConversions(binary);
+    // ascii?
     // update bits
     for (let i = 0; i < binary.length; i++) {
       let digit = binary.substr(i, 1);
@@ -130,6 +138,7 @@
         <th>Octal</th>
         <th>Hexadecimal</th>
         <th>Decimal</th>
+        <th>ASCII</th>
         <!-- Hack: display ASCII label for printable character(s)  -->
         <th>Minus</th>
       </tr>
@@ -139,6 +148,7 @@
         <td id="octal">0</td>
         <td id="hexadecimal">0</td>
         <td id="decimal">0</td>
+        <td id="ASCII">0</td>
         <!-- Hack: display ASCII printable character(s)  -->
         <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
 
