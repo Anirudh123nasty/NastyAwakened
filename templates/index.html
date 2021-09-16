@@ -1,6 +1,15 @@
 <!-- Extending the project layout, as this file will do minor customizations -->
 {% extends "layouts/base.html" %}
 
+{% block background %}
+    <html>
+    <head>
+    </head>
+    <body style="background-color:purple;">
+    </body>
+    </html>
+{% endblock %}
+
 <!-- Setting up variables to customize "project" details to be specific to index page -->
 {% set project = "Nasty" %}
 {% set repo = "https://github.com/NastyEthan/flask_portfolio" %}
