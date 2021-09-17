@@ -71,12 +71,18 @@ def binary():
         bits = request.form.get("bits")
         if len(bits) != 0:  # input field has content
             return render_template("binary.html", bits=int(bits))
+    #if request.form:
+     #   static = request.form.get("img")
     # starting and empty input default
     return render_template("binary.html", bits=8)
 
 @app.route('/About/')
 def About():
     return render_template("About.html")
+
+@app.route('/planner/')
+def planner():
+    return render_template("planner.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
