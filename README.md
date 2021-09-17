@@ -79,6 +79,7 @@
 | Created a new scrumboard for Week 4 | [Week 4 Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/2) |
 | Added binary.html and experimented with different hacks | [binary.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/binary.html) |
 | Added ASCII| [ASCII](https://github.com/NastyEthan/flask_portfolio/commit/c96df6846d6f54fd0d458269af8853eff913a552) |
+| Added the base for our main project in `planner.html`. There is no functionality in it yet. | [planner.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/planner.html) |
   
 ### Week 4 Grading
 | Name | Grade | Work | Evidence |
