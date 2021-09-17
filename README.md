@@ -82,15 +82,30 @@
 ### Week 4 Grading
 | Name | Grade | Work | Evidence |
 | - | - | - | - |
-| Ethan | | | || |
-| Anirudh | | | | | |
-| Michael | | | || |
-| James | | | || |
+| Ethan | 8/8 | Worked on ASCII hack for binary. Finished individual notes on videos. Updated README. Reformatted About page to use dropdown for Minilabs. Changed background color for pages. | [About Page](https://github.com/NastyEthan/flask_portfolio/commit/763f84323fb8bd69f0eee49b8c4ba17e8c789470) <br /> [Commit 2 About page](https://github.com/NastyEthan/flask_portfolio/commit/61775ba742338ab86a3773fdc6fcc2b4f2a812a3)|| |
+| Anirudh | 8/8 | Worked on Dog/Cat Swtich for binary. Finished individual notes on videos. Created Binary2.html. |[DogCat Progress](https://github.com/NastyEthan/flask_portfolio/commit/855b739aff3365f54a57d2dba371fa8339b42694) <br /> [Binary2.html](https://github.com/NastyEthan/flask_portfolio/commit/15450f5f534326be9e114a255a03e2004d63a1de) | | |
+| Michael | 8/8 | Worked on ASCII hack for binary. Created binary page. Finished indidivual notes on videos. Broke down about dropdown and created dropdown for minilabs.|[Binary.html Commit 1](https://github.com/NastyEthan/flask_portfolio/commit/6b350ef355e2537e9b777da58522affdffdefb9e) <br /> [Commit 2](https://github.com/NastyEthan/flask_portfolio/commit/c96df6846d6f54fd0d458269af8853eff913a552) <br /> [Navbar/Minilab Reformatting](https://github.com/NastyEthan/flask_portfolio/commit/1114c98d08f946cc699cc3a0a26c59cd05f91d1a) || |
+| James | 8/8 | Worked on Dog/Cat Swtich for binary. Added jpegs to assets file. Finished individual notes on videos.|[DogCat Progress](https://github.com/NastyEthan/flask_portfolio/commit/87bb8d789d7c81951bc9029429066a2fa5f430e1) || |
 
 | Grade | Requirement | Evidence |
 | - | - | - |
-| /# | | | |
+| -| Group Video| [2 Minute Video]() | |
   
+  ## Week 5
+
+### Week 5 Progress
+| Progress | Evidence |
+| - | - |
+| | |
+
+### Week 5 Grading
+| Name | Grade | Requirements | Evidence |
+| - | - | - | - |
+| Group |  |  | |
+| Ethan |  |  |  |
+| Anirudh |  |  |  |
+| Michael |  | | [ |
+| James |  | |  |
   
 ## Ideas:
 * Planner (School, Work, Personal)
