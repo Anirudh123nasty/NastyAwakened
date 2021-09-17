@@ -90,7 +90,11 @@
 
 | Grade | Requirement | Evidence |
 | - | - | - |
-| -| Group Video| [2 Minute Video]() | |
+| - | Group Video| [2 Minute Video]() | |
+| /1 | Team and Scrum Master Planning | |
+| /2 | Team Technicals. Evaluation is on how Planning and individual Issues compliment the entire project | |
+| /2 | Individual Technicals. Code commits is required on something Technical. | |
+
   
   ## Week 5
 
