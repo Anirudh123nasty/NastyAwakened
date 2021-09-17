@@ -97,6 +97,24 @@ def About():
 def planner():
     return render_template("planner.html")
 
+@app.route('/binarywithcat/')
+def binarywithcat():
+    if request.form:
+        bits = request.form.get("pets")
+        if len(bits) != 0:  # input field has content
+            return render_template("binarywithcat.html", pets=(bits))
+    # starting and empty input default
+    return render_template("binarywithcat.html", bits=8)
+
+@app.route('/binarywithdog/')
+def binarywithdog():
+    if request.form:
+        bits = request.form.get("pets")
+        if len(bits) != 0:  # input field has content
+            return render_template("binarywithdog.html", pets=(bits))
+    # starting and empty input default
+    return render_template("binarywithdog.html", bits=8)
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)

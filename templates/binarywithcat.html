@@ -111,10 +111,10 @@
                 let digit = binary.substr(i, 1);
                 document.getElementById('digit' + i).value = digit;
                 if (digit === "1") {
-                    document.getElementById('cat' + i).src = "{{ imgBulbOn2 }}";
+                    document.getElementById('cat' + i).src = "{{ imgCatOn }}";
                     document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
                 } else {
-                    document.getElementById('cat' + i).src = "{{ imgBulbOff2 }}";
+                    document.getElementById('cat' + i).src = "{{ imgCatOff}}";
                     document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
                 }
             }
@@ -155,7 +155,7 @@
                 <table class="table">
                     <tr>
                         {% for i in range(BITS) %}
-                            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff2 }}" alt="" width="40" height="Auto">
+                            <td><img class="img-responsive py-3" id="cat{{i}}" src="{{ imgCatOff }}" alt="" width="40" height="Auto">
                                 <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button>
                             </td>
                         {% endfor %}
@@ -170,25 +170,7 @@
 
         </div>
     </div>
-    <p>Select Pet:</p>
 
-    <div>
-        <input type="radio" id="Dog" name="pet" value="Dog"
-               checked>
-        <label for="dog">Dog</label>
-    </div>
-
-    <div>
-        <input type="radio" id="Cat" name="pet" value="Cat">
-        <label for="cat">Cat</label>
-    </div>
-
-    <div class="col-sm-2">
-        <img src="/static/assets/dogon.jpg" alt="Dog's picture" style="width: 150px; height: 150px;">
-    </div>
-    <div class="col-sm-2">
-        <img src="/static/assets/caton.jpg" alt="Cat's picture" style="width: 150px; height: 150px;">
-    </div>
 {% endblock %}
 
 {% block background %}
