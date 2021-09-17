@@ -76,6 +76,15 @@ def binary():
     # starting and empty input default
     return render_template("binary.html", bits=8)
 
+@app.route('/binary2/', methods=['GET', 'POST'])
+def binary2():
+    if request.form:
+        bits = request.form.get("bits")
+        if len(bits) != 0:  # input field has content
+            return render_template("binary2.html", bits=int(bits))
+    # starting and empty input default
+    return render_template("binary2.html", bits=8)
+
 @app.route('/About/')
 def About():
     return render_template("About.html")
