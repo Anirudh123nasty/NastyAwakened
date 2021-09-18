@@ -92,7 +92,7 @@
 
 | Grade | Requirement | Evidence |
 | - | - | - |
-| /1 | Group Video| [2 Minute Video]() | |
+| /1 | Group Video| [2 Minute Video](https://kapwi.ng/c/B6FEvQKEbp) | |
 | /1 | Team and Scrum Master Planning | |
 | /2 | Team Technicals. Evaluation is on how Planning and individual Issues compliment the entire project | |
 | /2 | Individual Technicals. Code commits is required on something Technical. | |
