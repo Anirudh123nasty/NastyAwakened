@@ -71,10 +71,9 @@
 |1 /1 | **Individual Coding**.   Review and update you home pages again.  Make sure you have a wireframe that can be linked to from your home page that shows design. | [Individual Pages](https://github.com/NastyEthan/flask_portfolio/tree/main/templates) [Brainwrite](https://docs.google.com/document/d/1t31XtKqvTwIF9UPtYcyjFa9-WkKPoQgcxXxMfE8rbKc/edit?usp=sharing) <br /> [Figma](https://www.figma.com/file/9eItLJPgtgRwK6GugaUwrl/Unique-Planner?node-id=0%3A1) |
 | 1/1 | **Individual Research**.   Learn about binary this week through TPT and TT.  Also, review related videos on CB and Harvard Video.  Update journal, be ready to work on Binary lab next week. | [Michael and James Journal w/ TPT3](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing) <br /> [Ethan and Anirudh Journal w/ TPT3](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing)|
 
-## Week 4
-
 ### Week 4 Progress
 | Progress | Evidence |
+| - | - |
 | Created a new scrumboard for Week 4 | [Week 4 Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/2) |
 | Added binary.html and experimented with different hacks | [binary.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/binary.html) |
 | Added binary2.html with hacks | [binary2.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/binary2.html) |
