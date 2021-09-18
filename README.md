@@ -81,6 +81,7 @@
 | Added binary2.html with hacks and attempted 'dog and cat' task | [binary2.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/binary2.html) |
 | Added ASCII | [ASCII](https://github.com/NastyEthan/flask_portfolio/commit/c96df6846d6f54fd0d458269af8853eff913a552) |
 | Added the base for our main project in `planner.html`. There is no functionality in it yet. | [planner.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/planner.html) |
+| Made Group Video | [2 Minute Video](https://kapwi.ng/c/B6FEvQKEbp) | |
   
 ### Week 4 Grading
 | Name | Grade | Work | Evidence |
@@ -90,10 +91,6 @@
 | Michael | 8/8 | Worked on ASCII hack for binary. Created binary page. Finished indidivual notes on videos. Broke down about dropdown and created dropdown for minilabs.|[Binary.html Commit 1](https://github.com/NastyEthan/flask_portfolio/commit/6b350ef355e2537e9b777da58522affdffdefb9e) <br /> [Commit 2](https://github.com/NastyEthan/flask_portfolio/commit/c96df6846d6f54fd0d458269af8853eff913a552) <br /> [Navbar/Minilab Reformatting](https://github.com/NastyEthan/flask_portfolio/commit/1114c98d08f946cc699cc3a0a26c59cd05f91d1a) || |
 | James | 8/8 | Worked on Dog/Cat Swtich for binary. Added jpegs to assets file. Finished individual notes on videos.|[DogCat Progress](https://github.com/NastyEthan/flask_portfolio/commit/87bb8d789d7c81951bc9029429066a2fa5f430e1) || |
 
-| Grade | Requirement | Evidence |
-| - | - | - |
-| /1 | Group Video| [2 Minute Video](https://kapwi.ng/c/B6FEvQKEbp) | |
- 
 ## Week 5
 
 ### Week 5 Progress
