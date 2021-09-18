@@ -2,37 +2,49 @@
 {% extends "layouts/base.html" %}
 
 {% block background %}
-    <html>
-    <head>
-    </head>
-    <body style="background-color:cadetblue;">
-    </body>
-    </html>
+    <body style="background-color:cadetblue;">  </body>
 {% endblock %}
-    {% block body %}
 
+{% block body %}
 {% set project = "About" %}
-
-        <h1 style="font-family:'Georgia';left:80px; top:30px; font-size:69px" >About Us</h1>
-        <br />
-        <div class="container">
-            <div class="row">
-        <div class="col-sm-2 offset-sm-1">
-            <img src="/static/assets/michaelprofile.gif" alt="Michael's picture" style="width: 200px; height: 200px;" >
-            <a style="color:white"; href="/michael/"> Michael Chen </a>
+    <style>
+        h1 {
+            font-family: Bahnschrift;
+            text-align: center;
+            font-size:80px
+        }
+    </style>
+    <br>
+    <h1>About Us</h1>
+    <br>
+    <div class="container">
+        <div class="row justify-content-center" style="text-align: center">
+            <div class="col align-self-start">
+                <img src="/static/assets/michaelprofile.gif" alt="Michael's picture" style="width: 200px; height: 200px;" >
+            </div>
+            <div class="col align-self-start">
+                <img src="/static/assets/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px;">
+            </div>
+            <div class="col align-self-start">
+                <img src="/static/assets/anirudhprofile.jpg" alt="Anirudh's picture" style="width: 200px; height: 200px;">
+            </div>
+            <div class="col align-self-start">
+                <img src="/static/assets/jamesprofile.jpg" alt="James's picture" style="width: 200px; height: 200px;">
+            </div>
         </div>
-        <div class="col-sm-2">
-            <img src="/static/assets/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px;">
-            <a style="color:white"; href="/ethan/">  Ethan Vo </a>
-        </div>
-        <div class="col-sm-2">
-            <img src="/static/assets/anirudhprofile.jpg" alt="Anirudh's picture" style="width: 200px; height: 200px;">
-            <a style="color:white"; href="/anirudh/"> Anirudh Ramachandran </a>
-        </div>
-        <div class="col-sm-2">
-            <img src="/static/assets/jamesprofile.jpg" alt="James's picture" style="width: 200px; height: 200px;">
-            <a style="color:white"; href="/james/"> James Lee </a>
+        <div class="row justify-content-center" style="text-align: center">
+            <div class="col align-self-start">
+                <a style="color:white" href={{ url_for('michael') }}> Michael Chen </a>
+            </div>
+            <div class="col align-self-start">
+                <a style="color:white" href={{ url_for('ethan') }}>  Ethan Vo </a>
+            </div>
+            <div class="col align-self-start">
+                <a style="color:white" href={{ url_for('anirudh') }}> Anirudh Ramachandran </a>
+            </div>
+            <div class="col align-self-start">
+                <a style="color:white" href={{ url_for('james') }}> James Lee </a>
+            </div>
         </div>
     </div>
-</div>
-    {% endblock %}
+{% endblock %}
