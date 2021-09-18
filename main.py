@@ -25,7 +25,7 @@ def michael():
         if len(name) != 0:  # input field has content
             return render_template("michael.html", name=name)
     # starting and empty input default
-    return render_template("michael.html", name="World")
+    return render_template("michael.html", name="")
 
 @app.route('/anirudh/', methods=['GET', 'POST'])
 def anirudh():
@@ -71,13 +71,13 @@ def binary():
         if request.form:
             bits = request.form.get("bits")
         if len(bits) != 0:  # input field has content
-            return render_template("binary.html", bits=int(bits))
+            return render_template("binary.html", bits=int(bits), staticOn="/static/assets/bulb_on.gif", staticOff="/static/assets/bulb_off.png")
     #if request.form:
      #   static = request.form.get("img")
     # starting and empty input default
     except:
-        return render_template("binary.html", bits=8)
-    return render_template("binary.html", bits=8)
+        return render_template("binary.html", bits=8, staticOn="/static/assets/bulb_on.gif", staticOff="/static/assets/bulb_off.png")
+    return render_template("binary.html", bits=8, staticOn="/static/assets/bulb_on.gif", staticOff="/static/assets/bulb_off.png")
 
 
 @app.route('/binary2/', methods=['GET', 'POST'])
