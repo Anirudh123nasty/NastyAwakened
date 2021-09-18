@@ -86,18 +86,14 @@
 | Name | Grade | Work | Evidence |
 | - | - | - | - |
 | Ethan | 8/8 | Worked on ASCII hack for binary. Finished individual notes on videos. Updated README. Reformatted About page to use dropdown for Minilabs. Changed background color for pages. | [About Page](https://github.com/NastyEthan/flask_portfolio/commit/763f84323fb8bd69f0eee49b8c4ba17e8c789470) <br /> [Commit 2 About page](https://github.com/NastyEthan/flask_portfolio/commit/61775ba742338ab86a3773fdc6fcc2b4f2a812a3)|| |
-| Anirudh | 8/8 | Worked on Dog/Cat 'hack' for binary. Finished individual notes on videos. Created Binary2.html. |[DogCat Progress](https://github.com/NastyEthan/flask_portfolio/commit/46e6e52e9a827dd3a6f7a3e95d599aebb8e67de9) <br /> [Binary2.html](https://github.com/NastyEthan/flask_portfolio/commit/15450f5f534326be9e114a255a03e2004d63a1de) | | |
+| Anirudh | 8/8 | Worked on Dog/Cat 'hack' for binary. Finished individual notes on videos. Created Binary2.html. Updated Planner Page. |[DogCat Progress](https://github.com/NastyEthan/flask_portfolio/commit/46e6e52e9a827dd3a6f7a3e95d599aebb8e67de9) <br /> [Binary2.html](https://github.com/NastyEthan/flask_portfolio/commit/15450f5f534326be9e114a255a03e2004d63a1de) <br /> [Updated Planner Page](https://github.com/NastyEthan/flask_portfolio/commit/46ef43c9acdf75302414feac7d480d7e75945374) || |
 | Michael | 8/8 | Worked on ASCII hack for binary. Created binary page. Finished indidivual notes on videos. Broke down about dropdown and created dropdown for minilabs.|[Binary.html Commit 1](https://github.com/NastyEthan/flask_portfolio/commit/6b350ef355e2537e9b777da58522affdffdefb9e) <br /> [Commit 2](https://github.com/NastyEthan/flask_portfolio/commit/c96df6846d6f54fd0d458269af8853eff913a552) <br /> [Navbar/Minilab Reformatting](https://github.com/NastyEthan/flask_portfolio/commit/1114c98d08f946cc699cc3a0a26c59cd05f91d1a) || |
 | James | 8/8 | Worked on Dog/Cat Swtich for binary. Added jpegs to assets file. Finished individual notes on videos.|[DogCat Progress](https://github.com/NastyEthan/flask_portfolio/commit/87bb8d789d7c81951bc9029429066a2fa5f430e1) || |
 
 | Grade | Requirement | Evidence |
 | - | - | - |
 | /1 | Group Video| [2 Minute Video](https://kapwi.ng/c/B6FEvQKEbp) | |
-| /1 | Team and Scrum Master Planning | |
-| /2 | Team Technicals. Evaluation is on how Planning and individual Issues compliment the entire project | |
-| /2 | Individual Technicals. Code commits is required on something Technical. | |
-
-  
+ 
 ## Week 5
 
 ### Week 5 Progress
