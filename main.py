@@ -79,15 +79,29 @@ def binary():
         return render_template("binary.html", bits=8, staticOn="/static/assets/bulb_on.gif", staticOff="/static/assets/bulb_off.png")
     return render_template("binary.html", bits=8, staticOn="/static/assets/bulb_on.gif", staticOff="/static/assets/bulb_off.png")
 
-
 @app.route('/binary2/', methods=['GET', 'POST'])
 def binary2():
-    if request.form:
-        bits = request.form.get("pets")
+    try:
+        if request.form:
+            bits = request.form.get("bits")
         if len(bits) != 0:  # input field has content
-            return render_template("binary2.html", pets=(bits))
+            return render_template("binary2.html", bits=int(bits), staticOn2="/static/assets/bulb_on2.gif", staticOff2="/static/assets/bulb_off2.png")
+    #if request.form:
+    #   static = request.form.get("img")
     # starting and empty input default
-    return render_template("binary2.html", bits=8)
+    except:
+        return render_template("binary2.html", bits=8, staticOn2="/static/assets/bulb_on2.gif", staticOff2="/static/assets/bulb_off2.png")
+    return render_template("binary2.html", bits=8, staticOn2="/static/assets/bulb_on2.gif", staticOff2="/static/assets/bulb_off2.png")
+
+
+#@app.route('/binary2/', methods=['GET', 'POST'])
+#def binary2():
+    # if request.form:
+    # bits = request.form.get("pets")
+    #  if len(bits) != 0:  # input field has content
+#  return render_template("binary2.html", pets=(bits))
+    # starting and empty input default
+  #  return render_template("binary2.html", bits=8)
 
 @app.route('/About/')
 def About():

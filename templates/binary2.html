@@ -14,8 +14,9 @@
 <!-- Hack: Set bulbs and pass as variables via Python render_template
            add new images (ie PNGs) to project -->
 <!-- use your PNGs as default -->
-{% set imgBulbOn2 = "/static/assets/bulb_on2.gif" %}
-{% set imgBulbOff2 = "/static/assets/bulb_off2.png" %}
+
+{% set imgBulbOn2 = staticOn2 %}
+{% set imgBulbOff2 = staticOff2 %}
 {% set msgTurnOn = "Turn On" %}
 {% set msgTurnOff = "Turn Off" %}
 
@@ -79,13 +80,13 @@
             const image = document.getElementById('bulb' + i);
             const butt = document.getElementById('butt' + i);
             // Change digit and visual
-            if (image.src.match("{{ imgBulbOn2 }}")) {
+            if (image.src.match("{{ staticOn2 }}")) {
                 dig.value = 0;
-                image.src = "{{ imgBulbOff2 }}";
+                image.src = "{{ staticOff2 }}";
                 butt.innerHTML = "{{ msgTurnOn }}";
             } else {
                 dig.value = 1;
-                image.src = "{{ imgBulbOn2 }}";
+                image.src = "{{ staticOn2 }}";
                 butt.innerHTML = "{{ msgTurnOff }}";
             }
             // Binary numbers
@@ -122,6 +123,11 @@
     </script>
 
     <h1 class="text-center">Binary Math with Conversions</h1>
+    <form class="text-center" action="/binary2/" id="bits" method="POST" >
+        <label for="bits">Please Enter A Value For the Number of Bits</label>
+        <input name="bits">
+        <input style="font-family:'Vladimir Script'; font-size:15px" type="submit" value="Go!">
+    </form>
     <div class="container">
         <div class="row justify-content-md-center">
 
