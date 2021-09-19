@@ -14,8 +14,8 @@
 <!-- Hack: Set bulbs and pass as variables via Python render_template
            add new images (ie PNGs) to project -->
 <!-- use your PNGs as default -->
-{% set imgDogOn = "/static/assets/dogon.jpg" %}
-{% set imgDogOff = "/static/assets/dogoff.jpg" %}
+{% set imgDogOn = DogOn %}
+{% set imgDogOff = DogOff %}
 {% set msgTurnOn = "Turn On" %}
 {% set msgTurnOff = "Turn Off" %}
 
@@ -122,6 +122,12 @@
     </script>
 
     <h1 class="text-center">Binary Math with Conversions</h1>
+    <form class="text-center" action="/binarywithdog/" id="bits" method="POST" >
+        <label for="bits">Please Enter A Value For the Number of Bits</label>
+        <input name="bits">
+        <input style="font-family:'Vladimir Script'; font-size:15px" type="submit" value="Go!">
+    </form>
+
     <div class="container">
         <div class="row justify-content-md-center">
 
