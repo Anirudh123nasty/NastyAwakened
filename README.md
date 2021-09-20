@@ -107,6 +107,12 @@
 | Michael |  | | [ |
 | James |  | |  |
   
+| Grade | Requirement | Evidence|
+| - | - | - |
+|-| Scrum/Pair activity.  Listen to OO's and TO's introduction.  Write about OOs' and TOs roles in your journal.  Brainstorm on how you think fellow student can help you in Test Prep.  Review idea with Scrum Team, then review again with Crossover team.  Each Scrum Team create summary and provide ideas to OO's.|-|
+| - | Scrum/Pair activity and journal. Unit 3.1 work.   Follow instructions and guidance from OO's| - |
+| - | Scrum/Pair activity and journal. Unit 3.2 work.   Follow instructions and guidance from OO's| - |
+  
 ## Ideas:
 * Planner (School, Work, Personal)
 
