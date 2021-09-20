@@ -1,6 +1,7 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
 
+
 # create a Flask instance
 app = Flask(__name__)
 
@@ -13,10 +14,6 @@ def index():
 @app.route('/README/')
 def README():
     return render_template("README.html")
-
-@app.route('/name/')
-def name():
-    return render_template("name.html")
 
 @app.route('/michael/', methods=['GET', 'POST'])
 def michael():
@@ -54,16 +51,6 @@ def james():
             return render_template("james.html", name=name)
     # starting and empty input default
     return render_template("james.html", name="World")
-
-@app.route('/minilab/', methods=['GET', 'POST'])
-def minilab():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("Minilab.html", name=name)
-    # starting and empty input default
-    return render_template("Minilab.html", name="World")
 
 @app.route('/binary/', methods=['GET', 'POST'])
 def binary():
@@ -103,6 +90,7 @@ def binary2():
     # starting and empty input default
   #  return render_template("binary2.html", bits=8)
 #what does the code above do^?
+
 @app.route('/About/')
 def About():
     return render_template("About.html")
@@ -142,9 +130,10 @@ def binarywithdog():
         return render_template("binarywithdog.html", bits=8, DogOn="/static/assets/dogon.jpg", DogOff="/static/assets/dogoff.jpg")
     return render_template("binarywithdog.html", bits=8, DogOn="/static/assets/dogon.jpg", DogOff="/static/assets/dogoff.jpg")
 
+
 @app.route('/rgb/')
 def rgb():
-    return render_template("rgb.html")# runs the application on the development server
+    return render_template("rgb.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
