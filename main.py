@@ -1,6 +1,6 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
-
+from algorithms.image import image_data
 
 # create a Flask instance
 app = Flask(__name__)
@@ -9,7 +9,7 @@ app = Flask(__name__)
 # connects default URL to render index.html
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("planner.html")
 
 @app.route('/README/')
 def README():
@@ -131,9 +131,15 @@ def binarywithdog():
     return render_template("binarywithdog.html", bits=8, DogOn="/static/assets/dogon.jpg", DogOff="/static/assets/dogoff.jpg")
 
 
-@app.route('/rgb/')
-def rgb():
-    return render_template("rgb.html")
+# @app.route('/rgb/')
+# def rgb():
+#     return render_template("rgb.html")
+
+
+@app.route('/michaelrgb/', methods=['GET', 'POST'])
+def michaelrgb():
+    basic = image_data()
+    return render_template("michaelrgb.html", images=basic )
 
 if __name__ == "__main__":
     app.run(debug=True)
