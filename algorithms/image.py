@@ -63,10 +63,13 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
         img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
     return img_list  # list is returned with all the attributes for each image dictionary
 
-def anirudh_image_data(path="static/assets/michaelimages/", img_list=None):  # change to anirudhimages
+def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # change to anirudhimages
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            {'source': "Charmander", 'label': "Charmander", 'file': "char.jpg"},
+            {'source': "Beach", 'label': "Beach", 'file': "beach 1.jpg"},
+            {'source': "Fall", 'label': "Fall", 'file': "fall 1.jpg"},
+            {'source': "Spring", 'label': "Spring", 'file': "spring 1.jpg"},
+            {'source': "Winter", 'label': "Winter", 'file': "winter 1.jpg"},
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for img_dict in img_list:

@@ -139,6 +139,11 @@ def michaelrgb():
     basic = michael_image_data()
     return render_template("michaelrgb.html", images=basic )
 
+@app.route('/anirudhrgb/', methods=['GET', 'POST'])
+def anirudhrgb():
+    junk = anirudh_image_data()
+    return render_template("anirudhrgb.html", images=junk )
+
 # add your own individual /namergb/ htmls with your own image_data for hacks
 
 if __name__ == "__main__":
