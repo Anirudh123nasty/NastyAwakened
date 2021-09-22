@@ -1,6 +1,6 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
-from algorithms.image import image_data
+from algorithms.image import michael_image_data, anirudh_image_data, ethan_image_data, james_image_data
 
 # create a Flask instance
 app = Flask(__name__)
@@ -99,8 +99,6 @@ def About():
 def planner():
     return render_template("planner.html")
 
-
-
 @app.route('/binarywithcat/', methods=['GET', 'POST'])
 def binarywithcat():
     try:
@@ -138,8 +136,10 @@ def binarywithdog():
 
 @app.route('/michaelrgb/', methods=['GET', 'POST'])
 def michaelrgb():
-    basic = image_data()
+    basic = michael_image_data()
     return render_template("michaelrgb.html", images=basic )
+
+# add your own individual /namergb/ htmls with your own image_data for hacks
 
 if __name__ == "__main__":
     app.run(debug=True)
