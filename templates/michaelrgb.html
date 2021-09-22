@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 {% extends "layouts/base.html" %}
 
+{% set project = "Michael RGB" %}
+
 {% block background %}
 {% endblock %}
 
@@ -8,6 +10,9 @@
     <style>
         html, body{
             background-color: mediumslateblue;
+        }
+        h1 {
+            font-size: 69px; /* lol */
         }
     </style>
 
@@ -17,7 +22,7 @@
         //  document.getElementID("img_gray<n>").innerHTML
         //  help: https://www.geeksforgeeks.org/how-to-change-the-src-attribute-of-an-img-element-in-javascript-jquery/
     </script>
-    <title>Michael RGB starter</title>
+    <title>Michael RGB</title>
 
     <h1 class="text-center">Michael's RGB values within an Image</h1>
     <div class="container">
