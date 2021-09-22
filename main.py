@@ -146,5 +146,10 @@ def anirudhrgb():
 
 # add your own individual /namergb/ htmls with your own image_data for hacks
 
+@app.route('/ethanrgb/', methods=['GET', 'POST'])
+def ethanrgb():
+    mine = ethan_image_data()
+    return render_template("ethanrgb.html", images=mine)
+
 if __name__ == "__main__":
     app.run(debug=True)
