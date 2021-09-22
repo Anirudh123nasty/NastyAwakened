@@ -144,7 +144,10 @@ def anirudhrgb():
     junk = anirudh_image_data()
     return render_template("anirudhrgb.html", images=junk )
 
-# add your own individual /namergb/ htmls with your own image_data for hacks
+@app.route('/jamesrgb/', methods=['GET', 'POST'])
+def jamesrgb():
+    trash = james_image_data()
+    return render_template("rgbjames.html", images=trash )
 
 if __name__ == "__main__":
     app.run(debug=True)
