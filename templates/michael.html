@@ -13,10 +13,14 @@
             font-size: 69px;
         }
         p {
-            font-family: 'fangsong'
+            font-family: 'fangsong';
+        }
+        .box {
+            padding: 8px;
+            margin: 25px;
         }
     </style>
-    <div style = "left:80px; top:30px" >
+    <div class="box" > <!-- idek what a box is tbh, might need to change - I just added it for the margin lul -->
         <h1> Michael Chen</h1>
         <p> Hello {{ name }}, I am Michael, here is some of my work:</p>
         <form action="{{ url_for('michael') }}" id="greet" method="POST" >
@@ -25,12 +29,12 @@
             <input style="font-family:'fangsong'; font-weight:900" type="submit" value="Greetings!">
         </form>
         <br>
-        <p>Here is my minilab for binary.html:</p>
-        <a style="font-family: 'fangsong'; color: antiquewhite" href={{ url_for('binary') }}>binary.html</a>
+        <p>Here is my minilab for binary.html:
+            <a style="font-family: 'fangsong'; color: antiquewhite" href={{ url_for('binary') }}>binary.html</a> </p>
         <br>
-        <p>Here is my minilab for RGB:</p>
-        <a style="font-family: 'fangsong'; color: antiquewhite" href={{ url_for('michaelrgb') }}>michaelrgb.html</a>
-        <p>Note, it takes a while for the html to load due to the file sizes of the images</p>
+        <p>Here is my minilab for RGB:
+        <a style="font-family: 'fangsong'; color: antiquewhite" href={{ url_for('michaelrgb') }}>michaelrgb.html</a> <br>
+        Note, it takes a while for the html to load due to the file sizes of the images</p>
     </div>
 {% endblock %}
 
