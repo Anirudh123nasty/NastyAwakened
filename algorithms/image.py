@@ -21,10 +21,10 @@ def image_formatter(img, img_type):
 def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # path of static images is defaulted
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
             {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
             {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"}
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for img_dict in img_list:
