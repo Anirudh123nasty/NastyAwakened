@@ -108,11 +108,13 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
     return img_list  # list is returned with all the attributes for each image dictionary
 
-def ethan_image_data(path="static/assets/michaelimages/", img_list=None):  # change to ethanimages plz
+def ethan_image_data(path="static/assets/ethanimages/", img_list=None):  # change to ethanimages plz
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
             # add your own
-            {'source': "Charmander", 'label': "Charmander", 'file': "char.jpg"},
+            {'source': "Van Theo", 'label': "GatsVo", 'file': "gatsVo.png"},
+            {'source': "Anirudh", 'label': "POV:You're Under 16", 'file': "anirudhsus.png"},
+            {'source': "Hamilton", 'label': "Evo", 'file': "vomilton.png"},
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for img_dict in img_list:
