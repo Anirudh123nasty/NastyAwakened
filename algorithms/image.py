@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw
 import numpy
+import re
 import base64
 from io import BytesIO
 
@@ -14,6 +15,24 @@ def image_base64(img, img_type):
 # formatter preps base64 string for inclusion, ie <img src=[this return value] ... />
 def image_formatter(img, img_type):
     return "data:image/" + img_type + ";base64," + image_base64(img, img_type)
+# made function where file is opened with raw binary mode to get binary values, binary values are then converted to hex values without for loop
+# https://stackoverflow.com/questions/24889338/python-image-jpeg-to-hex-code
+def imgToHex(file):
+    string = ''
+    with open(file, 'rb') as f:
+        binValue = f.read(1)
+        while len(binValue) != 0:
+            hexVal = hex(ord(binValue))
+            string += '\\' + hexVal
+            binValue = f.read(1)
+    string = re.sub('0x', 'x', string) # Replace '0x' with 'x' for your needs
+    return string
+
+def imgToBin(file):
+    string = ''
+    with open(file, 'rb') as f:
+        binValue = f.read(1)
+    return binValue
 
 
 # color_data prepares a series of images for data analysis
@@ -88,24 +107,9 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
             {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
-
-    # testing single file - UPDATE WORKS
-
-    # img = Image.open("static/assets/michaelimages/char4.jpg")
-    # clear = img.copy()
-    # draw = ImageDraw.Draw(clear)
-    # # draw.text((x, y),"Sample Text",(r,g,b))
-    # draw.text((0, 0),"TEST TEST",(255,255,255))
-    # clear.save('static/assets/michaelimages/char4drawn.jpg')
-    # img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4drawn.jpg"})
-
-    #for img_dict in img_list:
-
-    # TESTING CODE ~~~~~~
     for img_dict in img_list:
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
         file = path + img_dict['file']  # file with path for local access (backend)
-
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
@@ -118,15 +122,20 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
         img_dict['data'] = numpy.array(img_data)
         img_dict['hex_array'] = []
         img_dict['binary_array'] = []
-        # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
-        for pixel in img_dict['data']:
+        img_dict['hex_array'] = imgToHex(file)
+        img_dict['binary_array'] = imgToBin(file)
+        # img_dict['base64_GRAY'] = ImageOps.grayscale(file)
+
+    # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
+       # for pixel in img_dict['data']:
             # hexadecimal conversions
-            hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
-            hex_value = hex_value.replace("x", "0")
-            img_dict['hex_array'].append("#" + hex_value)
-            # binary conversions
-            bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
-            img_dict['binary_array'].append(bin_value)
+            # comment out these three lines
+            # hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            # hex_value = hex_value.replace("x", "0")
+            # img_dict['hex_array'].append("#" + hex_value)
+            # # binary conversions
+            # bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
+            # img_dict['binary_array'].append(bin_value)
         # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
         img_dict['gray_data'] = []
         for pixel in img_dict['data']:
@@ -153,6 +162,9 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         file = path + img_dict['file']  # file with path for local access (backend)
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
+        # here is commit for adding text into images
+        draw = ImageDraw.Draw(img_reference)
+        draw.text((25, 25), "Hello, TutorialsPoint941!", fill=(255, 255, 255))  # draw in image
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
@@ -164,14 +176,14 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         img_dict['hex_array'] = []
         img_dict['binary_array'] = []
         # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
-        for pixel in img_dict['data']:
+     #   for pixel in img_dict['data']:
             # hexadecimal conversions
-            hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
-            hex_value = hex_value.replace("x", "0")
-            img_dict['hex_array'].append("#" + hex_value)
-            # binary conversions
-            bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
-            img_dict['binary_array'].append(bin_value)
+            # hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            # hex_value = hex_value.replace("x", "0")
+            # img_dict['hex_array'].append("#" + hex_value)
+            # # binary conversions
+            # bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
+            # img_dict['binary_array'].append(bin_value)
         # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
         img_dict['gray_data'] = []
         for pixel in img_dict['data']:
@@ -184,11 +196,13 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
     return img_list  # list is returned with all the attributes for each image dictionary
 
-def ethan_image_data(path="static/assets/michaelimages/", img_list=None):  # change to ethanimages plz
+def ethan_image_data(path="static/assets/ethanimages/", img_list=None):  # change to ethanimages plz
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
             # add your own
-            {'source': "Charmander", 'label': "Charmander", 'file': "char.jpg"},
+            {'source': "Van Theo", 'label': "GatsVo", 'file': "gatsVo.png"},
+            {'source': "Anirudh", 'label': "POV:You're Under 16", 'file': "anirudhsus.png"},
+            {'source': "Hamilton", 'label': "Evo", 'file': "vomilton.png"},
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for img_dict in img_list:
@@ -227,10 +241,10 @@ def ethan_image_data(path="static/assets/michaelimages/", img_list=None):  # cha
         img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
     return img_list  # list is returned with all the attributes for each image dictionary
 
-def james_image_data(path="static/assets/michaelimages/", img_list=None):  # change to jamesimages
+def james_image_data(path="static/assets/jamesimages/", img_list=None):  # change to jamesimages
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            {'source': "Charmander", 'label': "Charmander", 'file': "char.jpg"},
+            {'source': "Seagals", 'label': "Seagals", 'file': "Seagals.jpg"},
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for img_dict in img_list:
