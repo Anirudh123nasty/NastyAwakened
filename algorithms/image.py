@@ -18,6 +18,7 @@ def image_formatter(img, img_type):
 
 # color_data prepares a series of images for data analysis
 # have to make this function more efficient!
+# writing on the image and rotating the image
 def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # path of static images is defaulted
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
