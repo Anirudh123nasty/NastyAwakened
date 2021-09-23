@@ -143,7 +143,9 @@ def michaelrgb():
         if request.form:
             option = request.form["option"]
         if (option == 'yes'):
-                return render_template("michaelrgb.html", images=draw)
+            return render_template("michaelrgb.html", images=draw)
+        elif (option == 'no'):
+            return render_template("michaelrgb.html", images=char)
     except:
         return render_template("michaelrgb.html", images=char)
 
