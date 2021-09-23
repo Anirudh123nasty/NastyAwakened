@@ -1,7 +1,9 @@
 from PIL import Image, ImageDraw
 import numpy
+import re
 import base64
 from io import BytesIO
+
 
 
 # image (PNG, JPG) to base64 conversion (string), learn about base64 on wikipedia https://en.wikipedia.org/wiki/Base64
@@ -14,6 +16,17 @@ def image_base64(img, img_type):
 # formatter preps base64 string for inclusion, ie <img src=[this return value] ... />
 def image_formatter(img, img_type):
     return "data:image/" + img_type + ";base64," + image_base64(img, img_type)
+
+# def imgToHex(file):
+#     string = ''
+#     with open(file, 'rb') as f:
+#         binValue = f.read(1)
+#         while len(binValue) != 0:
+#             hexVal = hex(ord(binValue))
+#             string += '\\' + hexVal
+#             binValue = f.read(1)
+#     string = re.sub('0x', 'x', string) # Replace '0x' with 'x' for your needs
+#     return string
 
 
 # color_data prepares a series of images for data analysis
@@ -43,9 +56,11 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
         img_dict['data'] = numpy.array(img_data)
         img_dict['hex_array'] = []
         img_dict['binary_array'] = []
-        # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
+       # img_dict['hex_array'] = imgToHex(file)
+    # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
         for pixel in img_dict['data']:
             # hexadecimal conversions
+            # comment out these three lines
             hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
             hex_value = hex_value.replace("x", "0")
             img_dict['hex_array'].append("#" + hex_value)
@@ -78,6 +93,9 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         file = path + img_dict['file']  # file with path for local access (backend)
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
+        # here is commit for adding text into images
+        draw = ImageDraw.Draw(img_reference)
+        draw.text((25, 25), "Hello, TutorialsPoint941!", fill=(255, 255, 255))  # draw in image
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
