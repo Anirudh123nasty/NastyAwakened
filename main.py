@@ -1,6 +1,7 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
-from algorithms.image import michael_image_data, anirudh_image_data, ethan_image_data, james_image_data
+from algorithms.image import drawhack, michael_image_data, anirudh_image_data, ethan_image_data, james_image_data
+
 
 # create a Flask instance
 app = Flask(__name__)
@@ -136,8 +137,15 @@ def binarywithdog():
 
 @app.route('/michaelrgb/', methods=['GET', 'POST'])
 def michaelrgb():
-    basic = michael_image_data()
-    return render_template("michaelrgb.html", images=basic )
+    char = michael_image_data()
+    draw = drawhack()
+    try:
+        if request.form:
+            option = request.form["option"]
+        if (option == 'yes'):
+                return render_template("michaelrgb.html", images=draw)
+    except:
+        return render_template("michaelrgb.html", images=char)
 
 @app.route('/anirudhrgb/', methods=['GET', 'POST'])
 def anirudhrgb():
