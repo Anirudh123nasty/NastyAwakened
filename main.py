@@ -146,6 +146,8 @@ def michaelrgb():
             return render_template("michaelrgb.html", images=draw)
         elif (option == 'no'):
             return render_template("michaelrgb.html", images=char)
+        else:
+            return render_template("michaelrgb.html", images=char)
     except:
         return render_template("michaelrgb.html", images=char)
 
