@@ -40,10 +40,10 @@ def imgToBin(file):
 def drawhack(path="static/assets/michaelimages/", img_list=None):
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
+            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
+            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
+            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
+            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
         ]
     for img_dict in img_list:
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
