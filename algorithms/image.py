@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw
+# import ImageOps
 import numpy
 import re
 import base64
@@ -16,17 +17,24 @@ def image_base64(img, img_type):
 # formatter preps base64 string for inclusion, ie <img src=[this return value] ... />
 def image_formatter(img, img_type):
     return "data:image/" + img_type + ";base64," + image_base64(img, img_type)
+# made function where file is opened with raw binary mode to get binary values, binary values are then converted to hex values without for loop
+# https://stackoverflow.com/questions/24889338/python-image-jpeg-to-hex-code
+def imgToHex(file):
+    string = ''
+    with open(file, 'rb') as f:
+        binValue = f.read(1)
+        while len(binValue) != 0:
+            hexVal = hex(ord(binValue))
+            string += '\\' + hexVal
+            binValue = f.read(1)
+    string = re.sub('0x', 'x', string) # Replace '0x' with 'x' for your needs
+    return string
 
-# def imgToHex(file):
-#     string = ''
-#     with open(file, 'rb') as f:
-#         binValue = f.read(1)
-#         while len(binValue) != 0:
-#             hexVal = hex(ord(binValue))
-#             string += '\\' + hexVal
-#             binValue = f.read(1)
-#     string = re.sub('0x', 'x', string) # Replace '0x' with 'x' for your needs
-#     return string
+def imgToBin(file):
+    string = ''
+    with open(file, 'rb') as f:
+        binValue = f.read(1)
+    return binValue
 
 
 # color_data prepares a series of images for data analysis
@@ -56,17 +64,20 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
         img_dict['data'] = numpy.array(img_data)
         img_dict['hex_array'] = []
         img_dict['binary_array'] = []
-       # img_dict['hex_array'] = imgToHex(file)
+        img_dict['hex_array'] = imgToHex(file)
+        img_dict['binary_array'] = imgToBin(file)
+        # img_dict['base64_GRAY'] = ImageOps.grayscale(file)
+
     # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
-        for pixel in img_dict['data']:
+       # for pixel in img_dict['data']:
             # hexadecimal conversions
             # comment out these three lines
-            hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
-            hex_value = hex_value.replace("x", "0")
-            img_dict['hex_array'].append("#" + hex_value)
-            # binary conversions
-            bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
-            img_dict['binary_array'].append(bin_value)
+            # hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            # hex_value = hex_value.replace("x", "0")
+            # img_dict['hex_array'].append("#" + hex_value)
+            # # binary conversions
+            # bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
+            # img_dict['binary_array'].append(bin_value)
         # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
         img_dict['gray_data'] = []
         for pixel in img_dict['data']:
@@ -107,14 +118,14 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         img_dict['hex_array'] = []
         img_dict['binary_array'] = []
         # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
-        for pixel in img_dict['data']:
+     #   for pixel in img_dict['data']:
             # hexadecimal conversions
-            hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
-            hex_value = hex_value.replace("x", "0")
-            img_dict['hex_array'].append("#" + hex_value)
-            # binary conversions
-            bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
-            img_dict['binary_array'].append(bin_value)
+            # hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            # hex_value = hex_value.replace("x", "0")
+            # img_dict['hex_array'].append("#" + hex_value)
+            # # binary conversions
+            # bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
+            # img_dict['binary_array'].append(bin_value)
         # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
         img_dict['gray_data'] = []
         for pixel in img_dict['data']:
