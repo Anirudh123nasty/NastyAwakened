@@ -208,6 +208,13 @@ def ethan_image_data(path="static/assets/ethanimages/", img_list=None):  # chang
         file = path + img_dict['file']  # file with path for local access (backend)
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
+        img = Image.open(file)  # opens file to work
+        clear = img.copy()  # creates a copy of the file used
+        draw = ImageDraw.Draw(clear)  # "draws" on the clean copy
+        font = ImageFont.truetype("arial.ttf", 30)  # font and fontsize
+        text = "CHARMANDER"  # the text
+        draw.text((0, 0), text, (255,255,255), font=font)  # the drawing process
+        clear.save(path + 'new' + img_dict['file'])  # saves clean copy as "new<file>.jpg"
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
