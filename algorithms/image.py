@@ -56,6 +56,7 @@ def drawhack(path="static/assets/michaelimages/", img_list=None):
         text = "CHARMANDER"  # the text
         draw.text((0, 0), text, (255,255,255), font=font)  # the drawing process
         clear.save(path + 'new' + img_dict['file'])  # saves clean copy as "new<file>.jpg"
+    # appending to img_list so the images can load on the html
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar1.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar2.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar3.jpg"},)
