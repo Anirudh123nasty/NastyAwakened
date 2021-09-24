@@ -113,8 +113,6 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
         # here is commit for adding text into images for Anirudh's rbg page
-        draw = ImageDraw.Draw(img_reference)
-        draw.text((25, 25), "Hello, TutorialsPoint941!", fill=(255, 255, 255))  # draw in image
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
