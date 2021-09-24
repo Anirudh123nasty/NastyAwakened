@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import numpy
 import re
 import base64
@@ -40,21 +40,22 @@ def imgToBin(file):
 def drawhack(path="static/assets/michaelimages/", img_list=None):
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
-            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
+            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
+            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
+            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
+            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
         ]
     for img_dict in img_list:
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
         file = path + img_dict['file']  # file with path for local access (backend)
         # hack testing
-        img = Image.open(file) # opens file to work
-        #newfile = path + img_dict['newfile']
-        clear = img.copy()
-        draw = ImageDraw.Draw(clear)
-        draw.text((0, 0),"CHARMANDER",(255,255,255))
-        clear.save(path + 'new' + img_dict['file'])
+        img = Image.open(file)  # opens file to work
+        clear = img.copy()  # creates a copy of the file used
+        draw = ImageDraw.Draw(clear)  # "draws" on the clean copy
+        font = ImageFont.truetype("arial.ttf", 30)  # font and fontsize
+        text = "CHARMANDER"  # the text
+        draw.text((0, 0), text, (255,255,255), font=font)  # the drawing process
+        clear.save(path + 'new' + img_dict['file'])  # saves clean copy as "new<file>.jpg"
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar1.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar2.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar3.jpg"},)
@@ -112,6 +113,7 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
         file = path + img_dict['file']  # file with path for local access (backend)
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
+        # here is commit for adding text into images for Anirudh's rbg page
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
@@ -122,22 +124,17 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
         img_dict['data'] = numpy.array(img_data)
         img_dict['hex_array'] = []
         img_dict['binary_array'] = []
-        img_dict['hex_array'] = imgToHex(file)
-        img_dict['binary_array'] = imgToBin(file)
-        # img_dict['base64_GRAY'] = ImageOps.grayscale(file)
-
-    # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
-       # for pixel in img_dict['data']:
+        # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
+        for pixel in img_dict['data']:
             # hexadecimal conversions
-            # comment out these three lines
-            # hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
-            # hex_value = hex_value.replace("x", "0")
-            # img_dict['hex_array'].append("#" + hex_value)
-            # # binary conversions
-            # bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
-            # img_dict['binary_array'].append(bin_value)
-        # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
-        img_dict['gray_data'] = []
+            hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            hex_value = hex_value.replace("x", "0")
+            img_dict['hex_array'].append("#" + hex_value)
+            # binary conversions
+            bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
+            img_dict['binary_array'].append(bin_value)
+            # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
+            img_dict['gray_data'] = []
         for pixel in img_dict['data']:
             average = (pixel[0] + pixel[1] + pixel[2]) // 3
             if len(pixel) > 3:
@@ -147,6 +144,7 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
         img_reference.putdata(img_dict['gray_data'])
         img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
     return img_list  # list is returned with all the attributes for each image dictionary
+# HACK- delete third for loop, put it in the one above, define grey data array above.
 
 def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # change to anirudhimages
     if img_list is None:  # color_dict is defined with defaults
@@ -175,23 +173,23 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         img_dict['data'] = numpy.array(img_data)
         img_dict['hex_array'] = []
         img_dict['binary_array'] = []
-        # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
-     #   for pixel in img_dict['data']:
-            # hexadecimal conversions
-            # hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
-            # hex_value = hex_value.replace("x", "0")
-            # img_dict['hex_array'].append("#" + hex_value)
-            # # binary conversions
-            # bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
-            # img_dict['binary_array'].append(bin_value)
-        # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
         img_dict['gray_data'] = []
+        # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
         for pixel in img_dict['data']:
+            # hexadecimal conversions
+            hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            hex_value = hex_value.replace("x", "0")
+            img_dict['hex_array'].append("#" + hex_value)
+            # binary conversions
+            bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
+            img_dict['binary_array'].append(bin_value)
             average = (pixel[0] + pixel[1] + pixel[2]) // 3
             if len(pixel) > 3:
                 img_dict['gray_data'].append((average, average, average, pixel[3]))
             else:
                 img_dict['gray_data'].append((average, average, average))
+        # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
+
         img_reference.putdata(img_dict['gray_data'])
         img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
     return img_list  # list is returned with all the attributes for each image dictionary
