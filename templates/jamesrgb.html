@@ -1,28 +1,67 @@
 <!DOCTYPE html>
-{% extends "layouts/base.html" %}
+{% extends "layouts/layout.html" %}
 
-{% block background %}
-{% endblock %}
+{% block meta %}
 
 
-{% block body %}
 <script>
+    var imageColor = 0; // 0 is color, 1 is gray
+    var grayscale = {{ grayed|safe }};
+    var colorscale = {{ colored|safe }};
+
+    function toggleColors(array) {
+        for (var i = 1; i <= array.length; i++) {
+            let id = "img" + i;
+            setImg(id, array[i-1]);
+        }
+    }
+
+    function toggle() {
+        if (imageColor == 0) {
+            toggleColors(grayscale);
+            imageColor = 1;
+        } else {
+            toggleColors(colorscale);
+            imageColor = 0;
+        }
+    }
+    let rot = 0;
+    function imgrotate() {
+        rot += 90;
+        if (rot === 360) {
+            rot = 0;
+        }
+        document.querySelector("img").style.transform = `rotate(${rot}deg)`;
+    }
+
+    function setImg(img, base64) {
+        // add button and rotate image from original to gray and back (toggle)
+        document.getElementById(img).src = base64;  //change img src to inner html on <p> tag
+    }
+
     // Hack: add java script function to toggle image from original to gray and back (toggle)
     //  document.getElementById("img<n>").src
     //  document.getElementID("img_gray<n>").innerHTML
     //  help: https://www.geeksforgeeks.org/how-to-change-the-src-attribute-of-an-img-element-in-javascript-jquery/
 </script>
-<title>RGB starter</title>
 
-<h1 class="text-center"> James's RGB values within an Image</h1>
+
+
+<title>RGB starter</title>
+{% endblock %}
+
+{% block content %}
+<h1 style="color: lightseagreen" class="text-center">RGB values within an Image</h1>
 <div class="container">
+    <button style="background-color: lightpink; border-color: rebeccapurple; color: mediumblue"
+            onclick="toggle()">Toggle Colors!</button>
     <div class="row justify-content-md-center">
         <table class="table">
             <thead>
             <tr>
-                <th>Meta Data</th>
-                <th>Image</th>
-                <th>Data</th>
+                <th style="color: lightseagreen">Meta Data</th>
+                <th style="color: lightseagreen">Image</th>
+                <th style="color: lightseagreen">Data</th>
             </tr>
             </thead>
             <tbody>
@@ -50,10 +89,10 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>{{image.mode}}</th>
-                                <th>Hex Code</th>
-                                <th>Binary</th>
+                                <th style="color: forestgreen">#</th>
+                                <th style="color: forestgreen">{{image.mode}}</th>
+                                <th style="color: forestgreen">Hex Code</th>
+                                <th style="color: forestgreen">Binary</th>
                             </tr>
                             </thead>
                             <tbody>

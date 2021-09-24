@@ -1,6 +1,5 @@
 from PIL import Image, ImageDraw
 import numpy
-import re
 import base64
 from io import BytesIO
 

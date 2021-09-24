@@ -157,7 +157,14 @@ def anirudhrgb():
 @app.route('/jamesrgb/', methods=['GET', 'POST'])
 def jamesrgb():
     trash = james_image_data()
-    return render_template("rgbjames.html", images=trash )
+    colorList = []
+    grayList = []
+    for img in trash:
+         colorList.append(img['base64'])
+         grayList.append(img['base64_GRAY'])
+    return render_template("jamesrgb.html", images=trash, colored=colorList, grayed=grayList )
+
+
 
 @app.route('/ethanrgb/', methods=['GET', 'POST'])
 def ethanrgb():
