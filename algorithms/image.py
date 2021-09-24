@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import numpy
 # import re
 import base64
@@ -40,6 +40,7 @@ def image_formatter(img, img_type):
 def drawhack(path="static/assets/michaelimages/", img_list=None):
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
+            # unnecessary for drawhack - only needs appended files
             # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
             # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
             # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
@@ -49,12 +50,14 @@ def drawhack(path="static/assets/michaelimages/", img_list=None):
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
         file = path + img_dict['file']  # file with path for local access (backend)
         # hack testing
-        img = Image.open(file) # opens file to work
-        #newfile = path + img_dict['newfile']
-        clear = img.copy()
-        draw = ImageDraw.Draw(clear)
-        draw.text((0, 0),"CHARMANDER",(255,255,255))
-        clear.save(path + 'new' + img_dict['file'])
+        img = Image.open(file)  # opens file to work
+        clear = img.copy()  # creates a copy of the file used
+        draw = ImageDraw.Draw(clear)  # "draws" on the clean copy
+        font = ImageFont.truetype("arial.ttf", 30)  # font and fontsize
+        text = "CHARMANDER"  # the text
+        draw.text((0, 0), text, (255,255,255), font=font)  # the drawing process
+        clear.save(path + 'new' + img_dict['file'])  # saves clean copy as "new<file>.jpg"
+    # appending to img_list so the images can load on the html
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar1.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar2.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar3.jpg"},)
