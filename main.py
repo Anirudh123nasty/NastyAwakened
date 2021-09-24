@@ -92,8 +92,8 @@ def binary2():
   #  return render_template("binary2.html", bits=8)
 #what does the code above do^?
 
-@app.route('/About/')
-def About():
+@app.route('/about/')
+def about():
     return render_template("About.html")
 
 @app.route('/planner/')
@@ -142,9 +142,9 @@ def michaelrgb():
     try:
         if request.form:
             option = request.form["option"]
-        if (option == 'yes'):
+        if option == 'yes':
             return render_template("michaelrgb.html", images=draw)
-        elif (option == 'no'):
+        elif option == 'no':
             return render_template("michaelrgb.html", images=char)
         else:
             return render_template("michaelrgb.html", images=char)
