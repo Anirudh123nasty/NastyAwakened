@@ -104,7 +104,7 @@
 | Group |  |  | |
 | Ethan |  |  |  |
 | Anirudh |  |  |  |
-| Michael |  | | [ |
+| Michael |  | RGB Hack #2: adding text to the RGB images. College board 3.1-3.2 video notes and quizzes | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c)<br />[Journal Week 5](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.9mn466vqyzp) |
 | James |  | |  |
   
 | Grade | Requirement | Evidence|
