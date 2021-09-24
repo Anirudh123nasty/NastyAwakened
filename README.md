@@ -96,7 +96,7 @@
 ### Week 5 Progress
 | Progress | Evidence |
 | - | - |
-| | |
+| `michaelrgb.html` - contains 4 .jpg's of a charmander buying cake. Implemented rgb hack #2 | [michaelrgb.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michaelrgb.html)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c) |
 
 ### Week 5 Grading
 | Name | Grade | Requirements | Evidence |

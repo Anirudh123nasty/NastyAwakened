@@ -19,14 +19,15 @@
             <p style="font-family:'Poor Richard'; font-size:100px; color: #1da1f2" > Hello, {{name}}!</p>
         </div>
         <div class="col-12">
-            <form action="/james/" id="greet" method="POST" >
-                <label for="name" ;  <p style="font-family:'Poor Richard'; font-size:25px; color: #1da1f2">Type a greeting name</label>
+            <form action="{{ url_for('james') }}" id="greet" method="POST" >
+                <label for="name" style="font-family:'Poor Richard'; font-size:25px; color: #1da1f2">Type a greeting name</label>
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
 
         </form>
         <a href={{ url_for('binary2') }}>Binary2 Progess</a>
         <br>
+    </div>
     </div>
 {% endblock %}
 

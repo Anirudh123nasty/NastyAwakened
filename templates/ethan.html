@@ -37,7 +37,7 @@
         </div>
 
         <div class="col-12">
-            <form action="/ethan/" id="greet" method="POST" >
+            <form action="{{ url_for('ethan') }}" id="greet" method="POST" >
                 <label for="name">Enter your name:</label>
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
