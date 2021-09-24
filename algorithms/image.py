@@ -176,7 +176,8 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
         for pixel in img_dict['data']:
             # hexadecimal conversions
-            hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            # hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            hex_value = hex((pixel[0]) + (pixel[1]) + (pixel[2]))[-2:]
             hex_value = hex_value.replace("x", "0")
             img_dict['hex_array'].append("#" + hex_value)
             # binary conversions
