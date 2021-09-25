@@ -97,6 +97,9 @@
 | Progress | Evidence |
 | - | - |
 | `michaelrgb.html` - contains 4 .jpg's of a charmander buying cake. Implemented rgb hack #2 | [michaelrgb.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michaelrgb.html)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c) |
+| `images.py`- contains rgb hack #4 and attempt on resizing images. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/72073520287cdc894b7c0240fa611e1892b4a306)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/ffc03ea8edf1b022a9a1026ffbf80e96da73f6ba) |
+| `jamesrgb.html` - contains button for grey scale function. Implemented RGB hack # 1 | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/7acb26002404cb3e7dde078d7bb3e6e382cf981c) |
+
 
 ### Week 5 Grading
 | Name | Grade | Requirements | Evidence |
@@ -109,7 +112,7 @@
   
 | Grade | Requirement | Evidence|
 | - | - | - |
-| 1 | Scrum/Pair activity.  Listen to OO's and TO's introduction.  Write about OOs' and TOs roles in your journal.  Brainstorm on how you think fellow student can help you in Test Prep.  Review idea with Scrum Team, then review again with Crossover team.  Each Scrum Team create summary and provide ideas to OO's.|-|
+| 1 | Scrum/Pair activity.  Listen to OO's and TO's introduction.  Write about OOs' and TOs roles in your journal.  Brainstorm on how you think fellow student can help you in Test Prep.  Review idea with Scrum Team, then review again with Crossover team.  Each Scrum Team create summary and provide ideas to OO's.| [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)<br>[Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing) |
 | 1 | Scrum/Pair activity and journal. Unit 3.1 work.   Follow instructions and guidance from OO's| [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)<br>[Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing) |
 | 1 | Scrum/Pair activity and journal. Unit 3.2 work.   Follow instructions and guidance from OO's| [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)<br>[Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing)  |
   
