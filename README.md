@@ -101,18 +101,35 @@
 ### Week 5 Grading
 | Name | Grade | Requirements | Evidence |
 | - | - | - | - |
-| Group |  |  | |
-| Ethan |  |  |  |
-| Anirudh |  |  |  |
-| Michael |  | RGB Hack #2: adding text to the RGB images. College board 3.1-3.2 video notes and quizzes | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c)<br />[Journal Week 5](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.9mn466vqyzp) |
-| James |  | |  |
+| Group | 8/8 | Finished notes on TPT presentations and college board videos. Finished quizzes, took screenshots of practice problems and made corrections. Started RGB lab along with different hacks | [image.py](https://github.com/NastyEthan/flask_portfolio/blob/main/algorithms/image.py) |
+| Ethan | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Started RGB picture resizing hacks. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/ffc03ea8edf1b022a9a1026ffbf80e96da73f6ba) |
+| Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Finished RGB Big O notation. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/72073520287cdc894b7c0240fa611e1892b4a306)|
+| Michael | 8/8 | RGB Hack #2: adding text to the RGB images. College board 3.1-3.2 video notes and quizzes | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c)<br />[Journal Week 5](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.9mn466vqyzp) |
+| James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Finished Grey Scale hack for RGB| [Commit](https://github.com/NastyEthan/flask_portfolio/commit/7acb26002404cb3e7dde078d7bb3e6e382cf981c) |
   
 | Grade | Requirement | Evidence|
 | - | - | - |
-|-| Scrum/Pair activity.  Listen to OO's and TO's introduction.  Write about OOs' and TOs roles in your journal.  Brainstorm on how you think fellow student can help you in Test Prep.  Review idea with Scrum Team, then review again with Crossover team.  Each Scrum Team create summary and provide ideas to OO's.|-|
-| - | Scrum/Pair activity and journal. Unit 3.1 work.   Follow instructions and guidance from OO's| - |
-| - | Scrum/Pair activity and journal. Unit 3.2 work.   Follow instructions and guidance from OO's| - |
+| 1 | Scrum/Pair activity.  Listen to OO's and TO's introduction.  Write about OOs' and TOs roles in your journal.  Brainstorm on how you think fellow student can help you in Test Prep.  Review idea with Scrum Team, then review again with Crossover team.  Each Scrum Team create summary and provide ideas to OO's.|-|
+| 1 | Scrum/Pair activity and journal. Unit 3.1 work.   Follow instructions and guidance from OO's| [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)<br>[Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing) |
+| 1 | Scrum/Pair activity and journal. Unit 3.2 work.   Follow instructions and guidance from OO's| [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)<br>[Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing)  |
   
+  ## Week 6
+
+### Week 6 Progress
+| Progress | Evidence |
+| - | - |
+| `michaelrgb.html` - contains 4 .jpg's of a charmander buying cake. Implemented rgb hack #2 | [michaelrgb.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michaelrgb.html)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c) |
+
+### Week 6 Grading
+| Name | Grade | Requirements | Evidence |
+| - | - | - | - |
+| Group |  |  | |
+| Ethan |  |  |  |
+| Anirudh |  |  |  |
+| Michael |  |  |  |
+| James |  | |  |
+  
+
 ## Ideas:
 * Planner (School, Work, Personal)
 
