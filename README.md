@@ -99,7 +99,7 @@
 | `michaelrgb.html` - contains 4 .jpg's of a charmander buying cake. Implemented rgb hack #2 | [michaelrgb.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michaelrgb.html)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c) |
 | `images.py`- contains rgb hack #4 and attempt on resizing images. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/72073520287cdc894b7c0240fa611e1892b4a306)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/ffc03ea8edf1b022a9a1026ffbf80e96da73f6ba) |
 | `jamesrgb.html` - contains button for grey scale function. Implemented RGB hack # 1 | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/7acb26002404cb3e7dde078d7bb3e6e382cf981c) |
-
+| `ethanrgb.html` - contains progress for image resizing. Partially implemented RGB hack # 3 | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/ffc03ea8edf1b022a9a1026ffbf80e96da73f6ba) |
 
 ### Week 5 Grading
 | Name | Grade | Requirements | Evidence |
