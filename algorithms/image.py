@@ -40,10 +40,10 @@ def imgToBin(file):
 def drawhack(path="static/assets/michaelimages/", img_list=None):
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
-            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
-            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
-            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
         ]
     for img_dict in img_list:
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
@@ -57,6 +57,7 @@ def drawhack(path="static/assets/michaelimages/", img_list=None):
         draw.text((0, 0), text, (255,255,255), font=font)  # the drawing process
         clear.save(path + 'new' + img_dict['file'])  # saves clean copy as "new<file>.jpg"
     # appending to img_list so the images can load on the html
+    img_list.clear()
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar1.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar2.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar3.jpg"},)
