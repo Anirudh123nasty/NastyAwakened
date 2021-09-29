@@ -92,9 +92,9 @@ def binary2():
   #  return render_template("binary2.html", bits=8)
 #what does the code above do^?
 
-@app.route('/about/')
-def about():
-    return render_template("About.html")
+@app.route('/nasty/')
+def nasty():
+    return render_template("nasty.html")
 
 @app.route('/planner/')
 def planner():

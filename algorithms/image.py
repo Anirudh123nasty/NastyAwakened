@@ -269,6 +269,7 @@ def size_hack(path="static/assets/ethanimages/", img_list=None):  # change to et
     img_list.append({'source': "Van Theo", 'label': "GatsVo2", 'file': "newgatsVo2.png"},)
     img_list.append({'source': "Anirudh", 'label': "POV:You're Under 16", 'file': "newanirudhsus.png"},)
     img_list.append({'source': "Hamilton", 'label': "Evo", 'file': "newvomilton.png"})
+    img_list.append({'source': "Liberty Park", 'label': "Scripted", 'file': "newankles.png"})
     for img_dict in img_list:
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
         file = path + img_dict['file']  # file with path for local access (backend)
