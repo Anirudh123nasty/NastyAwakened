@@ -1,6 +1,6 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
-from algorithms.image import drawhack, michael_image_data, anirudh_image_data, ethan_image_data, james_image_data
+from algorithms.image import drawhack, michael_image_data, anirudh_image_data, ethan_image_data, james_image_data, size_hack
 
 
 # create a Flask instance
@@ -171,7 +171,15 @@ def jamesrgb():
 @app.route('/ethanrgb/', methods=['GET', 'POST'])
 def ethanrgb():
     mine = ethan_image_data()
-    return render_template("ethanrgb.html", images=mine)
+    size = size_hack()
+    if request.form:
+        option = request.form["option"]
+    if option == 'yes':
+        return render_template("ethanrgb.html", images=size)
+    elif option == 'no':
+        return render_template("ethanrgb.html", images=mine)
+    else:
+        return render_template("ethanrgb.html", images=mine)
 
 if __name__ == "__main__":
     app.run(debug=True)
