@@ -172,13 +172,16 @@ def jamesrgb():
 def ethanrgb():
     mine = ethan_image_data()
     size = size_hack()
-    if request.form:
-        option = request.form["option"]
-    if option == 'yes':
-        return render_template("ethanrgb.html", images=size)
-    elif option == 'no':
-        return render_template("ethanrgb.html", images=mine)
-    else:
+    try:
+        if request.form:
+            option = request.form["option"]
+        if option == 'yes':
+            return render_template("ethanrgb.html", images=size)
+        elif option == 'no':
+            return render_template("ethanrgb.html", images=mine)
+        else:
+            return render_template("ethanrgb.html", images=mine)
+    except:
         return render_template("ethanrgb.html", images=mine)
 
 if __name__ == "__main__":

@@ -22,6 +22,9 @@
 * [Week 3](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-3)
 * [Week 4](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-4) 
 * [Week 5](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-5) 
+* [Week 6](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-6) 
+* [Week 7](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-7) 
+
 
 ## Week 1
 
@@ -121,7 +124,7 @@
 ### Week 6 Progress
 | Progress | Evidence |
 | - | - |
-| `michaelrgb.html` - contains 4 .jpg's of a charmander buying cake. Implemented rgb hack #2 | [michaelrgb.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michaelrgb.html)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c) |
+| | |
 
 ### Week 6 Grading
 | Name | Grade | Requirements | Evidence |
@@ -132,8 +135,30 @@
 | Michael |  |  |  |
 | James |  | |  |
   
+| Grade | Requirement | Evidence|
+| - | - | - |
+| 1 | Hack 1: RGB Values with an Image, Frontend... how would you change to grey scale dynamically? | [Commit: James]() |
+| 1 | Hack 2: RGB Values with an Image, Backend... how would you write a message on top of image (Links to an external site.) and transport it to the Web?  Look at Pillow Image write in Tester | [Commit: Michael](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c) |
+| 1 | Hack 3: RGB Values with an Image, New Development.  explore and implement a new possibility in manipulating images (Links to an external site.) | [Commit: Ethan](https://github.com/NastyEthan/flask_portfolio/commit/c431506b7c4418d4a4969c79f252bcb5e66a5f6f) [Commit 2](https://github.com/NastyEthan/flask_portfolio/commit/e145a1301190f34900203ecbfbe971e9b4033aa8) |
+| 1 | Hack 4: RGB Values with an Image.  Make journal entries and do corrections in code.   Backend... image files are really big, this would make a Programmer consider being efficiency in programming.  What are the calculations?  Could the image.py function "def image_data" more efficient?  There is a science to writing efficient algorithms called Big O notation (Links to an external site.). Write image_data function to be more efficient according to Big O notation.  Basically, you are looking to remove a loop | [Commit: Anirudh](https://github.com/NastyEthan/flask_portfolio/commit/72073520287cdc894b7c0240fa611e1892b4a306) |
+  ## Week 7
 
+### Week 7 Progress
+| Progress | Evidence |
+| - | - |
+| | |
+
+### Week 7 Grading
+| Name | Grade | Requirements | Evidence |
+| - | - | - | - |
+| Group |  |  | |
+| Ethan |  |  |  |
+| Anirudh |  |  |  |
+| Michael |  |  |  |
+| James |  | |  |
 ## Ideas:
+  
+  
 * Planner (School, Work, Personal)
 
 We want to create a efficient and aesthetically nice planner that can be used for anything (School, Work, Personal). Typically, the reason we do not use planners are becauses they are hassle to set up and use, but we want to change that with our project
