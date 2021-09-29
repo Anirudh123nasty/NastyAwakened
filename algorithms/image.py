@@ -249,7 +249,6 @@ def size_hack(path="static/assets/ethanimages/", img_list=None):  # change to et
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
             # add your own
-            {'source': "Van Theo", 'label': "GatsVo", 'file': "gatsVo.png"},
             {'source': "Van Theo", 'label': "GatsVo2", 'file': "gatsVo2.png"},
             {'source': "Anirudh", 'label': "POV:You're Under 16", 'file': "anirudhsus.png"},
             {'source': "Hamilton", 'label': "Evo", 'file': "vomilton.png"},
@@ -267,9 +266,10 @@ def size_hack(path="static/assets/ethanimages/", img_list=None):  # change to et
         new.save(path + 'new' + img_dict['file'])  # saves clean copy as "new<file>.jpg"
         # appending to img_list so the images can load on the html
     img_list.clear()
-    img_list.append({'source': "Van Theo", 'label': "GatsVo", 'file': "newgatsVo.png"},)
+    img_list.append({'source': "Van Theo", 'label': "GatsVo2", 'file': "newgatsVo2.png"},)
     img_list.append({'source': "Anirudh", 'label': "POV:You're Under 16", 'file': "newanirudhsus.png"},)
     img_list.append({'source': "Hamilton", 'label': "Evo", 'file': "newvomilton.png"})
+    img_list.append({'source': "Liberty Park", 'label': "Scripted", 'file': "newankles.png"})
     for img_dict in img_list:
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
         file = path + img_dict['file']  # file with path for local access (backend)

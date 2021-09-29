@@ -92,9 +92,9 @@ def binary2():
   #  return render_template("binary2.html", bits=8)
 #what does the code above do^?
 
-@app.route('/about/')
-def about():
-    return render_template("About.html")
+@app.route('/nasty/')
+def nasty():
+    return render_template("nasty.html")
 
 @app.route('/planner/')
 def planner():
@@ -160,7 +160,7 @@ def anirudhrgb():
 def jamesrgb():
     trash = james_image_data()
     colorList = []
-    grayList = []
+    grayList = [] # pass in the lists from the image_data() function
     for img in trash:
          colorList.append(img['base64'])
          grayList.append(img['base64_GRAY'])
@@ -172,13 +172,16 @@ def jamesrgb():
 def ethanrgb():
     mine = ethan_image_data()
     size = size_hack()
-    if request.form:
-        option = request.form["option"]
-    if option == 'yes':
-        return render_template("ethanrgb.html", images=size)
-    elif option == 'no':
-        return render_template("ethanrgb.html", images=mine)
-    else:
+    try:
+        if request.form:
+            option = request.form["option"]
+        if option == 'yes':
+            return render_template("ethanrgb.html", images=size)
+        elif option == 'no':
+            return render_template("ethanrgb.html", images=mine)
+        else:
+            return render_template("ethanrgb.html", images=mine)
+    except:
         return render_template("ethanrgb.html", images=mine)
 
 if __name__ == "__main__":
