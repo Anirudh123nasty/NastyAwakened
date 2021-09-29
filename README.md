@@ -138,7 +138,7 @@
 | Grade | Requirement | Evidence|
 | - | - | - |
 | 1 | Hack 1: RGB Values with an Image, Frontend... how would you change to grey scale dynamically? | [Commit: James]() |
-| 1 | Hack 2: RGB Values with an Image, Backend... how would you write a message on top of image (Links to an external site.) and transport it to the Web?  Look at Pillow Image write in Tester | [Commit: Michael]() |
+| 1 | Hack 2: RGB Values with an Image, Backend... how would you write a message on top of image (Links to an external site.) and transport it to the Web?  Look at Pillow Image write in Tester | [Commit: Michael](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c) |
 | 1 | Hack 3: RGB Values with an Image, New Development.  explore and implement a new possibility in manipulating images (Links to an external site.) | [Commit: Ethan]() |
 | 1 | Hack 4: RGB Values with an Image.  Make journal entries and do corrections in code.   Backend... image files are really big, this would make a Programmer consider being efficiency in programming.  What are the calculations?  Could the image.py function "def image_data" more efficient?  There is a science to writing efficient algorithms called Big O notation (Links to an external site.). Write image_data function to be more efficient according to Big O notation.  Basically, you are looking to remove a loop | [Commit: Anirudh](https://github.com/NastyEthan/flask_portfolio/commit/72073520287cdc894b7c0240fa611e1892b4a306) |
   ## Week 7
