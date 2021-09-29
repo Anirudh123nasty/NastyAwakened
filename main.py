@@ -160,7 +160,7 @@ def anirudhrgb():
 def jamesrgb():
     trash = james_image_data()
     colorList = []
-    grayList = []
+    grayList = [] # pass in the lists from the image_data() function
     for img in trash:
          colorList.append(img['base64'])
          grayList.append(img['base64_GRAY'])
