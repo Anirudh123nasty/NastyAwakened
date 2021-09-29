@@ -6,17 +6,17 @@
 
 <script>
     var imageColor = 0; // 0 is color, 1 is gray
-    var grayscale = {{ grayed|safe }};
+    var grayscale = {{ grayed|safe }};  // passes in base64 urls in a list into javascript via jinja
     var colorscale = {{ colored|safe }};
 
-    function toggleColors(array) {
+    function toggleColors(array) {  // toggles color of each image in the document
         for (var i = 1; i <= array.length; i++) {
-            let id = "img" + i;
+            let id = "img" + i; // for each image in the array, set the source (href) to the base64 version
             setImg(id, array[i-1]);
         }
     }
 
-    function toggle() {
+    function toggle() {  // calls toggleColors based on what the current color is
         if (imageColor == 0) {
             toggleColors(grayscale);
             imageColor = 1;
@@ -24,14 +24,6 @@
             toggleColors(colorscale);
             imageColor = 0;
         }
-    }
-    let rot = 0;
-    function imgrotate() {
-        rot += 90;
-        if (rot === 360) {
-            rot = 0;
-        }
-        document.querySelector("img").style.transform = `rotate(${rot}deg)`;
     }
 
     function setImg(img, base64) {
