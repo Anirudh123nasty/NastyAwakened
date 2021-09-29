@@ -41,10 +41,10 @@ def imgToBin(file):
 def drawhack(path="static/assets/michaelimages/", img_list=None):
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
-            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
-            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
-            # {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char1.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char2.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char3.jpg"},
+            {'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "char4.jpg"},
         ]
     for img_dict in img_list:
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
@@ -58,6 +58,7 @@ def drawhack(path="static/assets/michaelimages/", img_list=None):
         draw.text((0, 0), text, (255,255,255), font=font)  # the drawing process
         clear.save(path + 'new' + img_dict['file'])  # saves clean copy as "new<file>.jpg"
     # appending to img_list so the images can load on the html
+    img_list.clear()
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar1.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar2.jpg"},)
     img_list.append({'source': "ウノユウジ https://twitter.com/uno_yu_ji", 'label': "Charmander", 'file': "newchar3.jpg"},)
@@ -151,10 +152,10 @@ def michael_image_data(path="static/assets/michaelimages/", img_list=None):  # p
 def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # change to anirudhimages
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            {'source': "Beach", 'label': "Beach", 'file': "beach 1.jpg"},
-            {'source': "Fall", 'label': "Fall", 'file': "fall 1.jpg"},
-            {'source': "Spring", 'label': "Spring", 'file': "spring 1.jpg"},
-            {'source': "Winter", 'label': "Winter", 'file': "winter 1.jpg"},
+            {'source': "Beach", 'label': "Beach", 'file': "reducedbeach.jpg"},
+            {'source': "Fall", 'label': "Fall", 'file': "reducedfall.jpg"},
+            {'source': "Spring", 'label': "Spring", 'file': "reducedspring.jpg"},
+            {'source': "Winter", 'label': "Winter", 'file': "reducedwinter.jpg"},
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for img_dict in img_list:
@@ -179,7 +180,7 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
         for pixel in img_dict['data']:
             # hexadecimal conversions
-            hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
+            hex_value = hex((pixel[0]) + (pixel[1]) + (pixel[2]))[-2:]
             hex_value = hex_value.replace("x", "0")
             img_dict['hex_array'].append("#" + hex_value)
             # binary conversions
