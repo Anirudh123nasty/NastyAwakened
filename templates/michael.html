@@ -9,11 +9,11 @@
 {% block body %}
     <style>
         h1 {
-            font-family: monospace;
+            font-family: Fredericka the Great;
             font-size: 69px;
         }
         p {
-            font-family: 'fangsong';
+            font-family: Cutive Mono;
         }
         .box {
             padding: 8px;
@@ -24,13 +24,13 @@
         <h1> Michael Chen</h1>
         <p> Hello {{ name }}, I am Michael, here is some of my work:</p>
         <form action="{{ url_for('michael') }}" id="greet" method="POST" >
-            <label style="font-family:'fangsong'" for="name">Please Enter Your Name</label>
+            <label style="font-family: Cutive Mono" for="name">Please Enter Your Name</label>
             <input style="font-family:'fangsong'" name="name" id="name">
-            <input style="font-family:'fangsong'; font-weight:900" type="submit" value="Greetings!">
+            <input style="font-family: Cutive Mono; font-weight:900" type="submit" value="Greetings!">
         </form>
         <br>
         <p>Here is my minilab for binary.html:
-            <a style="font-family: 'fangsong'; color: antiquewhite" href={{ url_for('binary') }}>binary.html</a> </p>
+            <a style="font-family: Cutive Mono; color: antiquewhite" href={{ url_for('binary') }}>binary.html</a> </p>
         <br>
         <p>Here is my minilab for RGB:
         <a style="font-family: 'fangsong'; color: antiquewhite" href={{ url_for('michaelrgb') }}>michaelrgb.html</a> <br>
