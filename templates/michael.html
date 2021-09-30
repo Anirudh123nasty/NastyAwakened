@@ -4,8 +4,6 @@
 <!- This variable sets name of browser tab  -->
 {% set project = "Michael" %}
 
-{% set repo = "https://github.com/NastyEthan/flask_portfolio" %}
-
 {% block body %}
     <style>
         h1 {
@@ -29,11 +27,10 @@
             <input style="font-family: Cutive Mono; font-weight:900" type="submit" value="Greetings!">
         </form>
         <br>
-        <p>Here is my minilab for binary.html:
+        <p>Minilab for binary.html:
             <a style="font-family: Cutive Mono; color: antiquewhite" href={{ url_for('binary') }}>binary.html</a> </p>
-        <br>
-        <p>Here is my minilab for RGB:
-        <a style="font-family: 'fangsong'; color: antiquewhite" href={{ url_for('michaelrgb') }}>michaelrgb.html</a> <br>
+        <p>Minilab for RGB:
+        <a style="font-family: 'Cutive Mono'; color: antiquewhite" href={{ url_for('michaelrgb') }}>michaelrgb.html</a> <br>
         Note, it takes a while for the html to load due to the file sizes of the images</p>
     </div>
 {% endblock %}

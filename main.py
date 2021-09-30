@@ -23,7 +23,7 @@ def michael():
         if len(name) != 0:  # input field has content
             return render_template("michael.html", name=name)
     # starting and empty input default
-    return render_template("michael.html", name="")
+    return render_template("michael.html", name="World")
 
 @app.route('/anirudh/', methods=['GET', 'POST'])
 def anirudh():
