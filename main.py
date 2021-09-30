@@ -139,17 +139,22 @@ def binarywithdog():
 def michaelrgb():
     char = michael_image_data()
     draw = drawhack()
+    colorList = []
+    grayList = []
+    for img in char:
+        colorList.append(img['base64'])
+        grayList.append(img['base64_GRAY'])
     try:
         if request.form:
             option = request.form["option"]
         if option == 'yes':
             return render_template("michaelrgb.html", images=draw)
         elif option == 'no':
-            return render_template("michaelrgb.html", images=char)
+            return render_template("michaelrgb.html", images=char, colored=colorList, grayed=grayList)
         else:
-            return render_template("michaelrgb.html", images=char)
+            return render_template("michaelrgb.html", images=char, colored=colorList, grayed=grayList)
     except:
-        return render_template("michaelrgb.html", images=char)
+        return render_template("michaelrgb.html", images=char, colored=colorList, grayed=grayList)
 
 @app.route('/anirudhrgb/', methods=['GET', 'POST'])
 def anirudhrgb():
