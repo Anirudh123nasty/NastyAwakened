@@ -13,6 +13,31 @@
             text-align: center;
             font-size:80px
         }
+        p {
+            font-family: "Raleway"
+        }
+
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 100px;
+            transition: all .2s;
+            color: antiquewhite;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+        }
     </style>
     <br>
     <h1>Nasty: About Us</h1>
@@ -48,4 +73,18 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <h1 class="text-center">Journals</h1>
+    <div class="container"></div>
+        <div class="row justify-content-md-center" style="text-align: center; width: 100%">
+            <div class="col-2">
+                <a href="https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing" target="_blank" class="btn">Michael & James</a>
+            </div>
+            <div class="col-2">
+                <a href="https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing" target="_blank" class="btn">Ethan & Anirudh</a>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

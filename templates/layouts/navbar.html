@@ -14,7 +14,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                 <!-- stub is shown using the name of the route -->
                 <!--<a class="nav-link" href={>{ url_for('index') }}>Portfolio -->
                 <a class="nav-link" href={{ url_for('planner') }}>Planner</a>
-                <a class="nav-link" href={{ url_for('README') }}>README</a>
+                <!-- <a class="nav-link" href={{ url_for('README') }}>README</a> -->
                 <a class="nav-link" href={{ url_for('nasty') }}>Nasty</a>
             <li>
             <li class="nav-item dropdown">
@@ -25,8 +25,6 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                     <a class="dropdown-item" href="https://kapwi.ng/c/yKfJ5MqCfP" target="_blank">Tech Talk 0.*</a>
                     <a class="dropdown-item" href="https://docs.google.com/document/d/1t31XtKqvTwIF9UPtYcyjFa9-WkKPoQgcxXxMfE8rbKc/edit?usp=sharing" target="_blank" >Brain Write</a>
                     <a class="dropdown-item" href="https://www.figma.com/file/9eItLJPgtgRwK6GugaUwrl/Unique-Planner?node-id=0%3A1g" target="_blank" >Figma Wireframe</a>
-                    <a class="dropdown-item" href="https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing" target="_blank">Michael and James's Journal</a>
-                    <a class="dropdown-item" href="https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing" target="_blank">Ethan and Anirudh's Journal</a>
                     <a class="dropdown-item" href="https://github.com/NastyEthan/flask_portfolio/commit/6e82d0aa8279dfd8a3a561c14f798c67f4d6bdd7" target="_blank">Greet Commit</a>
                     <a class="dropdown-item" href={{ url_for('binary') }}>Binary</a>
                     <a class="dropdown-item" href={{ url_for('binary2') }}>Binary2</a>
