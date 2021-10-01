@@ -124,16 +124,20 @@
 ### Week 6 Progress
 | Progress | Evidence |
 | - | - |
-| | |
+| `michaelrgb.html`- imported and implimented new universal fonts for individual pages. Also added grey scale to individual page. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/9169c00616d7ce08936f1c06ff6d94c3b0ca8ce0)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/2bcacba053961f96d3ba30cf8ffb6678bfa622c3) | 
+| `ethanrgb.html` - contains finished image resizing. Fully implemented RGB hack # 3. Also touched up pages and format. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/e145a1301190f34900203ecbfbe971e9b4033aa8) |
+| `anirudhrgb.html`-  implimented new universal fonts for individual pages. Also worked on notes for bases and project layout documentation. | [Commit](https://docs.google.com/document/d/1ap0cW_aSCZotCXZSzTm050EakCtGQCYbtcwvLQhGf04/edit)<br />[Project Layout Notes](https://github.com/NastyEthan/flask_portfolio/commit/2bcacba053961f96d3ba30cf8ffb6678bfa622c3) |  |
+| `jamesrgb.html`-  implimented new universal fonts for individual pages. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/03eac5fbbc6af4409506010023238949b1d0e87e) |
+
 
 ### Week 6 Grading
 | Name | Grade | Requirements | Evidence |
 | - | - | - | - |
-| Group |  |  | |
-| Ethan |  |  |  |
-| Anirudh |  |  |  |
-| Michael |  |  |  |
-| James |  | |  |
+| Group | 8/8 | Finished notes on TPT presentations and college board videos. Finished quizzes, took screenshots of practice problems and made corrections. Finished RGB lab along with different hacks | [image.py](https://github.com/NastyEthan/flask_portfolio/blob/main/algorithms/image.py) |
+| Ethan | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Finished RGB picture resizing hacks. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/e145a1301190f34900203ecbfbe971e9b4033aa8) |
+| Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Used universal fonts and project layout notes  | [Notes](https://docs.google.com/document/d/1ap0cW_aSCZotCXZSzTm050EakCtGQCYbtcwvLQhGf04/edit)|
+| Michael | 8/8 | Added universal fonts to base.html, added grey scale. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/9169c00616d7ce08936f1c06ff6d94c3b0ca8ce0)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/2bcacba053961f96d3ba30cf8ffb6678bfa622c3) |
+| James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Used universal fonts| [Commit](https://github.com/NastyEthan/flask_portfolio/commit/03eac5fbbc6af4409506010023238949b1d0e87e) ||
   
 | Grade | Requirement | Evidence|
 | - | - | - |
