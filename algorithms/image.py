@@ -163,9 +163,9 @@ def anirudh_image_data(path="static/assets/anirudhimages/", img_list=None):  # c
         file = path + img_dict['file']  # file with path for local access (backend)
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
-        # here is commit for adding text into images
+        # HERE is commit for adding text into images
         draw = ImageDraw.Draw(img_reference)
-        draw.text((25, 25), "Hello, TutorialsPoint941!", fill=(255, 255, 255))  # draw in image
+        draw.text((25, 25), "Writing on images!", fill=(500, 500, 500))  # draw in image
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
