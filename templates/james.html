@@ -7,20 +7,20 @@
 {% set repo = "https://github.com/NastyEthan/flask_portfolio" %}
 
 {% block body %}
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family:'Poor Richard',serif;">
-        <p style="font-family:'Poor Richard'; font-size:200px; color: #1da1f2" > James Lee</p>
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family:'Kurale',serif;">
+        <p style="font-family:'Kurale'; font-size:100px; color: #1da1f2" > James Lee</p>
     </div>
 
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: 'Poor Richard',serif;">
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: 'Birthstone',serif;">
         <p>Here is my minilab for RGB:
-            <a style="font-family: 'Poor Richard'; color: antiquewhite" href={{ url_for('jamesrgb') }}>jamesrgb.html</a> <br>
+            <a style="font-family: 'Birthstone'; color: antiquewhite" href={{ url_for('jamesrgb') }}>jamesrgb.html</a> <br>
             Note, it takes a while for the html to load due to the file sizes of the images</p>
         <div class="col-12">
-            <p style="font-family:'Poor Richard'; font-size:100px; color: #1da1f2" > Hello, {{name}}!</p>
+            <p style="font-family:'Birthstone'; font-size:100px; color: #1da1f2" > Hello, {{name}}!</p>
         </div>
         <div class="col-12">
             <form action="{{ url_for('james') }}" id="greet" method="POST" >
-                <label for="name" style="font-family:'Poor Richard'; font-size:25px; color: #1da1f2">Type a greeting name</label>
+                <label for="name" style="font-family:'Birthstone'; font-size:75px; color: #1da1f2">Type a greeting name</label>
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
 
