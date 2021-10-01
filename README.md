@@ -1,6 +1,6 @@
 # Nasty Group README
 
-## Scrumboards (weekly)
+#### Scrumboards (weekly)
 * [Week 0-3](https://github.com/NastyEthan/flask_portfolio/projects/1)
 * [Week 4](https://2github.com/NastyEthan/flask_portfolio/projects/2)
 * [Week 5-6](https://github.com/NastyEthan/flask_portfolio/projects/3)
