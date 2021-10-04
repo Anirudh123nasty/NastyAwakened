@@ -21,7 +21,7 @@
 {% block body %}
 <title>Binary page</title>
 <style>
-    body {
+    html, body {
         background-color: mediumpurple;
     }
 </style>
@@ -45,10 +45,42 @@
     document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
     // DOM assignment to Decimal conversion
     document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString(10);
-    // DOM assigment to ASCII conversion
-    let ascii = String.fromCharCode(parseInt(parseInt(binary, 2).toString(10)));
-    document.getElementById('ASCII').innerHTML = ascii;
-    // RGB
+    // TESTING IF STATEMENT (HACK 2)
+    if (BITS <= 7) {
+        document.getElementById('ASCII').innerHTML = String.fromCharCode(parseInt(parseInt(binary, 2).toString(10)));
+        document.getElementById('UTF-8').style.display = 'none'; // PROBABLY A BETTER WAY TO DO THIS BUT ¯\_(ツ)_/¯
+        document.getElementById('UTF-8-text').style.display = 'none';
+        document.getElementById('UTF-16').style.display = 'none';
+        document.getElementById('UTF-16-text').style.display = 'none';
+        document.getElementById('UTF-32').style.display = 'none';
+        document.getElementById('UTF-32-text').style.display = 'none';
+    } else if (BITS >= 8 && BITS < 16) {
+        document.getElementById('UTF-8').innerHTML = String.fromCharCode(parseInt(parseInt(binary, 2).toString(10)));
+        document.getElementById('ASCII').style.display = 'none';
+        document.getElementById('ASCII-text').style.display = 'none';
+        document.getElementById('UTF-16').style.display = 'none';
+        document.getElementById('UTF-16-text').style.display = 'none';
+        document.getElementById('UTF-32').style.display = 'none';
+        document.getElementById('UTF-32-text').style.display = 'none';
+    } else if (BITS >= 16 && BITS < 32) {
+        document.getElementById('UTF-16').innerHTML = String.fromCharCode(parseInt(parseInt(binary, 2).toString(10)));
+        document.getElementById('ASCII').style.display = 'none';
+        document.getElementById('ASCII-text').style.display = 'none';
+        document.getElementById('UTF-8').style.display = 'none';
+        document.getElementById('UTF-8-text').style.display = 'none';
+        document.getElementById('UTF-32').style.display = 'none';
+        document.getElementById('UTF-32-text').style.display = 'none';
+    } else if (BITS >= 32) {
+        document.getElementById('UTF-32').innerHTML = String.fromCodePoint(parseInt(parseInt(binary, 2).toString(10))); // STILL UTF-16 for some reason
+        document.getElementById('ASCII').style.display = 'none';
+        document.getElementById('ASCII-text').style.display = 'none';
+        document.getElementById('UTF-8').style.display = 'none';
+        document.getElementById('UTF-8-text').style.display = 'none';
+        document.getElementById('UTF-16').style.display = 'none';
+        document.getElementById('UTF-16-text').style.display = 'none';
+    }
+
+
 
    // let rgb = parseInt(binary, 2);
    //     let r = rgb >> 16 & 0xFF;
@@ -99,7 +131,34 @@
     setConversions(binary);
   }
 
-  //ASCII STUFFS
+  // SHIFT HACK
+  function shift(n) {
+      let binary = getBits();
+      // convert to decimal and do math
+      let decimal = parseInt(binary, 2);
+      if (n > 0) {  // PLUS
+          decimal = MAX === decimal ? 0 : decimal *= n; // I DONT KNOW WHAT IT DOES OTHER THAN *(n)
+      } else  {     // MINUS
+          decimal = 0 === decimal ? MAX : decimal *= n; // ??? OVERFLOW??
+      }
+      // convert the result back to binary
+      binary = decimal_2_base(decimal, 2);
+      // update conversions
+      setConversions(binary);
+      // ascii?
+      // update bits
+      for (let i = 0; i < binary.length; i++) {
+          let digit = binary.substr(i, 1);
+          document.getElementById('digit' + i).value = digit;
+          if (digit === "1") {
+              document.getElementById('bulb' + i).src = "{{ imgBulbOn }}";
+              document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
+          } else {
+              document.getElementById('bulb' + i).src = "{{ imgBulbOff }}";
+              document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
+          }
+      }
+  }
 
   // add is positive integer, subtract is negative integer
   function add(n) {
@@ -146,26 +205,36 @@
     <div class="col-8">
       <table class="table">
       <tr id="table">
+        <th>Shift Left</th>
         <th>Plus</th>
         <th>Binary</th>
         <th>Octal</th>
         <th>Hexadecimal</th>
         <th>Decimal</th>
-        <th>ASCII</th>
+        <th id="ASCII-text">ASCII</th>
+        <th id="UTF-8-text">UTF-8</th>
+        <th id="UTF-16-text">UTF-16</th>
+        <th id="UTF-32-text">UTF-32</th>
         <th>RGB</th>
         <!-- Hack: display ASCII label for printable character(s)  -->
         <th>Minus</th>
+        <th>Shift Right</th>
       </tr>
       <tr>
+        <td><button type="button" id="shiftL" onclick="shift(2)"><<</button></td>
         <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
         <td id="binary">00000000</td>
         <td id="octal">0</td>
         <td id="hexadecimal">0</td>
         <td id="decimal">0</td>
         <td id="ASCII">0</td>
+        <td id="UTF-8">0</td>
+        <td id="UTF-16">0</td>
+        <td id="UTF-32">0</td>
         <td id="RGB"></td>
         <!-- Hack: display ASCII printable character(s)  -->
         <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
+        <td><button type="button" id="shiftR" onclick="shift(1/2)">>></button></td>
 
       </tr>
       </table>
