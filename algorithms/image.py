@@ -311,6 +311,7 @@ def james_image_data(path="static/assets/jamesimages/", img_list=None):  # chang
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
             {'source': "Seagals", 'label': "Seagals", 'file': "Seagals.jpg"},
+            {'source': "Seagals", 'label': "Seagals", 'file': "Seagals.jpg"},
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for img_dict in img_list:

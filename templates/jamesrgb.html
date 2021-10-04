@@ -5,12 +5,12 @@
 
 
 <script>
-    function changeImage() {
-        if(document.getElementById("img1").src == document.getElementById('img_orig1').innerHTML){
-            document.getElementById('img1').src = document.getElementById('img_gray1').innerHTML;
+    function changeImage(ndx) {
+        if(document.getElementById("img"+ndx).src == document.getElementById('img_orig'+ndx).innerHTML){
+            document.getElementById('img'+ndx).src = document.getElementById('img_gray'+ndx).innerHTML;
         }
         else {
-            document.getElementById('img1').src = document.getElementById('img_orig1').innerHTML;
+            document.getElementById('img'+ndx).src = document.getElementById('img_orig'+ndx).innerHTML;
         }
     }
 
@@ -57,7 +57,7 @@
                        {{image.base64}}  original image
                        {{image.base64_GRAY}}  gray scale image
                     -->
-                    <button style="background-color: lightpink; border-color: rebeccapurple; color: mediumblue" onclick="changeImage()">Toggle Colors!</button>
+                    <button style="background-color: lightpink; border-color: rebeccapurple; color: mediumblue" onclick="changeImage('{{loop.index}}')">Toggle Colors!</button>
 
                     <p hidden id="img_orig{{loop.index}}">{{image.base64}}</p>
                     <p hidden id="img_gray{{loop.index}}">{{image.base64_GRAY}}</p>
