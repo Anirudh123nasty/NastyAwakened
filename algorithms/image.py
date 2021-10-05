@@ -262,7 +262,7 @@ def size_hack(path="static/assets/ethanimages/", img_list=None):  # change to et
         img_reference = Image.open(file)  # PIL
         img = Image.open(file)  # opens file to work
         clear = img.copy()  # creates a copy of the file used
-        new = clear.resize((256,256))
+        new = clear.resize((256, 256))
         new.save(path + 'new' + img_dict['file'])  # saves clean copy as "new<file>.jpg"
         # appending to img_list so the images can load on the html
     img_list.clear()

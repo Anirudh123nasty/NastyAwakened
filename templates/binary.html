@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% extends "layouts/base.html" %}
+{% set project = "Binary" %}
+
 <!-- Search for all the Hack: below for hack-a-thon and mini-lab requirements -->
 <!-- need to adjust Templates to start -->
 
@@ -46,7 +48,7 @@
     // DOM assignment to Decimal conversion
     document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString(10);
     // TESTING IF STATEMENT (HACK 2)
-    if (BITS <= 7) {
+    if (BITS <= 7) { // if statement should actually consider either the decimal value or bit length instead of the BITS input form result
         document.getElementById('ASCII').innerHTML = String.fromCharCode(parseInt(parseInt(binary, 2).toString(10)));
         document.getElementById('UTF-8').style.display = 'none'; // PROBABLY A BETTER WAY TO DO THIS BUT ¯\_(ツ)_/¯
         document.getElementById('UTF-8-text').style.display = 'none';
