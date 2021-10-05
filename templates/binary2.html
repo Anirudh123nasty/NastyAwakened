@@ -35,7 +35,8 @@
             for(let i = 0; i < BITS; i++) {
                 bits = bits + document.getElementById('digit' + i).value;
             }
-            return bits;
+            bin_a=bin(bits)
+            return bin_a;
         }
         // setter for DOM values
         function setConversions(binary) {
@@ -93,6 +94,33 @@
             const binary = getBits();
             setConversions(binary);
         }
+        function unsignedaddition(n) {
+            let binary = getBits();
+            // convert to decimal and do math
+            let decimal = parseInt(binary, 2);
+            if (n > 0) {  // PLUS
+                decimal = MAX === decimal ? 0 : decimal *= n; // I DONT KNOW WHAT IT DOES OTHER THAN *(n)
+            } else  {     // MINUS
+                decimal = 0 === decimal ? MAX : decimal *= n; // ??? OVERFLOW??
+            }
+            // convert the result back to binary
+            binary = decimal_2_base(decimal, 2);
+            // update conversions
+            setConversions(binary);
+            // ascii?
+            // update bits
+            for (let i = 0; i < binary.length; i++) {
+                let digit = binary.substr(i, 1);
+                document.getElementById('digit' + i).value = digit;
+                if (digit === "1") {
+                    document.getElementById('bulb' + i).src = "{{ imgBulbOn2 }}";
+                    document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
+                } else {
+                    document.getElementById('bulb' + i).src = "{{ imgBulbOff2 }}";
+                    document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
+                }
+            }
+        }
         // add is positive integer, subtract is negative integer
         function add(n) {
             let binary = getBits();
@@ -128,6 +156,11 @@
         <input name="bits">
         <input style="font-family:'Vladimir Script'; font-size:15px" type="submit" value="Go!">
     </form>
+    <form class="text-center" action="/binary2/" id="bits" method="POST" >
+        <label for="bits">Enter a Value for Binary</label>
+        <input name="bits">
+        <input style="font-family:'Vladimir Script'; font-size:15px" type="submit" value="Go!">
+    </form>
     <div class="container">
         <div class="row justify-content-md-center">
 
@@ -142,6 +175,7 @@
                         <!-- Hack: display ASCII label for printable character(s)  -->
                         <th>ASCII</th>
                         <th>Minus</th>
+                        <th>Unsigned Binary Addition</th>
                     </tr>
                     <tr>
                         <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
@@ -152,6 +186,7 @@
                         <td id="ASCII">0</td>
                         <!-- Hack: display ASCII printable character(s)  -->
                         <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
+                        <td><button type="button" id="unsignedaddition" onclick="unsignedaddition(2)">+</button></td>
 
                     </tr>
                 </table>
@@ -202,3 +237,6 @@
 
 {% block background %}
 {% endblock %}
+
+{#add a function, place in the table, button#}
+{#so far, I have added a function for unsignedaddition, added a button and place on table, and need to work on having the input value be inputted in decimal and converted and stored in variable binary 1/#}
