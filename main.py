@@ -1,6 +1,7 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
-from algorithms.image import drawhack, michael_image_data, anirudh_image_data, ethan_image_data, james_image_data, size_hack
+from algorithms.image import drawhack, michael_image_data, anirudh_image_data, \
+    ethan_image_data, james_image_data, size_hack
 
 
 # create a Flask instance
@@ -165,7 +166,7 @@ def anirudhrgb():
 def jamesrgb():
     trash = james_image_data()
     colorList = []
-    grayList = [] # pass in the lists from the image_data() function
+    grayList = []  # pass in the lists from the image_data() function
     for img in trash:
          colorList.append(img['base64'])
          grayList.append(img['base64_GRAY'])
