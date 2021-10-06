@@ -250,7 +250,7 @@ def size_hack(path="static/assets/ethanimages/", img_list=None):  # change to et
         img_list = [
             # add your own
             {'source': "Van Theo", 'label': "GatsVo2", 'file': "gatsVo2.png"},
-            {'source': "Anirudh", 'label': "POV:You're Under 16", 'file': "anirudhsus.png"},
+            {'source': "Anirudh", 'label': "That man should be arrested immediately", 'file': "anirudhsus.png"},
             {'source': "Hamilton", 'label': "Evo", 'file': "vomilton.png"},
             {'source': "Liberty Park", 'label': "Scripted", 'file': "ankles.png"},
         ]
@@ -267,7 +267,7 @@ def size_hack(path="static/assets/ethanimages/", img_list=None):  # change to et
         # appending to img_list so the images can load on the html
     img_list.clear()
     img_list.append({'source': "Van Theo", 'label': "GatsVo2", 'file': "newgatsVo2.png"},)
-    img_list.append({'source': "Anirudh", 'label': "POV:You're Under 16", 'file': "newanirudhsus.png"},)
+    img_list.append({'source': "Anirudh", 'label': "That man should be arrested immediately", 'file': "newanirudhsus.png"},)
     img_list.append({'source': "Hamilton", 'label': "Evo", 'file': "newvomilton.png"})
     img_list.append({'source': "Liberty Park", 'label': "Scripted", 'file': "newankles.png"})
     for img_dict in img_list:
