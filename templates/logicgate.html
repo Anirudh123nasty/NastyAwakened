@@ -13,6 +13,7 @@
         h1 {
             font-family: "Bebas Neue";
             font-size: 80px;
+            text-align: center;
         }
         p {
             font-family: "Cutive Mono";
@@ -32,8 +33,11 @@
             height: 15px;
         }
         table {
-            width: 100%;
+            width: 50%;
             class: center;
+            margin-left: auto;
+            margin-right:auto;
+            padding: 2px
         }
     </style>
     <script>
@@ -64,12 +68,13 @@
         }
     </script>
     <div style="text-align: center">
+        <br>
         <h1>Logic Gates</h1>
-        <p>Select a Value! :):):)</p>
         <input type="checkbox" id="A" name="optionA" value="A" onclick="logic(this)">
         <label for="optionA">A</label>
         <input type="checkbox" id="B" name="optionB" value="B" onclick="logic(this)">
         <label for="optionA">B</label>
+        <p style="font-size: 12px">Checked = 1 Unchecked = 0</p>
 
         <table>
             <tr>
