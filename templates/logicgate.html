@@ -1,10 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layouts/base.html" %}
+{% set project = "Logic Gates" %}
 
-</body>
-</html>
+
+{% block background %}
+{% endblock %}
+
+{% block body %}
+    <style>
+        html, body{
+            background-color: lightseagreen;
+        }
+        h1 {
+            font-family: "Bebas Neue";
+            font-size: 69px;
+        }
+        p {
+            font-family: "Cutive Mono";
+        }
+        label {
+            font-family: "Cutive Mono";
+        }
+        th {
+            font-family: "Cutive Mono";
+            font-weight: 900;
+        }
+    </style>
+    <script>
+        function logic() {
+            var Atoggled = document.getElementById("A").checked
+            var Btoggled = document.getElementById("B").checked
+            if ( Atoggled && Btoggled ) {
+                document.getElementById("AND-result").innerHTML = "1"; // AND
+                document.getElementById("NAND-result").innerHTML = "0"; // NAND
+            }
+            else if ( Atoggled || Btoggled ) {
+                document.getElementById("OR-result").innerHTML = "1"; // OR
+                document.getElementById("NOR-result").innerHTML = "0"; // NOR
+            }
+        }
+    </script>
+    <div style="text-align: center">
+        <p>Select a Value! :):):)</p>
+        <input type="checkbox" id="A" name="optionA" value="A" onclick="logic(this)">
+        <label for="optionA">A</label>
+        <input type="checkbox" id="B" name="optionB" value="B" onclick="logic(this)">
+        <label for="optionA">B</label>
+
+        <table style="width: 100%; class: center">
+            <tr>
+                <th>Symbol</th>
+                <th>Logic Gate</th>
+                <th>Result</th>
+            </tr>
+            <tr id="AND">
+                <td><img src="/static/assets/logic/and.png"></td>
+                <td><p>AND</p></td>
+                <td id="AND-result">0</td>
+            </tr>
+
+            <tr id="NAND">
+                <td><img src="/static/assets/logic/nand.png"></td>
+                <td><p>NAND</p></td>
+                <td id="NAND-result">1</td>
+            </tr>
+
+            <tr id="OR">
+                <td><img src="/static/assets/logic/or.png"></td>
+                <td><p>OR</p></td>
+                <td id="OR-result">0</td>
+            </tr>
+
+            <tr id="NOR">
+                <td><img src="/static/assets/logic/nor.png"></td>
+                <td><p>NOR</p></td>
+                <td id="NOR-result">1</td>
+            </tr>
+
+            <tr id="XOR">
+                <td><img src="/static/assets/logic/xor.png"></td>
+                <td><p>XOR</p></td>
+                <td id="XOR-result">0</td>
+            </tr>
+
+            <tr id="XNOR">
+                <td><img src="/static/assets/logic/xnor.png"></td>
+                <td><p>XNOR</p></td>
+                <td id="XNOR-result">0</td>
+            </tr>
+
+        </table>
+    </div>
+    {% endblock %}

@@ -190,5 +190,9 @@ def ethanrgb():
     except:
         return render_template("ethanrgb.html", images=mine)
 
+@app.route('/logicgate/', methods=['GET', 'POST'])
+def logic():
+    return render_template("logicgate.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
