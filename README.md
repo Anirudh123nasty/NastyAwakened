@@ -156,7 +156,10 @@
 ### Week 7 Progress
 | Progress | Evidence |
 | - | - |
-| | |
+| `binary.html` - Progress on volor coding and individual R, G, B collumns. Progress on implementation of ASCII to Unicode conversion. Finished shift code for bulbs  | [Commit]() <br > [Commit]()|
+| `binary2.html` - Progress on unsigned addition. | [Commit]() |
+| `logicgate.html` - Progress on logic gates lab |[Commit]() |
+
 
 ### Week 7 Grading
 | Name | Grade | Requirements | Evidence |
