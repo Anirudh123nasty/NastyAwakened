@@ -15,8 +15,10 @@
            add new images (ie PNGs) to project -->
 <!-- use your PNGs as default -->
 
-{% set imgBulbOn2 = staticOn2 %}
-{% set imgBulbOff2 = staticOff2 %}
+{% set imgBulbOn2 = "/static/assets/bulb_on2.gif" %}
+{% set imgBulbOff2 = "/static/assets/bulb_off2.png" %}
+{% set imgBulbOnU = "/static/assets/bulb_onU.gif" %}
+{% set imgBulbOffU = "/static/assets/bulb_offU.png" %}
 {% set msgTurnOn = "Turn On" %}
 {% set msgTurnOff = "Turn Off" %}
 
@@ -81,14 +83,23 @@
             const image = document.getElementById('bulb' + i);
             const butt = document.getElementById('butt' + i);
             // Change digit and visual
-            if (image.src.match("{{ staticOn2 }}")) {
+            {#if (image.src.match("{{ imgBulbOn2 }}")) {#}
+            {#    dig.value = 0;#}
+            {#    image.src = "{{ imgBulbOff2 }}";#}
+            {#    butt.innerHTML = "{{ msgTurnOn }}";#}
+            {# else #}
+            {#    dig.value = 1;#}
+            {#    image.src = "{{ imgBulbOn2 }}";#}
+            {#    butt.innerHTML = "{{ msgTurnOff }}";#}
+            {#}#}
+            if (image.src.match("{{ imgBulbOffU }}")) {
                 dig.value = 0;
-                image.src = "{{ staticOff2 }}";
+                image.src = "{{ imgBulbOnU }}";
                 butt.innerHTML = "{{ msgTurnOn }}";
             } else {
                 dig.value = 1;
-                image.src = "{{ staticOn2 }}";
-                butt.innerHTML = "{{ msgTurnOff }}";
+                image.src = "{{ imgBulbOffU }}";
+                butt.innerHTML = "{{ msgTurnOn }}";
             }
             // Binary numbers
             const binary = getBits();
@@ -114,9 +125,11 @@
                 document.getElementById('digit' + i).value = digit;
                 if (digit === "1") {
                     document.getElementById('bulb' + i).src = "{{ imgBulbOn2 }}";
+                    document.getElementById('bulb' + i).src = "{{ imgBulbOnU }}";
                     document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
                 } else {
                     document.getElementById('bulb' + i).src = "{{ imgBulbOff2 }}";
+                    document.getElementById('bulb' + i).src = "{{ imgBulbOffU }}";
                     document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
                 }
             }
@@ -141,9 +154,11 @@
                 document.getElementById('digit' + i).value = digit;
                 if (digit === "1") {
                     document.getElementById('bulb' + i).src = "{{ imgBulbOn2 }}";
+                    document.getElementById('bulb' + i).src = "{{ imgBulbOnU }}";
                     document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
                 } else {
                     document.getElementById('bulb' + i).src = "{{ imgBulbOff2 }}";
+                    document.getElementById('bulb' + i).src = "{{ imgBulbOffU }}";
                     document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
                 }
             }
@@ -201,6 +216,21 @@
                             </td>
                         {% endfor %}
                     </tr>
+                    <tr>
+                        {% for i in range(BITS) %}
+                            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOffU }}" alt="" width="40" height="Auto">
+                                <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        {% for i in range(BITS) %}
+                            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOffU }}" alt="" width="40" height="Auto">
+                                <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button>
+                            </td>
+                        {% endfor %}
+                    </tr>
+
                     <tr>
                         {% for i in range(BITS) %}
                             <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
