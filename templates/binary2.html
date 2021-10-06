@@ -25,7 +25,7 @@
 {% block body %}
     <title>Binary 2</title>
     <style>
-        body {
+        html, body {
             background-color: darkred;
         }
     </style>
@@ -239,27 +239,27 @@
 
         </div>
     </div>
-    <center>Select Pet:</center>
-    <div class="container" style="margin-left: 300px; width: 1000px">
-        <div class="row justify-content-md-center">
-            <div class="col-sm-2">
-                <input type="radio" id="Dog" name="pet" value="Dog">
-                <a href="/binarywithdog/"> Dog </a>
-            </div>
-            <div class="col-sm-2">
-                <input type="radio" id="Cat" name="pet" value="Cat">
-                <a href="/binarywithcat/"> Cat </a>
-            </div>
-        </div>
-        <div class="row justify-content-md-center" >
-            <div class="col-sm-2">
-                <img src="/static/assets/dogon.jpg" alt="Dog's picture" style="width: 70%; height: 70%;">
-            </div>
-            <div class="col-sm-2">
-                <img src="/static/assets/caton.jpg" alt="Cat's picture" style="width: 70%; height: 70%;">
-            </div>
-        </div>
-    </div>
+{#    <center>Select Pet:</center>#}
+{#    <div class="container" style="margin-left: 300px; width: 1000px">#}
+{#        <div class="row justify-content-md-center">#}
+{#            <div class="col-sm-2">#}
+{#                <input type="radio" id="Dog" name="pet" value="Dog">#}
+{#                <a href="/binarywithdog/"> Dog </a>#}
+{#            </div>#}
+{#            <div class="col-sm-2">#}
+{#                <input type="radio" id="Cat" name="pet" value="Cat">#}
+{#                <a href="/binarywithcat/"> Cat </a>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="row justify-content-md-center" >#}
+{#            <div class="col-sm-2">#}
+{#                <img src="/static/assets/dogon.jpg" alt="Dog's picture" style="width: 70%; height: 70%;">#}
+{#            </div>#}
+{#            <div class="col-sm-2">#}
+{#                <img src="/static/assets/caton.jpg" alt="Cat's picture" style="width: 70%; height: 70%;">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
     </div>{% endblock %}
 
