@@ -156,7 +156,7 @@
 ### Week 7 Progress
 | Progress | Evidence |
 | - | - |
-| `binary.html` - Progress on implementation of ASCII to Unicode conversion. Finished shift code for bulbs  | [Commit]() <br > [Commit]()|
+| `binary.html` - Progress on implementation of ASCII to Unicode conversion. Finished shift code for bulbs  | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/64dff46fd9a7292fe02f8d70a032b5c2d5ef6ab4) <br > [Commit](https://github.com/NastyEthan/flask_portfolio/commit/dba3f1b765fae297dd00d4a2380b57432213eb0f)|
 | `binary2.html` - Progress on unsigned addition. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/3d553199420d35a824b1c0d7d5e672539e9b652c) |
 | `logicgate.html` - Progress on logic gates lab |[Commit]() |
   |`colorcode.html` - Progress on volor coding and individual R, G, B collumns.|[Commit](https://github.com/NastyEthan/flask_portfolio/commit/6bb298b3ecc8891c81816b354a18f159fc20ef41)|
