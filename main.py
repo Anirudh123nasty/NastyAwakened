@@ -190,5 +190,9 @@ def ethanrgb():
     except:
         return render_template("ethanrgb.html", images=mine)
 
+@app.route('/colorcode/')
+def colorcode():
+    return render_template("colorcode.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
