@@ -157,7 +157,7 @@
 | Progress | Evidence |
 | - | - |
 | `binary.html` - Progress on volor coding and individual R, G, B collumns. Progress on implementation of ASCII to Unicode conversion. Finished shift code for bulbs  | [Commit]() <br > [Commit]()|
-| `binary2.html` - Progress on unsigned addition. | [Commit]() |
+| `binary2.html` - Progress on unsigned addition. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/3d553199420d35a824b1c0d7d5e672539e9b652c) |
 | `logicgate.html` - Progress on logic gates lab |[Commit]() |
 
 
