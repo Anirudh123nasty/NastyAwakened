@@ -34,7 +34,7 @@
         }
         table {
             width: 50%;
-            class: center;
+            text-align: center;
             margin-left: auto;
             margin-right:auto;
             padding: 2px
@@ -64,6 +64,20 @@
             } else {
                 document.getElementById("XOR-result").innerHTML = "0"; // XOR
                 document.getElementById("XNOR-result").innerHTML = "1"; // XNOR
+            }
+            if ( Atoggled ) {
+                document.getElementById("ABUFFER-result").innerHTML = "1"; // BUFFER
+                document.getElementById("ANOT-result").innerHTML = "0"; // NOT
+            } else {
+                document.getElementById("ABUFFER-result").innerHTML = "0"; // XOR
+                document.getElementById("ANOT-result").innerHTML = "1"; // NOT
+            }
+            if ( Btoggled ) {
+                document.getElementById("BBUFFER-result").innerHTML = "1"; // BUFFER
+                document.getElementById("BNOT-result").innerHTML = "0"; // NOT
+            } else {
+                document.getElementById("BBUFFER-result").innerHTML = "0"; // XOR
+                document.getElementById("BNOT-result").innerHTML = "1"; // NOT
             }
         }
     </script>
@@ -116,6 +130,30 @@
                 <td><img src="/static/assets/logic/xnor.png"></td>
                 <td><p>XNOR</p></td>
                 <td id="XNOR-result">0</td>
+            </tr>
+
+            <tr id="ABUFFER">
+                <td><img src="/static/assets/logic/buffer.png"></td>
+                <td><p>A BUFFER</p></td>
+                <td id="ABUFFER-result">0</td>
+            </tr>
+
+            <tr id="ANOT">
+                <td><img src="/static/assets/logic/not.png"></td>
+                <td><p>A NOT</p></td>
+                <td id="ANOT-result">1</td>
+            </tr>
+
+            <tr id="BBUFFER">
+                <td><img src="/static/assets/logic/bbuffer.png"></td>
+                <td><p>B BUFFER</p></td>
+                <td id="BBUFFER-result">0</td>
+            </tr>
+
+            <tr id="BNOT">
+                <td><img src="/static/assets/logic/bnot.png"></td>
+                <td><p>B NOT</p></td>
+                <td id="BNOT-result">1</td>
             </tr>
 
         </table>
