@@ -2,24 +2,8 @@
 
 {% extends "layouts/base.html" %}
 
+
 {% block body %}
-<style>
-    h1 {
-        font-family: "Birthstone";
-        text-align: center;
-        font-size:80px
-    }
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
-
-    <h1>ColorCode Lab</h1>
-
-    <br />
-
     <div class="row">
         <div class="col-sm-1"></div> <!-- Jinja for loops to create buttons -->
         {% for i in range(1, 9) %}
@@ -29,9 +13,7 @@
             <p id="r">Decimal value: 0</p>
         </div>
     </div>
-
     <br />
-
     <div class="row">
         <div class="col-sm-1"></div>
         {% for i in range(1, 9) %}
@@ -54,20 +36,18 @@
 
     <br />
 
+    <div class="offset-sm-1 col-sm-10" id="color" style="background-color: #000000; height: 20vh;">
     <div class="offset-sm-1 col-sm-10" id="color" style="background-color: #000000; height: 20vh;">  <!-- Div that shows off color -->
     </div>
     <p style="text-align: center;" id="code">Hexcode: #000000</p>
 
     <br />
-    <div class = "container"> </div>
-        <div class="center">
-            <button style="justify-content: center;" onclick="reset()">Reset</button>
-        </div>
-    </div>
+    <button style="justify-content: center;" onclick="reset()">Reset</button>
+    
+{% endblock %}
 
 
 <script>
-
     var red = 0;
     var green = 0;
     var blue = 0;
@@ -81,7 +61,6 @@
         }
         element.classList.toggle("buttonOn");
         element.classList.toggle("buttonOff");
-
         calculateRow(id.charAt(0));
     }
 
@@ -109,6 +88,7 @@
         setColorCode();
     }
 
+    function setColorCode () {
         function setColorCode() {    // uses values from each row to create a color
             let r = red.toString(16);
             let g = green.toString(16);
@@ -125,7 +105,7 @@
             let code = "#" + r + g + b;
             document.getElementById("color").style.backgroundColor = code;
             document.getElementById("code").innerHTML = "Hexcode: " + code;
-        
+        }
     }
 
     function reset () {   // function to reset all buttons back to off
@@ -144,12 +124,8 @@
             document.getElementById('b' + i).classList.remove("buttonOn");
         }
     }
-    window.onload = reset();  // init buttons
 
 </script>
 
-{% endblock %}
-
 {% block background %}
-    <body style="background-color:darkgoldenrod;">  </body>
 {% endblock %}
