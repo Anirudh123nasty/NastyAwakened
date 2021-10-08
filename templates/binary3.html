@@ -53,6 +53,19 @@
             return num1 + num2;
 
         }
+
+        function convertToBinary(x) {
+            let bin = 0;
+            let rem, i = 1, step = 1;
+            while (x != 0) {
+                rem = x % 2
+                x = parseInt(x / 2);
+                bin = bin + rem * i;
+                i = i * 10;
+            }
+            return bin
+        }
+
         // setter for DOM values
         function setConversions(binary, binary2) {
             document.getElementById('binary').innerHTML = binary;
@@ -102,8 +115,8 @@
         }
 
         function setAdditions(num){
-            document.getElementById('signed').innerHTML = num;
-
+            nums = "Integer: " + num.toString() + " Binary: " + num.toString(2)
+            document.getElementById('signed').innerHTML = nums;
         }
 
         // add is positive integer, subtract is negative integer
@@ -140,9 +153,7 @@
     <h1 class="text-center">Binary Math with Conversions</h1>
 
     <form class="text-center" action="/binary/" id="bits" method="POST" >
-        <label for="bits">Please Enter A Value For the Number of Bits</label>
-        <input name="bits">
-        <input style="font-family:'Vladimir Script'; font-size:15px" type="submit" value="Go!">
+        <label for="bits">Click on the Sign Addition button after selecting bulbs for sum</label>
     </form>
 
     <div class="container">
@@ -155,7 +166,6 @@
                         <th>Binary</th>
                         <th>BinaryRow2</th>
                         <td><button type="button" id="sub1" onclick="setAdditions(signedAddition(getBits(),getBits2())) ">Sign Addition</button></td>
-
                         {#                        <th>Hexadecimal</th>#}
 {#                        <th>Decimal</th>#}
 {#                        <th id="ASCII-text">ASCII</th>#}
