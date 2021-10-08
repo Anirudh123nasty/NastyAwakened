@@ -82,6 +82,19 @@ def binary2():
         return render_template("binary2.html", bits=8, staticOn2="/static/assets/bulb_on2.gif", staticOff2="/static/assets/bulb_off2.png")
     return render_template("binary2.html", bits=8, staticOn2="/static/assets/bulb_on2.gif", staticOff2="/static/assets/bulb_off2.png")
 
+@app.route('/binary3/', methods=['GET', 'POST'])
+def binary3():
+    try:
+        if request.form:
+            bits = request.form.get("bits")
+        if len(bits) != 0:  # input field has content
+            return render_template("binary3.html", bits=int(bits), staticOn="/static/assets/bulb_on.gif", staticOff="/static/assets/bulb_off.png")
+    #if request.form:
+    #   static = request.form.get("img")
+    # starting and empty input default
+    except:
+        return render_template("binary3.html", bits=8, staticOn="/static/assets/bulb_on.gif", staticOff="/static/assets/bulb_off.png")
+    return render_template("binary3.html", bits=8, staticOn="/static/assets/bulb_on.gif", staticOff="/static/assets/bulb_off.png")
 
 #@app.route('/binary2/', methods=['GET', 'POST'])
 #def binary2():

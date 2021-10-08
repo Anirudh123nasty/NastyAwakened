@@ -213,6 +213,10 @@
 
             <div class="col-12">
                 <table class="table">
+                <tr>
+                    <button type="button" id="num{{i}}" onclick="toggleBit('{{i}}')">{{  }}</button>
+
+                </tr>
                     <tr>
                         {% for i in range(BITS) %}
                             <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOffU }}" alt="" width="40" height="Auto">
@@ -252,11 +256,6 @@
                         {% endfor %}
                     </tr>
 
-{#                    <tr>#}
-{#                        {% for i in range(BITS, 3*BITS) %}#}
-{#                            <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>#}
-{#                        {% endfor %}#}
-{#                    </tr>#}
                 </table>
             </div>
 
