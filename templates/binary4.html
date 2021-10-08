@@ -107,21 +107,10 @@
             const binary2 = getBits2();
             setConversions(binary, binary2);
         }
-        function setAdditions(num) {
-            document.getElementById('unsigned').innerHTML = num;
+        function setAdditions(num){
+            nums = "Integer: " + num.toString() + " Binary: " + num.toString(2)
+            document.getElementById('unsigned').innerHTML = nums;
         }
-        function convertToBinary(x) {
-            let bin = 0;
-            let rem, i = 1, step = 1;
-            while (x != 0) {
-                rem = x % 2
-                x = parseInt(x / 2);
-                bin = bin + rem * i;
-                i = i * 10;
-            }
-            return bin
-        }
-
 
             // add is positive integer, subtract is negative integer
 
@@ -142,7 +131,7 @@
                         <th>Binary</th>
                         <th>Binary2</th>
                         <th>Unsigned Sum</th>
-                        <td><button type="button" id="sub1" onclick="setAdditions(convertToBinary(unsignedAddition(getBits(),getBits2()))) ">Unsigned Addition</button></td>
+                        <td><button type="button" id="sub1" onclick="setAdditions(unsignedAddition(getBits(),getBits2())) ">Unsigned Addition</button></td>
                     </tr>
                     <tr>
                         <td id="binary">00000000</td>

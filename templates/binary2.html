@@ -26,7 +26,7 @@
     <title>Binary 2</title>
     <style>
         html, body {
-            background-color: darkred;
+            background-color: darkolivegreen;
         }
     </style>
     <script>
@@ -109,35 +109,6 @@
             const binary = getBits();
             setConversions(binary);
         }
-        {#function unsignedaddition(n) {#}
-        {#    let binary = getBits();#}
-        {#    // convert to decimal and do math#}
-        {#    let decimal = parseInt(binary, 2);#}
-        {#    if (n > 0) {  // PLUS#}
-        {#        decimal = MAX === decimal ? 0 : decimal *= n; // I DONT KNOW WHAT IT DOES OTHER THAN *(n)#}
-        {#    } else  {     // MINUS#}
-        {#        decimal = 0 === decimal ? MAX : decimal *= n; // ??? OVERFLOW??#}
-        {#    }#}
-        {#    // convert the result back to binary#}
-        {#    binary = decimal_2_base(decimal, 2);#}
-        {#    // update conversions#}
-        {#    setConversions(binary);#}
-        {#    // ascii?#}
-        {#    // update bits#}
-        {#    for (let i = 0; i < binary.length; i++) {#}
-        {#        let digit = binary.substr(i, 1);#}
-        {#        document.getElementById('digit' + i).value = digit;#}
-        {#        if (digit === "1") {#}
-        {#            document.getElementById('bulb' + i).src = "{{ imgBulbOn2 }}";#}
-        {#            document.getElementById('bulb' + i).src = "{{ imgBulbOnU }}";#}
-        {#            document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";#}
-        {#        } else {#}
-        {#            document.getElementById('bulb' + i).src = "{{ imgBulbOff2 }}";#}
-        {#            document.getElementById('bulb' + i).src = "{{ imgBulbOffU }}";#}
-        {#            document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";#}
-        {#        }#}
-        {#    }#}
-        {#}#}
 
             // add is positive integer, subtract is negative integer
             function add(n) {
@@ -167,7 +138,7 @@
                         document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
                     }
                 }
-            }
+
         }
     </script>
 
@@ -254,4 +225,3 @@
 {% endblock %}
 
 {#add a function, place in the table, button#}
-{#so far, I have added a function for unsignedaddition, added a button and place on table, and need to work on having the input value be inputted in decimal and converted and stored in variable binary 1/#}
