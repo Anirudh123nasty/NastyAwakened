@@ -1,0 +1,152 @@
+Index: templates/colorcode2.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n\r\n{% extends \"layouts/base.html\" %}\r\n\r\n{% block body %}\r\n    <style>\r\n        h1 {\r\n            font-family: \"Birthstone\";\r\n            text-align: center;\r\n            font-size:80px\r\n        }\r\n        .center {\r\n            display: flex;\r\n            justify-content: center;\r\n            align-items: center;\r\n        }\r\n    </style>\r\n\r\n    <h1>ColorCode Lab</h1>\r\n\r\n    <br />\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-1\"></div>\r\n        {% for i in range(1, 9) %}\r\n            <button class=\"col-sm-1\" id=\"r{{i}}\" onclick=\"toggleSwitch('r{{i}}')\">0</button>\r\n        {% endfor %}\r\n        <div class=\"offset-sm-1 col-sm-2\">\r\n            <p id=\"r\">Decimal: 0</p>\r\n        </div>\r\n    </div>\r\n\r\n    <br />\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-1\"></div>\r\n        {% for i in range(1, 9) %}\r\n            <button class=\"col-sm-1\" id=\"g{{i}}\" onclick=\"toggleSwitch('g{{i}}')\">0</button>\r\n        {% endfor %}\r\n        <div class=\"offset-sm-1 col-sm-2\">\r\n            <p id=\"g\">Decimal: 0</p>\r\n        </div>\r\n    </div>\r\n    <br />\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-1\"></div>\r\n        {% for i in range(1, 9) %}\r\n            <button class=\"col-sm-1\" id=\"b{{i}}\" onclick=\"toggleSwitch('b{{i}}')\">0</button>\r\n        {% endfor %}\r\n        <div class=\"offset-sm-1 col-sm-2\">\r\n            <p id=\"b\">Decimal: 0</p>\r\n        </div>\r\n    </div>\r\n\r\n    <br />\r\n\r\n    <div class=\"offset-sm-1 col-sm-10\" id=\"color\" style=\"background-color: #000000; height: 20vh;\">\r\n    </div>\r\n    <p style=\"text-align: center;\" id=\"code\">Hexcode: #000000</p>\r\n\r\n    <br />\r\n    <div class = \"container\"> </div>\r\n    <div class=\"center\">\r\n        <button style=\"justify-content: center;\" onclick=\"reset()\">Reset</button>\r\n    </div>\r\n    </div>\r\n\r\n    <script>\r\n\r\n\r\n        var colors = new Map();\r\n        colors.set('r', 0);\r\n        colors.set('g', 0);\r\n        colors.set('b', 0);\r\n\r\n        function bin2int(binary){\r\n            {#console.log(binary)#}\r\n            return parseInt(binary, 2) //turns string into number, comma 2 specifies that input number is written in base 2\r\n        }\r\n\r\n\r\n\r\n        function totalRow (color) {    // function that calculates the decimal value for a certain row after one of its buttons is toggled\r\n            let binary = \"\";\r\n            for (var i = 1; i <= 8; i++) {\r\n                let element = document.getElementById(color + i);\r\n                binary += parseInt(element.innerHTML);\r\n            }\r\n            sum = bin2int(binary)\r\n\r\n            document.getElementById(color).innerHTML = \"Decimal value: \" + sum;\r\n            colors.set(color, sum)\r\n            setColorCode();\r\n        }\r\n\r\n\r\n        function setColorCode() {    // uses values from each row to create a color\r\n            let r = colors.get(\"r\").toString(16);\r\n            let g = colors.get(\"g\").toString(16);\r\n            let b = colors.get(\"b\").toString(16);\r\n            if (r.length == 1) {\r\n                r = \"0\" + r;\r\n            }\r\n            if (g.length == 1) {\r\n                g = \"0\" + g;\r\n            }\r\n            if (b.length == 1) {\r\n                b = \"0\" + b;\r\n            }\r\n            let code = \"#\" + r + g + b;\r\n            document.getElementById(\"color\").style.backgroundColor = code;\r\n            document.getElementById(\"code\").innerHTML = \"Hexcode = \" + code;\r\n\r\n        }\r\n\r\n        function toggleSwitch (id) {     // toggles button between on and off\r\n            const element = document.getElementById(id);\r\n            if (element.innerHTML == \"1\") {\r\n                element.innerHTML = \"0\";\r\n            } else {\r\n                element.innerHTML = \"1\";\r\n            }\r\n            element.classList.toggle(\"On\");\r\n            element.classList.toggle(\"Off\");\r\n\r\n            totalRow(id.charAt(0));\r\n        }\r\n\r\n        {#function reset () {   // function to reset all buttons back to off#}\r\n        {#    colors = {\"r\", \"g\", \"b\"}#}\r\n        {#    for (var j = 0; j < 3; j++) {#}\r\n        {#        for (var i = 1; i <= 8; i++) {#}\r\n        {#            console.log(colors[j] + i)#}\r\n        {#            document.getElementById(colors[j] + i).innerHTML = \"0\";#}\r\n        {#            totalRow(colors[j]);#}\r\n        {#            document.getElementById(colors[j] + i).classList.add(\"Off\");#}\r\n        {#            document.getElementById(colors[j] + i).classList.remove(\"On\");#}\r\n        {#        }#}\r\n        {#    }#}\r\n        {#}#}\r\n\r\n            function reset () {   // function to reset all buttons back to off\r\n                for (var i = 1; i <= 8; i++) {\r\n                    document.getElementById('r' + i).innerHTML = \"0\";\r\n                    document.getElementById('g' + i).innerHTML = \"0\";\r\n                    document.getElementById('b' + i).innerHTML = \"0\";\r\n                    calculateRow('r');\r\n                    calculateRow('b');\r\n                    calculateRow('g');\r\n                    document.getElementById('r' + i).classList.add(\"buttonOff\");\r\n                    document.getElementById('g' + i).classList.add(\"buttonOff\");\r\n                    document.getElementById('b' + i).classList.add(\"buttonOff\");\r\n                    document.getElementById('r' + i).classList.remove(\"buttonOn\");\r\n                    document.getElementById('g' + i).classList.remove(\"buttonOn\");\r\n                    document.getElementById('b' + i).classList.remove(\"buttonOn\");\r\n                }\r\n            }\r\n        window.onload = reset();  // init buttons\r\n\r\n    </script>\r\n\r\n{% endblock %}\r\n\r\n{% block background %}\r\n    <body style=\"background-color:darkgoldenrod;\">  </body>\r\n{% endblock %}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/colorcode2.html b/templates/colorcode2.html
+--- a/templates/colorcode2.html	(revision ae4eaef073a93d9c328acf098b3c9d08d20ac77f)
++++ b/templates/colorcode2.html	(date 1633842870682)
+@@ -19,11 +19,11 @@
+     <h1>ColorCode Lab</h1>
+ 
+     <br />
+-
++    <!function that returns one less than what you give it>
+     <div class="row">
+         <div class="col-sm-1"></div>
+         {% for i in range(1, 9) %}
+-            <button class="col-sm-1" id="r{{i}}" onclick="toggleSwitch('r{{i}}')">0</button>
++            <button class="col-sm-1" id="r{{i}}" onclick="toggleCell('r{{i}}')">0</button>
+         {% endfor %}
+         <div class="offset-sm-1 col-sm-2">
+             <p id="r">Decimal: 0</p>
+@@ -35,7 +35,7 @@
+     <div class="row">
+         <div class="col-sm-1"></div>
+         {% for i in range(1, 9) %}
+-            <button class="col-sm-1" id="g{{i}}" onclick="toggleSwitch('g{{i}}')">0</button>
++            <button class="col-sm-1" id="g{{i}}" onclick="toggleCell('g{{i}}')">0</button>
+         {% endfor %}
+         <div class="offset-sm-1 col-sm-2">
+             <p id="g">Decimal: 0</p>
+@@ -45,7 +45,7 @@
+     <div class="row">
+         <div class="col-sm-1"></div>
+         {% for i in range(1, 9) %}
+-            <button class="col-sm-1" id="b{{i}}" onclick="toggleSwitch('b{{i}}')">0</button>
++            <button class="col-sm-1" id="b{{i}}" onclick="toggleCell('b{{i}}')">0</button>
+         {% endfor %}
+         <div class="offset-sm-1 col-sm-2">
+             <p id="b">Decimal: 0</p>
+@@ -54,7 +54,7 @@
+ 
+     <br />
+ 
+-    <div class="offset-sm-1 col-sm-10" id="color" style="background-color: #000000; height: 20vh;">
++    <div class="offset-sm-1 col-sm-10" id="color" style="background-color: #000000; height: 10vh;">
+     </div>
+     <p style="text-align: center;" id="code">Hexcode: #000000</p>
+ 
+@@ -68,7 +68,7 @@
+     <script>
+ 
+ 
+-        var colors = new Map();
++        var colors = new Map(); //makes an array I think??
+         colors.set('r', 0);
+         colors.set('g', 0);
+         colors.set('b', 0);
+@@ -113,8 +113,8 @@
+ 
+         }
+ 
+-        function toggleSwitch (id) {     // toggles button between on and off
+-            const element = document.getElementById(id);
++        function toggleCell (cellid) {
++            const element = document.getElementById(cellid);
+             if (element.innerHTML == "1") {
+                 element.innerHTML = "0";
+             } else {
+@@ -123,44 +123,30 @@
+             element.classList.toggle("On");
+             element.classList.toggle("Off");
+ 
+-            totalRow(id.charAt(0));
++            totalRow(cellid.charAt(0));
+         }
+-
+-        {#function reset () {   // function to reset all buttons back to off#}
+-        {#    colors = {"r", "g", "b"}#}
+-        {#    for (var j = 0; j < 3; j++) {#}
+-        {#        for (var i = 1; i <= 8; i++) {#}
+-        {#            console.log(colors[j] + i)#}
+-        {#            document.getElementById(colors[j] + i).innerHTML = "0";#}
+-        {#            totalRow(colors[j]);#}
+-        {#            document.getElementById(colors[j] + i).classList.add("Off");#}
+-        {#            document.getElementById(colors[j] + i).classList.remove("On");#}
+-        {#        }#}
+-        {#    }#}
+-        {#}#}
+ 
+-            function reset () {   // function to reset all buttons back to off
+-                for (var i = 1; i <= 8; i++) {
+-                    document.getElementById('r' + i).innerHTML = "0";
+-                    document.getElementById('g' + i).innerHTML = "0";
+-                    document.getElementById('b' + i).innerHTML = "0";
+-                    calculateRow('r');
+-                    calculateRow('b');
+-                    calculateRow('g');
+-                    document.getElementById('r' + i).classList.add("buttonOff");
+-                    document.getElementById('g' + i).classList.add("buttonOff");
+-                    document.getElementById('b' + i).classList.add("buttonOff");
+-                    document.getElementById('r' + i).classList.remove("buttonOn");
+-                    document.getElementById('g' + i).classList.remove("buttonOn");
+-                    document.getElementById('b' + i).classList.remove("buttonOn");
++        function reset () {   // function to reset all buttons back to off
++            colorCode = ["r", "g", "b"];    //array parameters needs brackets, objects have {}
++            for (var j = 0; j < 3; j++) {    //looping through rows
++                for (var i = 1; i <= 8; i++) {  //also each cell
++                    console.log(colorCode[j] + i);
++                    document.getElementById(colorCode[j] + i).innerHTML = "0";
++                    totalRow(colorCode[j]);
++                    document.getElementById(colorCode[j] + i).classList.add("Off");
++                    document.getElementById(colorCode[j] + i).classList.remove("On");
+                 }
+             }
+-        window.onload = reset();  // init buttons
++        }
++
++        window.onload = reset();  // everytime a new tab opens, you reset the cells
++        console.log("loaded");  //for testing errors
+ 
+     </script>
+ 
+ {% endblock %}
+ 
+ {% block background %}
+-    <body style="background-color:darkgoldenrod;">  </body>
++    <body style="background-color:darkslategrey;">  </body>
+ {% endblock %}
++// click cell, detect change, remake binary number for that row, convert to rgb, display color
+\ No newline at end of file
+Index: templates/layouts/navbar.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!-- Navigation Bar from bootstrap\r\nThis HTML is setup as a fragment allowing it to be \"included\" by other HTML files via Jinja2\r\n-->\r\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n    <a class=\"navbar-brand\" href=\"https://csp.nighthawkcodingsociety.com/\">{{basename}}</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"navbar-nav\">\r\n                <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->\r\n               <!-- commenting out these lines for the moment-->\r\n                <!-- stub is shown using the name of the route -->\r\n                <!--<a class=\"nav-link\" href={>{ url_for('index') }}>Portfolio -->\r\n                <a class=\"nav-link\" href={{ url_for('planner') }}>Planner</a>\r\n                <!-- <a class=\"nav-link\" href={{ url_for('README') }}>README</a> -->\r\n                <a class=\"nav-link\" href={{ url_for('nasty') }}>Nasty</a>\r\n            <li>\r\n            <li class=\"nav-item dropdown\">\r\n                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                    Minilab\r\n                </a>\r\n                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">\r\n                    <a class=\"dropdown-item\" href=\"https://kapwi.ng/c/yKfJ5MqCfP\" target=\"_blank\">Tech Talk 0.*</a>\r\n                    <a class=\"dropdown-item\" href=\"https://docs.google.com/document/d/1t31XtKqvTwIF9UPtYcyjFa9-WkKPoQgcxXxMfE8rbKc/edit?usp=sharing\" target=\"_blank\" >Brain Write</a>\r\n                    <a class=\"dropdown-item\" href=\"https://www.figma.com/file/9eItLJPgtgRwK6GugaUwrl/Unique-Planner?node-id=0%3A1g\" target=\"_blank\" >Figma Wireframe</a>\r\n                    <a class=\"dropdown-item\" href=\"https://github.com/NastyEthan/flask_portfolio/commit/6e82d0aa8279dfd8a3a561c14f798c67f4d6bdd7\" target=\"_blank\">Greet Commit</a>\r\n                    <a class=\"dropdown-item\" href={{ url_for('binary') }}>Binary</a>\r\n                    <a class=\"dropdown-item\" href={{ url_for('binary2') }}>Binary2</a>\r\n                    <a class=\"dropdown-item\" href={{ url_for('binary3') }}>Binary3</a>\r\n                    <a class=\"dropdown-item\" href={{ url_for('binary4') }}>Binary4</a>\r\n                    <a class=\"dropdown-item\" href={{ url_for('logic') }}>Logic Gates</a>\r\n                    <a class=\"dropdown-item\" href={{ url_for('colorcode') }}>Color Code</a>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</nav>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/layouts/navbar.html b/templates/layouts/navbar.html
+--- a/templates/layouts/navbar.html	(revision ae4eaef073a93d9c328acf098b3c9d08d20ac77f)
++++ b/templates/layouts/navbar.html	(date 1633841937796)
+@@ -31,7 +31,7 @@
+                     <a class="dropdown-item" href={{ url_for('binary3') }}>Binary3</a>
+                     <a class="dropdown-item" href={{ url_for('binary4') }}>Binary4</a>
+                     <a class="dropdown-item" href={{ url_for('logic') }}>Logic Gates</a>
+-                    <a class="dropdown-item" href={{ url_for('colorcode') }}>Color Code</a>
++                    <a class="dropdown-item" href={{ url_for('colorcode2') }}>Color Code</a>
+                 </div>
+             </li>
+         </ul>
