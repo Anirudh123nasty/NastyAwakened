@@ -221,6 +221,10 @@ def ethanrgb():
 def colorcode():
     return render_template("colorcode.html")
 
+@app.route('/colorcode2/')
+def colorcode2():
+    return render_template("colorcode2.html")
+
 @app.route('/logicgate/', methods=['GET', 'POST'])
 def logic():
     return render_template("logicgate.html")
