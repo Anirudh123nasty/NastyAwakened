@@ -20,6 +20,7 @@
 
     <br />
     <!function that returns one less than what you give it>
+    <!these for loops create the button that only apply to each row of bulbs since the range of i is specified>
     <div class="row">
         <div class="col-sm-1"></div>
         {% for i in range(1, 9) %}
@@ -80,11 +81,11 @@
 
 
 
-        function totalRow (color) {    // function that calculates the decimal value for a certain row after one of its buttons is toggled
+        function totalRow (color) {    // gets decimal sum for row
             let binary = "";
             for (var i = 1; i <= 8; i++) {
                 let element = document.getElementById(color + i);
-                binary += parseInt(element.innerHTML);
+                binary += parseInt(element.innerHTML);  //addition assignment operator, adds value to variable
             }
             sum = bin2int(binary)
 
@@ -94,7 +95,7 @@
         }
 
 
-        function setColorCode() {    // uses values from each row to create a color
+        function setColorCode() {    // takes decimal values from each row, converts to base 16 (hex) and then ensures that its two digits
             let r = colors.get("r").toString(16);
             let g = colors.get("g").toString(16);
             let b = colors.get("b").toString(16);
@@ -108,7 +109,7 @@
                 b = "0" + b;
             }
             let code = "#" + r + g + b;
-            document.getElementById("color").style.backgroundColor = code;
+            document.getElementById("color").style.backgroundColor = code;  //also changes color in box to corresponding hexcode
             document.getElementById("code").innerHTML = "Hexcode = " + code;
 
         }
@@ -126,11 +127,11 @@
             totalRow(cellid.charAt(0));
         }
 
-        function reset () {   // function to reset all buttons back to off
+        function reset () {   // resets all cells to 0, color in box in black with reset button
             colorCode = ["r", "g", "b"];    //array parameters needs brackets, objects have {}
             for (var j = 0; j < 3; j++) {    //looping through rows
                 for (var i = 1; i <= 8; i++) {  //also each cell
-                    console.log(colorCode[j] + i);
+                    console.log(colorCode[j] + i);  //for testing
                     document.getElementById(colorCode[j] + i).innerHTML = "0";
                     totalRow(colorCode[j]);
                     document.getElementById(colorCode[j] + i).classList.add("Off");

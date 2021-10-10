@@ -46,7 +46,7 @@
             }
             return bits;
         }
-        function unsignedAddition(binary, binary2) {
+        function unsignedAddition(binary, binary2) {    //adding in decimal
 
             //converts string with bit info to integer
             num1 = parseInt(binary,2)
@@ -103,11 +103,11 @@
                 butt.innerHTML = "{{ msgTurnOff }}";
             }
             // Binary numbers
-            const binary = getBits();
+            const binary = getBits();   //here both binary numbers are set to decimal values
             const binary2 = getBits2();
-            setConversions(binary, binary2);
+            setConversions(binary, binary2);    //converting decimal to binary
         }
-        function setAdditions(num){
+        function setAdditions(num){     //updating value with every cell clicked
             nums = "Integer: " + num.toString() + " Binary: " + num.toString(2)
             document.getElementById('unsigned').innerHTML = nums;
         }
