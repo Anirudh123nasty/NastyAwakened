@@ -156,21 +156,23 @@
 ### Week 7 Progress
 | Progress | Evidence |
 | - | - |
-| `binary.html` - Progress on implementation of ASCII to Unicode conversion. Finished shift code for bulbs  | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/39de00e48056f6b7ce70cfffd7fb10f91732c780) <br > [Commit](https://github.com/NastyEthan/flask_portfolio/commit/dba3f1b765fae297dd00d4a2380b57432213eb0f)|
-| `binary2.html` - Progress on unsigned addition. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/3d553199420d35a824b1c0d7d5e672539e9b652c) |
-| `logicgate.html` - Progress on logic gates lab |[Commit]() |
-  |`colorcode.html` - Progress on volor coding and individual R, G, B collumns.|[Commit](https://github.com/NastyEthan/flask_portfolio/commit/6bb298b3ecc8891c81816b354a18f159fc20ef41)|
+| `binary.html` - Finished shift code for bulbs  | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/dba3f1b765fae297dd00d4a2380b57432213eb0f)|
+| `binary2.html` - Finished ASCII to Unicode conversion.  | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/39123e49453efd22ae9715161ba6c4cae57c357a)|
+| `binary4.html` - Finished unsigned addition. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/d9537c32dcc138bf03ce23d710627cdd378c2f88) <br > [Commit](https://github.com/NastyEthan/flask_portfolio/commit/5d4aeb7db67f3bc8228a1590944352f1b44985b8)|
+| `logicgate.html` - Finished logic gates lab | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/ce1c7c4dd0a5182acb2400552cf6c332f02d0be5) <br > [Commit](https://github.com/NastyEthan/flask_portfolio/commit/669e9b450af1eb2bb16d5d9b381799089cf8ad55)|
+|`colorcode.html` -Finished color code and individual R, G, B columns.| [Commit](https://github.com/NastyEthan/flask_portfolio/commit/9e15b0241f43be57530bac8b88a1872c93d240f1) <br > [Commit](https://github.com/NastyEthan/flask_portfolio/commit/e2038d0c09ef7cdf28b5b38caf797046e2217177) <br > [Commit](https://github.com/NastyEthan/flask_portfolio/commit/91be02585dcd5e69a98facc55c1bdfe95fe30015)|
+| `binary3.html` - Finished signed addition. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/93c6e8880ec7cb32f47f86054eab9b7fd78c0c64) <br > [Commit](https://github.com/NastyEthan/flask_portfolio/commit/b18a925fcea12d7fd4ff05e2a505c93ff0c36fb4)|
+| Video - under two minutes, decribing individual contributions. | [Link](https://kapwi.ng/c/zR2Kj31sHG) |
 
 
 ### Week 7 Grading
 | Name | Grade | Requirements | Evidence |
 | - | - | - | - |
-| Group |  |  | |
-| Ethan |  |  |  |
-| Anirudh |  |  |  |
-| Michael |  |  |  |
-| James |  | |  |
-
+| Group | 8/8 | Finished notes on TPT presentations and college board videos. Finished quizzes, took screenshots of practice problems and made corrections. Finished logic gates lab along with different hacks | [Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.sc3byl6nwt6r) <br > [Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit) |
+| Ethan | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on color code and signed binary. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/9e15b0241f43be57530bac8b88a1872c93d240f1) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/93c6e8880ec7cb32f47f86054eab9b7fd78c0c64) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/b18a925fcea12d7fd4ff05e2a505c93ff0c36fb4) |
+| Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on color code and unsigned binary.  | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/d9537c32dcc138bf03ce23d710627cdd378c2f88) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/5d4aeb7db67f3bc8228a1590944352f1b44985b8) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/e2038d0c09ef7cdf28b5b38caf797046e2217177) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/91be02585dcd5e69a98facc55c1bdfe95fe30015)|
+| Michael | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on logic gate and shift. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/dba3f1b765fae297dd00d4a2380b57432213eb0f) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/ce1c7c4dd0a5182acb2400552cf6c332f02d0be5) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/669e9b450af1eb2bb16d5d9b381799089cf8ad55) |
+| James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on ASCII to Unicode| [Commit](https://github.com/NastyEthan/flask_portfolio/commit/39123e49453efd22ae9715161ba6c4cae57c357a) |
 ## Ideas:
 
   
