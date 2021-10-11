@@ -85,7 +85,7 @@
             let binary = "";
             for (var i = 1; i <= 8; i++) {
                 let element = document.getElementById(color + i);
-                binary += parseInt(element.innerHTML);  //addition assignment operator, adds value to variable
+                binary += parseInt(element.innerHTML);  //addition assignment operator, adds value to variable, code equals code plus ___
             }
             sum = bin2int(binary)
 
@@ -96,19 +96,15 @@
 
 
         function setColorCode() {    // takes decimal values from each row, converts to base 16 (hex) and then ensures that its two digits
-            let r = colors.get("r").toString(16);
-            let g = colors.get("g").toString(16);
-            let b = colors.get("b").toString(16);
-            if (r.length == 1) {
-                r = "0" + r;
-            }
-            if (g.length == 1) {
-                g = "0" + g;
-            }
-            if (b.length == 1) {
-                b = "0" + b;
-            }
-            let code = "#" + r + g + b;
+            let colorCode = ["r", "g", "b"];
+            let code = "#"
+            for (var i = 0; i<3; i++){  //i++ means keep looping until i is less than 3, ++ same as +1
+                    if (colors.get(colorCode[i]).toString(16).length == 1){
+                        code += "0" + colors.get(colorCode[i]).toString(16)
+                    }else {
+                        code += colors.get(colorCode[i]).toString(16)
+                    }
+                }
             document.getElementById("color").style.backgroundColor = code;  //also changes color in box to corresponding hexcode
             document.getElementById("code").innerHTML = "Hexcode = " + code;
 
