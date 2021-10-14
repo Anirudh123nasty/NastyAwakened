@@ -236,7 +236,7 @@ def joke():
     """
     url = "https://csp.nighthawkcodingsociety.com/api/joke"
     response = requests.request("GET", url)
-    return render_template("joke.html", joke=response.json())
+    return render_template("apis/joke.html", joke=response.json())
 
 
 @app.route('/jokes', methods=['GET', 'POST'])
@@ -248,7 +248,7 @@ def jokes():
     url = "https://csp.nighthawkcodingsociety.com/api/jokes"
 
     response = requests.request("GET", url)
-    return render_template("jokes.html", jokes=response.json())
+    return render_template("apis/jokes.html", jokes=response.json())
 
 
 @app.route('/covid19', methods=['GET', 'POST'])
@@ -270,7 +270,7 @@ def covid19():
         print(country["country_name"])
     """
 
-    return render_template("covid19.html", stats=response.json())
+    return render_template("apis/covid19.html", stats=response.json())
 
 if __name__ == "__main__":
     app.run(debug=True)
