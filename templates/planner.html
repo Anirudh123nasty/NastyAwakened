@@ -28,8 +28,18 @@
             font-family: Forum;
             font-size: 90px;
         }
+        table {
+            width: auto;
+            /*column-rule: 4px dotted rgb(79, 185, 227);*/
+        }
+        .task {
+                height:400px;
+        }
+        .task, .day, .complete, th, td{
+            border: 5px solid black;
+            column-rule: 4px dotted rgb(79, 185, 227);
 
-
+        }
     </style>
     <title>Nighthawk Coding | Planner</title>
 </head>
@@ -45,11 +55,11 @@
 
 
     <!-- TABLE TIME -->
-    <div class="container"  style="width: 100%">
+<!--    <div class="container">-->
         <div class="row justify-content-md-center">
-            <div class="col-7">
+<!--            <div class="col-7">-->
                 <table class="table">
-                    <tr id="day">
+                    <tr class ="day" id="day">
                         <th>Sunday</th>
                         <th>Monday</th>
                         <th>Tuesday</th>
@@ -58,7 +68,7 @@
                         <th>Friday</th>
                         <th>Saturday</th>
                     </tr>
-                    <tr id="task">
+                    <tr class ="task" id="task">
                         <td>task</td>
                         <td>task</td>
                         <td>task</td>
@@ -66,6 +76,15 @@
                         <td>task</td>
                         <td>task</td>
                         <td>task</td>
+                    </tr>
+                    <tr class ="complete" id="complete">
+                        <td>smth</td>
+                        <td>smth</td>
+                        <td>smth</td>
+                        <td>smth</td>
+                        <td>smth</td>
+                        <td>smth</td>
+                        <td>smth</td>
                     </tr>
                 </table>
                     <div class="container">
