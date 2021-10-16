@@ -129,6 +129,10 @@ def nasty():
 def planner():
     return render_template("planner.html")
 
+@app.route('/planner2/')
+def planner2():
+    return render_template("planner2.html")
+
 @app.route('/binarywithcat/', methods=['GET', 'POST'])
 def binarywithcat():
     try:
