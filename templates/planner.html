@@ -30,11 +30,14 @@
         }
         table {
             width: auto;
-            border: 1px solid black;
+            /*column-rule: 4px dotted rgb(79, 185, 227);*/
         }
         .task {
                 height:400px;
-            border: 1px solid black;
+        }
+        .task, .day, .complete, th, td{
+            border: 5px solid black;
+            column-rule: 4px dotted rgb(79, 185, 227);
 
         }
     </style>
@@ -56,7 +59,7 @@
         <div class="row justify-content-md-center">
 <!--            <div class="col-7">-->
                 <table class="table">
-                    <tr id="day">
+                    <tr class ="day" id="day">
                         <th>Sunday</th>
                         <th>Monday</th>
                         <th>Tuesday</th>
@@ -74,7 +77,7 @@
                         <td>task</td>
                         <td>task</td>
                     </tr>
-                    <tr id="complete">
+                    <tr class ="complete" id="complete">
                         <td>smth</td>
                         <td>smth</td>
                         <td>smth</td>
