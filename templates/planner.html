@@ -68,6 +68,7 @@
                         <th>Friday</th>
                         <th>Saturday</th>
                     </tr>
+
                     <tr class ="task" id="task">
                         <td>task</td>
                         <td>task</td>
@@ -78,7 +79,14 @@
                         <td>task</td>
                     </tr>
                     <tr class ="complete" id="complete">
-                        <td>smth</td>
+                        <td> <h6>Are You Done?</h6>
+                            <form action="/action_page.php">
+                                <input type="checkbox" id="complete1" name="complete1" value="Yes">
+                                <label for="complete1"> Yes, I'm done.</label><br>
+                                <input type="checkbox" id="incomplete1" name="incomplete1" value="No">
+                                <label for="incomplete1"> No, not yet.</label><br>   <!use if statements to display these when yes or no is selected>
+                                <input type="submit" value="Submit">
+                            </form></td>
                         <td>smth</td>
                         <td>smth</td>
                         <td>smth</td>
@@ -87,24 +95,7 @@
                         <td>smth</td>
                     </tr>
                 </table>
-                    <div class="container">
-                        <div class="row justify-content-md-center">
-                            <div class="col-sm-2">
-                                <input type="radio" id="Yes" name="Yes or No" value="Yes">
-                                <a href="/binarywithdog/"> Yes </a>
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="radio" id="No" name="Yes or No" value="No">
-                                <a href="/binarywithcat/"> No </a>
-                            </div>
-                        </div>
-                        <div class="row justify-content-md-center" >
-                            <div class="col-sm-2">
-                                <img src="/static/assets/yescsp.png" alt="Yes Picture" style="width: 100%; height: 100%;">
-                            </div>
-                            <div class="col-sm-2">
-                                <img src="/static/assets/nocsp.png" alt="No picture" style="width: 100%; height: 100%;">
-                            </div>
+
                         </div>
                     </div>
             </div>
