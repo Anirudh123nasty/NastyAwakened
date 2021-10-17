@@ -78,22 +78,48 @@
                         <td>task</td>
                         <td>task</td>
                     </tr>
-                    <tr class ="complete" id="complete">
                         <td> <h6>Are You Done?</h6>
                             <form>
-                                <input type="checkbox" id="complete1" name="complete1" value="Yes">
-                                <label for="complete1"> Yes, I'm done.</label><br>
-                                <input type="checkbox" id="incomplete1" name="incomplete1" value="No">
-                                <label for="incomplete1"> No, not yet.</label><br>   <!use if statements to display these when yes or no is selected>
-<!--                                <input type="submit" value="Submit">-->
-                                <button style="justify-content: center;" onclick="taskfunction()">Submit</button>
-                            </form></td>
-                        <td>smth</td>
-                        <td>smth</td>
-                        <td>smth</td>
-                        <td>smth</td>
-                        <td>smth</td>
-                        <td>smth</td>
+                                <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                                <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                            </form>
+                        </td>
+                        <td><h6>Are You Done?</h6>
+                            <form>
+                                <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                                <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                            </form>
+                        </td>
+                        <td><h6>Are You Done?</h6>
+                            <form>
+                                <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                                <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                            </form>
+                        </td>
+                        <td><h6>Are You Done?</h6>
+                            <form>
+                                <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                                <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                            </form>
+                        </td>
+                        <td><h6>Are You Done?</h6>
+                            <form>
+                                <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                                <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                            </form>
+                        </td>
+                        <td><h6>Are You Done?</h6>
+                            <form>
+                                <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                                <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                            </form>
+                        </td>
+                        <td><h6>Are You Done?</h6>
+                            <form>
+                                <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                                <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                            </form>
+                        </td>
                     </tr>
                 </table>
 
@@ -108,14 +134,9 @@
 
 </html>
 <script>
-    function taskfunction() {
-        var myText = "You have done the task!"
-        alert (myText)
-        // if ("complete" == 'Yes') {
-        //     alert("Well Done!");
-        // }
 
+    function reply_click(clicked_id)
+    {
+        alert(clicked_id);
     }
-
-
 </script>
