@@ -56,11 +56,11 @@
     <table border="1">
 
         <tr align= "center">
-            <th colspan="7">October 2021</th>
+            <th colspan="7">October 2021</th>    <!-- html  -->
         </tr>
 
-        <tr align= "center">
-            <th >Sun</th>
+        <tr align= "center">    <!-- tr is the table row and center aligns them  -->
+            <th >Sun</th>      <!-- The days and aligning in the center th is the table header  -->
             <th>Mon</th>
             <th>Tue</th>
             <th>Wed</th>
@@ -70,7 +70,7 @@
         </tr>
 
         <tr>
-            <td> <label> &nbsp </label>
+            <td> <label> &nbsp </label>     <!-- blank space in the table and makes the space occupied  -->
                 <input> </td>
             </td>
             <td> <label> &nbsp </label>
@@ -81,8 +81,9 @@
                 <input> </td>
             <td> <label> &nbsp </label>
                 <input> </td>
-            <td><label for="plan">  1 </label>
-                <p id="printhere"></p>
+
+            <td><label for="plan">  1 </label>  <!-- td table data and what is inside of each date plan is defined as variables below  -->
+                <p id="printhere"></p>    <!-- referenced the id print here which is referenced below and calls -->
                 Plan: <input type="text" id="plan">
 
                 <button  onclick="display()">Add Info</button>
