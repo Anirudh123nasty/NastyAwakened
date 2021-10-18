@@ -90,7 +90,8 @@
                 <form>
                     <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
                     <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
-                </form> </td>
+                </form>
+            </td>
             <td><label for="plan2"> 2 </label>
                 <p id="printhere2"></p>
                 Plan: <input type="text" id="plan2">
@@ -382,6 +383,19 @@
 
     </table>
 
+    <label>
+        <span>Are You Satisfied with the Progress?</span>
+        <input type="checkbox" name="A" class="checkbox" id="firstcondition" value="1">
+    </label>
+
+    <label>
+        <span>Are You Satisfied with the Grades?</span>
+        <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">
+    </label>
+    <td> <input type="button" onclick="myFunction()" class="button" value="Done"></td>
+    <td><span id="onlyrow"></span> </td>
+
+
 
 
     <script>
@@ -575,6 +589,24 @@
             var plan31 = document.getElementById("plan31").value;
             document.getElementById("printhere31").innerHTML = plan31;
         }
+
+        function myFunction() {
+            const x = document.getElementById("firstcondition")
+            const y = document.getElementById("secondcondition")
+
+            if (x.checked || y.checked) {   //or
+                document.getElementById("onlyrow").innerHTML = ":/"
+            }
+            if (x.checked && y.checked) {   //and
+                document.getElementById("onlyrow").innerHTML = ":)"
+            }
+            if (!(x.checked || y.checked)) {    //nor
+                document.getElementById("onlyrow").innerHTML = ":("
+
+            }
+        }
         // there has to be an easier way to do this with indexes for one function, I tried '+n' and 'i' in a for loop but couldn't get it to work
+
+
     </script>
 </div>
