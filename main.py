@@ -133,6 +133,11 @@ def planner():
 def planner2():
     return render_template("planner2.html")
 
+
+@app.route('/planner3/')
+def planner3():
+    return render_template("planner3.html")
+
 @app.route('/binarywithcat/', methods=['GET', 'POST'])
 def binarywithcat():
     try:
