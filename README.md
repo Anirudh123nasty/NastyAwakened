@@ -1,34 +1,32 @@
 # Nasty Group README
 
 #### Scrumboards (weekly)
-* [Week 0-3](https://github.com/NastyEthan/flask_portfolio/projects/1)
-* [Week 4](https://2github.com/NastyEthan/flask_portfolio/projects/2)
-* [Week 5-6](https://github.com/NastyEthan/flask_portfolio/projects/3)
-* [Week 7](https://github.com/NastyEthan/flask_portfolio/projects/4)
+* [Week 8](https://github.com/NastyEthan/NastyReturned/projects/1)
 
 #### Contributors
-* [Contributors](https://github.com/NastyEthan/flask_portfolio/graphs/contributors)
+* [Contributors](https://github.com/NastyEthan/NastyReturned/graphs/contributors)
 
 ## Team Members
 | Name | Github Profile | Issues | Scrum Board | Commits | MiniLab |
 | - | - | - | - | - | -|
-| Michael Chen | [@Michaelc179](https://github.com/Michaelc179) |  [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AMichaelc179) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3Amichaelc179) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=michaelc179) | [michael.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/michael.html)
-| Ethan Vo | [@NastyEthan](https://github.com/NastyEthan) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3ANastyEthan) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3ANastyEthan) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=NastyEthan) |[ethan.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/ethan.html) |
-| Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AAnirudh123nasty) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AAnirudh123nasty) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=Anirudh123nasty) | [anirudh.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/anirudh.html) |
-| James Lee | [@JL1080](https://github.com/JL1080) | [Issue](https://github.com/NastyEthan/flask_portfolio/issues?q=assignee%3AJL1080) | [Scrum Board](https://github.com/NastyEthan/flask_portfolio/projects/1?card_filter_query=assignee%3AJL1080) | [Commits](https://github.com/NastyEthan/flask_portfolio/commits?author=JL1080) | [james.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/james.html) |
+| Michael Chen | [@Michaelc179](https://github.com/Michaelc179) |  [Issue](https://github.com/NastyEthan/NastyReturned/issues?q=assignee%3AMichaelc179) | [Scrum Board](https://github.com/NastyEthan/NastyReturned/projects/1?card_filter_query=assignee%3Amichaelc179) | [Commits](https://github.com/NastyEthan/NastyReturned/commits?author=michaelc179) | [michael.html](https://github.com/NastyEthan/NastyReturned/blob/main/templates/michael.html)
+| Ethan Vo | [@NastyEthan](https://github.com/NastyEthan) | [Issue](https://github.com/NastyEthan/NastyReturned/issues?q=assignee%3ANastyEthan) | [Scrum Board](https://github.com/NastyEthan/NastyReturned/projects/1?card_filter_query=assignee%3ANastyEthan) | [Commits](https://github.com/NastyEthan/NastyReturned/commits?author=NastyEthan) |[ethan.html](https://github.com/NastyEthan/NastyReturned/blob/main/templates/ethan.html) |
+| Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) | [Issue](https://github.com/NastyEthan/NastyReturned/issues?q=assignee%3AAnirudh123nasty) | [Scrum Board](https://github.com/NastyEthan/NastyReturned/projects/1?card_filter_query=assignee%3AAnirudh123nasty) | [Commits](https://github.com/NastyEthan/NastyReturned/commits?author=Anirudh123nasty) | [anirudh.html](https://github.com/NastyEthan/NastyReturned/blob/main/templates/anirudh.html) |
+| James Lee | [@JL1080](https://github.com/JL1080) | [Issue](https://github.com/NastyEthan/NastyReturned/issues?q=assignee%3AJL1080) | [Scrum Board](https://github.com/NastyEthan/NastyReturned/projects/1?card_filter_query=assignee%3AJL1080) | [Commits](https://github.com/NastyEthan/NastyReturned/commits?author=JL1080) | [james.html](https://github.com/NastyEthan/NastyReturned/blob/main/templates/james.html) |
 
 ## Journals
 * [Michael & James](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)
 * [Ethan & Anirudh](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing)
 
 ## Table of Contents
-* [Week 1](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-1)
-* [Week 2](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-2)
-* [Week 3](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-3)
-* [Week 4](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-4) 
-* [Week 5](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-5) 
-* [Week 6](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-6) 
-* [Week 7](https://github.com/NastyEthan/flask_portfolio/blob/main/README.md#week-7) 
+* [Week 1](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-1)
+* [Week 2](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-2)
+* [Week 3](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-3)
+* [Week 4](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-4) 
+* [Week 5](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-5) 
+* [Week 6](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-6) 
+* [Week 7](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-7)
+* [Week 8](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-8) 
 
 
 ## Week 1
@@ -173,6 +171,25 @@
 | Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on color code and unsigned binary.  | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/d9537c32dcc138bf03ce23d710627cdd378c2f88) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/5d4aeb7db67f3bc8228a1590944352f1b44985b8) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/e2038d0c09ef7cdf28b5b38caf797046e2217177) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/91be02585dcd5e69a98facc55c1bdfe95fe30015)|
 | Michael | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on logic gate and shift. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/dba3f1b765fae297dd00d4a2380b57432213eb0f) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/ce1c7c4dd0a5182acb2400552cf6c332f02d0be5) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/669e9b450af1eb2bb16d5d9b381799089cf8ad55) |
 | James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on ASCII to Unicode| [Commit](https://github.com/NastyEthan/flask_portfolio/commit/39123e49453efd22ae9715161ba6c4cae57c357a) |
+  
+  
+## Week 8
+
+### Week 8 Progress
+| Progress | Evidence |
+| - | - |
+| `planner3.html` - Added checkbox, yes or no buttons, table format, user inputs  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/ebb0f3fa7a02cbcd963b99bfd07822c1c392d6af) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/9a5e00090586392f8b662186485478a320fb6cff) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/3dc043b247f27a1dea3faa8022b0cad93c0c088f) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/b68781f5f4cb92dc8002100ad8085542b58cdeba) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/f58386a5a8fa3ab0cc61f40c208bf7eb3ddbd0b3) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/8b001dff7de4efaf49549b35b541912c8770a113) |
+
+
+  
+ ### Week 8 Grading
+| Name | Grade | Requirements | Evidence |
+| - | - | - | - |
+| Group | 8/8 | Finished notes on TPT presentations and college board videos. Finished quizzes, took screenshots of practice problems and made corrections. Implemented new tables for october with user inputs, alerts, and a simple checkbox. | [Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.sc3byl6nwt6r) <br > [Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit) <br/> [Grader Comment](https://github.com/NastyEthan/NastyReturned/projects/1#card-70927552)|
+| Ethan | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Bolded and worked on table format | [Journal](https://docs.google.com/document/d/1ZaNCZFb-jkWd4c-f7FgZ9GwwUXmOwUnSNN9Vp1z3UiQ/edit) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/87c72babe2e551a1bc80500e78000d5a3eb29808) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/9a5e00090586392f8b662186485478a320fb6cff) |
+| Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Added user input box, Yes or No button, and bottom checkboxes.  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/f58386a5a8fa3ab0cc61f40c208bf7eb3ddbd0b3) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/b68781f5f4cb92dc8002100ad8085542b58cdeba) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/8b001dff7de4efaf49549b35b541912c8770a113) <br /> [Journal](https://docs.google.com/document/d/1abNEEFvTat4dgupx-nGr7IKHJLhuvql1ZxxxPThSM0Y/edit)|
+| Michael | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Bolded and worked on table format | [Commit](https://github.com/NastyEthan/NastyReturned/commit/ebb0f3fa7a02cbcd963b99bfd07822c1c392d6af) <br /> [Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.sc3byl6nwt6r) |
+| James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Made calender format for October| [Commit](https://github.com/NastyEthan/NastyReturned/commit/3dc043b247f27a1dea3faa8022b0cad93c0c088f) <br /> [Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.sc3byl6nwt6r) |
 ## Ideas:
 
   
