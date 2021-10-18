@@ -2,6 +2,11 @@
 <module version="4">
   <component name="Flask">
     <option name="enabled" value="true" />
+     <component name="NewModuleRootManager" inherit-compiler-output="true">
+        <exclude-output />
+        <orderEntry type="inheritedJdk" />
+        <orderEntry type="sourceFolder" forTests="false" />
+      </component>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
