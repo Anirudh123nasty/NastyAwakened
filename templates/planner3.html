@@ -373,7 +373,7 @@
             <td><label for="plan31"> 31 </label>
                 <p id="printhere31"></p>
                 Plan: <input type="text" id="plan31">
-                <button  onclick="display31()">Add Info</button>
+                <button  onclick="display(plan31)">Add Info</button>
                 <h6>Are You Done?</h6>
                 <form>
                     <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
@@ -403,6 +403,12 @@
         function reply_click(clicked_id)
         {
             alert(clicked_id);
+        }
+
+        function display(n){
+            cellid = "plan" + n;
+            alert(document.getElementById(cellid).innerHTML);
+            document.getElementById(cellid).innerHTML;
         }
 
         function display(){
