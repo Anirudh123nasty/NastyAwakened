@@ -13,7 +13,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                <!-- commenting out these lines for the moment-->
                 <!-- stub is shown using the name of the route -->
                 <!--<a class="nav-link" href={>{ url_for('index') }}>Portfolio -->
-                <a class="nav-link" href={{ url_for('planner3') }}>Planner</a>
+                <a class="nav-link" href={{ url_for('planner3') }} >Planner</a>
                 <!-- <a class="nav-link" href={{ url_for('README') }}>README</a> -->
                 <a class="nav-link" href={{ url_for('nasty') }}>Nasty</a>
             <li>
@@ -32,6 +32,16 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                     <a class="dropdown-item" href={{ url_for('binary4') }}>Binary4</a>
                     <a class="dropdown-item" href={{ url_for('logic') }}>Logic Gates</a>
                     <a class="dropdown-item" href={{ url_for('colorcode2') }}>Color Code</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    APIs
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href={{ url_for('joke') }}>Joke</a>
+                    <a class="dropdown-item" href={{ url_for('jokes') }}>Jokes</a>
+                    <a class="dropdown-item" href={{ url_for('covid19') }}>COVID 19</a>
                 </div>
             </li>
         </ul>
