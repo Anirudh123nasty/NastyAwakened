@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+</head>
+
+<body>
+<h1 id="temperature"></h1>
+<h2 id="description"></h2>
+<p id="location"></p>
+</body>
+
+<script src="app.js"></script>
+<script>
+    function getWeather() {
+        let temperature = document.getElementById("temperature");
+        let description = document.getElementById("description");
+        let location = document.getElementById("location");
+
+        let api = "https://api.openweathermap.org/data/2.5/weather";
+        let apiKey = "244fccfe030acc5e699c54d1f512f8d0";
+
+        location.innerHTML = "Locating...";
+
+        navigator.geolocation.getCurrentPosition(success, error);
+
+        function success(position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+
+            let url =
+                api +
+                "?lat=" +
+                latitude +
+                "&lon=" +
+                longitude +
+                "&appid=" +
+                apiKey +
+                "&units=imperial";
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    let temp = data.main.temp;
+                    temperature.innerHTML = temp + "° F";
+                    location.innerHTML =
+                        data.name + " (" + latitude + "°, " + longitude + "°)";
+                    description.innerHTML = data.weather[0].main;
+                });
+        }
+
+        function error() {
+            location.innerHTML = "Unable to retrieve your location";
+        }
+    }
+
+    getWeather();
+</script>
+
+</html>

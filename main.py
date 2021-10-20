@@ -138,6 +138,14 @@ def planner2():
 def planner3():
     return render_template("planner3.html")
 
+@app.route('/weatherapi/')
+def weatherapi():
+    return render_template("weatherapi.html")
+
+# @app.route('/index/')
+# def index():
+#     return render_template("index.html")
+
 @app.route('/binarywithcat/', methods=['GET', 'POST'])
 def binarywithcat():
     try:
@@ -280,6 +288,27 @@ def covid19():
     """
 
     return render_template("apis/covid19.html", stats=response.json())
+
+# @app.route('/weatherapi', methods=['GET', 'POST'])
+# def weatherapi():
+#     url = "hhttps://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=xml"
+#     headers = {
+#         "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+#         "x-rapidapi-key": "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+#     }
+#
+#     response = requests.request("GET", url, headers=headers)
+#
+#     """
+#     # uncomment this code to test from terminal
+#     world = response.json().get('world_total')
+#     countries = response.json().get('countries_stat')
+#     print(world['total_cases'])
+#     for country in countries:
+#         print(country["country_name"])
+#     """
+#
+#     return render_template("apis/weatherapi.html", stats=response.json())
 
 if __name__ == "__main__":
     app.run(debug=True)
