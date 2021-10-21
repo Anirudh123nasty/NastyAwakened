@@ -130,6 +130,11 @@ def nasty():
 def planner():
     return render_template("planner.html")
 
+@app.route('/binarytoplanner/')
+def binarytoplanner():
+    return render_template("binarytoplanner.html")
+
+
 @app.route('/planner2/')
 def planner2():
     return render_template("planner2.html")

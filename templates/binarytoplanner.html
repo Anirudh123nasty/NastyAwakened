@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<input id="box1" value ="Enter words here!"/>
+<input id="box2"/>
+<button onclick="convert();">Convert to secret code (binary)!</button>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    input {font-size:12px; width:300px;}
+</style>
+<script>
+    function convert() {
+        var  output=document.getElementById("box2");
+        var input=document.getElementById("box1").value;
+        output.value = "";
+        for (i=0; i < input.length; i++) {
+            output.value +=input[i].charCodeAt(0).toString(2) + " ";
+        }
+    }
+</script>
+</body>
+</html>
+
+<!--maybe could add timer and then show an alert after 1 minute to get back to work?-->
