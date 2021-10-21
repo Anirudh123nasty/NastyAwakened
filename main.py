@@ -152,17 +152,19 @@ def weatherapi():
 def weatherapi2():
     url = "https://community-open-weather-map.p.rapidapi.com/weather"
 
-    querystring = {"q":"London,uk","lat":"0","lon":"0","callback":"test","id":"2172797","lang":"null","units":"imperial","mode":"xml"}
+    querystring = {"q":"London,uk","lat":"0","lon":"0","id":"2172797","lang":"null","units":"imperial","mode":"json"}
 
     headers = {
         'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
-        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+        'x-rapidapi-key': "e2d0d1a7efmsh5668be741c711ffp1a3e44jsnfc9e0a91c2b2"
     }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
-    print(response.text)
 
-    return render_template("weatherapi2.html", myweather=response.text)
+    print(response.text)
+    mydict = json.loads(response.text)
+    print(mydict)
+    return render_template("weatherapi2.html", myweather=mydict)
 
 # @app.route('/index/')
 # def index():
