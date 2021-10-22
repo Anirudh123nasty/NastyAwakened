@@ -1,17 +1,63 @@
 <!DOCTYPE html>
-{% extends "layouts/base.html" %}
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-{% block body %}
-<P>Co-Ordinates:Lon: </P>
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
 
-<p> {{myweather['coord']['lon']}}</p>
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
 
-<P>Co-Ordinates:Lon: </P>
+<h2>Weather in London!!</h2>
 
-<p> {{myweather['coord']['lat']}}</p>
+<table>
+    <tr>
+        <th>Conditions</th>
+        <th>Values</th>
+    </tr>
+    <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+    </tr>
+    <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+    </tr>
+    <tr>
+        <td>Ernst Handel</td>
+        <td>{{myweather['coord']['lon']}}</td>
 
-<P>Temperature: </P>
+    </tr>
+    <tr>
+        <td>Temperature</td>
+        <td>{{myweather['main']['temp']}}</td>
 
-<p> {{myweather['main']['temp']}}</p>
+    </tr>
+    <tr>
+        <td>Latitude</td>
+        <td>{{myweather['coord']['lat']}}</td>
 
-{% endblock %}
+    </tr>
+    <tr>
+        <td>Longitude</td>
+        <td>{{myweather['coord']['lon']}}</td>
+
+    </tr>
+</table>
+
+</body>
+</html>
+
