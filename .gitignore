@@ -1,9 +1,4 @@
-/.idea/.gitignore
-/.idea/aws.xml
-/.idea/flask_portfolio.iml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/vcs.xml
-__pycache__/main.cpython-39.pyc
-*.xml
-*.pyc
+.idea
+*.iws
+*.iml
+*.ipr
