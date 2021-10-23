@@ -152,7 +152,7 @@ def weatherapi():
 def weatherapi2():
     url = "https://community-open-weather-map.p.rapidapi.com/weather"
 
-    querystring = {"q":"London,uk","lat":"0","lon":"0","id":"2172797","lang":"null","units":"imperial","mode":"json"}
+    querystring = {"q":"San Diego","lat":"0","lon":"0","id":"2172797","lang":"null","units":"imperial","mode":"json"}
 
     headers = {
         'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
