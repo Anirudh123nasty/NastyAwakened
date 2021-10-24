@@ -109,7 +109,21 @@
             <td><span id="onlyrow"></span> </td>
         </tr>
     </table>
+<body>
+<p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">
+</p>
 
+<button onclick = "STUDYTIME()">
+    Enter...STUDY MODE!!!
+</button>
+
+<button onclick = "RANDOMCOLOR()">
+    Test's Over? Have some fun!
+</button>
+
+<p id = "RETURNTOFUN" style ="color:white; font-size: 20px; font-weight: bold;">
+</p>
+</body>
 
     <script>
 
@@ -133,6 +147,20 @@
 
             }
         }
+
+        function changeColor(color) {
+            document.body.style.background = color;
+        }
+
+        function STUDYTIME() {
+            changeColor('white');
+
+        }
+        function RANDOMCOLOR() {
+            var color = '#'+Math.floor(Math.random() * 16777215).toString(16);
+            changeColor(color)
+        }
+
 
     </script>
 <!--    <a href="http://127.0.0.1:5000/weatherapi/">-->
