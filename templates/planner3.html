@@ -72,26 +72,44 @@
             <th>Sat</th>
         </tr>
 
+        {% for j in range(0,5) %}
+        <tr>
 
-            {% for i in range(1,32) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
+            {% if j < 4 %}
+            {% for i in range(1,8) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
             <td>
-                <p> {{i}} </p>
-                <p id="{{loop.index}}show_input"></p>
+                <p> {{j*7+i}} </p>
+                <p id="show_input{{j}}{{i}}"></p>
                 Plan: <label>
-                    <input id="task{{i}}" type="text">
-                </label>
-                <button  onclick="display{{loop.index}}('task{{i}}')">Add Info</button>
+                <input id="task{{j}}{{i}}" type="text">
+            </label>
+                <button  onclick="display('{{j}}{{i}}')">Add Info</button>
                 <h6>Are You Done?</h6>
                 <form>
                     <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
                     <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
                 </form></td>
-            <script>
-                function display{{loop.index}}(id){   // By putting the function in the loop it corresponds to each cell; and by adding the {{loop.index}} it knows which elements to edit
-                    alert(document.getElementById(id).value);
-                    document.getElementById("{{loop.index}}show_input").innerHTML = document.getElementById(id).value;
-                }</script>
             {% endfor %}
+            {% endif %}
+
+            {% if j == 4 %} <!-- jinja if statement; prints certain number of cells depending on which row -->
+            {% for i in range(1,4) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
+            <td>
+                <p> {{j*7+i}} </p>
+                <p id="show_input{{j}}{{i}}"></p>
+                Plan: <label>
+                <input id="task{{j}}{{i}}" type="text">
+            </label>
+                <button  onclick="display('{{j}}{{i}}')">Add Info</button>
+                <h6>Are You Done?</h6>
+                <form>
+                    <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                    <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                </form></td>
+            {% endfor %}
+            {% endif %}
+        </tr>
+        {% endfor %}
     </table>
 
     <table>
@@ -106,7 +124,7 @@
                 <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">
             </td>
             <td> <input type="button" onclick="myFunction()" class="button" value="Done"></td>
-            <td><span id="onlyrow"></span> </td>
+            <!-- <td><span id="onlyrow"></span> </td> idk what this is for so i commented it out -->
         </tr>
     </table>
 <body>
@@ -126,6 +144,13 @@
 </body>
 
     <script>
+
+        function display(id){
+            const task = "task" + id;
+            const show_input = "show_input" + id;
+            alert("Adding " + document.getElementById(task).value + " to October " + id);
+            document.getElementById(show_input).innerHTML = document.getElementById(task).value;
+        }
 
         function reply_click(clicked_id)
         {
@@ -163,8 +188,8 @@
 
 
     </script>
-<!--    <a href="http://127.0.0.1:5000/weatherapi/">-->
-<!--        Click Here to Check the Weather!-->
-<!--    </a>-->
+    <!--    <a href="http://127.0.0.1:5000/weatherapi/">-->
+    <!--        Click Here to Check the Weather!-->
+    <!--    </a>-->
     <a class="btn btn-primary" href="http://127.0.0.1:5000/binarytoplanner/">Want to take a quick break from studying and talk to your friends in binary? Click here!</a>
 </div>
