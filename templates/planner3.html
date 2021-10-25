@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <!-- THE MAIN PROJECT -->
 {% set basename = "Nighthawk Coding" %}
 
@@ -49,6 +51,20 @@
 
 <body>
 {% include "layouts/navbar.html" %}
+<!-- Clock display -->
+<div class="px-3">
+    <span id="clock"></span>
+</div>
+<script>
+    // Clock controller
+    let clockElement = document.getElementById('clock');
+    function clock() {
+        let date = new Date();
+        clockElement.textContent = date.toLocaleString();
+    }
+    // Clock refresh frequency
+    setInterval(clock, 1000);
+</script>
 <div style="margin-left: 50px">
     <h1>PLANNER</h1>
     <p>This will be where we will build the month version - <b>a daily planner with alarms for tests, homework, etc.</b></p>
