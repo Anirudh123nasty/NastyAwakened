@@ -127,6 +127,28 @@
              <td><span id="onlyrow"></span> </td>
         </tr>
     </table>
+    <table>  <!--  new table that is created for events -->
+        <tr>   <!--  table header for 3 seperate events-->
+            <th bgcolor="#00bfff"> Birthday </th>
+            <th bgcolor="red"> Urgent Task </th>
+            <th bgcolor="yellow"> Exam in this month </th>
+        </tr>
+
+        {% for image in eventimages %} <!--  for loop for iteration(image  -->
+            <td>
+                <img class="img-responsive py-3" id=img{{loop.index}} alt="" width="256" height="Auto" src="{{image.base64_GRAY}}" > <!--  default is gray   -->
+                <!-- Hack: create button (btn{{loop.index}} to  call java script function
+                       pass index to allow you to toggle images with hidden id's
+                       {{image.base64}}  original image
+                       {{image.base64_GRAY}}  gray scale image
+                    -->
+                <button style="background-color: mediumspringgreen; border-color: rebeccapurple; color: mediumblue" onclick="changeImage('{{loop.index}}')">Toggle Event!</button>
+                <!--  changes from gray to color when using button  -->
+                <p hidden id="img_orig{{loop.index}}">{{image.base64}}</p> <!--  loops the images   -->
+                <p hidden id="img_gray{{loop.index}}">{{image.base64_GRAY}}</p>
+            </td>
+        {% endfor %}
+    </table>
 <body>
 <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">
 </p>
@@ -170,6 +192,14 @@
             if (!(x.checked || y.checked)) {    //nor
                 document.getElementById("onlyrow").innerHTML = "<img src=\"/static/assets/ethanimages/anirudhsus.png\" alt=\"Sadge\" style=\"width: 200px; height: 200px; object-fit: cover\" ></a>"
 
+            }
+        }
+
+        function changeImage(ndx) {     <!-- if else statement using the function changeImage   -->
+            if (document.getElementById("img" + ndx).src == document.getElementById('img_orig' + ndx).innerHTML) { <!-- if original switch to gray   -->
+                document.getElementById('img' + ndx).src = document.getElementById('img_gray' + ndx).innerHTML;
+            } else {
+                document.getElementById('img' + ndx).src = document.getElementById('img_orig' + ndx).innerHTML;  <!-- if gray switch to original   -->
             }
         }
 
