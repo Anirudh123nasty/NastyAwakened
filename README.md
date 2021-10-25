@@ -196,8 +196,8 @@
 | - | - | - |
 | Ethan's [Video]() | _/8 | <br > [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
 | Anirudh's [Video](https://kapwi.ng/c/jHlYyDI6p6) | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
-| Michael's [Video]() | _/8 | Link to Video  | [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
-| James's [Video]() | _/8 | Link to Video | [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
+| Michael's [Video]() | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
+| James's [Video]() | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
 ## Ideas:
 
   
