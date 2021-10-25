@@ -197,7 +197,7 @@
 | Ethan's [Video](https://kapwi.ng/c/3ZovXODS-k) | _/8 | <br > [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)| Averages: 7.5 |
 | Anirudh's [Video](https://kapwi.ng/c/jHlYyDI6p6) | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)| Averages: 7.75 |
 | Michael's [Video](https://www.loom.com/share/6de26e2f01904985aae6e43bc7c5516e) | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)| Averages: 7.5 |
-| James's [Video]() | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)| Averages: |
+| James's [Video](https://www.loom.com/share/c90a6dad72ec4da183bad17872a38d63) | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)| Averages: |
 
 ## Ideas:
 
