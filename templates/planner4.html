@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- THE MAIN PROJECT -->
+{% set basename = "Nighthawk Coding" %}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive Mono"> <!-- a monospace -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue"> <!-- https://fonts.google.com/specimen/Bebas+Neue?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret One"> <!-- https://fonts.google.com/specimen/Poiret+One?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton"> <!-- https://fonts.google.com/specimen/Monoton?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredericka the Great"> <!-- https://fonts.google.com/specimen/Fredericka+the+Great?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Forum"> <!--https://fonts.google.com/specimen/Forum?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        p {
+            font-family: Raleway;
+        }
+        a {
+            font-family: Raleway;
+        }
+        body {
+            background-color: antiquewhite;
+        }
+        h1 {
+            font-family: Forum;
+            font-size: 90px;
+        }
+        table {
+            width: auto;
+            /*column-rule: 4px dotted rgb(79, 185, 227);*/
+        }
+        .task {
+            height:400px;
+        }
+        .task, .day, .complete, th, td{
+            border: 5px solid black;
+            column-rule: 4px dotted rgb(79, 185, 227);
+        }
+        button {
+            font-family: Raleway;
+        }
+        label {
+            font-family: Raleway;
+        }
+        .btn {
+            border: 5px solid black;
+        }
+    </style>
+    <title>Nighthawk Coding | Planner</title>
+</head>
+
+<body>
+{% include "layouts/navbar.html" %}
+<div style="margin-left: 50px">
+    <h1>PLANNER</h1>
+    <p>This will be where we will build the main project - <b>a daily planner with alarms for tests, homework, etc.</b></p>
+
+    <!-- button that leads to the repo, can style the button in css above -->
+    <a href="http://127.0.0.1:5000/planner3/" target="_blank" class="btn">Monthly Schedule</a>
+
+    <table>
+        <tr>    <!-- tr is the table row and center aligns them  -->
+            <th>Sun</th>      <!-- The days and aligning in the center th is the table header  -->
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+        <tr>
+            {% for i in range(1, 8) %}
+            <td>
+                <p id="show_input{{i}}"></p>
+                <label> Plan </label>
+                <input type="text" id="task{{i}}">
+                <button onclick="display('{{i}}')">Add Plan</button>
+
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+
+    <label>
+        <span>Are You Satisfied with the Progress?</span>
+        <input type="checkbox" name="A" class="checkbox" id="firstcondition" value="1">
+    </label>
+
+    <label>
+        <span>Are You Satisfied with the Grades?</span>
+        <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">
+    </label>
+    <td> <input type="button" onclick="myFunction()" class="button" value="Done"></td>
+    <td><span id="onlyrow"></span> </td>
+
+    <br>
+
+    <a href="#" target="_blank" class="btn" onclick="music()" id="Music">Want to Listen to Music?</a>
+
+    <script>
+        // for loop table
+
+
+        // for (let i = 1; i <= 31; i++) {
+        //
+        //     dates += "plan" + i;
+        //     const plan = document.getElementById('plan')
+        //     const planNumbered = plan
+        //     document.getElementById(dates).innerHTML;
+        //     function display(dates) {
+        //         document.getElementById('plan')
+        //         alert(document.getElementById(dates).innerHTML);
+        //     }
+        // }
+        // function reply_click(clicked_id)
+        // {
+        //     alert(clicked_id);
+        // }
+        //
+        // function display(n){
+        //     cellid = "plan" + n;
+        //     alert(document.getElementById(cellid).innerHTML);
+        //     document.getElementById(cellid).innerHTML;
+        // }
+
+        function display(id) {
+            const task = "task" + id;
+            const show_input = "show_input" + id;
+            document.getElementById(show_input).innerHTML = document.getElementById(task).value;
+        }
+
+        function music() {
+            const a = "https://open.spotify.com/playlist/18KrvqaSiubu6uPN9kYUw8?si=b7f3e8ef7b784f48"
+            const b = "https://open.spotify.com/playlist/6WYQ7w1iQ4bsMXT50A6fCu?si=bc94c77c9f5e42e2"
+            const c = "https://open.spotify.com/playlist/4qgfMmrc8XSF3P1fHmiuvf?si=86f173fb899e4589"
+            const playlists = [a, b, c]
+            document.getElementById('Music').href = playlists[Math.floor(Math.random() * playlists.length)]
+        }
+
+        function myFunction() {
+            const x = document.getElementById("firstcondition")
+            const y = document.getElementById("secondcondition")
+
+            if (x.checked || y.checked) {   //or
+                document.getElementById("onlyrow").innerHTML = ":/"
+            }
+            if (x.checked && y.checked) {   //and
+                document.getElementById("onlyrow").innerHTML = ":)"
+            }
+            if (!(x.checked || y.checked)) {    //nor
+                document.getElementById("onlyrow").innerHTML = ":("
+
+            }
+        }
+        // there has to be an easier way to do this with indexes for one function, I tried '+n' and 'i' in a for loop but couldn't get it to work
+
+    </script>
+</div>

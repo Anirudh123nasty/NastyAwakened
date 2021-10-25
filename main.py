@@ -144,6 +144,11 @@ def planner2():
 def planner3():
     return render_template("planner3.html")
 
+
+@app.route('/planner4/')
+def planner4():
+    return render_template("planner4.html")
+
 @app.route('/weatherapi/')
 def weatherapi():
     return render_template("weatherapi.html")
