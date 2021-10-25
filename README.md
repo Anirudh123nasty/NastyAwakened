@@ -2,7 +2,6 @@
 
 #### Scrumboards (weekly)
 * [Week 8](https://github.com/NastyEthan/NastyReturned/projects/1)
-* [Time Box for Final Videos](https://www.loom.com/share/c90a6dad72ec4da183bad17872a38d63
 
 #### Contributors
 * [Contributors](https://github.com/NastyEthan/NastyReturned/graphs/contributors)
