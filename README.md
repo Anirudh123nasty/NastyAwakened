@@ -191,13 +191,14 @@
 | Michael | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Bolded and worked on table format | [Commit](https://github.com/NastyEthan/NastyReturned/commit/ebb0f3fa7a02cbcd963b99bfd07822c1c392d6af) <br /> [Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.sc3byl6nwt6r) |
 | James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Made calender format for October| [Commit](https://github.com/NastyEthan/NastyReturned/commit/3dc043b247f27a1dea3faa8022b0cad93c0c088f) <br /> [Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.sc3byl6nwt6r) |
  
- ### Time Box for Final Videos
+### Time Box for Final Videos
 | Name and Video Link | Peer Grades | Link to Review Ticket |
 | - | - | - |
 | Ethan's [Video](https://kapwi.ng/c/3ZovXODS-k) | _/8 | <br > [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
 | Anirudh's [Video](https://kapwi.ng/c/jHlYyDI6p6) | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
-| Michael's [Video]() | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
+| Michael's [Video](https://www.loom.com/share/6de26e2f01904985aae6e43bc7c5516e) | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
 | James's [Video]() | _/8 | <br /> [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)|
+
 ## Ideas:
 
   
