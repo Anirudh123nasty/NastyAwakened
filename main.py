@@ -2,8 +2,8 @@
 import requests
 from flask import Flask, render_template, request
 from algorithms.image import drawhack, michael_image_data, anirudh_image_data, \
-    ethan_image_data, james_image_data, size_hack
-
+    ethan_image_data, james_image_data, size_hack, planner_image_data
+from pathlib import Path
 import json
 
 # create a Flask instance
@@ -142,7 +142,14 @@ def planner2():
 
 @app.route('/planner3/')
 def planner3():
-    return render_template("planner3.html")
+    path = Path(app.root_path) / "static" / "assets" / "plannerimages"
+    storage = planner_image_data(path) # calling from image.py and labeling as storage
+    colorList = []
+    grayList = []  # pass in the lists from the image_data() function
+    for img in storage:
+        colorList.append(img['base64'])
+        grayList.append(img['base64_GRAY'])
+    return render_template("planner3.html", eventimages=storage, colored=colorList, grayed=grayList ) # labeling eventimages as storage to get images
 
 
 @app.route('/planner4/')
@@ -238,7 +245,8 @@ def anirudhrgb():
 
 @app.route('/jamesrgb/', methods=['GET', 'POST'])
 def jamesrgb():
-    trash = james_image_data()
+    path = Path(app.root_path) / "static" / "assets" / "jamesimages"
+    trash = james_image_data(path)
     colorList = []
     grayList = []  # pass in the lists from the image_data() function
     for img in trash:
