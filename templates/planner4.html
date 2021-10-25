@@ -21,7 +21,7 @@
         p {
             font-family: Raleway;
         }
-        a {
+        a.btn {
             font-family: Raleway;
         }
         body {
@@ -57,9 +57,9 @@
 
 <body>
 {% include "layouts/navbar.html" %}
-<div style="margin-left: 50px">
+<div style="margin-left: 50px; margin-right: 50px">
     <h1>PLANNER</h1>
-    <p>This will be where we will build the main project - <b>a daily planner with alarms for tests, homework, etc.</b></p>
+    <p>This is this projects WEEKLY schedule - <b>a daily planner structured on a weekly basis.</b></p>
 
     <!-- button that leads to the repo, can style the button in css above -->
     <a href="http://127.0.0.1:5000/planner3/" target="_blank" class="btn">Monthly Schedule</a>
@@ -78,30 +78,18 @@
             {% for i in range(1, 8) %}
             <td>
                 <p id="show_input{{i}}"></p>
-                <label> Plan </label>
                 <input type="text" id="task{{i}}">
                 <button onclick="display('{{i}}')">Add Plan</button>
-
             </td>
             {% endfor %}
         </tr>
     </table>
 
-    <label>
-        <span>Are You Satisfied with the Progress?</span>
-        <input type="checkbox" name="A" class="checkbox" id="firstcondition" value="1">
-    </label>
-
-    <label>
-        <span>Are You Satisfied with the Grades?</span>
-        <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">
-    </label>
-    <td> <input type="button" onclick="myFunction()" class="button" value="Done"></td>
-    <td><span id="onlyrow"></span> </td>
-
     <br>
 
-    <a href="#" target="_blank" class="btn" onclick="music()" id="Music">Want to Listen to Music?</a>
+    <a href="#" class="btn" onclick="music()" id="Music">Want to Listen to Music?</a>
+    <a href="#" class="btn" onclick="toggleMusic()" id="HideMusic">Hide Playlist</a>
+    <iframe id="songs" src="about:blank" width="100%" height="280" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
     <script>
         // for loop table
@@ -135,30 +123,32 @@
             document.getElementById(show_input).innerHTML = document.getElementById(task).value;
         }
 
+        // playlist format: https://open.spotify.com/embed/playlist/ID
+        // make sure to include /embed/ and remove the ?:stuff
+        const a = "https://open.spotify.com/embed/playlist/18KrvqaSiubu6uPN9kYUw8"
+        const b = "https://open.spotify.com/embed/playlist/6WYQ7w1iQ4bsMXT50A6fCu"
+        const c = "https://open.spotify.com/embed/playlist/4qgfMmrc8XSF3P1fHmiuvf"
+        const d = "https://open.spotify.com/embed/playlist/5kYOn1V225bRpJ1CpwZPX8"
+        const e = "https://open.spotify.com/embed/playlist/2Ytk3eaNRNao1B0NJais5X"
+        const f = "https://open.spotify.com/embed/playlist/1qO45Esl7AIo6nsuM18tyy"
+        const h = "https://open.spotify.com/embed/playlist/7077oO7N4wtuxXbrcG1Ph7"
+        const playlists = [a, b, c, d, e, f, h]
+        const x = document.getElementById("songs")
+
         function music() {
-            const a = "https://open.spotify.com/playlist/18KrvqaSiubu6uPN9kYUw8?si=b7f3e8ef7b784f48"
-            const b = "https://open.spotify.com/playlist/6WYQ7w1iQ4bsMXT50A6fCu?si=bc94c77c9f5e42e2"
-            const c = "https://open.spotify.com/playlist/4qgfMmrc8XSF3P1fHmiuvf?si=86f173fb899e4589"
-            const playlists = [a, b, c]
-            document.getElementById('Music').href = playlists[Math.floor(Math.random() * playlists.length)]
-        }
-
-        function myFunction() {
-            const x = document.getElementById("firstcondition")
-            const y = document.getElementById("secondcondition")
-
-            if (x.checked || y.checked) {   //or
-                document.getElementById("onlyrow").innerHTML = ":/"
-            }
-            if (x.checked && y.checked) {   //and
-                document.getElementById("onlyrow").innerHTML = ":)"
-            }
-            if (!(x.checked || y.checked)) {    //nor
-                document.getElementById("onlyrow").innerHTML = ":("
-
+            document.getElementById('songs').src = playlists[Math.floor(Math.random() * playlists.length)]
+            if (x.style.display === "none") {
+                x.style.display = 'block';
             }
         }
-        // there has to be an easier way to do this with indexes for one function, I tried '+n' and 'i' in a for loop but couldn't get it to work
+
+        function toggleMusic() {
+            if (x.style.display === "none") {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
 
     </script>
 </div>

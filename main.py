@@ -13,7 +13,7 @@ app = Flask(__name__)
 # connects default URL to render index.html
 @app.route('/')
 def index():
-    return render_template("planner.html")
+    return render_template("nasty.html")
 
 @app.route('/README/')
 def README():
