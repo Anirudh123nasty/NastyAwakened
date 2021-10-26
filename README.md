@@ -2,6 +2,7 @@
 
 #### Scrumboards (weekly)
 * [Week 8](https://github.com/NastyEthan/NastyReturned/projects/1)
+* [Week 9](https://github.com/NastyEthan/NastyReturned/projects/2)
 
 #### Contributors
 * [Contributors](https://github.com/NastyEthan/NastyReturned/graphs/contributors)
