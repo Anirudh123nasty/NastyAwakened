@@ -33,7 +33,7 @@
         table {
             width: fit-content;
             overflow-wrap: anywhere;
-
+            font-family: Raleway;
             /*column-rule: 4px dotted rgb(79, 185, 227);*/
 
         }
@@ -44,6 +44,7 @@
         }
         .btn{
             border: 5px solid black;
+            font-family: Raleway;
         }
     </style>
     <title>Nighthawk Coding | Planner</title>
@@ -51,26 +52,18 @@
 
 <body>
 {% include "layouts/navbar.html" %}
-<!-- Clock display -->
-<div class="px-3">
-    <span id="clock"></span>
-</div>
-<script>
-    // Clock controller
-    let clockElement = document.getElementById('clock');
-    function clock() {
-        let date = new Date();
-        clockElement.textContent = date.toLocaleString();
-    }
-    // Clock refresh frequency
-    setInterval(clock, 1000);
-</script>
+
 <div style="margin-left: 50px; margin-right: 50px">
+    <!-- Clock display -->
+    <div style="text-align: right">
+        <span style="font-family: Cutive Mono" id="clock"></span>
+    </div>
+
     <h1>PLANNER</h1>
     <p>This will be where we will build the month version - <b>a daily planner with alarms for tests, homework, etc.</b></p>
 
     <!-- button that leads to the repo, can style the button in css above -->
-    <a href="http://127.0.0.1:5000/planner4" class="btn">Weekly Calendar</a>
+    <a href="http://127.0.0.1:5000/planner4" class="btn">Weekly Schedule</a>
 
     <table>
 
@@ -182,6 +175,14 @@
 </body>
 
     <script>
+        // Clock controller
+        let clockElement = document.getElementById('clock');
+        function clock() {
+            let date = new Date();
+            clockElement.textContent = date.toLocaleString();
+        }
+        // Clock refresh frequency
+        setInterval(clock, 1000);
 
         function display(id){
             const task = "task" + id;

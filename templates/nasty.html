@@ -46,6 +46,10 @@
             transform: translateY(-1px);
             box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
         }
+
+        a.name {
+            font-family: Raleway;
+        }
     </style>
     <br>
     <h1>Nasty: About Us</h1>
@@ -54,30 +58,30 @@
     <div class="container">
         <div class="row justify-content-center" style="text-align: center">
             <div class="col align-self-start">
-                <a href={{ url_for('michael') }}><img src="/static/assets/michaelprofile.jpg" alt="Michael's picture" style="width: 200px; height: 200px; object-fit: cover" ></a>
+                <a href="http://127.0.0.1:5000/michael"><img src="/static/assets/michaelprofile.jpg" alt="Michael's picture" style="width: 200px; height: 200px; object-fit: cover" ></a>
             </div>
             <div class="col align-self-start">
-                <a href={{ url_for('ethan') }}><img src="/static/assets/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px; object-fit: cover"></a>
+                <a href="http://127.0.0.1:5000/ethan"><img src="/static/assets/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px; object-fit: cover"></a>
             </div>
             <div class="col align-self-start">
-                <a href={{ url_for('anirudh') }}><img src="/static/assets/anirudhprofile.jpg" alt="Anirudh's picture" style="width: 200px; height: 200px; object-fit: cover "></a>
+                <a href="http://127.0.0.1:5000/anirudh"><img src="/static/assets/anirudhprofile.jpg" alt="Anirudh's picture" style="width: 200px; height: 200px; object-fit: cover "></a>
             </div>
             <div class="col align-self-start">
-                <a href={{ url_for('james') }}><img src="/static/assets/jamesprofile.jfif" alt="James's picture" style="width: 200px; height: 200px; object-fit:cover"></a>
+                <a href="http://127.0.0.1:5000/james"><img src="/static/assets/jamesprofile.jfif" alt="James's picture" style="width: 200px; height: 200px; object-fit:cover"></a>
             </div>
         </div>
         <div class="row justify-content-center" style="text-align: center">
             <div class="col align-self-start">
-                <a style="color:white" href={{ url_for('michael') }}> Michael Chen </a>
+                <a class="name" style="color:white" href="http://127.0.0.1:5000/michael"> Michael Chen </a>
             </div>
             <div class="col align-self-start">
-                <a style="color:white" href={{ url_for('ethan') }}>  Ethan Vo </a>
+                <a class="name" style="color:white" href="http://127.0.0.1:5000/ethan">  Ethan Vo </a>
             </div>
             <div class="col align-self-start">
-                <a style="color:white" href={{ url_for('anirudh') }}> Anirudh Ramachandran </a>
+                <a class="name" style="color:white" href="http://127.0.0.1:5000/anirudh"> Anirudh Ramachandran </a>
             </div>
             <div class="col align-self-start">
-                <a style="color:white" href={{ url_for('james') }}> James Lee </a>
+                <a class="name" style="color:white" href="http://127.0.0.1:5000/james"> James Lee </a>
             </div>
         </div>
     </div>
