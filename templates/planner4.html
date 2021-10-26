@@ -35,12 +35,10 @@
             width: auto;
             /*column-rule: 4px dotted rgb(79, 185, 227);*/
         }
-        .task {
-            height:400px;
-        }
-        .task, .day, .complete, th, td{
+        th, td{
             border: 5px solid black;
             column-rule: 4px dotted rgb(79, 185, 227);
+            padding: 10px;
         }
         button {
             font-family: Raleway;
@@ -59,24 +57,23 @@
 {% include "layouts/navbar.html" %}
 <div style="margin-left: 50px; margin-right: 50px">
     <h1>PLANNER</h1>
-    <p>This is this projects WEEKLY schedule - <b>a daily planner structured on a weekly basis.</b></p>
-
-    <!-- button that leads to the repo, can style the button in css above -->
-    <a href="http://127.0.0.1:5000/planner3/" class="btn">Monthly Schedule</a>
-
-    <table>
+    <p>This is the project's <i>WEEKLY</i> schedule - <b>a daily planner structured on a weekly basis.</b></p>
+    <a href="http://127.0.0.1:5000/planner3/" class="btn">Monthly Calendar</a>
+    <input type="checkbox" id="color" name="colorCheck" onclick="display(id)">
+    <label for="colorCheck">Use Colors?</label>
+    <table style="text-align: center">
         <tr>    <!-- tr is the table row and center aligns them  -->
-            <th>Sun</th>      <!-- The days and aligning in the center th is the table header  -->
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
+            <th>Sunday</th>      <!-- The days and aligning in the center th is the table header  -->
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
         </tr>
         <tr>
             {% for i in range(1, 8) %}
-            <td>
+            <td id="cell{{i}}">
                 <p id="show_input{{i}}"></p>
                 <input type="text" id="task{{i}}">
                 <button onclick="display('{{i}}')">Add Plan</button>
@@ -88,55 +85,57 @@
     <br>
 
     <a href="#" class="btn" onclick="music()" id="Music">Want to Listen to Music?</a>
-    <a href="#" class="btn" onclick="toggleMusic()" id="HideMusic">Hide Playlist</a>
-    <iframe id="songs" src="about:blank" width="100%" height="280" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <a href="#" class="btn" onclick="toggleMusic()" id="HideMusic">Toggle Show Music</a>
+    <iframe id="songs" src="about:blank" width="100%" height="280" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
     <script>
-        // for loop table
+        // converting string to hex
+        function conversion(id) {
+            const task = "task" + id;
+            let text = document.getElementById(task).value;
+            let short = text.slice(0,4)
+            let arr1 = [];
+            for (let n = 0, l = short.length; n < l; n ++)
+            {
+                let hex = Number(short.charCodeAt(n)).toString(16);
+                arr1.push(hex);
+            }
+            return "#" + arr1.join('')
+        }
 
+        // changes cell background color to the hex from conversion()
+        function colorChange(id) {
+            let cell = "cell" + id;
+            document.getElementById(cell).style.backgroundColor = conversion(id);
+        }
 
-        // for (let i = 1; i <= 31; i++) {
-        //
-        //     dates += "plan" + i;
-        //     const plan = document.getElementById('plan')
-        //     const planNumbered = plan
-        //     document.getElementById(dates).innerHTML;
-        //     function display(dates) {
-        //         document.getElementById('plan')
-        //         alert(document.getElementById(dates).innerHTML);
-        //     }
-        // }
-        // function reply_click(clicked_id)
-        // {
-        //     alert(clicked_id);
-        // }
-        //
-        // function display(n){
-        //     cellid = "plan" + n;
-        //     alert(document.getElementById(cellid).innerHTML);
-        //     document.getElementById(cellid).innerHTML;
-        // }
-
+        // displaying user input for their tasks
         function display(id) {
             const task = "task" + id;
             const show_input = "show_input" + id;
             document.getElementById(show_input).innerHTML = document.getElementById(task).value;
+            // whether or not checkbox is toggled, and uses color based on result
+            let checked = document.getElementById("color").checked
+            if ( checked ) {
+                colorChange(id);
+            }
         }
 
+        // all personal playlists (from Michael), can add more public one's in the future
         // playlist format: https://open.spotify.com/embed/playlist/ID
         // make sure to include /embed/ and remove the ?:stuff
-        const a = "https://open.spotify.com/embed/playlist/18KrvqaSiubu6uPN9kYUw8"
-        const b = "https://open.spotify.com/embed/playlist/6WYQ7w1iQ4bsMXT50A6fCu"
-        const c = "https://open.spotify.com/embed/playlist/4qgfMmrc8XSF3P1fHmiuvf"
-        const d = "https://open.spotify.com/embed/playlist/5kYOn1V225bRpJ1CpwZPX8"
-        const e = "https://open.spotify.com/embed/playlist/2Ytk3eaNRNao1B0NJais5X"
-        const f = "https://open.spotify.com/embed/playlist/1qO45Esl7AIo6nsuM18tyy"
-        const h = "https://open.spotify.com/embed/playlist/7077oO7N4wtuxXbrcG1Ph7"
-        const playlists = [a, b, c, d, e, f, h]
-        const x = document.getElementById("songs")
+        const a = "https://open.spotify.com/embed/playlist/18KrvqaSiubu6uPN9kYUw8";
+        const b = "https://open.spotify.com/embed/playlist/6WYQ7w1iQ4bsMXT50A6fCu";
+        const c = "https://open.spotify.com/embed/playlist/4qgfMmrc8XSF3P1fHmiuvf";
+        const d = "https://open.spotify.com/embed/playlist/5kYOn1V225bRpJ1CpwZPX8";
+        const e = "https://open.spotify.com/embed/playlist/2Ytk3eaNRNao1B0NJais5X";
+        const f = "https://open.spotify.com/embed/playlist/1qO45Esl7AIo6nsuM18tyy";
+        const h = "https://open.spotify.com/embed/playlist/7077oO7N4wtuxXbrcG1Ph7";
+        const playlists = [a, b, c, d, e, f, h];
+        const x = document.getElementById("songs");
 
         function music() {
-            document.getElementById('songs').src = playlists[Math.floor(Math.random() * playlists.length)]
+            document.getElementById('songs').src = playlists[Math.floor(Math.random() * playlists.length)];
             if (x.style.display === "none") {
                 x.style.display = 'block';
             }
