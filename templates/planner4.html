@@ -33,10 +33,11 @@
         }
         table {
             width: auto;
+            margin-top: 20px;
             /*column-rule: 4px dotted rgb(79, 185, 227);*/
         }
         th, td{
-            border: 5px solid black;
+            border: 3px solid black;
             column-rule: 4px dotted rgb(79, 185, 227);
             padding: 10px;
         }
@@ -47,10 +48,18 @@
             font-family: Raleway;
         }
         .btn {
-            border: 5px solid black;
+            border: 2px solid black;
         }
         iframe {
              border: 0px;
+        }
+        input.checkbox {
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+        }
+        input.text {
+            font-family: Raleway;
         }
     </style>
     <title>Nighthawk Coding | Planner</title>
@@ -61,9 +70,12 @@
 <div style="margin-left: 50px; margin-right: 50px">
     <h1>PLANNER</h1>
     <p>This is the project's <i>WEEKLY</i> schedule - <b>a daily planner structured on a weekly basis.</b></p>
+
     <a href="http://127.0.0.1:5000/planner3/" class="btn">Monthly Calendar</a>
-    <input type="checkbox" id="color" name="colorCheck" onclick="display(id)">
-    <label for="colorCheck">Use Colors?</label>
+
+    <input type="checkbox" class="checkbox" id="color" onclick="display(id)">
+    <label for="color">Use Colors?</label>
+
     <table style="text-align: center">
         <tr>    <!-- tr is the table row and center aligns them  -->
             <th>Sunday</th>      <!-- The days and aligning in the center th is the table header  -->
@@ -78,7 +90,7 @@
             {% for i in range(1, 8) %}
             <td id="cell{{i}}">
                 <p id="show_input{{i}}"></p>
-                <input type="text" id="task{{i}}">
+                <input type="text" class="text" id="task{{i}}">
                 <button onclick="display('{{i}}')">Add Plan</button>
             </td>
             {% endfor %}
