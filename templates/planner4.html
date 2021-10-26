@@ -49,6 +49,9 @@
         .btn {
             border: 5px solid black;
         }
+        iframe {
+             border: 0px;
+        }
     </style>
     <title>Nighthawk Coding | Planner</title>
 </head>
@@ -93,7 +96,7 @@
         function conversion(id) {
             const task = "task" + id;
             let text = document.getElementById(task).value;
-            let short = text.slice(0,4)
+            let short = text.slice(0,4) // slices long strings to just 4 characters
             let arr1 = [];
             for (let n = 0, l = short.length; n < l; n ++)
             {
