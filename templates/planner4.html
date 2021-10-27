@@ -42,6 +42,7 @@
             padding: 10px;
         }
         button {
+            margin-top: 5px;
             font-family: Raleway;
         }
         label {
@@ -65,7 +66,7 @@
     <title>Nighthawk Coding | Planner</title>
 </head>
 
-<body>
+<body onload="check()">
 {% include "layouts/navbar.html" %}
 <div style="margin-left: 50px; margin-right: 50px">
     <h1>PLANNER</h1>
@@ -91,7 +92,9 @@
             <td id="cell{{i}}">
                 <p id="show_input{{i}}"></p>
                 <input type="text" class="text" id="task{{i}}">
-                <button onclick="display('{{i}}')">Add Plan</button>
+                <button onclick="display('{{i}}')">Add Task</button>
+                <br>
+                <button onclick="remove('{{i}}')">Clear Task</button>
             </td>
             {% endfor %}
         </tr>
@@ -127,13 +130,33 @@
         // displaying user input for their tasks
         function display(id) {
             const task = "task" + id;
-            const show_input = "show_input" + id;
-            document.getElementById(show_input).innerHTML = document.getElementById(task).value;
+            const show_input = "show_input" + id
+            // trying to figure out web storage
+            sessionStorage.setItem(task, document.getElementById(task).value);
+            document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
             // whether or not checkbox is toggled, and uses color based on result
             let checked = document.getElementById("color").checked
             if ( checked ) {
                 colorChange(id);
+                sessionStorage.check = "yes"
             }
+        }
+
+        function check() {
+            for ( let i = 1; i < 8; i++ ) {
+                const task = "task" + i;
+                const show_input = "show_input" + i
+                if ( sessionStorage.getItem(task) !== null) {
+                    document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
+                }
+            }
+        }
+
+        function remove(id) {
+            const task = "task" + id;
+            const show_input = "show_input" + id
+            sessionStorage.removeItem(task)
+            document.getElementById(show_input).innerHTML = null;
         }
 
         // all personal playlists (from Michael), can add more public one's in the future
