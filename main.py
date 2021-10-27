@@ -154,11 +154,23 @@ def planner3():
 
 @app.route('/planner4/')
 def planner4():
-    return render_template("planner4.html")
+    url = "https://geocodeapi.p.rapidapi.com/GetTimezone"
 
-@app.route('/weatherapi/')
-def weatherapi():
-    return render_template("weatherapi.html")
+    querystring = {"latitude":"32.715736","longitude":"-117.161087"}
+
+    headers = {
+        'x-rapidapi-host': "geocodeapi.p.rapidapi.com",
+        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    mydict = json.loads(response.text)
+    print(mydict)
+    return render_template("planner4.html", mytime=mydict)
+
+
 
 @app.route('/weatherapi2/')
 def weatherapi2():
