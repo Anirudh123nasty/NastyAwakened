@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,7 @@
         }
 
         html, body {
-            background-color: lightblue;
+            background-color: lightseagreen;
         }
         th, td{
             border: 5px solid black;
@@ -39,39 +40,39 @@
     </style>
 </head>
 <body>
-<h2 class="text-center">What to wear.... here are the conditions in San Diego!!</h2>
+<h2 class="text-center">Here's the forecast for the next three days!</h2>
 
 
 <table>
 
+<!--    maybe list i through the days of the month-->
     <tr>
-        <th>Conditions</th>
-        <th>Values</th>
+        <th>Day</th>
+        <th>Predicted Temperature</th>
+        <th>Predicted Rain Chance</th>
     </tr>
     <tr>
-        <td>Wind</td>
-        <td>{{myweather['wind']['speed']}}</td>
+        <td>Today</td>
+        <td>{{myforecast['forecast']['forecastday'][0]['day']['avgtemp_f']}}</td>
+        <td>{{myforecast['forecast']['forecastday'][0]['day']['daily_chance_of_rain']}}</td>
     </tr>
     <tr>
-        <td>Humidity</td>
-        <td>{{myweather['main']['humidity']}}</td>
+        <td>Tomorrow</td>
+        <td>{{myforecast['forecast']['forecastday'][1]['day']['avgtemp_f']}}</td>
+        <td>{{myforecast['forecast']['forecastday'][1]['day']['daily_chance_of_rain']}}</td>
     </tr>
     <tr>
-        <td>Feels Like</td>
-        <td>{{myweather['main']['feels_like']}}</td>
+        <td>Day after Tomorrow</td>
+        <td>{{myforecast['forecast']['forecastday'][2]['day']['avgtemp_f']}}</td>
+        <td>{{myforecast['forecast']['forecastday'][2]['day']['daily_chance_of_rain']}}</td>
+    </tr>
 
-    </tr>
-    <tr>
-        <td>Temperature</td>
-        <td>{{myweather['main']['temp']}}</td>
-
-    </tr>
 
 </table>
 
+
 </body>
 </html>
-
 
 <br>
 <h2 class="text-center">Important Links</h2>
@@ -79,7 +80,9 @@
 <div class="row justify-content-md-center" style="text-align: center; width: 100%">
     <div class="col">
         <a href="http://127.0.0.1:5000/weatherapi/" target="_blank" class="btn">Forecast</a>
-        <a href="http://127.0.0.1:5000/planner3/" target="_blank" class="btn">Back To Planner</a>
+        <a href="http://127.0.0.1:5000/weatherapi2/" target="_blank" class="btn">Back to Detailed Weather Report</a>
+        <a href="http://127.0.0.1:5000/planner3/" target="_blank" class="btn">Back to Planner</a>
     </div>
 </div>
 </div>
+

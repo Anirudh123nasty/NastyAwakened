@@ -142,18 +142,6 @@ def planner2():
 
 @app.route('/planner3/')
 def planner3():
-    path = Path(app.root_path) / "static" / "assets" / "plannerimages"
-    storage = planner_image_data(path) # calling from image.py and labeling as storage
-    colorList = []
-    grayList = []  # pass in the lists from the image_data() function
-    for img in storage:
-        colorList.append(img['base64'])
-        grayList.append(img['base64_GRAY'])
-    return render_template("planner3.html", eventimages=storage, colored=colorList, grayed=grayList ) # labeling eventimages as storage to get images
-
-
-@app.route('/planner4/')
-def planner4():
     url = "https://geocodeapi.p.rapidapi.com/GetTimezone"
 
     querystring = {"latitude":"32.715736","longitude":"-117.161087"}
@@ -168,8 +156,41 @@ def planner4():
     print(response.text)
     mydict = json.loads(response.text)
     print(mydict)
-    return render_template("planner4.html", mytime=mydict)
+    return render_template("planner3.html", mytime=mydict)
 
+    path = Path(app.root_path) / "static" / "assets" / "plannerimages"
+    storage = planner_image_data(path) # calling from image.py and labeling as storage
+    colorList = []
+    grayList = []  # pass in the lists from the image_data() function
+    for img in storage:
+        colorList.append(img['base64'])
+        grayList.append(img['base64_GRAY'])
+    return render_template("planner3.html", eventimages=storage, colored=colorList, grayed=grayList ) # labeling eventimages as storage to get images
+
+
+@app.route('/planner4/')
+def planner4():
+    return render_template("planner4.html")
+
+
+@app.route('/weatherapi/')
+def weatherapi():
+
+    url = "https://weatherapi-com.p.rapidapi.com/forecast.json"
+
+    querystring = {"q":"San Diego","days":"30"}
+
+    headers = {
+        'x-rapidapi-host': "weatherapi-com.p.rapidapi.com",
+        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    mydict = json.loads(response.text)
+    print(mydict)
+    return render_template("weatherapi.html", myforecast=mydict)
 
 
 @app.route('/weatherapi2/')

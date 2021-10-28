@@ -58,7 +58,7 @@
 <div style="margin-left: 50px; margin-right: 50px">
     <!-- Clock display -->
     <div style="text-align: right">
-        <span style="font-family: Cutive Mono" id="clock"></span>
+        <p style="font-family:'Courier New'">{{mytime['LocalTime_Now']}}</p>
     </div>
 
     <h1>PLANNER</h1>
@@ -134,7 +134,7 @@
                 <span>Are You Satisfied with the Grades?</span>
                 <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">
             </td>
-            <td> <input type="button" onclick="myFunction()" class="button" value="Done"></td>
+            <td> <input type="button" onclick="myFunction()" class="btn btn-outline-info" value="Done"></td>
              <td><span id="onlyrow"></span> </td>
         </tr>
     </table>
@@ -163,28 +163,29 @@
 <body>
 <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">
 </p>
-
-<button onclick = "STUDYTIME()">
+<div class="row justify-content-md-center" style="text-align: center; width: 100%">
+    <div class="col">
+<button onclick = "STUDYTIME()"class="btn btn-outline-secondary">
     Enter...STUDY MODE!!!
 </button>
 
-<button onclick = "RANDOMCOLOR()">
+<button onclick = "RANDOMCOLOR()"class="btn btn-outline-danger">
     Test's Over? Have some fun!
 </button>
-
+<div/>
 <p id = "RETURNTOFUN" style ="color:white; font-size: 20px; font-weight: bold;">
 </p>
 </body>
 
     <script>
-        // Clock controller
-        let clockElement = document.getElementById('clock');
-        function clock() {
-            let date = new Date();
-            clockElement.textContent = date.toLocaleString();
-        }
-        // Clock refresh frequency
-        setInterval(clock, 1000);
+        // // Clock controller
+        // let clockElement = document.getElementById('clock');
+        // function clock() {
+        //     let date = new Date();
+        //     clockElement.textContent = date.toLocaleString();
+        // }
+        // // Clock refresh frequency
+        // setInterval(clock, 1000);
 
         function display(id){
             const task = "task" + id;
@@ -237,10 +238,13 @@
 
 
     </script>
-    <!--    <a href="http://127.0.0.1:5000/weatherapi/">-->
-    <!--        Click Here to Check the Weather!-->
-    <!--    </a>-->
-    <a class="btn btn-primary" href="http://127.0.0.1:5000/binarytoplanner/">Want to take a quick break from studying and talk to your friends in binary? Click here!</a>
-</div>
-    <a class="btn btn-outline-primary btn-lg btn-block" href="http://127.0.0.1:5000/weatherapi2/">What to wear...</a>
+    <div class="row justify-content-md-center" style="text-align: center; width: 100%">
+        <div class="col">
+            <a href="http://127.0.0.1:5000/binarytoplanner/" target="_blank" class="btn">Want to take a quick break from studying and talk to your friends in binary? Click here!</a>
+            <a href="http://127.0.0.1:5000/weatherapi2/" target="_blank" class="btn">What to wear..</a>
+        </div>
     </div>
+<!--    <a class="btn btn-primary" href="http://127.0.0.1:5000/binarytoplanner/">Want to take a quick break from studying and talk to your friends in binary? Click here!</a>-->
+<!--    </div>-->
+<!--    <a class="btn btn-secondary" href="http://127.0.0.1:5000/weatherapi2/">What to wear...</a>-->
+<!--    </div>-->
