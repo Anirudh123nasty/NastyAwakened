@@ -50,11 +50,16 @@
             border-radius: 6px;
             color: #3D3D3D;
             background: #fff;
-            border: none;
+            border: 1px solid white;
             box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
+            transition-deration: 0.4s;
+        }
+        button:hover {
+            background-color: floralwhite;
+            border: 1px solid black;
         }
         label {
             font-family: Raleway;
@@ -122,9 +127,9 @@
                 <ol id="show_input.{{i}}">
                 </ol>
                 <input placeholder="Task" type="text" class="text" id="task.{{i}}">
-                <button id="add_task.{{i}}" onclick="display('{{i}}')">Add Task</button>
+                <button class="task" id="add_task.{{i}}" onclick="display('{{i}}')">Add Task</button>
                 <br>
-                <button onclick="remove('{{i}}')">Clear Task(s)</button>
+                <button class="task" onclick="remove('{{i}}')">Clear Task(s)</button>
             </td>
             {% endfor %}
         </tr>
@@ -168,6 +173,7 @@
             const list = document.createElement('list')
             list.innerHTML = "<li>" + TASK + "</li>"; // list
             document.getElementById(show_input).appendChild(list); // adding to list
+            sessionStorage.setItem(show_input, document.getElementById(show_input).innerText)
 
             // whether or not checkbox is toggled, and uses color based on result
             let checked = document.getElementById("color").checked
@@ -196,13 +202,15 @@
                 const task = "task." + i;
                 const show_input = "show_input." + i;
                 if (typeof sessionStorage.getItem(task) !== null) {
-                    for ( let TASK in document.getElementById(show_input).innerText ) {
-                        alert(TASK)
+                    let str = sessionStorage.getItem(show_input);
+                    let tasks = "'"+str+"'".split(" ");
+                    for (let i = 0, i < tasks.length; i++ ) {
                         const list = document.createElement('list')
                         list.innerHTML = "<li>" + TASK + "</li>";
                         document.getElementById(show_input).appendChild(list);
                     }
                 }
+                // alert(str.match(/.*?[\.\s]+?/g))
             }
         }
 
