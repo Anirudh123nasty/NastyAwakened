@@ -72,6 +72,13 @@
         }
         input.text {
             font-family: Raleway;
+            border: 0;
+        }
+        input::placeholder {
+            color: gray;
+            padding-left: 10px;
+            font-size: small;
+            font-family: Raleway;
         }
         /*li {*/
         /*    text-align: left;*/
@@ -114,7 +121,7 @@
             <td id="cell.{{i}}">
                 <ol id="show_input.{{i}}">
                 </ol>
-                <input type="text" class="text" id="task.{{i}}">
+                <input placeholder="Task" type="text" class="text" id="task.{{i}}">
                 <button id="add_task.{{i}}" onclick="display('{{i}}')">Add Task</button>
                 <br>
                 <button onclick="remove('{{i}}')">Clear Task(s)</button>
