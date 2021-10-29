@@ -173,6 +173,21 @@ def planner4():
     return render_template("planner4.html")
 
 
+@app.route('/experiment/')
+def experiment():
+    url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily"
+
+    querystring = {"lat":"32.7157","lon":"-117.1611","units":"imperial"}
+
+    headers = {
+        'x-rapidapi-host': "weatherbit-v1-mashape.p.rapidapi.com",
+        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    return render_template("experiment.html", my30day=response.json())
+
 @app.route('/weatherapi/')
 def weatherapi():
 
