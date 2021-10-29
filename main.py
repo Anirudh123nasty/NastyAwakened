@@ -170,7 +170,38 @@ def planner3():
 
 @app.route('/planner4/')
 def planner4():
-    return render_template("planner4.html")
+    # time
+    url = "https://geocodeapi.p.rapidapi.com/GetTimezone"
+
+    querystring = {"latitude":"32.715736","longitude":"-117.161087"}
+
+    headers = {
+        'x-rapidapi-host': "geocodeapi.p.rapidapi.com",
+        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    mydict = json.loads(response.text)
+    print(mydict)
+
+    #weather
+    url = "https://community-open-weather-map.p.rapidapi.com/weather"
+
+    querystring = {"q":"San Diego","lat":"0","lon":"0","id":"2172797","lang":"null","units":"imperial","mode":"json"}
+
+    headers = {
+        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+        'x-rapidapi-key': "e2d0d1a7efmsh5668be741c711ffp1a3e44jsnfc9e0a91c2b2"
+    }
+
+    weather = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(weather.text)
+    weatherdict = json.loads(weather.text)
+    print(weatherdict)
+    return render_template("planner4.html", mytime=mydict, myweather=weatherdict)
 
 
 @app.route('/experiment/')
