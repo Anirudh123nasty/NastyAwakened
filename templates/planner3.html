@@ -52,8 +52,7 @@
     <title>Nighthawk Coding | Planner</title>
 </head>
 
-<body onload="keep()">
-
+<body>
 {% include "layouts/navbar.html" %}
 
 <div style="margin-left: 50px; margin-right: 50px">
@@ -86,6 +85,7 @@
 
         {% for j in range(0,5) %}
         <tr>
+
             {% if j < 4 %}
             {% for i in range(1,8) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
             <td>
@@ -96,9 +96,10 @@
             </label>
                 <button  onclick="display('{{j}}{{i}}')">Add Info</button>
                 <h6>Are You Done?</h6>
-                <br>
-                <button onclick="remove('{{j}}{{i}}')">Clear Task</button>
-            </td>
+                <form>
+                    <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                    <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                </form></td>
             {% endfor %}
             {% endif %}
 
@@ -112,9 +113,10 @@
             </label>
                 <button  onclick="display('{{j}}{{i}}')">Add Info</button>
                 <h6>Are You Done?</h6>
-                <br>
-                <button onclick="remove('{{j}}{{i}}')">Clear Task</button>
-            </td>
+                <form>
+                    <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
+                    <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
+                </form></td>
             {% endfor %}
             {% endif %}
         </tr>
@@ -158,6 +160,7 @@
 <!--            </td>-->
 <!--        {% endfor %}-->
 <!--    </table>-->
+<body>
 <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">
 </p>
 <div class="row justify-content-md-center" style="text-align: center; width: 100%">
@@ -172,10 +175,7 @@
 <div/>
 <p id = "RETURNTOFUN" style ="color:white; font-size: 20px; font-weight: bold;">
 </p>
-<button onclick = "darkMode()"class="btn btn-primary btn-lg brn-clock">Dark Mode</button>
-        <a class="btn btn-primary btn-lg btn-block" href="http://127.0.0.1:5000/binarytoplanner/">Want to take a quick break from studying and talk to your friends in binary? Click here!</a>
-    </div>
-    <a class="btn btn-outline-primary btn-lg btn-block" href="http://127.0.0.1:5000/weatherapi2/">What to wear...</a>
+</body>
 
     <script>
 
@@ -184,30 +184,13 @@
             const task = "task" + id;
             const show_input = "show_input" + id;
             alert("Adding " + document.getElementById(task).value + " to October " + id);
-            sessionStorage.setItem(task, document.getElementById(task).value);
-            document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
+            document.getElementById(show_input).innerHTML = document.getElementById(task).value;
         }
 
-        function keep() {
-            // for (let j = 0; j < 5; j++) {
-            //     for (let i = 1; i < 8; i++) {
-                    task = "task" + i;
-                    task = task + j;
-                    const show_input = "show_input" + i;
-                    alert(sessionStorage.getItem(task));
-                    if (typeof sessionStorage.getItem(task) !== null) {
-                        document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
-                    }
-                }
-            }
+        function reply_click(clicked_id)
+        {
+            alert(clicked_id);
         }
-
-            function remove(id) {
-                const task = "task" + id;
-                const show_input = "show_input" + id
-                sessionStorage.removeItem(task)
-                document.getElementById(show_input).innerHTML = null;
-            }
 
         function myFunction() {    //Code for logic gate
             const x = document.getElementById("firstcondition")
@@ -233,12 +216,8 @@
             }
         }
 
-        function darkMode() {
-            changeColor('black');
-        }
-
         function changeColor(color) {
-            document.style.background = color;
+            document.body.style.background = color;
         }
 
         function STUDYTIME() {
@@ -252,4 +231,13 @@
 
 
     </script>
-    </body>
+    <div class="row justify-content-md-center" style="text-align: center; width: 100%">
+        <div class="col">
+            <a href="http://127.0.0.1:5000/binarytoplanner/" target="_blank" class="btn">Want to take a quick break from studying and talk to your friends in binary? Click here!</a>
+            <a href="http://127.0.0.1:5000/weatherapi2/" target="_blank" class="btn">What to wear..</a>
+        </div>
+    </div>
+<!--    <a class="btn btn-primary" href="http://127.0.0.1:5000/binarytoplanner/">Want to take a quick break from studying and talk to your friends in binary? Click here!</a>-->
+<!--    </div>-->
+<!--    <a class="btn btn-secondary" href="http://127.0.0.1:5000/weatherapi2/">What to wear...</a>-->
+<!--    </div>-->
