@@ -139,6 +139,9 @@ def binarytoplanner():
 def planner2():
     return render_template("planner2.html")
 
+@app.route('/workplanner/')
+def workplanner():
+    return render_template("workplanner.html")
 
 @app.route('/planner3/')
 def planner3():
