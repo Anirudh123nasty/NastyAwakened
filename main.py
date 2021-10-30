@@ -172,6 +172,10 @@ def planner3():
 def planner4():
     return render_template("planner4.html")
 
+@app.route('/dailyplanner/')
+def dailyplanner():
+    return render_template("dailyplanner.html")
+
 
 @app.route('/experiment/')
 def experiment():
