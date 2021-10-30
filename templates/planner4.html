@@ -173,7 +173,7 @@
             const list = document.createElement('list')
             list.innerHTML = "<li>" + TASK + "</li>"; // list
             document.getElementById(show_input).appendChild(list); // adding to list
-            sessionStorage.setItem(show_input, document.getElementById(show_input).innerText)
+            sessionStorage.setItem(show_input, document.getElementById(show_input).innerHTML)
 
             // whether or not checkbox is toggled, and uses color based on result
             let checked = document.getElementById("color").checked
@@ -203,14 +203,10 @@
                 const show_input = "show_input." + i;
                 if (typeof sessionStorage.getItem(task) !== null) {
                     let str = sessionStorage.getItem(show_input);
-                    let tasks = "'"+str+"'".split(" ");
-                    for (let i = 0, i < tasks.length; i++ ) {
-                        const list = document.createElement('list')
-                        list.innerHTML = "<li>" + TASK + "</li>";
-                        document.getElementById(show_input).appendChild(list);
-                    }
+                    // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
+                    document.getElementById(show_input).innerHTML = str;
+                    // alert(str.match(/.*?[\.\s]+?/g)) // nah bruh
                 }
-                // alert(str.match(/.*?[\.\s]+?/g))
             }
         }
 
@@ -219,10 +215,13 @@
             const task = "task." + id;
             const show_input = "show_input." + id;
             let cell = "cell." + id;
-            sessionStorage.removeItem(task)
+            // clearing web storage
+            sessionStorage.removeItem(task);
+            sessionStorage.removeItem(show_input);
+            // clearing cell text
             document.getElementById(show_input).innerHTML = null;
             if ( typeof document.getElementById(cell).style.backgroundColor !== null ) { // checking for color
-                document.getElementById(cell).style.backgroundColor = null
+                document.getElementById(cell).style.backgroundColor = null // removing color
             }
 
         }
@@ -257,3 +256,4 @@
 
     </script>
 </div>
+</body>
