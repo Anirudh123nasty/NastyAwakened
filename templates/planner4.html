@@ -92,6 +92,10 @@
             margin-left: -40px;
             list-style-position: inside;
         }
+        #top {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
     <title>Nighthawk Coding | Planner</title>
 </head>
@@ -99,11 +103,10 @@
 <body onload="check()">
 {% include "layouts/navbar.html" %}
 <div style="margin-left: 50px; margin-right: 50px">
-    <div style="text-align: right" >
+    <div id="top" style="text-align: right" >
+        <h1>PLANNER</h1>
         <p style="font-family: 'Courier New';">{{mytime['LocalTime_Now']}} // {{myweather['main']['temp']}}°F</p>
     </div>
-
-    <h1>PLANNER</h1>
     <p>This is the project's <i>WEEKLY</i> schedule - <b>a daily planner structured on a weekly basis.</b></p>
 
     <a href="http://127.0.0.1:5000/planner3/" class="btn">Monthly Calendar</a>
@@ -202,9 +205,8 @@
                 const task = "task." + i;
                 const show_input = "show_input." + i;
                 if (typeof sessionStorage.getItem(task) !== null) {
-                    let str = sessionStorage.getItem(show_input);
                     // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
-                    document.getElementById(show_input).innerHTML = str;
+                    document.getElementById(show_input).innerHTML = sessionStorage.getItem(show_input);
                     // alert(str.match(/.*?[\.\s]+?/g)) // nah bruh
                 }
             }
