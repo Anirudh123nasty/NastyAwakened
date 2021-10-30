@@ -146,12 +146,14 @@
 
     <script>
         // converting string (task input) to hex
-        function conversion(id) {
-            const task = "task." + id;
-            // const show_input = "show_input." + id;
-            sessionStorage.setItem(task, document.getElementById(task).value);
-            let text = sessionStorage.getItem(task);
-            let short = text.slice(0,4) // slices long strings to just 4 characters
+        function conversion(i) {
+            const task = "task." + i;
+            const show_input = "show_input." + i;
+            const tasks_text = show_input + ".text"
+            // sessionStorage.setItem(task, document.getElementById(task).value);
+            sessionStorage.setItem(tasks_text, document.getElementById(show_input).innerText)
+            let text = sessionStorage.getItem(tasks_text);
+            let short = text.slice(-4) // takes last 4 characters of the task list
             let arr1 = [];
             for (let n = 0, l = short.length; n < l; n ++)
             {
@@ -161,29 +163,36 @@
             return "#" + arr1.join('')
         }
 
-        function colorChange(id) {
-            let cell = "cell." + id;
-            document.getElementById(cell).style.backgroundColor = conversion(id); // changes cell background color to the hex from conversion()
+        function colorChange(i) {
+            let cell = "cell." + i;
+            let cellColor = cell + "." + "color";
+            sessionStorage.setItem(cellColor, conversion(i));
+            document.getElementById(cell).style.backgroundColor = sessionStorage.getItem(cellColor); // changes cell background color to the hex from conversion()
         }
 
         // displaying user input for their tasks
-        function display(id) {
-            let task = "task." + id;
+        function display(i) {
+            let task = "task." + i;
             // let task2 = "task." + id;
-            const show_input = "show_input." + id;
+            const show_input = "show_input." + i;
+            const cell = "cell." + i;
             sessionStorage.setItem(task, document.getElementById(task).value); // stores value in session
-            const TASK = sessionStorage.getItem(task) // a new variable for the list
-            const list = document.createElement('list')
+            const TASK = sessionStorage.getItem(task); // a new variable for the list
+            const list = document.createElement('list');
             list.innerHTML = "<li>" + TASK + "</li>"; // list
             document.getElementById(show_input).appendChild(list); // adding to list
             sessionStorage.setItem(show_input, document.getElementById(show_input).innerHTML)
 
             // whether or not checkbox is toggled, and uses color based on result
-            let checked = document.getElementById("color").checked
+            let checked = document.getElementById("color").checked;
             if ( checked ) {
-                colorChange(id)
+                colorChange(i);
+                sessionStorage.setItem("checkbox", "true");
+            } else {
+                document.getElementById(cell).style.backgroundColor = null;
+                sessionStorage.setItem("checkbox", "false");
             }
-            document.getElementById(task).value = null // clears input box, QOL update
+            document.getElementById(task).value = null; // clears input box, QOL update
         }
 
         // enter key
@@ -204,19 +213,29 @@
             for (let i = 1; i < 8; i++) {
                 const task = "task." + i;
                 const show_input = "show_input." + i;
+                const cell = "cell." + i;
                 if (typeof sessionStorage.getItem(task) !== null) {
                     // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
                     document.getElementById(show_input).innerHTML = sessionStorage.getItem(show_input);
                     // alert(str.match(/.*?[\.\s]+?/g)) // nah bruh
                 }
+                // let cellColor = cell + "." + "color";
+                // if ( typeof sessionStorage.getItem(cellColor) !== "#" ) {
+                //     colorChange(i)
+                // }
+                // let checked = document.getElementById("color").checked
+                if (sessionStorage.getItem("checkbox")) {
+                    document.getElementById("color").checked = true
+                    colorChange(i)
+                }
             }
         }
 
         // clears task list and web storage
-        function remove(id) {
-            const task = "task." + id;
-            const show_input = "show_input." + id;
-            let cell = "cell." + id;
+        function remove(i) {
+            const task = "task." + i;
+            const show_input = "show_input." + i;
+            let cell = "cell." + i;
             // clearing web storage
             sessionStorage.removeItem(task);
             sessionStorage.removeItem(show_input);
