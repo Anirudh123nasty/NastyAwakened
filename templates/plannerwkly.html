@@ -105,6 +105,7 @@
 <div style="margin-left: 50px; margin-right: 50px">
     <div id="top" style="text-align: right" >
         <h1>PLANNER</h1>
+        <p style="font-family: 'Courier New';">{{mytime['LocalTime_Now']}} // {{myweather['main']['temp']}}°F</p>
     </div>
     <p>This is the project's <i>WEEKLY</i> schedule - <b>a daily planner structured on a weekly basis.</b></p>
 
@@ -146,7 +147,6 @@
     <script>
         // converting string (task input) to hex
         function conversion(i) {
-            const task = "task." + i;
             const show_input = "show_input." + i;
             const tasks_text = show_input + ".text"
             // sessionStorage.setItem(task, document.getElementById(task).value);
@@ -213,8 +213,7 @@
         function check() {
             for (let i = 1; i < 8; i++) {
                 const task = "task." + i;
-                const show_input = "show_input." + i;
-                const cell = "cell." + i;
+                const show_input = "show_input." + i;;
                 if (typeof sessionStorage.getItem(task) !== null) {
                     // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
                     document.getElementById(show_input).innerHTML = sessionStorage.getItem(show_input);
@@ -226,8 +225,8 @@
                 // }
                 // let checked = document.getElementById("color").checked
                 if (sessionStorage.getItem("checkbox")) {
-                    document.getElementById("color").checked = true
-                    colorChange(i)
+                    document.getElementById("color").checked = true;
+                    colorChange(i);
                 }
             }
         }

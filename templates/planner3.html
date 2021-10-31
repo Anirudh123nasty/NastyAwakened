@@ -147,19 +147,19 @@
                 <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">
             </td>
             <td> <input type="button" onclick="myFunction()" class="btn btn-outline-info" value="Done"></td>
-             <td><span id="onlyrow"></span> </td>
+            <td><span id="onlyrow"></span> </td>
         </tr>
     </table>
-<!--    <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">-->
-<!--    </p>-->
+    <!--    <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">-->
+    <!--    </p>-->
     <button onclick="toggleEverything()">Toggle dark mode</button>
 
     <button onclick = "RANDOMCOLOR()"class="btn btn-outline-secondary">
         Test's Over? Have some fun!
     </button>
 
-<!--<p id = "RETURNTOFUN" style ="color:white; font-size: 20px; font-weight: bold;">-->
-<!--</p>-->
+    <!--<p id = "RETURNTOFUN" style ="color:white; font-size: 20px; font-weight: bold;">-->
+    <!--</p>-->
     <div class="row" style="text-align: center; width: 100%">
         <div class="col">
             <a href="http://127.0.0.1:5000/binarytoplanner/" target="_blank" class="btn btn-secondary">
@@ -223,11 +223,11 @@
             changeColor(color);
         }
         function keep() {
-        // for (let j = 0; j < 5; j++) {
-        //     for (let i = 1; i < 8; i++) {
-        //         task = "task" + j;
-        //         task = task + i;
-        //         const show_input = "show_input" + j;
+            // for (let j = 0; j < 5; j++) {
+            //     for (let i = 1; i < 8; i++) {
+            //         task = "task" + j;
+            //         task = task + i;
+            //         const show_input = "show_input" + j;
             alert(sessionStorage.getItem(task));
             if (typeof sessionStorage.getItem(task) != null) {
                 document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
@@ -255,3 +255,4 @@
         }
 
     </script>
+</div>
