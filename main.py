@@ -182,6 +182,7 @@ def plannerwkly():
         'x-rapidapi-host': "geocodeapi.p.rapidapi.com",
         'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
     }
+
     response = requests.request("GET", url, headers=headers, params=querystring)
 
     print(response.text)
@@ -191,18 +192,19 @@ def plannerwkly():
     #weather
     url = "https://community-open-weather-map.p.rapidapi.com/weather"
 
-    querystring = {"q":"San Diego","lat":"0","lon":"0","id":"2172797","lang":"null","units":"imperial","mode":"json"}
+    querystring = {"id":"2172797","lang":"null","units":"imperial","mode":"json"}
 
     headers = {
         'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
         'x-rapidapi-key': "e2d0d1a7efmsh5668be741c711ffp1a3e44jsnfc9e0a91c2b2"
     }
+
     weather = requests.request("GET", url, headers=headers, params=querystring)
 
     print(weather.text)
     weatherdict = json.loads(weather.text)
     print(weatherdict)
-    return render_template("plannerwkly.html", mytime=mydict, myweather=weatherdict)
+    return render_template("plannerwkly.html", mytime=mydict, myweather=weatherdict )
 
 @app.route('/dailyplanner/')
 def dailyplanner():

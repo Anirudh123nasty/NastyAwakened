@@ -198,13 +198,13 @@
                 const task = "task." + i;
                 const show_input = "show_input." + i;
                 if (typeof sessionStorage.getItem(task) !== null) {
-                    let str = sessionStorage.getItem(show_input);
-                    let tasks = "'"+str+"'".split(" ");
-                    for (let i = 0, i < tasks.length; i++ ) {
-                        const list = document.createElement('list')
-                        list.innerHTML = "<li>" + TASK + "</li>";
-                        document.getElementById(show_input).appendChild(list);
-                    }
+                    // let str = sessionStorage.getItem(show_input);
+                    // let tasks = "'"+str+"'".split(" ");
+                    // // for (let i = 0, i < tasks.length; i++ ) {
+                    // //     const list = document.createElement('list')
+                    // //     list.innerHTML = "<li>" + TASK + "</li>";
+                    // //     document.getElementById(show_input).appendChild(list);
+                    // // }
                 }
                 // alert(str.match(/.*?[\.\s]+?/g))
             }
@@ -252,4 +252,4 @@
         }
 
     </script>
-</div>
+</body>
