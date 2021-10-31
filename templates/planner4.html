@@ -34,6 +34,7 @@
         table {
             width: auto;
             margin-top: 20px;
+            text-align: center;
             /*column-rule: 4px dotted rgb(79, 185, 227);*/
         }
         th, td{
@@ -45,6 +46,20 @@
         button {
             margin-top: 5px;
             font-family: Raleway;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: #3D3D3D;
+            background: #fff;
+            border: 1px solid white;
+            box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            transition-deration: 0.4s;
+        }
+        button:hover {
+            background-color: floralwhite;
+            border: 1px solid black;
         }
         label {
             font-family: Raleway;
@@ -53,7 +68,7 @@
             border: 2px solid black;
         }
         iframe {
-             border: 0px;
+            border: 0px;
         }
         input.checkbox {
             width: 15px;
@@ -62,6 +77,24 @@
         }
         input.text {
             font-family: Raleway;
+            border: 0;
+        }
+        input::placeholder {
+            color: gray;
+            padding-left: 10px;
+            font-size: small;
+            font-family: Raleway;
+        }
+        /*li {*/
+        /*    text-align: left;*/
+        /*}*/
+        ol {
+            margin-left: -40px;
+            list-style-position: inside;
+        }
+        #top {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
     <title>Nighthawk Coding | Planner</title>
@@ -70,7 +103,9 @@
 <body onload="check()">
 {% include "layouts/navbar.html" %}
 <div style="margin-left: 50px; margin-right: 50px">
-    <h1>PLANNER</h1>
+    <div id="top" style="text-align: right" >
+        <h1>PLANNER</h1>
+    </div>
     <p>This is the project's <i>WEEKLY</i> schedule - <b>a daily planner structured on a weekly basis.</b></p>
 
     <a href="http://127.0.0.1:5000/planner3/" class="btn">Monthly Calendar</a>
@@ -78,7 +113,7 @@
     <input type="checkbox" class="checkbox" id="color" onclick="display(id)">
     <label for="color">Use Colors?</label>
 
-    <table style="text-align: center">
+    <table>
         <tr>    <!-- tr is the table row and center aligns them  -->
             <th>Sunday</th>      <!-- The days and aligning in the center th is the table header  -->
             <th>Monday</th>
@@ -90,12 +125,13 @@
         </tr>
         <tr>
             {% for i in range(1, 8) %}
-            <td id="cell{{i}}">
-                <p id="show_input{{i}}"></p>
-                <input type="text" class="text" id="task{{i}}">
-                <button onclick="display('{{i}}')">Add Task</button>
+            <td id="cell.{{i}}">
+                <ol id="show_input.{{i}}">
+                </ol>
+                <input placeholder="Task" type="text" class="text" id="task.{{i}}">
+                <button class="task" id="add_task.{{i}}" onclick="display('{{i}}')">Add Task</button>
                 <br>
-                <button onclick="remove('{{i}}')">Clear Task</button>
+                <button class="task" onclick="remove('{{i}}')">Clear Task(s)</button>
             </td>
             {% endfor %}
         </tr>
@@ -108,61 +144,108 @@
     <iframe id="songs" src="about:blank" width="100%" height="280" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
     <script>
-        function colorChange(id) {
-            let cell = "cell" + id;
-            document.getElementById(cell).style.backgroundColor = conversion(id);
-        }
-
-        // converting string to hex
-        function conversion(id) {
-            const task = "task" + id;
-            sessionStorage.setItem(task, document.getElementById(task).value);
-            let text = sessionStorage.getItem(task);
-            let short = text.slice(0,4) // slices long strings to just 4 characters
+        // converting string (task input) to hex
+        function conversion(i) {
+            const task = "task." + i;
+            const show_input = "show_input." + i;
+            const tasks_text = show_input + ".text"
+            // sessionStorage.setItem(task, document.getElementById(task).value);
+            sessionStorage.setItem(tasks_text, document.getElementById(show_input).innerText)
+            let text = sessionStorage.getItem(tasks_text);
+            let short = text.slice(-4) // takes last 4 characters of the task list
             let arr1 = [];
             for (let n = 0, l = short.length; n < l; n ++)
             {
-                let hex = Number(short.charCodeAt(n)).toString(16);
+                let hex = Number(short.charCodeAt(n)).toString(16); // algorithm from stack overflow, thanks
                 arr1.push(hex);
             }
             return "#" + arr1.join('')
         }
 
-        // changes cell background color to the hex from conversion()
-
-
-        // displaying user input for their tasks
-        function display(id) {
-            const task = "task" + id;
-            const show_input = "show_input" + id
-            // trying to figure out web storage
-            sessionStorage.setItem(task, document.getElementById(task).value);
-            document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
-            // whether or not checkbox is toggled, and uses color based on result
-            let checked = document.getElementById("color").checked
-            if ( checked ) {
-                colorChange(id)
-            }
+        function colorChange(i) {
+            let cell = "cell." + i;
+            let cellColor = cell + "." + "color";
+            sessionStorage.setItem(cellColor, conversion(i));
+            document.getElementById(cell).style.backgroundColor = sessionStorage.getItem(cellColor); // changes cell background color to the hex from conversion()
         }
 
+
+                // displaying user input for their tasks
+        function display(i) {
+            let task = "task." + i;
+            // let task2 = "task." + id;
+            const show_input = "show_input." + i;
+            const cell = "cell." + i;
+            sessionStorage.setItem(task, document.getElementById(task).value); // stores value in session
+            const TASK = sessionStorage.getItem(task); // a new variable for the list
+            const list = document.createElement('list');
+            list.innerHTML = "<li>" + TASK + "</li>"; // list
+            document.getElementById(show_input).appendChild(list); // adding to list
+            sessionStorage.setItem(show_input, document.getElementById(show_input).innerHTML)
+
+            // whether or not checkbox is toggled, and uses color based on result
+
+            let checked = document.getElementById("color").checked;
+            if ( checked ) {
+                colorChange(i);
+                sessionStorage.setItem("checkbox", "true");
+            } else {
+                document.getElementById(cell).style.backgroundColor = null;
+                sessionStorage.setItem("checkbox", "false");
+            }
+            document.getElementById(task).value = null; // clears input box, QOL update
+        }
+
+        // enter key
+        for (let i = 1; i < 8; i++) {
+            const task = "task." + i;
+            const button = "add_task." + i;
+            document.getElementById(task)
+                .addEventListener("keyup", function (event) {
+                    event.preventDefault();
+                    if (event.keyCode === 13) { // maybe it's deprecated, but it works
+                        document.getElementById(button).click(); // button runs the display() code
+                    }
+                });
+        }
+
+        // checks stored web memory for tasks from a prev. session
         function check() {
             for (let i = 1; i < 8; i++) {
-                const task = "task" + i;
-                const show_input = "show_input" + i
+                const task = "task." + i;
+                const show_input = "show_input." + i;
+                const cell = "cell." + i;
                 if (typeof sessionStorage.getItem(task) !== null) {
-                    document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
+                    // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
+                    document.getElementById(show_input).innerHTML = sessionStorage.getItem(show_input);
+                    // alert(str.match(/.*?[\.\s]+?/g)) // nah bruh
+                }
+                // let cellColor = cell + "." + "color";
+                // if ( typeof sessionStorage.getItem(cellColor) !== "#" ) {
+                //     colorChange(i)
+                // }
+                // let checked = document.getElementById("color").checked
+                if (sessionStorage.getItem("checkbox")) {
+                    document.getElementById("color").checked = true
+                    colorChange(i)
                 }
             }
-            // if ( sessionStorage.color === true ) {
-            //     colorChange(id);
-            // }
         }
 
-        function remove(id) {
-            const task = "task" + id;
-            const show_input = "show_input" + id
-            sessionStorage.removeItem(task)
+        // clears task list and web storage
+        function remove(i) {
+            const task = "task." + i;
+            const show_input = "show_input." + i;
+            let cell = "cell." + i;
+            // clearing web storage
+            sessionStorage.removeItem(task);
+            sessionStorage.removeItem(show_input);
+            // clearing cell text
             document.getElementById(show_input).innerHTML = null;
+            if ( typeof document.getElementById(cell).style.backgroundColor !== null ) { // checking for color
+                document.getElementById(cell).style.backgroundColor = null // removing color
+            }
+
         }
 
         // all personal playlists (from Michael), can add more public one's in the future
@@ -195,3 +278,4 @@
 
     </script>
 </div>
+</body>
