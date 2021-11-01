@@ -143,8 +143,8 @@ def planner2():
 def workplanner():
     return render_template("plannerwork.html")
 
-@app.route('/monthlyplanner/')
-def monthlyplanner():
+@app.route('/plannermnthly/')
+def plannermnthly():
     url = "https://geocodeapi.p.rapidapi.com/GetTimezone"
 
     querystring = {"latitude":"32.715736","longitude":"-117.161087"}
@@ -159,7 +159,7 @@ def monthlyplanner():
     print(response.text)
     mydict = json.loads(response.text)
     print(mydict)
-    return render_template("monthlyplanner.html", mytime=mydict)
+    return render_template("plannermnthly.html", mytime=mydict)
 
     path = Path(app.root_path) / "static" / "assets" / "plannerimages"
     storage = planner_image_data(path) # calling from image.py and labeling as storage
@@ -168,7 +168,7 @@ def monthlyplanner():
     for img in storage:
         colorList.append(img['base64'])
         grayList.append(img['base64_GRAY'])
-    return render_template("monthlyplanner.html", eventimages=storage, colored=colorList, grayed=grayList ) # labeling eventimages as storage to get images
+    return render_template("plannermnthly.html", eventimages=storage, colored=colorList, grayed=grayList ) # labeling eventimages as storage to get images
 
 
 @app.route('/plannerwkly/')

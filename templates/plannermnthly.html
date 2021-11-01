@@ -33,10 +33,20 @@
             color: #b3b3b3;
             border: 3px white;
         }
-        .button {
-            background-color: #35363a;
-            color: #b3b3b3;
-            border: 3px white;
+
+        button {
+            margin-top: 5px;
+            font-family: Raleway;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: #3D3D3D;
+            background: #fff;
+            border: 1px solid black;
+            box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            transition-deration: 0.4s;
         }
         h1 {
             font-family: Forum;
@@ -64,7 +74,7 @@
     <title>Nighthawk Coding | Planner</title>
 </head>
 
-<body>
+<body onload="keep()">
 {% include "layouts/navbar.html" %}
 
 <div style="margin-left: 50px; margin-right: 50px">
@@ -74,10 +84,10 @@
     </div>
 
     <h1>PLANNER</h1>
-    <p>This will be where we will build the month version - <b>a daily planner with alarms for tests, homework, etc.</b></p>
+    <p>This will be where we will build the month version - <b>Put your main events, deadlines, and important events here.</b></p>
 
     <!-- button that leads to the repo, can style the button in css above -->
-    <a href="http://127.0.0.1:5000/planner4" class="btn">Weekly Schedule</a>
+    <a href="http://127.0.0.1:5000/plannerwkly" class="btn">Weekly Schedule</a>
 
     <table>
 
@@ -108,10 +118,7 @@
             </label>
                 <button  onclick="display('{{j}}{{i}}')">Add Info</button>
                 <h6>Are You Done?</h6>
-                <form>
-                    <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
-                    <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
-                </form></td>
+                <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
             {% endif %}
 
@@ -125,10 +132,7 @@
             </label>
                 <button  onclick="display('{{j}}{{i}}')">Add Info</button>
                 <h6>Are You Done?</h6>
-                <form>
-                    <button id="Great work!" onClick="reply_click(this.id)">Yes!</button>
-                    <button id="Don't worry, keep working on it!" onClick="reply_click(this.id)">No...</button>
-                </form></td>
+            <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
             {% endif %}
         </tr>
@@ -152,7 +156,7 @@
     </table>
     <!--    <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">-->
     <!--    </p>-->
-    <button onclick="toggleEverything()">Toggle dark mode</button>
+    <button onclick="toggleMode()">Toggle dark mode</button>
 
     <button onclick = "RANDOMCOLOR()"class="btn btn-outline-secondary">
         Test's Over? Have some fun!
@@ -176,9 +180,23 @@
         function display(id){
             const task = "task" + id;
             const show_input = "show_input" + id;
-            alert("Adding " + document.getElementById(task).value);
-            sessionStorage.setItem(task, document.getElementById(task).value);
-            document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
+            alert("Adding " + document.getElementById(task).value + " to Row and Column " + id);
+            localStorage.setItem(task, document.getElementById(task).value);
+            document.getElementById(show_input).innerHTML = localStorage.getItem(task);
+        }
+
+        function keep() {
+            for (let j = 0; j < 5; j++) {
+                for (let i = 1; i < 8; i++) {
+                    task = "task" + j;
+                    task = task + i;
+                    show_input = "show_input" + j;
+                    show_input = show_input + i;
+                    if (typeof localStorage.getItem(task) != null) {
+                        document.getElementById(show_input).innerHTML = localStorage.getItem(task);
+                    }
+                }
+            }
         }
 
         function reply_click(clicked_id)
@@ -222,36 +240,20 @@
             let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
             changeColor(color);
         }
-        function keep() {
-            // for (let j = 0; j < 5; j++) {
-            //     for (let i = 1; i < 8; i++) {
-            //         task = "task" + j;
-            //         task = task + i;
-            //         const show_input = "show_input" + j;
-            alert(sessionStorage.getItem(task));
-            if (typeof sessionStorage.getItem(task) != null) {
-                document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
-            }
 
-
-        }
         function remove(id) {
             const task = "task" + id;
-            const show_input = "show_input" + id
-            sessionStorage.removeItem(task)
+            const show_input = "show_input" + id;
+            // clearing web storage
+            localStorage.removeItem(task);
+            localStorage.removeItem(show_input);
+            // clearing cell text
             document.getElementById(show_input).innerHTML = null;
-        }
-        function toggleMode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-        }
-        function toggleButt() {
-            var element = document.body;
-            element.classList.toggle("button");
-        }
-        function toggleEverything() {
-            toggleMode();
-            toggleButt();
+            }
+
+            function toggleMode() {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
         }
 
     </script>
