@@ -168,9 +168,9 @@
         function conversion(i) {
             const show_input = "show_input." + i;
             const tasks_text = show_input + ".text"
-            // sessionStorage.setItem(task, document.getElementById(task).value);
-            sessionStorage.setItem(tasks_text, document.getElementById(show_input).innerText)
-            let text = sessionStorage.getItem(tasks_text);
+            // localStorage.setItem(task, document.getElementById(task).value);
+            localStorage.setItem(tasks_text, document.getElementById(show_input).innerText)
+            let text = localStorage.getItem(tasks_text);
             let short = text.slice(-4) // takes last 4 characters of the task list
             let arr1 = [];
             for (let n = 0, l = short.length; n < l; n ++)
@@ -184,8 +184,8 @@
         function colorChange(i) {
             let cell = "cell." + i;
             let cellColor = cell + "." + "color";
-            sessionStorage.setItem(cellColor, conversion(i));
-            document.getElementById(cell).style.backgroundColor = sessionStorage.getItem(cellColor); // changes cell background color to the hex from conversion()
+            localStorage.setItem(cellColor, conversion(i));
+            document.getElementById(cell).style.backgroundColor = localStorage.getItem(cellColor); // changes cell background color to the hex from conversion()
         }
 
 
@@ -195,22 +195,22 @@
             // let task2 = "task." + id;
             const show_input = "show_input." + i;
             const cell = "cell." + i;
-            sessionStorage.setItem(task, document.getElementById(task).value); // stores value in session
-            const TASK = sessionStorage.getItem(task); // a new variable for the list
+            localStorage.setItem(task, document.getElementById(task).value); // stores value in session
+            const TASK = localStorage.getItem(task); // a new variable for the list
             const list = document.createElement('list');
             list.innerHTML = "<li>" + TASK + "</li>"; // list
             document.getElementById(show_input).appendChild(list); // adding to list
-            sessionStorage.setItem(show_input, document.getElementById(show_input).innerHTML)
+            localStorage.setItem(show_input, document.getElementById(show_input).innerHTML)
 
             // whether or not checkbox is toggled, and uses color based on result
 
             let checked = document.getElementById("color").checked;
             if ( checked ) {
                 colorChange(i);
-                sessionStorage.setItem("checkbox", "true");
+                localStorage.setItem("checkbox", "true");
             } else {
                 document.getElementById(cell).style.backgroundColor = null;
-                sessionStorage.setItem("checkbox", "false");
+                localStorage.setItem("checkbox", "false");
             }
             document.getElementById(task).value = null; // clears input box, QOL update
         }
@@ -233,17 +233,17 @@
             for (let i = 1; i < 8; i++) {
                 const task = "task." + i;
                 const show_input = "show_input." + i;;
-                if (typeof sessionStorage.getItem(task) !== null) {
+                if (typeof localStorage.getItem(task) !== null) {
                     // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
-                    document.getElementById(show_input).innerHTML = sessionStorage.getItem(show_input);
+                    document.getElementById(show_input).innerHTML = localStorage.getItem(show_input);
                     // alert(str.match(/.*?[\.\s]+?/g)) // nah bruh
                 }
                 // let cellColor = cell + "." + "color";
-                // if ( typeof sessionStorage.getItem(cellColor) !== "#" ) {
+                // if ( typeof localStorage.getItem(cellColor) !== "#" ) {
                 //     colorChange(i)
                 // }
                 // let checked = document.getElementById("color").checked
-                if (sessionStorage.getItem("checkbox")) {
+                if (localStorage.getItem("checkbox")) {
                     document.getElementById("color").checked = true;
                     colorChange(i);
                 }
@@ -256,8 +256,8 @@
             const show_input = "show_input." + i;
             let cell = "cell." + i;
             // clearing web storage
-            sessionStorage.removeItem(task);
-            sessionStorage.removeItem(show_input);
+            localStorage.removeItem(task);
+            localStorage.removeItem(show_input);
             // clearing cell text
             document.getElementById(show_input).innerHTML = null;
             if ( typeof document.getElementById(cell).style.backgroundColor !== null ) { // checking for color

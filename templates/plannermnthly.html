@@ -33,7 +33,20 @@
             color: #b3b3b3;
             border: 3px white;
         }
-
+        button.task {
+            margin-top: 5px;
+            font-family: Raleway;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: #3D3D3D;
+            background: #fff;
+            border: 1px solid white;
+            box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            transition-deration: 0.4s;
+        }
         button {
             margin-top: 5px;
             font-family: Raleway;
@@ -58,13 +71,24 @@
             width: fit-content;
             overflow-wrap: anywhere;
             font-family: Raleway;
-
-
+            text-align: center;
         }
         th, td{
             border: 3px solid black;
             column-rule: 4px dotted rgb(79, 185, 227);
+            padding: 10px;
+        }
 
+        input.text {
+            font-family: Raleway;
+            border: 0;
+        }
+
+        input::placeholder {
+            color: gray;
+            padding-left: 10px;
+            font-size: small;
+            font-family: Raleway;
         }
         .btn{
             border: 2px solid black;
@@ -112,10 +136,11 @@
             {% if j < 4 %}
             {% for i in range(1,8) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
             <td>
-                <p> {{j*7+i}} </p>
+                <p style="text-align: left"> {{j*7+i}} </p>
                 <p id="show_input{{j}}{{i}}"></p>
-                <input id="task{{j}}{{i}}" type="text">
-                <button  id="add-task('{{j}}{{i}}')" onclick="display('{{j}}{{i}}')">Add Info</button>
+                <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">
+                <button  class="task" id="add-task('{{j}}{{i}}')" onclick="display('{{j}}{{i}}')">Add Info</button>
+                <br>
                 <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
             {% endif %}
@@ -123,14 +148,12 @@
             {% if j == 4 %} <!-- jinja if statement; prints certain number of cells depending on which row -->
             {% for i in range(1,4) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
             <td>
-                <p> {{j*7+i}} </p>
+                <p style="text-align: left"> {{j*7+i}} </p>
                 <p id="show_input{{j}}{{i}}"></p>
-                Plan: <label>
-                <input id="task{{j}}{{i}}" type="text">
-            </label>
-                <button  onclick="display('{{j}}{{i}}')">Add Info</button>
-                <h6>Are You Done?</h6>
-            <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
+                <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">
+                <button  class="task" onclick="display('{{j}}{{i}}')">Add Info</button>
+                <br>
+                <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
             {% endif %}
         </tr>
@@ -156,22 +179,10 @@
     <!--    </p>-->
     <button onclick="toggleMode()">Toggle dark mode</button>
 
-    <button onclick = "RANDOMCOLOR()"class="btn btn-outline-secondary">
+    <button onclick = "RANDOMCOLOR()">
         Test's Over? Have some fun!
     </button>
 
-    <!--<p id = "RETURNTOFUN" style ="color:white; font-size: 20px; font-weight: bold;">-->
-    <!--</p>-->
-    <div class="row" style="text-align: center; width: 100%">
-        <div class="col">
-            <a href="http://127.0.0.1:5000/binarytoplanner/" target="_blank" class="btn btn-secondary">
-                Want to take a quick break from studying and talk to your friends in binary? Click here!
-            </a>
-            <a href="http://127.0.0.1:5000/weatherapi2/" target="_blank" class="btn btn-secondary">
-                What to wear...
-            </a>
-        </div>
-    </div>
     <script>
 
 
