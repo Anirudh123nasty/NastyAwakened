@@ -139,12 +139,12 @@ def binarytoplanner():
 def planner2():
     return render_template("planner2.html")
 
-@app.route('/workplanner/')
+@app.route('/plannerwork/')
 def workplanner():
-    return render_template("workplanner.html")
+    return render_template("plannerwork.html")
 
-@app.route('/planner3/')
-def planner3():
+@app.route('/plannermnthly/')
+def plannermnthly():
     url = "https://geocodeapi.p.rapidapi.com/GetTimezone"
 
     querystring = {"latitude":"32.715736","longitude":"-117.161087"}
@@ -159,7 +159,7 @@ def planner3():
     print(response.text)
     mydict = json.loads(response.text)
     print(mydict)
-    return render_template("planner3.html", mytime=mydict)
+    return render_template("plannermnthly.html", mytime=mydict)
 
     path = Path(app.root_path) / "static" / "assets" / "plannerimages"
     storage = planner_image_data(path) # calling from image.py and labeling as storage
@@ -168,12 +168,43 @@ def planner3():
     for img in storage:
         colorList.append(img['base64'])
         grayList.append(img['base64_GRAY'])
-    return render_template("planner3.html", eventimages=storage, colored=colorList, grayed=grayList ) # labeling eventimages as storage to get images
+    return render_template("plannermnthly.html", eventimages=storage, colored=colorList, grayed=grayList ) # labeling eventimages as storage to get images
 
 
-@app.route('/planner4/')
-def planner4():
-    return render_template("planner4.html")
+@app.route('/plannerwkly/')
+def plannerwkly():
+    # time
+    url = "https://geocodeapi.p.rapidapi.com/GetTimezone"
+
+    querystring = {"latitude":"32.715736","longitude":"-117.161087"}
+
+    headers = {
+        'x-rapidapi-host': "geocodeapi.p.rapidapi.com",
+        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    mydict = json.loads(response.text)
+    print(mydict)
+
+    #weather
+    url = "https://community-open-weather-map.p.rapidapi.com/weather"
+
+    querystring = {"id":"2172797","lang":"null","units":"imperial","mode":"json"}
+
+    headers = {
+        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+        'x-rapidapi-key': "e2d0d1a7efmsh5668be741c711ffp1a3e44jsnfc9e0a91c2b2"
+    }
+
+    weather = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(weather.text)
+    weatherdict = json.loads(weather.text)
+    print(weatherdict)
+    return render_template("plannerwkly.html", mytime=mydict, myweather=weatherdict )
 
 @app.route('/dailyplanner/')
 def dailyplanner():

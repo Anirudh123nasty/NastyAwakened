@@ -9,14 +9,18 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto">
             <li class="navbar-nav">
-                <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-               <!-- commenting out these lines for the moment-->
-                <!-- stub is shown using the name of the route -->
-                <!--<a class="nav-link" href={>{ url_for('index') }}>Portfolio -->
-                <a class="nav-link" href={{ url_for('planner3') }} >Planner</a>
-                <!-- <a class="nav-link" href={{ url_for('README') }}>README</a> -->
-                <a class="nav-link" href={{ url_for('nasty') }}>Nasty</a>
-            <li>
+                <a class="nav-link" href="http://127.0.0.1:5000/nasty">Nasty</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="planner" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Planner
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/plannermnthly">Monthly Planner</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/plannerwkly">Weekly Planner</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/plannerwork">Work Planner</a>
+                </div>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Minilab

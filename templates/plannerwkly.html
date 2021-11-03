@@ -21,9 +21,6 @@
         p {
             font-family: Raleway;
         }
-        a.btn {
-            font-family: Raleway;
-        }
         body {
             background-color: antiquewhite;
         }
@@ -37,13 +34,19 @@
             text-align: center;
             /*column-rule: 4px dotted rgb(79, 185, 227);*/
         }
+        .dark-mode {
+            background-color: #35363a;
+            color: #b3b3b3;
+
+        }
+
         th, td{
             font-family: Raleway;
             border: 3px solid black;
             column-rule: 4px dotted rgb(79, 185, 227);
             padding: 10px;
         }
-        button {
+        button.task {
             margin-top: 5px;
             font-family: Raleway;
             padding: 6px 14px;
@@ -61,11 +64,22 @@
             background-color: floralwhite;
             border: 1px solid black;
         }
+        button {
+            margin-top: 5px;
+            font-family: Raleway;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: #3D3D3D;
+            background: #fff;
+            border: 1px solid black;
+            box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            transition-deration: 0.4s;
+        }
         label {
             font-family: Raleway;
-        }
-        .btn {
-            border: 2px solid black;
         }
         iframe {
             border: 0px;
@@ -105,13 +119,15 @@
 <div style="margin-left: 50px; margin-right: 50px">
     <div id="top" style="text-align: right" >
         <h1>PLANNER</h1>
+        <p style="font-family: Courier New">{{mytime['LocalTime_Now']}} </p>
     </div>
     <p>This is the project's <i>WEEKLY</i> schedule - <b>a daily planner structured on a weekly basis.</b></p>
 
-    <a href="http://127.0.0.1:5000/planner3/" class="btn">Monthly Calendar</a>
-
+    <button onclick="location.href='http://127.0.0.1:5000/planner3/'" type="button">Monthly Calendar</button>
+    <button class="mode" onclick="toggleMode()">Toggle Dark Mode</button>
     <input type="checkbox" class="checkbox" id="color" onclick="display(id)">
     <label for="color">Use Colors?</label>
+
 
     <table>
         <tr>    <!-- tr is the table row and center aligns them  -->
@@ -139,14 +155,16 @@
 
     <br>
 
-    <a href="#" class="btn" onclick="music()" id="Music">Want to Listen to Music?</a>
-    <a href="#" class="btn" onclick="toggleMusic()" id="HideMusic">Toggle Show Music</a>
+
+    <button onclick="music()" id="Music">Want to Listen to Music?</button>
+    <button onclick="toggleMusic()" id="HideMusic">Toggle Show Music</button>
     <iframe id="songs" src="about:blank" width="100%" height="280" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+
 
     <script>
         // converting string (task input) to hex
         function conversion(i) {
-            const task = "task." + i;
             const show_input = "show_input." + i;
             const tasks_text = show_input + ".text"
             // sessionStorage.setItem(task, document.getElementById(task).value);
@@ -213,8 +231,7 @@
         function check() {
             for (let i = 1; i < 8; i++) {
                 const task = "task." + i;
-                const show_input = "show_input." + i;
-                const cell = "cell." + i;
+                const show_input = "show_input." + i;;
                 if (typeof sessionStorage.getItem(task) !== null) {
                     // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
                     document.getElementById(show_input).innerHTML = sessionStorage.getItem(show_input);
@@ -226,8 +243,8 @@
                 // }
                 // let checked = document.getElementById("color").checked
                 if (sessionStorage.getItem("checkbox")) {
-                    document.getElementById("color").checked = true
-                    colorChange(i)
+                    document.getElementById("color").checked = true;
+                    colorChange(i);
                 }
             }
         }
@@ -274,6 +291,10 @@
             } else {
                 x.style.display = 'none';
             }
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
         }
 
     </script>
