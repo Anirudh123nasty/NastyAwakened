@@ -206,9 +206,9 @@ def plannerwkly():
     print(weatherdict)
     return render_template("plannerwkly.html", mytime=mydict, myweather=weatherdict )
 
-@app.route('/dailyplanner/')
-def dailyplanner():
-    return render_template("dailyplanner.html")
+@app.route('/plannerdly/')
+def plannerdly():
+    return render_template("plannerdly.html")
 
 
 @app.route('/experiment/')

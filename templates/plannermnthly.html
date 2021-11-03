@@ -87,7 +87,8 @@
     <p>This will be where we will build the month version - <b>Put your main events, deadlines, and important events here.</b></p>
 
     <!-- button that leads to the repo, can style the button in css above -->
-    <a href="http://127.0.0.1:5000/plannerwkly" class="btn">Weekly Schedule</a>
+    <button onclick="location.href='http://127.0.0.1:5000/plannerwkly/'" type="button">Weekly Schedule</button>
+    <button onclick="location.href='http://127.0.0.1:5000/plannerdly/'" type="button">Daily Planner</button>
 
     <table>
 
@@ -113,11 +114,8 @@
             <td>
                 <p> {{j*7+i}} </p>
                 <p id="show_input{{j}}{{i}}"></p>
-                Plan: <label>
                 <input id="task{{j}}{{i}}" type="text">
-            </label>
-                <button  onclick="display('{{j}}{{i}}')">Add Info</button>
-                <h6>Are You Done?</h6>
+                <button  id="add-task('{{j}}{{i}}')" onclick="display('{{j}}{{i}}')">Add Info</button>
                 <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
             {% endif %}

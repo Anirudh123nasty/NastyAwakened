@@ -27,9 +27,13 @@
         body {
         background-color: antiquewhite;
         }
-        h1 {
-        font-family: Forum;
-        font-size: 90px;
+            /*h1 {*/
+            /*font-family: Forum;*/
+            /*font-size: 90px;*/
+            /*}*/
+        h2 {
+        font-family: 'Monoton';
+        font-size: 50px;
         }
         table {
 
@@ -91,7 +95,7 @@
         }
         button:hover {
             color: #333;
-            background: #000;
+            background: floralwhite;
         }
 
         .table {
@@ -105,6 +109,10 @@
             cursor: default;
         }
 
+        ol {
+            margin-left: -40px;
+            list-style-position: inside;
+        }
         </style>
         <title>Nighthawk Coding | Planner</title>
 </head>
@@ -115,7 +123,8 @@
     <h1>PLANNER</h1>
     <p>This is the project's <i>DAILY</i> schedule - <b>a daily planner.</b></p>
 
-    <a href="http://127.0.0.1:5000/planner3/" class="btn">Monthly Calendar</a>
+    <button onclick="location.href='http://127.0.0.1:5000/plannermnthly/'" type="button">Monthly Calendar</button>
+    <button onclick="location.href='http://127.0.0.1:5000/plannerwkly/'" type="button">Weekly Schedule</button>
 
 
 
@@ -140,12 +149,11 @@
 
     <br>
 
-<body>
 <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 
 <div class="table">
     <div class="cell">
-        <h1 id="clock" class="clock"></h1>
+        <h2 id="clock" class="clock"></h2>
 
         <select id="hours"></select>
         <select id="minutes"></select>
