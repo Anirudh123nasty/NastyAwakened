@@ -36,7 +36,7 @@
             width: 100%;
 
         margin-top: 20px;
-        /*column-rule: 4px dotted rgb(79, 185, 227);*/
+
         }
         th, td{
         font-family: Raleway;
@@ -59,7 +59,52 @@
         }
         input.text {
         font-family: Raleway;
+            height: 40px;
         }
+        html, body {
+            height: 100%;
+        }
+
+
+        body {
+            text-align: center;
+        }
+
+
+        h1 {
+            font-family: 'Monoton', sans-serif;
+            font-size: 4em;
+            color: #000;
+        }
+
+
+        button {
+            cursor: pointer;
+            margin: 0 5px;
+            padding: 10px 30px;
+            background: transparent;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: 0;
+            color: #000;
+            transition: all ease 300ms;
+        }
+        button:hover {
+            color: #333;
+            background: #000;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        .cell {
+            display: table-cell;
+            vertical-align: middle;
+            cursor: default;
+        }
+
         </style>
         <title>Nighthawk Coding | Planner</title>
 </head>
@@ -82,12 +127,12 @@
         </tr>
         <tr>
             {% for i in range(0, 2) %}
-            <td id="cell{{i}}">
-                <p id="show_input{{i}}"></p>
-                <input type="text" class="text" id="task{{i}}">
-                <button onclick="display('{{i}}')">Add Task</button>
-                <br>
-                <button onclick="remove('{{i}}')">Clear Task</button>
+            <td id="cell.{{i}}">
+                <ol id="show_input.{{i}}">
+                </ol>
+                <input placeholder="Task" type="text" class="text" id="task.{{i}}">
+                <button class="btn btn-outline-secondary" id="add_task.{{i}}" onclick="display('{{i}}')">Add Task</button>
+                <button class="btn btn-outline-secondary" onclick="remove('{{i}}')">Clear Task(s)</button>
             </td>
             {% endfor %}
         </tr>
@@ -95,46 +140,202 @@
 
     <br>
 
+<body>
+<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 
+<div class="table">
+    <div class="cell">
+        <h1 id="clock" class="clock"></h1>
+
+        <select id="hours"></select>
+        <select id="minutes"></select>
+        <select id="seconds"></select>
+        <select id="ampm">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+
+        <p>
+            <button id="startstop">Set Alarm</button>
+        </p>
+    </div>
+</div>
+<body/>
 
     <script>
 
+        // converting string (task input) to hex
+        function conversion(i) {
+            const task = "task." + i;
+            const show_input = "show_input." + i;
+            const tasks_text = show_input + ".text"
+            // sessionStorage.setItem(task, document.getElementById(task).value);
+            sessionStorage.setItem(tasks_text, document.getElementById(show_input).innerText)
+            let text = sessionStorage.getItem(tasks_text);
+            let short = text.slice(-4) // takes last 4 characters of the task list
+            let arr1 = [];
+            for (let n = 0, l = short.length; n < l; n ++)
+            {
+                let hex = Number(short.charCodeAt(n)).toString(16); // algorithm from stack overflow, thanks
+                arr1.push(hex);
+            }
+            return "#" + arr1.join('')
+        }
+
+        function colorChange(i) {
+            let cell = "cell." + i;
+            let cellColor = cell + "." + "color";
+            sessionStorage.setItem(cellColor, conversion(i));
+            document.getElementById(cell).style.backgroundColor = sessionStorage.getItem(cellColor); // changes cell background color to the hex from conversion()
+        }
 
 
+        // displaying user input for their tasks
+        function display(i) {
+            let task = "task." + i;
+            // let task2 = "task." + id;
+            const show_input = "show_input." + i;
+            const cell = "cell." + i;
+            sessionStorage.setItem(task, document.getElementById(task).value); // stores value in session
+            const TASK = sessionStorage.getItem(task); // a new variable for the list
+            const list = document.createElement('list');
+            list.innerHTML = "<li>" + TASK + "</li>"; // list
+            document.getElementById(show_input).appendChild(list); // adding to list
+            sessionStorage.setItem(show_input, document.getElementById(show_input).innerHTML)
 
-
-        function display(id) {
-            const task = "task" + id;
-            const show_input = "show_input" + id
-            // trying to figure out web storage
-            sessionStorage.setItem(task, document.getElementById(task).value);
-            document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
             // whether or not checkbox is toggled, and uses color based on result
 
-
-
+            let checked = document.getElementById("color").checked;
+            if ( checked ) {
+                colorChange(i);
+                sessionStorage.setItem("checkbox", "true");
+            } else {
+                document.getElementById(cell).style.backgroundColor = null;
+                sessionStorage.setItem("checkbox", "false");
+            }
+            document.getElementById(task).value = null; // clears input box, QOL update
         }
 
+        // enter key
+        for (let i = 0; i < 2; i++) {
+            const task = "task." + i;
+            const button = "add_task." + i;
+            document.getElementById(task)
+                .addEventListener("keyup", function (event) {
+                    event.preventDefault();
+                    if (event.keyCode === 13) { // maybe it's deprecated, but it works
+                        document.getElementById(button).click(); // button runs the display() code
+                    }
+                });
+        }
+
+        // checks stored web memory for tasks from a prev. sessionalar
         function check() {
             for (let i = 0; i < 2; i++) {
-                const task = "task" + i;
-                const show_input = "show_input" + i
+                const task = "task." + i;
+                const show_input = "show_input." + i;
+                const cell = "cell." + i;
                 if (typeof sessionStorage.getItem(task) !== null) {
-                    document.getElementById(show_input).innerHTML = sessionStorage.getItem(task);
+                    // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
+                    document.getElementById(show_input).innerHTML = sessionStorage.getItem(show_input);
+                    // alert(str.match(/.*?[\.\s]+?/g)) // nah bruh
+                }
+                // let cellColor = cell + "." + "color";
+                // if ( typeof sessionStorage.getItem(cellColor) !== "#" ) {
+                //     colorChange(i)
+                // }
+                // let checked = document.getElementById("color").checked
+                if (sessionStorage.getItem("checkbox")) {
+                    document.getElementById("color").checked = true
+                    colorChange(i)
                 }
             }
-         
         }
 
-        function remove(id) {
-            const task = "task" + id;
-            const show_input = "show_input" + id
-            sessionStorage.removeItem(task)
+        // clears task list and web storage
+        function remove(i) {
+            const task = "task." + i;
+            const show_input = "show_input." + i;
+            let cell = "cell." + i;
+            // clearing web storage
+            sessionStorage.removeItem(task);
+            sessionStorage.removeItem(show_input);
+            // clearing cell text
             document.getElementById(show_input).innerHTML = null;
+            if ( typeof document.getElementById(cell).style.backgroundColor !== null ) { // checking for color
+                document.getElementById(cell).style.backgroundColor = null // removing color
+            }
+
         }
 
+
+        var time, alarm, currentH, currentM,
+            activeAlarm = false,
+            sound = new Audio("https://freesound.org/data/previews/316/316847_4939433-lq.mp3");
+        //needed to repeat sound until stop button is clicked
+        sound.loop = true;
+
+        function displayTime() {
+            var now = new Date();
+            time = now.toLocaleTimeString();
+            clock.textContent = time;
+            if (time === alarm) {
+                sound.play();
+
+            }
+            setTimeout(displayTime, 1000);
+        }
+        displayTime();
+
+
+        function addMinSecVals(id) {
+            var select = id;
+            var min = 59;
+            //makes the drop down for minutes
+            for (i = 0; i <= min; i++) {
+                // the ? here is a Ternary Operator, returns a value if the condition is true and another value if it is false
+                select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i < 10 ? "0" + i : i);
+            }
+        }
+        function addHours(id) {
+            var select = id;
+            var hour = 12;
+            // makes the drop down for hours
+            for (i = 1; i <= hour; i++) {
+                select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
+            }
+        }
+        addMinSecVals(minutes);
+        addMinSecVals(seconds);
+        addHours(hours);
+
+
+        startstop.onclick = function() {
+
+            if (activeAlarm === false) {
+                hours.disabled = true;
+                minutes.disabled = true;
+                seconds.disabled = true;
+                ampm.disabled = true;
+
+                alarm = hours.value + ":" + minutes.value + ":" + seconds.value + " " + ampm.value;
+                this.textContent = "Clear Alarm";
+                activeAlarm = true;
+            } else {
+                hours.disabled = false;
+                minutes.disabled = false;
+                seconds.disabled = false;
+                ampm.disabled = false;
+
+                sound.pause();
+                alarm = "00:00:00 AM";
+                this.textContent = "Set Alarm";
+
+
+            }
+        };
 
 
     </script>
 </div>
-
+</body>
