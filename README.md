@@ -209,6 +209,7 @@
 | - | - |
 | `plannerwkly` - added list function  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/61a0d331e60bd5ffd903defe49327c9e84f9a4fb) | 
 | `plannermnthly` - added dark mode  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/6b347161f40441999cde3097b6fcff64faa13958) | 
+| `plannermnthly` - added 4 season buttons | [Commit](https://github.com/NastyEthan/NastyReturned/commit/07e3a7d66f64384cf15a6a453b1d14499811aa5c) | 
 | `plannerdly` - added alarm  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/e9e9cddf662ae51f1da7da0dfa89016d70ca2059) | 
 | All planners - CSS to make buttons match background | [Commit](https://github.com/NastyEthan/NastyReturned/commit/33df6c1cf4ee914dc2979f8adb3f8ad97a9ba346) | 
 | Poll - (On Slack) | [Link](https://cs-p-hq.slack.com/archives/C02BBM3CE95/p1636006468001700) | 
@@ -217,12 +218,11 @@
   
 * Planner (School, Work, Personal)
 
-We want to create a efficient and aesthetically nice planner that can be used for anything (School, Work, Personal). Typically, the reason we do not use planners are becauses they are hassle to set up and use, but we want to change that with our project. This is the purpose our of project.
+We want to create a efficient and aesthetically nice planner that can be used for anything (School, Work, Personal). Typically, the reason we do not use planners are becauses they are hassle to set up and use, but we want to change that with our project
 
-Some goals that make our project unique is our future plans to include different modes for different seasons and studying, alarms for tests or important events, inputs boxes to lists tasks every day, and maybe even  time slots and several buttons for flexibility.
-  
-Over the weeks, we started by implemented features like APIs, web storage, and simple alerts associated with buttons. A few major accomplishments were figuring out how to use indexes to get inputs to apply to every individual cell, and how to locally store inputs so they wouldn't leave when the page is refreshed.
-  
-Michael worked on lists and storage, Ethan worked on different modes and indexes, Anirudh worked on an alarm function, and James helped Ethan with various modes.
+Have dropdown for different classes, jobs, times, etc.
 
-Our project is quite simple to use, just enter events that you want to rememeber on the planner. If you want to contribute, please email Anirudh at anirudhrams123@gmail.com. If we feel like your ideas would add value to the project, we would be glad to add you as contributors to the project.
+Pictures to match with tasks
+
+Simple set up of time slots and several buttons for flexibility
+
