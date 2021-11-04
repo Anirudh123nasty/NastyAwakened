@@ -136,11 +136,16 @@
             {% if j < 4 %}
             {% for i in range(1,8) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
             <td>
-                <p style="text-align: left"> {{j*7+i}} </p>
-                <p id="show_input{{j}}{{i}}"></p>
-                <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">
-                <button  class="task" id="add-task('{{j}}{{i}}')" onclick="display('{{j}}{{i}}')">Add Info</button>
-                <br>
+                <p> {{j*7+i}} </p>
+                <ul id="show_input.{{j}}{{i}}"></ul>
+                <input id="task.{{j}}{{i}}" type="text">
+            </label>
+                <button id="add_task.{{j}}{{i}}" onclick="display('{{j}}{{i}}')">Add Info</button>
+<!--                <p style="text-align: left"> {{j*7+i}} </p>-->
+<!--                <p id="show_input{{j}}{{i}}"></p>-->
+<!--                <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">-->
+<!--                <button id="add_task.{{j}}{{i}}" class="task" id="add-task('{{j}}{{i}}')" onclick="display('{{j}}{{i}}')">Add Info</button>-->
+<!--                <br>-->
                 <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
             {% endif %}
@@ -148,10 +153,17 @@
             {% if j == 4 %} <!-- jinja if statement; prints certain number of cells depending on which row -->
             {% for i in range(1,4) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
             <td>
+<!--                <p> {{j*7+i}} </p>-->
+<!--                <ul id="show_input.{{j}}{{i}}"></ul>-->
+<!--                Plan: <label>-->
+<!--                <input id="task.{{j}}{{i}}" type="text">-->
+<!--            </label>-->
+<!--                <button id="add_task.{{j}}{{i}}" onclick="display('{{j}}{{i}}')">Add Info</button>-->
+<!--            <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>-->
                 <p style="text-align: left"> {{j*7+i}} </p>
                 <p id="show_input{{j}}{{i}}"></p>
                 <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">
-                <button  class="task" onclick="display('{{j}}{{i}}')">Add Info</button>
+                <button id="add_task.{{j}}{{i}}" class="task" onclick="display('{{j}}{{i}}')">Add Info</button>
                 <br>
                 <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
@@ -186,20 +198,42 @@
     <script>
 
 
+
         function display(id){
-            const task = "task" + id;
-            const show_input = "show_input" + id;
+            const task = "task." + id;
+            const show_input = "show_input." + id;
             alert("Adding " + document.getElementById(task).value + " to Row and Column " + id);
             localStorage.setItem(task, document.getElementById(task).value);
-            document.getElementById(show_input).innerHTML = localStorage.getItem(task);
+            let TASK = localStorage.getItem(task); // a new variable for the list
+            let list = document.createElement('list');
+            list.innerHTML = "<li>" + TASK + "</li>"; // list
+            document.getElementById(show_input).appendChild(list); // adding to list
+            document.getElementById(task).value = null; // clears input box, QOL update
+
+        }
+
+        for (let j = 0; j < 5; j++) {
+            for (let i = 1; i < 8; i++) {
+                let task = "task." + j;
+                task = task + i;
+                let button = "add_task." + j;
+                button = button + i;
+                document.getElementById(task)
+                    .addEventListener("keyup", function (event) {
+                        event.preventDefault();
+                        if (event.keyCode === 13) { // maybe it's deprecated, but it works
+                            document.getElementById(button).click(); // button runs the display() code
+                        }
+                    });
+            }
         }
 
         function keep() {
             for (let j = 0; j < 5; j++) {
                 for (let i = 1; i < 8; i++) {
-                    task = "task" + j;
+                    task = "task." + j;
                     task = task + i;
-                    show_input = "show_input" + j;
+                    show_input = "show_input." + j;
                     show_input = show_input + i;
                     if (typeof localStorage.getItem(task) != null) {
                         document.getElementById(show_input).innerHTML = localStorage.getItem(task);
@@ -251,8 +285,8 @@
         }
 
         function remove(id) {
-            const task = "task" + id;
-            const show_input = "show_input" + id;
+            const task = "task." + id;
+            const show_input = "show_input." + id;
             // clearing web storage
             localStorage.removeItem(task);
             localStorage.removeItem(show_input);
@@ -260,9 +294,9 @@
             document.getElementById(show_input).innerHTML = null;
             }
 
-            function toggleMode() {
-                var element = document.body;
-                element.classList.toggle("dark-mode");
+        function toggleMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
         }
 
     </script>
