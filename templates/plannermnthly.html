@@ -45,7 +45,7 @@
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
-            transition-deration: 0.4s;
+            transition-duration: 0.4s;
         }
         button {
             margin-top: 5px;
@@ -59,7 +59,11 @@
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
-            transition-deration: 0.4s;
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: floralwhite;
+            border: 1px solid black;
         }
         h1 {
             font-family: Forum;
@@ -68,7 +72,7 @@
         table {
             margin-top: 20px;
             margin-bottom: 20px;
-            width: fit-content;
+            width: 100%;
             overflow-wrap: anywhere;
             font-family: Raleway;
             text-align: center;
@@ -90,9 +94,9 @@
             font-size: small;
             font-family: Raleway;
         }
-        .btn{
-            border: 2px solid black;
-            font-family: Raleway;
+        #top {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
     <title>Nighthawk Coding | Planner</title>
@@ -103,16 +107,19 @@
 
 <div style="margin-left: 50px; margin-right: 50px">
     <!-- Clock display -->
-    <div style="text-align: right">
-        <p style="font-family:'Courier New'">{{mytime['LocalTime_Now']}}</p>
+    <div id="top" style="text-align: right" >
+        <h1>PLANNER</h1>
+        <p style="font-family: Courier New">{{mytime['LocalTime_Now']}} </p>
     </div>
 
-    <h1>PLANNER</h1>
     <p>This will be where we will build the month version - <b>Put your main events, deadlines, and important events here.</b></p>
 
     <!-- button that leads to the repo, can style the button in css above -->
     <button onclick="location.href='http://127.0.0.1:5000/plannerwkly/'" type="button">Weekly Schedule</button>
     <button onclick="location.href='http://127.0.0.1:5000/plannerdly/'" type="button">Daily Planner</button>
+    <button onclick="toggleMode()">Toggle Dark Mode</button>
+    <button onclick = "RANDOMCOLOR()">Test's Over?</button>
+    <button onclick = "returnColor()">Return</button>
 
     <table>
 
@@ -139,6 +146,7 @@
                 <p style="text-align: left"> {{j*7+i}} </p>
                 <p id="show_input{{j}}{{i}}"></p>
                 <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">
+                <br>
                 <button  class="task" id="add-task('{{j}}{{i}}')" onclick="display('{{j}}{{i}}')">Add Info</button>
                 <br>
                 <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
@@ -151,6 +159,7 @@
                 <p style="text-align: left"> {{j*7+i}} </p>
                 <p id="show_input{{j}}{{i}}"></p>
                 <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">
+                <br>
                 <button  class="task" onclick="display('{{j}}{{i}}')">Add Info</button>
                 <br>
                 <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
@@ -160,28 +169,24 @@
         {% endfor %}
     </table>
 
-    <table>
+    <table style="width: fit-content">
         <tr>
             <td>
-                <span>Are You Satisfied with the Progress?</span>
                 <input type="checkbox" name="A" class="checkbox" id="firstcondition" value="1">
+                <label for="firstcondition">Are You Satisfied with the Progress?</label
             </td>
 
             <td>
-                <span>Are You Satisfied with the Grades?</span>
                 <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">
+                <label for="secondcondition">Are You Satisfied with the Grades?</label>
             </td>
-            <td> <input type="button" onclick="myFunction()" class="btn btn-outline-info" value="Done"></td>
-            <td><span id="onlyrow"></span> </td>
+            <td> <button class="task" onclick="myFunction()">Done</button>
+            <td><span id="onlyrow"></span></td>
         </tr>
     </table>
     <!--    <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">-->
     <!--    </p>-->
-    <button onclick="toggleMode()">Toggle dark mode</button>
 
-    <button onclick = "RANDOMCOLOR()">
-        Test's Over? Have some fun!
-    </button>
 
     <script>
 
@@ -241,10 +246,10 @@
             document.body.style.background = color;
         }
 
-        function STUDYTIME() {
-            changeColor('white');
-
+        function returnColor() {
+            document.body.style.background = "#faebd7";
         }
+
         function RANDOMCOLOR() {
             let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
             changeColor(color);
