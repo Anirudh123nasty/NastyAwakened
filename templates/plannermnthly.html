@@ -65,6 +65,108 @@
             background-color: floralwhite;
             border: 1px solid black;
         }
+        .button1:hover {
+            box-shadow: inset 300px 0 0 0 #FFD580;
+            cursor: pointer;
+            color: sandybrown;
+        }
+        .button1:before {
+            transition: all ease;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            opacity: 0;
+            content: "";
+            background-color: sandybrown;
+        }
+
+        .button1:hover:before {
+            transition: .5s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            z-index: -1;
+
+        }
+        .button2:hover {
+            box-shadow: inset 300px 0 0 0 #ADD8E6;
+            cursor: pointer;
+            color: white;
+        }
+        .button2:before {
+            transition: all ease;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            opacity: 0;
+            content: "";
+            background-color: lightblue;
+        }
+
+        .button2:hover:before {
+            transition: .5s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            z-index: -1;
+
+        }
+
+
+        .button3:hover {
+            box-shadow: inset 300px 0 0 0 #CBC3E3;
+            cursor: pointer;
+            color: lightpink;
+        }
+        .button3:before {
+            transition: all ease;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            opacity: 0;
+            content: "";
+            background-color: lightpink;
+        }
+
+        .button3:hover:before {
+            transition: .5s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            z-index: -1;
+
+        }
+        .button4:hover {
+            box-shadow: inset 300px 0 0 0 #87CEEB;
+            cursor: pointer;
+            color: cornflowerblue;
+        }
+        .button4:before {
+            transition: all ease;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            opacity: 0;
+            content: "";
+            background-color: deepskyblue;
+        }
+
+        .button4:hover:before {
+            transition: .5s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            z-index: -1;
+
+        }
         h1 {
             font-family: Forum;
             font-size: 90px;
@@ -120,6 +222,18 @@
     <button onclick="toggleMode()">Toggle Dark Mode</button>
     <button onclick = "RANDOMCOLOR()">Test's Over?</button>
     <button onclick = "returnColor()">Return</button>
+    <button class="button1" style="background-color: sandybrown; color: orangered " onclick = "AUTUMN()">
+        AUTUMN MODE
+    </button>
+    <button class="button2" style="background-color: ghostwhite; color: dodgerblue" onclick = "WINTER()">
+        WINTER MODE
+    </button>
+    <button class="button3" style="background-color: mediumspringgreen; color:navy" onclick = "SPRING()">
+        SPRING MODE
+    </button>
+    <button class="button4" style="background-color:dodgerblue ; color: yellow" onclick = "SUMMER()">
+        SUMMER MODE
+    </button>
 
     <table>
 
@@ -249,7 +363,19 @@
         function returnColor() {
             document.body.style.background = "#faebd7";
         }
+        function AUTUMN() {
+            changeColor('sandybrown');
 
+        }
+        function WINTER() {
+            changeColor('lightblue');
+        }
+        function SPRING() {
+            changeColor('lightpink');
+        }
+        function SUMMER() {
+            changeColor('deepskyblue');
+        }
         function RANDOMCOLOR() {
             let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
             changeColor(color);
