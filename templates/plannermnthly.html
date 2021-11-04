@@ -45,7 +45,7 @@
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
-            transition-duration: 0.4s;
+            transition-deration: 0.4s;
         }
         button {
             margin-top: 5px;
@@ -59,13 +59,42 @@
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
-            transition-duration: 0.4s;
+            transition-deration: 0.4s;
         }
-        button:hover {
-            background-color: floralwhite;
-            border: 1px solid black;
+        h1 {
+            font-family: Forum;
+            font-size: 90px;
         }
-        .button1:hover {
+        table {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: fit-content;
+            overflow-wrap: anywhere;
+            font-family: Raleway;
+            text-align: center;
+        }
+        th, td{
+            border: 3px solid black;
+            column-rule: 4px dotted rgb(79, 185, 227);
+            padding: 10px;
+        }
+
+        input.text {
+            font-family: Raleway;
+            border: 0;
+        }
+
+        input::placeholder {
+            color: gray;
+            padding-left: 10px;
+            font-size: small;
+            font-family: Raleway;
+        }
+        .btn{
+            border: 2px solid black;
+            font-family: Raleway;
+        }
+        +        .button1:hover {
             box-shadow: inset 300px 0 0 0 #FFD580;
             cursor: pointer;
             color: sandybrown;
@@ -167,39 +196,6 @@
             z-index: -1;
 
         }
-        h1 {
-            font-family: Forum;
-            font-size: 90px;
-        }
-        table {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 100%;
-            overflow-wrap: anywhere;
-            font-family: Raleway;
-            text-align: center;
-        }
-        th, td{
-            border: 3px solid black;
-            column-rule: 4px dotted rgb(79, 185, 227);
-            padding: 10px;
-        }
-
-        input.text {
-            font-family: Raleway;
-            border: 0;
-        }
-
-        input::placeholder {
-            color: gray;
-            padding-left: 10px;
-            font-size: small;
-            font-family: Raleway;
-        }
-        #top {
-            display: flex;
-            justify-content: space-between;
-        }
     </style>
     <title>Nighthawk Coding | Planner</title>
 </head>
@@ -209,22 +205,24 @@
 
 <div style="margin-left: 50px; margin-right: 50px">
     <!-- Clock display -->
-    <div id="top" style="text-align: right" >
-        <h1>PLANNER</h1>
-        <p style="font-family: Courier New">{{mytime['LocalTime_Now']}} </p>
+    <div style="text-align: right">
+        <p style="font-family:'Courier New'">{{mytime['LocalTime_Now']}}</p>
     </div>
 
+    <h1>PLANNER</h1>
     <p>This will be where we will build the month version - <b>Put your main events, deadlines, and important events here.</b></p>
 
     <!-- button that leads to the repo, can style the button in css above -->
     <button onclick="location.href='http://127.0.0.1:5000/plannerwkly/'" type="button">Weekly Schedule</button>
     <button onclick="location.href='http://127.0.0.1:5000/plannerdly/'" type="button">Daily Planner</button>
+
     <button onclick="toggleMode()">Toggle Dark Mode</button>
     <button onclick = "RANDOMCOLOR()">Test's Over?</button>
     <button onclick = "returnColor()">Return</button>
-    <button class="button1" style="background-color: sandybrown; color: orangered " onclick = "AUTUMN()">
-        AUTUMN MODE
-    </button>
+
+    +    <button class="button1" style="background-color: sandybrown; color: orangered " onclick = "AUTUMN()">
+    AUTUMN MODE
+</button>
     <button class="button2" style="background-color: ghostwhite; color: dodgerblue" onclick = "WINTER()">
         WINTER MODE
     </button>
@@ -234,6 +232,7 @@
     <button class="button4" style="background-color:dodgerblue ; color: yellow" onclick = "SUMMER()">
         SUMMER MODE
     </button>
+
 
     <table>
 
@@ -257,12 +256,16 @@
             {% if j < 4 %}
             {% for i in range(1,8) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
             <td>
-                <p style="text-align: left"> {{j*7+i}} </p>
-                <p id="show_input{{j}}{{i}}"></p>
-                <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">
-                <br>
-                <button  class="task" id="add-task('{{j}}{{i}}')" onclick="display('{{j}}{{i}}')">Add Info</button>
-                <br>
+                <p> {{j*7+i}} </p>
+                <ul id="show_input.{{j}}{{i}}"></ul>
+                <input id="task.{{j}}{{i}}" type="text">
+            </label>
+                <button id="add_task.{{j}}{{i}}" onclick="display('{{j}}{{i}}')">Add Info</button>
+<!--                <p style="text-align: left"> {{j*7+i}} </p>-->
+<!--                <p id="show_input{{j}}{{i}}"></p>-->
+<!--                <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">-->
+<!--                <button id="add_task.{{j}}{{i}}" class="task" id="add-task('{{j}}{{i}}')" onclick="display('{{j}}{{i}}')">Add Info</button>-->
+<!--                <br>-->
                 <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
             {% endif %}
@@ -270,11 +273,17 @@
             {% if j == 4 %} <!-- jinja if statement; prints certain number of cells depending on which row -->
             {% for i in range(1,4) %} <!-- Code for iteration, table, button: Cell for each day of the month -->
             <td>
+<!--                <p> {{j*7+i}} </p>-->
+<!--                <ul id="show_input.{{j}}{{i}}"></ul>-->
+<!--                Plan: <label>-->
+<!--                <input id="task.{{j}}{{i}}" type="text">-->
+<!--            </label>-->
+<!--                <button id="add_task.{{j}}{{i}}" onclick="display('{{j}}{{i}}')">Add Info</button>-->
+<!--            <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>-->
                 <p style="text-align: left"> {{j*7+i}} </p>
                 <p id="show_input{{j}}{{i}}"></p>
                 <input placeholder="Event" class="text" id="task{{j}}{{i}}" type="text">
-                <br>
-                <button  class="task" onclick="display('{{j}}{{i}}')">Add Info</button>
+                <button id="add_task.{{j}}{{i}}" class="task" onclick="display('{{j}}{{i}}')">Add Info</button>
                 <br>
                 <button class="task" onclick="remove('{{j}}{{i}}')">Clear Task(s)</button>
             {% endfor %}
@@ -283,42 +292,68 @@
         {% endfor %}
     </table>
 
-    <table style="width: fit-content">
+    <table>
         <tr>
             <td>
+                <span>Are You Satisfied with the Progress?</span>
                 <input type="checkbox" name="A" class="checkbox" id="firstcondition" value="1">
-                <label for="firstcondition">Are You Satisfied with the Progress?</label>
             </td>
 
             <td>
+                <span>Are You Satisfied with the Grades?</span>
                 <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">
-                <label for="secondcondition">Are You Satisfied with the Grades?</label>
             </td>
-            <td> <button class="task" onclick="myFunction()">Done</button>
-            <td><span id="onlyrow"></span></td>
+            <td> <input type="button" onclick="myFunction()" class="btn btn-outline-info" value="Done"></td>
+            <td><span id="onlyrow"></span> </td>
         </tr>
     </table>
     <!--    <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">-->
     <!--    </p>-->
+    <button onclick="toggleMode()">Toggle dark mode</button>
 
+    <button onclick = "RANDOMCOLOR()">
+        Test's Over? Have some fun!
+    </button>
 
     <script>
 
 
+
         function display(id){
-            const task = "task" + id;
-            const show_input = "show_input" + id;
+            const task = "task." + id;
+            const show_input = "show_input." + id;
             alert("Adding " + document.getElementById(task).value + " to Row and Column " + id);
             localStorage.setItem(task, document.getElementById(task).value);
-            document.getElementById(show_input).innerHTML = localStorage.getItem(task);
+            let TASK = localStorage.getItem(task); // a new variable for the list
+            let list = document.createElement('list');
+            list.innerHTML = "<li>" + TASK + "</li>"; // list
+            document.getElementById(show_input).appendChild(list); // adding to list
+            document.getElementById(task).value = null; // clears input box, QOL update
+
+        }
+
+        for (let j = 0; j < 5; j++) {
+            for (let i = 1; i < 8; i++) {
+                let task = "task." + j;
+                task = task + i;
+                let button = "add_task." + j;
+                button = button + i;
+                document.getElementById(task)
+                    .addEventListener("keyup", function (event) {
+                        event.preventDefault();
+                        if (event.keyCode === 13) { // maybe it's deprecated, but it works
+                            document.getElementById(button).click(); // button runs the display() code
+                        }
+                    });
+            }
         }
 
         function keep() {
             for (let j = 0; j < 5; j++) {
                 for (let i = 1; i < 8; i++) {
-                    task = "task" + j;
+                    task = "task." + j;
                     task = task + i;
-                    show_input = "show_input" + j;
+                    show_input = "show_input." + j;
                     show_input = show_input + i;
                     if (typeof localStorage.getItem(task) != null) {
                         document.getElementById(show_input).innerHTML = localStorage.getItem(task);
@@ -360,9 +395,30 @@
             document.body.style.background = color;
         }
 
-        function returnColor() {
-            document.body.style.background = "#faebd7";
+        function STUDYTIME() {
+            changeColor('white');
+
         }
+        function RANDOMCOLOR() {
+            let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            changeColor(color);
+        }
+
+        function remove(id) {
+            const task = "task." + id;
+            const show_input = "show_input." + id;
+            // clearing web storage
+            localStorage.removeItem(task);
+            localStorage.removeItem(show_input);
+            // clearing cell text
+            document.getElementById(show_input).innerHTML = null;
+            }
+
+        function toggleMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+
         function AUTUMN() {
             changeColor('sandybrown');
 
@@ -376,25 +432,8 @@
         function SUMMER() {
             changeColor('deepskyblue');
         }
-        function RANDOMCOLOR() {
-            let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
-            changeColor(color);
+        function returnColor() {
+            document.body.style.background = "#FAEBD7";
         }
-
-        function remove(id) {
-            const task = "task" + id;
-            const show_input = "show_input" + id;
-            // clearing web storage
-            localStorage.removeItem(task);
-            localStorage.removeItem(show_input);
-            // clearing cell text
-            document.getElementById(show_input).innerHTML = null;
-            }
-
-            function toggleMode() {
-                var element = document.body;
-                element.classList.toggle("dark-mode");
-        }
-
     </script>
 </div>

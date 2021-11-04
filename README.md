@@ -200,19 +200,7 @@
 | Anirudh's [Video](https://kapwi.ng/c/jHlYyDI6p6) | _/8 | [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)| Average: 7.75 |
 | Michael's [Video](https://www.loom.com/share/6de26e2f01904985aae6e43bc7c5516e) | _/8 | [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197)| Average: 7.5 |
 | James's [Video](https://www.loom.com/share/c90a6dad72ec4da183bad17872a38d63) | _/8 | [Review Ticket](https://github.com/NastyEthan/NastyReturned/projects/2#card-71486197) | Average: 7.5 |
-  
-  
-## Week 10
 
-### Week 10 Progress
-| Progress | Evidence |
-| - | - |
-| `plannerwkly` - added list function  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/61a0d331e60bd5ffd903defe49327c9e84f9a4fb) | 
-| `plannermnthly` - added dark mode  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/6b347161f40441999cde3097b6fcff64faa13958) | 
-| `plannermnthly` - added 4 season buttons | [Commit](https://github.com/NastyEthan/NastyReturned/commit/07e3a7d66f64384cf15a6a453b1d14499811aa5c) | 
-| `plannerdly` - added alarm  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/e9e9cddf662ae51f1da7da0dfa89016d70ca2059) | 
-| All planners - CSS to make buttons match background | [Commit](https://github.com/NastyEthan/NastyReturned/commit/33df6c1cf4ee914dc2979f8adb3f8ad97a9ba346) | 
-| Poll - (On Slack) | [Link](https://cs-p-hq.slack.com/archives/C02BBM3CE95/p1636006468001700) | 
 ## Ideas:
 
   
