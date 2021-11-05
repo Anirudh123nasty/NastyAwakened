@@ -23,6 +23,9 @@
         p {
             font-family: Raleway;
         }
+        label {
+            font-family: Raleway;
+        }
         body {
             background-color: antiquewhite;
             color: black;
@@ -123,8 +126,6 @@
             z-index: -1;
 
         }
-
-
         .button3:hover {
             box-shadow: inset 300px 0 0 0 #CBC3E3;
             cursor: pointer;
@@ -212,6 +213,23 @@
             margin-left: -40px;
             list-style-position: inside;
         }
+        button.rainbow {
+            background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+            background-color:#191919;
+            border-radius:5px;
+        }
+        button.rainbow:hover {
+            animation:slidebg 10s linear infinite;
+        }
+        @keyframes slidebg {
+            to {
+                background-position:10vw;
+            }
+        }
+        button.dark {
+            background-color: #363d47;
+            color: #9daf9b;
+        }
     </style>
     <title>Nighthawk Coding | Planner</title>
 </head>
@@ -229,15 +247,22 @@
     <p>This will be where we will build the month version - <b>Put your main events, deadlines, and important events here.</b></p>
 
     <!-- button that leads to the repo, can style the button in css above -->
-    <button onclick="location.href='http://127.0.0.1:5000/plannerwkly/'" type="button">Weekly Schedule</button>
-    <button onclick="location.href='http://127.0.0.1:5000/plannerdly/'" type="button">Daily Planner</button>
-    <button onclick="toggleMode()">Toggle Dark Mode</button>
-    <button onclick = "RANDOMCOLOR()">Test's Over?</button>
-    <button class="button1" style="background-color: sandybrown; color: orangered " onclick = "AUTUMN()">AUTUMN</button>
-    <button class="button2" style="background-color: ghostwhite; color: dodgerblue" onclick = "WINTER()">WINTER</button>
-    <button class="button3" style="background-color: mediumspringgreen; color:navy" onclick = "SPRING()">SPRING</button>
-    <button class="button4" style="background-color:dodgerblue ; color: yellow" onclick = "SUMMER()">SUMMER</button>
-    <button onclick = "returnColor()">RETURN</button>
+    <div id="top" style="text-align: right" >
+        <div>
+            <button onclick="location.href='http://127.0.0.1:5000/plannerwkly/'" type="button">Weekly Schedule</button>
+            <button onclick="location.href='http://127.0.0.1:5000/plannerdly/'" type="button">Daily Planner</button>
+        </div>
+        <div>
+            <button class="rainbow" onclick = "RANDOMCOLOR()">RANDOM</button>
+            <button class="dark" onclick="darkMode()">DARK MODE</button>
+            <button class="button1" style="background-color: sandybrown; color: orangered " onclick = "AUTUMN()">AUTUMN</button>
+            <button class="button2" style="background-color: ghostwhite; color: dodgerblue" onclick = "WINTER()">WINTER</button>
+            <button class="button3" style="background-color: mediumspringgreen; color:navy" onclick = "SPRING()">SPRING</button>
+            <button class="button4" style="background-color:dodgerblue ; color: yellow" onclick = "SUMMER()">SUMMER</button>
+            <button onclick = "returnColor()">RETURN</button>
+        </div>
+    </div>
+
 
     <table>
 
@@ -290,21 +315,21 @@
         {% endfor %}
     </table>
 
-{#    <table style="width: fit-content">#}
-{#        <tr>#}
-{#            <td>#}
-{#                <input type="checkbox" name="A" class="checkbox" id="firstcondition" value="1">#}
-{#                <label for="firstcondition">Are You Satisfied with the Progress?</label>#}
-{#            </td>#}
-{##}
-{#            <td>#}
-{#                <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">#}
-{#                <label for="secondcondition">Are You Satisfied with the Grades?</label>#}
-{#            </td>#}
-{#            <td> <button class="task" onclick="myFunction()">Done</button>#}
-{#            <td><span id="onlyrow"></span></td>#}
-{#        </tr>#}
-{#    </table>#}
+<!--{#    <table style="width: fit-content">#}-->
+<!--{#        <tr>#}-->
+<!--{#            <td>#}-->
+<!--{#                <input type="checkbox" name="A" class="checkbox" id="firstcondition" value="1">#}-->
+<!--{#                <label for="firstcondition">Are You Satisfied with the Progress?</label>#}-->
+<!--{#            </td>#}-->
+<!--{##}-->
+<!--{#            <td>#}-->
+<!--{#                <input type="checkbox" name="B" class="checkbox" id="secondcondition" value="1">#}-->
+<!--{#                <label for="secondcondition">Are You Satisfied with the Grades?</label>#}-->
+<!--{#            </td>#}-->
+<!--{#            <td> <button class="task" onclick="myFunction()">Done</button>#}-->
+<!--{#            <td><span id="onlyrow"></span></td>#}-->
+<!--{#        </tr>#}-->
+<!--{#    </table>#}-->
     <!--    <p id = "GOTOSTUDY" style ="font-size: 16px; font-weight: bold;">-->
     <!--    </p>-->
 
@@ -386,23 +411,6 @@
         function changeColor(color) {
             document.body.style.background = color;
         }
-
-        function returnColor() {
-            document.body.style.background = "#faebd7";
-        }
-        function AUTUMN() {
-            changeColor('sandybrown');
-
-        }
-        function WINTER() {
-            changeColor('lightblue');
-        }
-        function SPRING() {
-            changeColor('lightpink');
-        }
-        function SUMMER() {
-            changeColor('deepskyblue');
-        }
         function RANDOMCOLOR() {
             let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
             changeColor(color);
@@ -418,14 +426,13 @@
             document.getElementById(show_input).innerHTML = null;
             }
 
-            function toggleMode() {
-                var element = document.body;
-                element.classList.toggle("dark-mode");
-        }
+        // function toggleMode() {
+        //     var element = document.body;
+        //     element.classList.toggle("dark-mode");
+        // }
 
         function AUTUMN() {
             changeColor('sandybrown');
-
         }
         function WINTER() {
             changeColor('lightblue');
@@ -438,6 +445,11 @@
         }
         function returnColor() {
             document.body.style.background = "#FAEBD7";
+            document.body.style.color = 'black';
+        }
+        function darkMode() {
+            document.body.style.color = "#b3b3b3";
+            document.body.style.background = "#35363a";
         }
     </script>
 </div>
