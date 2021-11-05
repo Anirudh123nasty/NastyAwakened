@@ -1,7 +1,9 @@
 # Nasty Group README
 
 #### Description
-*
+This is a Planner for your personal, work, or school use. We have three different settings to cater to your specific uses. The daily planner has an alarm for when you want to time youself doing activities. The weekly planner has a quick and accessible spot to place your tasks and goals for each week, with options to listen to music while working. Lastly, the monthly planner is there for your big deadlines, events, or holidays you want to keep in the month. Have fun with the different backgrounds and use dark mode when using the site at night. We hope this is accessible for you and keep working hard!
+
+NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 
 #### Scrumboards (weekly)
 * [Week 8](https://github.com/NastyEthan/NastyReturned/projects/1)
