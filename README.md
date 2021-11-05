@@ -1,5 +1,8 @@
 # Nasty Group README
 
+#### Description
+*
+
 #### Scrumboards (weekly)
 * [Week 8](https://github.com/NastyEthan/NastyReturned/projects/1)
 * [Week 9](https://github.com/NastyEthan/NastyReturned/projects/2)
