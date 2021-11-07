@@ -1,16 +1,16 @@
-# README - Nasty P4
+# README - NASTY P4
 
 ### Description
 
 This is a planner for your personal, work, or school use. We have three modes to cater to your preferences. 
 
-1. Daily Planner - add individual tasks in a list, and set an alarm for when you want to time youself doing activities.
-2. Weekly Schedule - a quick and accessible spot to place your tasks and goals for each week, with options to listen to music while working. Option to add color to each plan.
-3. Monthly Calendar - there for your big deadlines, events, or holidays you want to keep in the month. Have fun with the different backgrounds and use dark mode when using the site at night. 
+1. **Daily Planner** - add individual tasks in a list, and set an alarm for when you want to time youself doing activities.
+2. **Weekly Schedule** - a quick and accessible spot to place your tasks and goals for each week, with options to listen to music while working. Option to add color to each plan.
+3. **Monthly Calendar** - there for your big deadlines, events, or holidays you want to keep in the month. Have fun with the different backgrounds and make sure to use dark mode when using the site at night. 
 
 We hope this is accessible for you and keep working hard!
 
-NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
+NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, and James Lee
 
 #### Scrumboards (weekly)
 * [Week 8](https://github.com/NastyEthan/NastyReturned/projects/1)
