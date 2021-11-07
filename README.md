@@ -1,13 +1,21 @@
-# Nasty Group README
+# README - Nasty P4
 
-#### Description
-This is a Planner for your personal, work, or school use. We have three different settings to cater to your specific uses. The daily board has an alarm for when you want to time youself doing activities. The weekly planner has a quick and accessible spot to place your tasks and goals for each week, with options to listen to music while working. Lastly, the monthly calendar is there for your big deadlines, events, or holidays you want to keep in the month. Have fun with the different backgrounds and use dark mode when using the site at night. We hope this is accessible for you and keep working hard!
+### Description
+
+This is a planner for your personal, work, or school use. We have three modes to cater to your preferences. 
+
+1. Daily Planner - add individual tasks in a list, and set an alarm for when you want to time youself doing activities.
+2. Weekly Schedule - a quick and accessible spot to place your tasks and goals for each week, with options to listen to music while working. Option to add color to each plan.
+3. Monthly Calendar - there for your big deadlines, events, or holidays you want to keep in the month. Have fun with the different backgrounds and use dark mode when using the site at night. 
+
+We hope this is accessible for you and keep working hard!
 
 NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 
 #### Scrumboards (weekly)
 * [Week 8](https://github.com/NastyEthan/NastyReturned/projects/1)
 * [Week 9](https://github.com/NastyEthan/NastyReturned/projects/2)
+* [Week 10](https://github.com/NastyEthan/NastyReturned/projects/3)
 
 #### Contributors
 * [Contributors](https://github.com/NastyEthan/NastyReturned/graphs/contributors)
@@ -85,7 +93,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 | 1/1 | **Individual Research**.   Learn about binary this week through TPT and TT.  Also, review related videos on CB and Harvard Video.  Update journal, be ready to work on Binary lab next week. | [Michael and James Journal w/ TPT3](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing) <br /> [Ethan and Anirudh Journal w/ TPT3](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing)|
 
 ## Week 4  
-  
+
 ### Week 4 Progress
 | Progress | Evidence |
 | - | - |
@@ -95,7 +103,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 | Added ASCII | [ASCII](https://github.com/NastyEthan/flask_portfolio/commit/c96df6846d6f54fd0d458269af8853eff913a552) |
 | Added the base for our main project in `planner.html`. There is no functionality in it yet. | [planner.html](https://github.com/NastyEthan/flask_portfolio/blob/main/templates/planner.html) |
 | Made Group Video | [2 Minute Video](https://kapwi.ng/c/B6FEvQKEbp) | |
-  
+
 ### Week 4 Grading
 | Name | Grade | Work | Evidence |
 | - | - | - | - |
@@ -122,13 +130,13 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 | Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Finished RGB Big O notation. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/72073520287cdc894b7c0240fa611e1892b4a306)|
 | Michael | 8/8 | RGB Hack #2: adding text to the RGB images. College board 3.1-3.2 video notes and quizzes | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/93ff63be5855c7fc51b01582905750715e50604c)<br />[Journal Week 5](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.9mn466vqyzp) |
 | James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Finished Grey Scale hack for RGB| [Commit](https://github.com/NastyEthan/flask_portfolio/commit/7acb26002404cb3e7dde078d7bb3e6e382cf981c) |
-  
+
 | Grade | Requirement | Evidence|
 | - | - | - |
 | 1 | Scrum/Pair activity.  Listen to OO's and TO's introduction.  Write about OOs' and TOs roles in your journal.  Brainstorm on how you think fellow student can help you in Test Prep.  Review idea with Scrum Team, then review again with Crossover team.  Each Scrum Team create summary and provide ideas to OO's.| [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)<br>[Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing) |
 | 1 | Scrum/Pair activity and journal. Unit 3.1 work.   Follow instructions and guidance from OO's| [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)<br>[Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing) |
 | 1 | Scrum/Pair activity and journal. Unit 3.2 work.   Follow instructions and guidance from OO's| [Michael & James Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit?usp=sharing)<br>[Ethan & Anirudh Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing)  |
-  
+
   ## Week 6
 
 ### Week 6 Progress
@@ -148,7 +156,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 | Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Used universal fonts, added writing on image and project layout notes  | [Notes](https://docs.google.com/document/d/1ap0cW_aSCZotCXZSzTm050EakCtGQCYbtcwvLQhGf04/edit)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/209f511a50a09a4b68b4feb18f0450f1404d8ae2)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/ead060cc3461b00c6c7376a95e087c65e37ef03d)|
 | Michael | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Added universal fonts to base.html, added grey scale. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/9169c00616d7ce08936f1c06ff6d94c3b0ca8ce0)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/2bcacba053961f96d3ba30cf8ffb6678bfa622c3) |
 | James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Used universal fonts and found easier way for grey scale| [Commit](https://github.com/NastyEthan/flask_portfolio/commit/03eac5fbbc6af4409506010023238949b1d0e87e)<br />[Commit](https://github.com/NastyEthan/flask_portfolio/commit/d75ded45b579f84373db1ed4d202557986e56f00) |
-  
+
 | Grade | Requirement | Evidence|
 | - | - | - |
 | 1 | Hack 1: RGB Values with an Image, Frontend... how would you change to grey scale dynamically? | [Commit: James](https://github.com/NastyEthan/flask_portfolio/commit/d75ded45b579f84373db1ed4d202557986e56f00) |
@@ -178,8 +186,8 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 | Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on color code and unsigned binary.  | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/d9537c32dcc138bf03ce23d710627cdd378c2f88) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/5d4aeb7db67f3bc8228a1590944352f1b44985b8) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/e2038d0c09ef7cdf28b5b38caf797046e2217177) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/91be02585dcd5e69a98facc55c1bdfe95fe30015)|
 | Michael | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on logic gate and shift. | [Commit](https://github.com/NastyEthan/flask_portfolio/commit/dba3f1b765fae297dd00d4a2380b57432213eb0f) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/ce1c7c4dd0a5182acb2400552cf6c332f02d0be5) <br /> [Commit](https://github.com/NastyEthan/flask_portfolio/commit/669e9b450af1eb2bb16d5d9b381799089cf8ad55) |
 | James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Worked on ASCII to Unicode| [Commit](https://github.com/NastyEthan/flask_portfolio/commit/39123e49453efd22ae9715161ba6c4cae57c357a) |
-  
-  
+
+
 ## Week 8
 
 ### Week 8 Progress
@@ -188,7 +196,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 | `planner3.html` - Added checkbox, yes or no buttons, table format, user inputs  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/ebb0f3fa7a02cbcd963b99bfd07822c1c392d6af) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/9a5e00090586392f8b662186485478a320fb6cff) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/3dc043b247f27a1dea3faa8022b0cad93c0c088f) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/b68781f5f4cb92dc8002100ad8085542b58cdeba) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/f58386a5a8fa3ab0cc61f40c208bf7eb3ddbd0b3) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/8b001dff7de4efaf49549b35b541912c8770a113) |
 
 
-  
+
  ### Week 8 Grading
 | Name | Grade | Requirements | Evidence |
 | - | - | - | - |
@@ -197,7 +205,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 | Anirudh | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Added user input box, Yes or No button, and bottom checkboxes.  | [Commit](https://github.com/NastyEthan/NastyReturned/commit/f58386a5a8fa3ab0cc61f40c208bf7eb3ddbd0b3) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/b68781f5f4cb92dc8002100ad8085542b58cdeba) <br /> [Commit](https://github.com/NastyEthan/NastyReturned/commit/8b001dff7de4efaf49549b35b541912c8770a113) <br /> [Journal](https://docs.google.com/document/d/1abNEEFvTat4dgupx-nGr7IKHJLhuvql1ZxxxPThSM0Y/edit)|
 | Michael | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Bolded and worked on table format | [Commit](https://github.com/NastyEthan/NastyReturned/commit/ebb0f3fa7a02cbcd963b99bfd07822c1c392d6af) <br /> [Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.sc3byl6nwt6r) |
 | James | 8/8 | Finished college board quizzes and notes, along with notes on TPT presentations and other notes. Made calender format for October| [Commit](https://github.com/NastyEthan/NastyReturned/commit/3dc043b247f27a1dea3faa8022b0cad93c0c088f) <br /> [Journal](https://docs.google.com/document/d/1Kcb8k2XW2PODSQW_EKFYb1XKB39VrwB-OEAnCMM7Frs/edit#heading=h.sc3byl6nwt6r) |
- 
+
 ### Time Box for Final Videos
 | Name and Video Link | Final Grade | Link to Review Ticket | Average Score from Comments |
 | - | - | - | - | 
@@ -208,7 +216,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, James Lee
 
 ## Ideas:
 
-  
+
 * Planner (School, Work, Personal)
 
 We want to create a efficient and aesthetically nice planner that can be used for anything (School, Work, Personal). Typically, the reason we do not use planners are becauses they are hassle to set up and use, but we want to change that with our project
