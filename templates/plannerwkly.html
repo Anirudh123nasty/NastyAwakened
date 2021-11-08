@@ -232,7 +232,7 @@
         function check() {
             for (let i = 1; i < 8; i++) {
                 const task = "task." + i;
-                const show_input = "show_input." + i;;
+                const show_input = "show_input." + i;
                 if (typeof localStorage.getItem(task) !== null) {
                     // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
                     document.getElementById(show_input).innerHTML = localStorage.getItem(show_input);
