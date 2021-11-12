@@ -43,6 +43,12 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, and James Lee
 * [Week 8](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#week-8) 
 * [Time Box for Final Videos](https://github.com/NastyEthan/NastyReturned/blob/main/README.md#time-box-for-final-videos) 
 
+### N@TM
+| Name | Reflection | Capture the Moment |
+| - | - | - |
+| Anirudh |  I really liked looking at the other art projects around the school, and just to see the other ways people can include a creative aspect into their lives. From photography to video editing, the many creative outlets offered at Del Norte were really eye opening. From our tours of the other classrooms, I really wanted to take 3D animation, since it seemed really practical and cool to learn how to draw online. I also enjoyed the pottery class and their final products, and wanted to potentially pursue that as a hobby in college and the future. To the right are images of me presenting at the night of the museum, and some cool art works we saw on our tour.| [Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing) |
+
+
 
 ## Week 1
 
