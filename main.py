@@ -47,14 +47,9 @@ def ethan():
             # starting and empty input default
     return render_template("ethan.html", name="World")
 
-@app.route('/james/', methods=['GET', 'POST'])
-def james():
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("james.html", name=name)
-    # starting and empty input default
-    return render_template("james.html", name="World")
+@app.route('/sahilabout/', methods=['GET', 'POST'])
+def sahil():
+    return render_template("sahilabout.html", pic1="/static/assets/sahilimages/sahilmask.JPG", pic2="/static/assets/sahilimages/sahilnomask.JPG")
 
 @app.route('/binary/', methods=['GET', 'POST'])
 def binary():
