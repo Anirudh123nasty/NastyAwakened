@@ -20,38 +20,8 @@
     </style>
     <div class="box" > <!-- idek what a box is tbh, might need to change - I just added it for the margin lul -->
         <h1> Michael Chen</h1>
-        <p> Hello {{ name }}, I am Michael, here is some of my work:</p>
-        <form action="{{ url_for('michael') }}" id="greet" method="POST" >
-            <label style="font-family: Cutive Mono" for="name">Please Enter Your Name</label>
-            <input style="font-family:'fangsong'" name="name" id="name">
-            <input style="font-family: Cutive Mono; font-weight:900" type="submit" value="Greetings!">
-        </form>
-        <br>
-        <p>Minilab for binary.html:
-            <a style="font-family: Cutive Mono; color: antiquewhite" href={{ url_for('binary') }}>binary.html</a> </p>
-        <p>Minilab for RGB:
-        <a style="font-family: 'Cutive Mono'; color: antiquewhite" href={{ url_for('michaelrgb') }}>michaelrgb.html</a> <br>
-        Note, it takes a while for the html to load due to the file sizes of the images</p>
-        <p>Minilab for Logic gates:
-        <a style="font-family: 'Cutive Mono'; color: antiquewhite" href={{ url_for('logic') }}>logicgate.html</a> <br>
     </div>
 {% endblock %}
 
 {% block background %}
-    <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vanta.net.min.js') }}"></script>
-    <script>
-        VANTA.NET({
-            el: "body",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0xe3a95a,
-            backgroundColor: 0x2d0f64
-        })
-    </script>
 {% endblock %}
