@@ -42,7 +42,7 @@ def ethan():
 
 @app.route('/sahil/', methods=['GET', 'POST'])
 def sahil():
-    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilmask.JPG", pic2="/static/assets/sahilimages/sahilnomask.JPG")
+    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG")
 
 @app.route('/nasty/')
 def nasty():

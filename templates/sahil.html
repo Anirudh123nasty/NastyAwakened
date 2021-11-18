@@ -4,17 +4,51 @@
 {% set project = "Sahil" %}
 {% set imgMaskOn = pic1 %}
 {% set imgMaskOff = pic2 %}
-{% set msgTurnOn = "Mask On" %}
-{% set msgTurnOff = "Mask Off" %}
-{% set repo = "https://github.com/NastyEthan/NastyAwakened" %}
+{% set msgTurnOn = "Remove Mask" %}
+{% set msgTurnOff = "Put Mask back on" %}
+{% set journal = "https://drive.google.com/drive/u/1/folders/109c7P4Li6FC6_TDuxjpdwKTddyE3Jvg1" %}
 
 {% block body %}
+    <style>
+        body {
+            background-image: url('/static/assets/sahilimages/sahilbackground.jfif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 100px;
+            transition: all .2s;
+            color: white;
+            font-size: 2.5em;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+        }
+    </style>
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
         <p style="font-family:'Bebas Neue'; font-size:120px" > Sahil Samar </p>
     </div>
-    <div class="col-12">
-        <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="65" height="Auto">
+    <div class="col-12" style="text-align:center">
+        <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="400" height="Auto">
+    </div>
+    <div style="text-align:center">
         <button type="button" id="butt" onclick="toggleMask('{{i}}')">{{ msgTurnOn }}</button>
+    </div>
+    </br>
+    <div style="text-align:center">
+        <a href="{{ journal }}" class="btn">Sahil's Journal</a>
     </div>
     <script>
         function toggleMask() {
