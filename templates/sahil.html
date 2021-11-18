@@ -39,6 +39,7 @@
         <p style="font-family:'Bebas Neue'; font-size:120px" > Sahil Samar </p>
     </div>
     <div class="col-12" style="text-align:center">
+        <p style="font-family:'Bebas Neue'; font-size:40px"> Click the image to take off the mask! </p>
         <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="400" height="Auto" onclick="toggleMask('{{i}}')">
     </div>
     </br>
@@ -47,10 +48,7 @@
     </div>
     <script>
         function toggleMask() {
-            //alert("Digit action: " + i );
             const image = document.getElementById('picture');
-            const butt = document.getElementById('butt');
-            // Change digit and visual
             if (image.src.match("{{ imgMaskOn }}")) {
                 image.src = "{{ imgMaskOff }}";
             } else {
