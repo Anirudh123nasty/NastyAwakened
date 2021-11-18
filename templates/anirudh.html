@@ -3,8 +3,12 @@
 
 <!- This variable sets name of browser tab  -->
 {% set project = "Anirudh" %}
+{% set imgMaskOn = Img1 %}
+{% set imgMaskOff = Img2 %}
+{% set msgTurnOn = "Mask On" %}
+{% set msgTurnOff = "Mask Off" %}
+{% set repo = "https://github.com/NastyEthan/NastyAwakened" %}
 
-{% set repo = "https://github.com/NastyEthan/flask_portfolio" %}
 
 {% block body %}
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
@@ -18,12 +22,25 @@
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
             </form>
-        <p>Here is my binary work:</p>
-        <a style="font-family: 'Raleway'; color: antiquewhite" href={{ url_for('binary2') }}>Binary2 Progress</a>
-        <br>
-        <p>Here is my RGB page:</p>
-        <a style="font-family: 'Raleway'; color: antiquewhite" href={{ url_for('anirudhrgb') }}>AnirudhRGB</a>
+
     </div>
+    <div class="col-12">
+        <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="65" height="Auto">
+        <button type="button" id="butt" onclick="MaskOnMaskoff('{{i}}')">{{ msgTurnOn }}</button>
+    </div>
+    <script>
+        function MaskOnMaskoff() {
+            const image = document.getElementById('picture');
+            const butt = document.getElementById('butt');
+            if (image.src.match("{{ imgMaskOn }}")) {
+                image.src = "{{ imgMaskOff }}";
+                butt.innerHTML = "{{ msgTurnOn }}";
+            } else {
+                image.src = "{{ imgMaskOn }}";
+                butt.innerHTML = "{{ msgTurnOff }}";
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block background %}
