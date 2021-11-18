@@ -4,8 +4,6 @@
 {% set project = "Sahil" %}
 {% set imgMaskOn = pic1 %}
 {% set imgMaskOff = pic2 %}
-{% set msgTurnOn = "Remove Mask" %}
-{% set msgTurnOff = "Put Mask back on" %}
 {% set journal = "https://drive.google.com/drive/u/1/folders/109c7P4Li6FC6_TDuxjpdwKTddyE3Jvg1" %}
 
 {% block body %}
@@ -41,10 +39,7 @@
         <p style="font-family:'Bebas Neue'; font-size:120px" > Sahil Samar </p>
     </div>
     <div class="col-12" style="text-align:center">
-        <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="400" height="Auto">
-    </div>
-    <div style="text-align:center">
-        <button type="button" id="butt" onclick="toggleMask('{{i}}')">{{ msgTurnOn }}</button>
+        <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="400" height="Auto" onclick="toggleMask('{{i}}')">
     </div>
     </br>
     <div style="text-align:center">
@@ -58,15 +53,12 @@
             // Change digit and visual
             if (image.src.match("{{ imgMaskOn }}")) {
                 image.src = "{{ imgMaskOff }}";
-                butt.innerHTML = "{{ msgTurnOn }}";
             } else {
                 image.src = "{{ imgMaskOn }}";
-                butt.innerHTML = "{{ msgTurnOff }}";
             }
         }
     </script>
 {% endblock %}
-
 
 {% block background %}
 {% endblock %}
