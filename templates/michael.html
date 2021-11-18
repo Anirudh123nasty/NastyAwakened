@@ -17,11 +17,31 @@
             padding: 8px;
             margin: 25px;
         }
+        body {
+            background-image: url("/static/assets/michaelimages/field.jpg");
+            background-size:     cover;
+        }
     </style>
     <div class="box" > <!-- idek what a box is tbh, might need to change - I just added it for the margin lul -->
         <h1> Michael Chen</h1>
+        <p>Welcome to my page, here is some of my work:</p>
+        <img id="mask_img" style="width: 20%; height: 20%" onclick="mask()" src="/static/assets/michaelimages/michael_mask.jpg" alt="michael_mask">
     </div>
+
+    <script>
+        function mask() {
+            var value = document.getElementById("mask_img").alt
+            if ( value == "michael_mask" ) {
+                document.getElementById("mask_img").src = "/static/assets/michaelimages/michael_nomask.jpg"
+                document.getElementById("mask_img").alt = "michael_nomask"
+            } else {
+                document.getElementById("mask_img").src = "/static/assets/michaelimages/michael_mask.jpg"
+                document.getElementById("mask_img").alt = "michael_mask"
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block background %}
+
 {% endblock %}
