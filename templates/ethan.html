@@ -8,35 +8,48 @@
 
 <!- This is turning off birds background from base.html -->
 {% block background %}
-    <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vanta.waves.min.js') }}"></script>
-    <script>
-        VANTA.WAVES({
-            el: "body",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0xbb62fa,
-        })
-    </script>
 {% endblock %}
 
 {% block body %}
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: 'Poiret One',serif;">
-        <p style="font-family:'Poiret One'; font-size:69px" > Ethan Vo</p>
-    </div>
+    <style>
+        h1 {
+            font-family: Fredericka the Great;
+            font-size: 69px;
+        }
+        p {
+            font-family: Cutive Mono;
+        }
+        .box {
+            padding: 8px;
+            margin: 25px;
+        }
+        body {
+            background-image: url("/static/assets/michaelimages/field.jpg");
+            background-size:     cover;
+        }
+    </style>
 
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family:'Railway'; font-weight: 900; font-size:20px; color: antiquewhite">
-            <p>Hello, {{name}}! This is my about page</p>
-            <form action="{{ url_for('ethan') }}" id="greet" method="POST" >
-                <label for="name">Enter your name:</label>
-                <input name="name" id="name">
-                <input type="submit" value="Greetings!">
-            </form>
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-weight: 900; font-size:20px; color: antiquewhite">
+        <p>Hello, {{name}}! This is my about page</p>
+        <form action="{{ url_for('ethan') }}" id="greet" method="POST" >
+            <label for="name">Enter your name:</label>
+            <input name="name" id="name">
+            <input type="submit" value="Greetings!">
+            <img id="mask_img" style="width: 20%; height: 20%" onclick="mask()" src="/static/assets/ethanimages/maskedvo.png" alt="maskedvo">
+        </form>
         <br>
     </div>
+
+    <script>
+        function mask() {
+            var value = document.getElementById("mask_img").alt
+            if ( value === "maskedvo" ) {
+                document.getElementById("mask_img").src = "/static/assets/ethanimages/unmaskedvo.png"
+                document.getElementById("mask_img").alt = "unmaskedvo"
+            } else {
+                document.getElementById("mask_img").src = "/static/assets/ethanimages/maskedvo.png"
+                document.getElementById("mask_img").alt = "maskedvo"
+            }
+        }
+    </script>
 {% endblock %}
