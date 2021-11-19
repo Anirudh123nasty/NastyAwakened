@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+import json
+import requests
 
 # create a Flask instance
 app = Flask(__name__)
@@ -28,7 +30,21 @@ def anirudh():
         if len(name) != 0:  # input field has content
             return render_template("anirudh.html", name=name)
     # starting and empty input default
-    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg",)
+    url = "https://weatherapi-com.p.rapidapi.com/forecast.json"
+
+    querystring = {"q":"San Diego","days":"30"}
+
+    headers = {
+        'x-rapidapi-host': "weatherapi-com.p.rapidapi.com",
+        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    mydict = json.loads(response.text)
+    print(mydict)
+    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg", myforecast=mydict )
 
 @app.route('/ethan/', methods=['GET', 'POST'])
 def ethan():

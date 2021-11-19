@@ -22,7 +22,18 @@
     }
 
 </style>
-
+        <table>
+            <tr>
+                <th>
+                    Temp
+                </th>
+            </tr>
+            <tr>
+                <th>
+                {{myforecast['forecast']['forecastday'][0]['day']['avgtemp_f']}}
+                </th>
+            </tr>
+        </table>
     </div>
     <div class="col-12" style="text-align:center">
         <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="200" height="250" onclick="MaskOnMaskoff('{{i}}')">
