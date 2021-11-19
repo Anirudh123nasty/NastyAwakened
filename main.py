@@ -28,7 +28,7 @@ def anirudh():
         if len(name) != 0:  # input field has content
             return render_template("anirudh.html", name=name)
     # starting and empty input default
-    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg")
+    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg",)
 
 @app.route('/ethan/', methods=['GET', 'POST'])
 def ethan():

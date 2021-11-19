@@ -15,8 +15,13 @@
         <p style="font-family:'Bebas Neue'; font-size:120px" > Anirudh Ramachandran</p>
     </div>
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: Raleway,serif;">
+<style>
+    body {
+        background-image: url("/static/assets/ethanimages/ankles.png");
+        background-size:     cover;
+    }
 
-
+</style>
 
     </div>
     <div class="col-12" style="text-align:center">
@@ -38,20 +43,6 @@
 {% endblock %}
 
 {% block background %}
-    <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vanta.halo.min.js') }}"></script>
-    <script>
-        VANTA.HALO({
-            el: "body",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color:0xbb62fa,
-            color2: 0x20ffb0
-        })
-    </script>
+
+
 {% endblock %}
