@@ -53,7 +53,22 @@ def ethan():
         if len(name) != 0:
             return render_template("ethan.html", name=name)
             # starting and empty input default
-    return render_template("ethan.html", name="World")
+
+    url = "https://dictionary-by-api-ninjas.p.rapidapi.com/v1/dictionary"
+
+    querystring = {"word":"<REQUIRED>"}
+
+    headers = {
+        'x-rapidapi-host': "dictionary-by-api-ninjas.p.rapidapi.com",
+        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    mydict = json.loads(response.text)
+    print(mydict)
+    return render_template("ethan.html", name="World", mydef=mydict)
 
 
 @app.route('/sahil/', methods=['GET', 'POST'])
