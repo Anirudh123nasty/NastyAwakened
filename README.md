@@ -1,7 +1,4 @@
-# NastyAwakened
-p5-Nastyv2.0
-
-# README - NASTYAWAKENED P5
+# README - NastyAwakened P5
 
 ### Description
 test change
