@@ -1,9 +1,7 @@
 # README - NastyAwakened P5
 
 ### Description
-test change
 This is our new project!. 
-
 
 We hope this is accessible for you and keep working hard!
 
