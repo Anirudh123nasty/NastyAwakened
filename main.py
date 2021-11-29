@@ -53,7 +53,21 @@ def ethan():
 
 @app.route('/sahil/', methods=['GET', 'POST'])
 def sahil():
-    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG")
+    url = "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation"
+
+    querystring = {"cityName":"San Diego","countryName":"United States"}
+
+    headers = {
+        'x-rapidapi-host': "best-booking-com-hotel.p.rapidapi.com",
+        'x-rapidapi-key': "df17610e35msh51d75ac58fb44f9p14c5f0jsn7d95a150e08b"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    dict = json.loads(response.text)
+    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict)
+
 
 @app.route('/nasty/')
 def nasty():
