@@ -20,7 +20,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 | Ethan Vo | [@NastyEthan](https://github.com/NastyEthan) | [Issue](https://github.com/NastyEthan/NastyAwakened/issues/created_by/AD1616) | [Commits](https://github.com/NastyEthan/NastyAwakened/commits?author=NastyEthan) |[ethan.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/ethan.html) |
 | Anirudh Ramachandran | [@Anirudh123nasty](https://github.com/Anirudh123nasty) | [Issue](https://github.com/NastyEthan/NastyAwakened/issues/created_by/Anirudh123nasty) | [Commits](https://github.com/NastyEthan/NastyAwakened/commits?author=Anirudh123nasty) | [anirudh.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/anirudh.html) |
 | Sahil Samar | [@AD1616](https://github.com/AD1616) | [Issue](https://github.com/NastyEthan/NastyAwakened/issues/created_by/AD1616) | [Commits](https://github.com/NastyEthan/NastyAwakened/commits?author=AD1616) | [sahil.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/sahil.html) |
-| Byron Lu | [@](https://github.com/) | [Issue](https://github.com/NastyEthan/NastyAwakened/issues/created_by/) | [Commits](https://github.com/NastyEthan/NastyAwakened/commits?author=) | [sahil.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/) |
+| Byron Lu | [@](https://github.com/) | [Issue](https://github.com/NastyEthan/NastyAwakened/issues/created_by/) | [Commits](https://github.com/NastyEthan/NastyAwakened/commits?author=) | [.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/) |
 
 ## Journals
 * [Michael & Sahil](https://drive.google.com/drive/u/1/folders/109c7P4Li6FC6_TDuxjpdwKTddyE3Jvg1)
