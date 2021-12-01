@@ -23,7 +23,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 | Byron Lu | [@](https://github.com/) | [Issue](https://github.com/NastyEthan/NastyAwakened/issues/created_by/) | [Commits](https://github.com/NastyEthan/NastyAwakened/commits?author=) | [.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/) |
 
 ## Journals
-* [Michael & Sahil](https://drive.google.com/drive/u/1/folders/109c7P4Li6FC6_TDuxjpdwKTddyE3Jvg1)
+* [Michael & Sahil & Byron](https://drive.google.com/drive/u/1/folders/109c7P4Li6FC6_TDuxjpdwKTddyE3Jvg1)
 * [Ethan & Anirudh](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing)
 
 ## Table of Contents
