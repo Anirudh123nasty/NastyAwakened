@@ -50,4 +50,5 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 | Ethan | /8 | | [ethan.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/ethan.html) |
 | Anirudh | /8 |  | [anirudh.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/anirudh.html) |
 | Sahil | /8 |  | [sahil.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/sahil.html) |
+| Byron | /8 |  | [byron.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/byron.html) |
 
