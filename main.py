@@ -29,17 +29,20 @@ def anirudh():
         if len(name) != 0:  # input field has content
             return render_template("anirudh.html", name=name)
     # starting and empty input default
-    url = "https://weatherapi-com.p.rapidapi.com/forecast.json"
-    querystring = {"q":"San Diego","days":"30"}
+    url = "https://community-open-weather-map.p.rapidapi.com/weather"
+
+    querystring = {"q":"San Diego","lat":"32.7157","lon":"-117.161087","id":"2172797","lang":"null","units":"imperial","mode":"json"}
+
     headers = {
-        'x-rapidapi-host': "weatherapi-com.p.rapidapi.com",
-        'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
+        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+        'x-rapidapi-key': "e2d0d1a7efmsh5668be741c711ffp1a3e44jsnfc9e0a91c2b2"
     }
+
     response = requests.request("GET", url, headers=headers, params=querystring)
     print(response.text)
     mydict = json.loads(response.text)
     print(mydict)
-    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg", myforecast=mydict )
+    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg", myweather=mydict )
 
 @app.route('/ethan/', methods=['GET', 'POST'])
 def ethan():

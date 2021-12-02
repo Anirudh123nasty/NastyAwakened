@@ -26,22 +26,36 @@
         <div style="text-align:center">
             <a style="color: white;" href="{{ journal }}" class="btn">Anirudh's Journal</a>
         </div>
-        <table>
-            <tr>
-                <th>
-                    Temp
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    {{myforecast['forecast']['forecastday'][0]['day']['avgtemp_f']}}
-                </th>
-            </tr>
-        </table>
     </div>
     <div class="col-12" style="text-align:center">
         <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="200" height="250" onclick="MaskOnMaskoff('{{i}}')">
     </div>
+    <table style="margin-left:auto;margin-right:auto;">
+
+        <tr>
+            <th>Conditions</th>
+            <th>Values</th>
+        </tr>
+        <tr>
+            <td>Wind</td>
+            <td>{{myweather['wind']['speed']}}</td>
+        </tr>
+        <tr>
+            <td>Humidity</td>
+            <td>{{myweather['main']['humidity']}}</td>
+        </tr>
+        <tr>
+            <td>Feels Like</td>
+            <td>{{myweather['main']['feels_like']}}</td>
+
+        </tr>
+        <tr>
+            <td>Temperature</td>
+            <td>{{myweather['main']['temp']}}</td>
+
+        </tr>
+
+    </table>
     <script>
         function MaskOnMaskoff() {
             const image = document.getElementById('picture');
