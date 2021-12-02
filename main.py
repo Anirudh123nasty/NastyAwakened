@@ -71,6 +71,9 @@ def sahil():
     dict = json.loads(response.text)
     return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict)
 
+@app.route('/byron/')
+def byron():
+    return render_template("byron.html")
 
 @app.route('/nasty/')
 def nasty():
