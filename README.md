@@ -42,16 +42,6 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 | Wiki for Management Plan | [Link to Issue with Wiki Page](https://github.com/NastyEthan/NastyAwakened/issues/24) |
 | Deployment "Guide" in wiki for AWS | [Link to Issue with Wiki Page](https://github.com/NastyEthan/NastyAwakened/issues/22) |
 
-### Week 1 Grading
-| Name | Grade | Requirements | Evidence |
-| - | - | - | - |
-| Group | /8 | | [Individual Pages]()|
-| Michael | /8 | | [michael.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/michael.html) |
-| Ethan | /8 | | [ethan.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/ethan.html) |
-| Anirudh | /8 |  | [anirudh.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/anirudh.html) |
-| Sahil | /8 |  | [sahil.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/sahil.html) |
-| Byron | /8 |  | [byron.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/byron.html) |
-
 
 ## Week 2
 
