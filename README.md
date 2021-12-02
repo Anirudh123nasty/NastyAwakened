@@ -55,7 +55,7 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 | Ethan | 7.75/8 | Did Video Notes, Quiz, and Contributing Guidelines BOF | [ethan.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/ethan.html) <br />  [Contributing Guide](https://github.com/NastyEthan/NastyAwakened/wiki/Contributing-Guidelines) <br />  [Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit#) |
 | Anirudh | 7.75/8 | Did Video Notes, Quiz, and Push and Pull BOF | [anirudh.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/anirudh.html) <br />  [Push Pull Policy](https://github.com/NastyEthan/NastyAwakened/wiki/Push-Pull-guide) <br />  [Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit#) |
 | Sahil | 7.75/8 | Did Video Notes, Quiz, and TO BOF | [sahil.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/sahil.html) <br />  [TO BOF](https://github.com/NastyEthan/NastyAwakened/wiki/BOF---TO) <br />  [Journal](https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit) |
-| Byron | /8 |  | [byron.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/byron.html) <br />  [Journal](https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit) |
+| Byron | /8 |  | [BOF Design](https://github.com/NastyEthan/NastyAwakened/wiki/BOF---Designer)[byron.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/byron.html) <br />  [Journal](https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit) |
 
 
 
