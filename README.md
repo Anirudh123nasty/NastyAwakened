@@ -33,6 +33,11 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 * [Week 4](https://github.com/NastyEthan/NastyAwakened#week-4)
 * [Week 5](https://github.com/NastyEthan/NastyAwakened#week-5)
 
+## Week 0
+| Progress | Evidence |
+| - | - |
+| Repo has arrived! Trimester 2 | [NastyAwakened](https://github.com/NastyEthan/NastyAwakened) |
+
 ## Week 1
 
 ### Week 1 Progress
@@ -48,7 +53,6 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 ### Week 2 Progress
 | Progress | Evidence |
 | - | - |
-| Repo has arrived! Trimester 2 | [NastyAwakened](https://github.com/NastyEthan/NastyAwakened) |
 | Image Mask toggle functions added to about pages | [Individual Pages](https://github.com/NastyEthan/NastyAwakened/tree/main/templates) |
 | Deployment "Guide" in wiki for AWS | [Wiki Page](https://github.com/NastyEthan/NastyAwakened/wiki/Deployment-Guide) |
 
