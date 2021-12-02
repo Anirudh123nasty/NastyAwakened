@@ -47,6 +47,17 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 | Wiki for Management Plan | [Link to Issue with Wiki Page](https://github.com/NastyEthan/NastyAwakened/issues/24) |
 | Deployment "Guide" in wiki for AWS | [Link to Issue with Wiki Page](https://github.com/NastyEthan/NastyAwakened/issues/22) |
 
+### Week 1 Grading
+| Name | Grade | Requirements | Evidence |
+| - | - | - | - |
+| Group | 7.75/8 | Participated in wire frame, brain write, did individual BOFs on wiki and CB Video Notes | [Wiki](https://github.com/NastyEthan/NastyAwakened/wiki) <br /> [Wireframe](https://github.com/NastyEthan/NastyAwakened/wiki/Wireframe---BetterCanvas) <br /> [Brainwrite](https://github.com/NastyEthan/NastyAwakened/wiki/Brainwrite)|
+| Michael | 7.75/8 | Did Video Notes, Quiz, and Deployment BOF | [michael.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/michael.html) <br />  [Deployment Guide](https://github.com/NastyEthan/NastyAwakened/wiki/Deployment-Guide) <br />  [Journal](https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit) |
+| Ethan | 7.75/8 | Did Video Notes, Quiz, and Contributing Guidelines BOF | [ethan.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/ethan.html) <br />  [Contributing Guide](https://github.com/NastyEthan/NastyAwakened/wiki/Contributing-Guidelines) <br />  [Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit#) |
+| Anirudh | 7.75/8 | Did Video Notes, Quiz, and Push and Pull BOF | [anirudh.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/anirudh.html) <br />  [Push Pull Policy](https://github.com/NastyEthan/NastyAwakened/wiki/Push-Pull-guide) <br />  [Journal](https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit#) |
+| Sahil | 7.75/8 | Did Video Notes, Quiz, and TO BOF | [sahil.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/sahil.html) <br />  [TO BOF](https://github.com/NastyEthan/NastyAwakened/wiki/BOF---TO) <br />  [Journal](https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit) |
+| Byron | /8 |  | [byron.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/byron.html) <br />  [Journal](https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit) |
+
+
 
 ## Week 2
 
