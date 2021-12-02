@@ -38,11 +38,31 @@ NASTY Developers: Ethan Vo, Michael Chen, Anirudh Ramachandran, Sahil Samar, and
 ### Week 1 Progress
 | Progress | Evidence |
 | - | - |
+| Design and Technicals | [Link to issue with Brain Write and Wire Frame with Technicals](https://github.com/NastyEthan/NastyAwakened/issues/8) |
+| Wiki for Management Plan | [Link to Issue with Wiki Page](https://github.com/NastyEthan/NastyAwakened/issues/24) |
+| Deployment "Guide" in wiki for AWS | [Link to Issue with Wiki Page](https://github.com/NastyEthan/NastyAwakened/issues/22) |
+
+### Week 1 Grading
+| Name | Grade | Requirements | Evidence |
+| - | - | - | - |
+| Group | /8 | | [Individual Pages]()|
+| Michael | /8 | | [michael.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/michael.html) |
+| Ethan | /8 | | [ethan.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/ethan.html) |
+| Anirudh | /8 |  | [anirudh.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/anirudh.html) |
+| Sahil | /8 |  | [sahil.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/sahil.html) |
+| Byron | /8 |  | [byron.html](https://github.com/NastyEthan/NastyAwakened/blob/main/templates/byron.html) |
+
+
+## Week 2
+
+### Week 2 Progress
+| Progress | Evidence |
+| - | - |
 | Repo has arrived! Trimester 2 | [NastyAwakened](https://github.com/NastyEthan/NastyAwakened) |
 | Image Mask toggle functions added to about pages | [Individual Pages](https://github.com/NastyEthan/NastyAwakened/tree/main/templates) |
 | Deployment "Guide" in wiki for AWS | [Wiki Page](https://github.com/NastyEthan/NastyAwakened/wiki/Deployment-Guide) |
 
-### Week 1 Grading
+### Week 2 Grading
 | Name | Grade | Requirements | Evidence |
 | - | - | - | - |
 | Group | /8 | | [Individual Pages]()|
