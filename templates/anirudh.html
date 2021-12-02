@@ -12,35 +12,52 @@
 
 
 {% block body %}
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-        <p style="font-family:'Bebas Neue'; font-size:120px" > Anirudh Ramachandran</p>
-    </div>
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: Raleway,serif;">
     <style>
         body {
             background-image: url("/static/assets/ethanimages/ankles.png");
             background-size:     cover;
         }
-
+        header {
+            font-family: "Bebas Neue";
+            font-size: 120px
+        }
+        table {
+            padding: 2px;
+            border-spacing: 5px;
+        }
     </style>
-        <div style="text-align:center">
-            <a style="color: white;" href="{{ journal }}" class="btn">Anirudh's Journal</a>
-        </div>
-        <table>
-            <tr>
-                <th>
-                    Temp
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    {{myforecast['forecast']['forecastday'][0]['day']['avgtemp_f']}}
-                </th>
-            </tr>
-        </table>
-    </div>
-    <div class="col-12" style="text-align:center">
+    <div style="padding: 8px; margin: 25px;">
+    <!-- for centering, add "text-align: center" to div style -->
+        <header> Anirudh Ramachandran</header>
+        <a style="color: white;" href="{{ journal }}" >Anirudh's Journal</a>
+        <br>
         <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="200" height="250" onclick="MaskOnMaskoff('{{i}}')">
+        <table>
+
+            <tr>
+                <th>Conditions</th>
+                <th>Values</th>
+            </tr>
+            <tr>
+                <td>Wind</td>
+                <td>{{myweather['wind']['speed']}}</td>
+            </tr>
+            <tr>
+                <td>Humidity</td>
+                <td>{{myweather['main']['humidity']}}</td>
+            </tr>
+            <tr>
+                <td>Feels Like</td>
+                <td>{{myweather['main']['feels_like']}}</td>
+
+            </tr>
+            <tr>
+                <td>Temperature</td>
+                <td>{{myweather['main']['temp']}}</td>
+
+            </tr>
+
+        </table>
     </div>
     <script>
         function MaskOnMaskoff() {
