@@ -1,0 +1,43 @@
+{% include 'layouts/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <h2 style="color: white" >Hi my name is Byron Lu and I am a sophomore in AP CSP.</h2>
+    <a style="font-size: 30px;color: white" href="https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit">Journal Link</a>
+
+<body>
+<label class="tog">
+    <input type="checkbox" checked>
+    <span>Mask</span>
+</label>
+</body>
+<style>
+    html,body {
+        background: url('/static/assets/byronimages/byronbackground2.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    label.tog > input {
+
+    }
+
+    label.tog > input + span {
+        text-indent: -9000px; /* Make text Accessible but not visible */
+        display: inline-block;
+        width: 400px;
+        height: 400px;
+        background: center / contain no-repeat url("/static/assets/byronimages/byronmaskoff.png");
+    }
+
+    label.tog > input:checked + span {
+        background-image: url("/static/assets/byronimages/byronmaskon.png");
+    }
+</style>
+
+</html>
