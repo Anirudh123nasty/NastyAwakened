@@ -1,15 +1,18 @@
-from flask import Flask, render_template, request
+from flask import render_template, request
+from crud import app_crud
+from __init__ import app
 import json
 import requests
-# create a Flask instance
-app = Flask(__name__)
+import time
+
+
+app.register_blueprint(app_crud)
 
 
 # connects default URL to render index.html
 @app.route('/')
 def index():
     return render_template("nasty.html")
-
 
 
 @app.route('/michael/', methods=['GET', 'POST'])
@@ -21,6 +24,7 @@ def michael():
     # starting and empty input default
     return render_template("michael.html", name="World")
 
+
 @app.route('/anirudh/', methods=['GET', 'POST'])
 def anirudh():
     # submit button has been pushed
@@ -30,7 +34,7 @@ def anirudh():
             return render_template("anirudh.html", name=name)
     # starting and empty input default
     url = "https://weatherapi-com.p.rapidapi.com/forecast.json"
-    querystring = {"q":"San Diego","days":"30"}
+    querystring = {"q": "San Diego", "days": "30"}
     headers = {
         'x-rapidapi-host': "weatherapi-com.p.rapidapi.com",
         'x-rapidapi-key': "7f40b4d84bmsha2a68aaf4baa0afp168062jsncc2e438f86de"
@@ -39,7 +43,9 @@ def anirudh():
     print(response.text)
     mydict = json.loads(response.text)
     print(mydict)
-    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg", myforecast=mydict )
+    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg",
+                           Img2="/static/assets/anirudhimages/anirudhnomask.jpg", myforecast=mydict)
+
 
 @app.route('/ethan/', methods=['GET', 'POST'])
 def ethan():
@@ -55,23 +61,28 @@ def ethan():
 def sahil():
     url = "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation"
 
-    querystring = {"cityName":"San Diego","countryName":"United States"}
+    cities = ["San Diego", "Los Angeles", "New York", "Lincoln", "Miami"]
+    for city in cities:
+        querystring = {"cityName": city, "countryName": "United States"}
 
-    headers = {
-        'x-rapidapi-host': "best-booking-com-hotel.p.rapidapi.com",
-        'x-rapidapi-key': "df17610e35msh51d75ac58fb44f9p14c5f0jsn7d95a150e08b"
-    }
+        headers = {
+            'x-rapidapi-host': "best-booking-com-hotel.p.rapidapi.com",
+            'x-rapidapi-key': "df17610e35msh51d75ac58fb44f9p14c5f0jsn7d95a150e08b"
+        }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        time.sleep(5)
 
     print(response.text)
     dict = json.loads(response.text)
-    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict)
+    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG",
+                           pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict)
 
 
 @app.route('/nasty/')
 def nasty():
     return render_template("nasty.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
