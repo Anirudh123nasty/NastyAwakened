@@ -101,23 +101,5 @@ def byron():
 def nasty():
     return render_template("nasty.html")
 
-
-@app.route('/sports/')
-def sports():
-    url = "https://livescore6.p.rapidapi.com/matches/v2/list-live"
-
-    querystring = {"Category":"soccer"}
-
-    headers = {
-        'x-rapidapi-host': "livescore6.p.rapidapi.com",
-        'x-rapidapi-key': "e919089b4amsh0b802c611d0362cp1ef95cjsn19265aeec315"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
-
-    return render_template("sports.html")
-
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,3 +1,6 @@
-Flask
+Flask~=2.0.1
 numpy
 pillow
+SQLAlchemy~=1.4.27
+requests~=2.26.0
+crud~=0.1
