@@ -8,7 +8,7 @@ from model import print_tester, url_prefix
 # play with api on localhost, server must be running
 def api_tester():
     # local host URL for model
-    url = 'http://127.0.0.1:5222/' + url_prefix
+    url = 'http://127.0.0.1:5000/' + url_prefix
 
     # test conditions
     API = 0

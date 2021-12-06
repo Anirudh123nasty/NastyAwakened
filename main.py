@@ -1,12 +1,13 @@
-from flask import Flask, render_template, request
-import json
+from flask import render_template, request
+from crud import app_crud
+from __init__ import app
 import requests
+import time
 import ssl
+import urllib.request, json
 ssl._create_default_https_context = ssl._create_unverified_context
 
-# create a Flask instance
-app = Flask(__name__)
-
+app.register_blueprint(app_crud)
 
 # connects default URL to render index.html
 @app.route('/')
@@ -45,7 +46,7 @@ def anirudh():
     print(response.text)
     mydict = json.loads(response.text)
     print(mydict)
-    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg", myforecast=mydict )
+    return render_template("anirudh.html", name="World", Img1="/static/assets/anirudhimages/anirudhmask.jpg", Img2="/static/assets/anirudhimages/anirudhnomask.jpg", myweather=mydict )
 
 @app.route('/ethan/', methods=['GET', 'POST'])
 def ethan():
@@ -80,7 +81,7 @@ def ethan():
 def sahil():
     url = "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation"
 
-    cities = ["San Diego", "Los Angeles", "New York", "Lincoln", "Miami"]
+    cities = ["San Diego"]
     for city in cities:
         querystring = {"cityName": city, "countryName": "United States"}
 
@@ -91,11 +92,11 @@ def sahil():
 
         response = requests.request("GET", url, headers=headers, params=querystring)
         time.sleep(5)
+        print(city)
 
     print(response.text)
     dict = json.loads(response.text)
-    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG",
-                           pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict)
+    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict)
 
 @app.route('/byron/')
 def byron():
