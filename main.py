@@ -1,8 +1,14 @@
-from flask import Flask, render_template, request
-import urllib.request, json
+from flask import render_template, request
+from crud import app_crud
+from __init__ import app
 import requests
+import time
 import ssl
+import urllib.request, json
 ssl._create_default_https_context = ssl._create_unverified_context
+
+app.register_blueprint(app_crud)
+
 
 # create a Flask instance
 app = Flask(__name__)
