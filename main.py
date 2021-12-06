@@ -56,25 +56,6 @@ def ethan():
             definition = data[0]["meanings"][0]["definitions"][0]["definition"]
         return render_template("ethan.html", word=word, mydef=definition)
     return render_template("ethan.html", word="Word appears here", mydef="Definition here")
-    # word = request.form.get("word")
-    # if word is None:
-    #     return render_template("ethan.html", mydef="Definition here")
-    # else:
-    #     with urllib.request.urlopen(f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}") as url:
-    #         data = json.loads(url.read().decode())
-    #         definition = data[0]["meanings"][0]["definitions"][0]["definition"]
-    #     return render_template("ethan.html", mydef=definition)
-        # if len(word) != 0:
-        #     with urllib.request.urlopen(f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}") as url:
-        #         data = json.loads(url.read().decode())
-        #         definition = data[0]["meanings"][0]["definitions"][0]["definition"]
-        # return render_template("ethan.html", mydef=definition)
-        #     # starting and empty input default
-
-
-
-    # return render_template("ethan.html", mydef="Definition here")
-
 
 @app.route('/sahil/', methods=['GET', 'POST'])
 def sahil():
@@ -101,5 +82,8 @@ def byron():
 def nasty():
     return render_template("nasty.html")
 
+@app.route('/calendar/', methods=['GET', 'POST'])
+def calendar():
+    return render_template("calendar.html")
 if __name__ == "__main__":
     app.run(debug=True)
