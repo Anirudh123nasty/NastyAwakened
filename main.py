@@ -1,12 +1,13 @@
-from flask import Flask, render_template, request
-import urllib.request, json
+from flask import render_template, request
+from crud import app_crud
+from __init__ import app
 import requests
+import time
 import ssl
+import urllib.request, json
 ssl._create_default_https_context = ssl._create_unverified_context
 
-# create a Flask instance
-app = Flask(__name__)
-
+app.register_blueprint(app_crud)
 
 # connects default URL to render index.html
 @app.route('/')
@@ -61,14 +62,18 @@ def ethan():
 def sahil():
     url = "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation"
 
-    querystring = {"cityName":"San Diego","countryName":"United States"}
+    cities = ["San Diego"]
+    for city in cities:
+        querystring = {"cityName": city, "countryName": "United States"}
 
-    headers = {
-        'x-rapidapi-host': "best-booking-com-hotel.p.rapidapi.com",
-        'x-rapidapi-key': "df17610e35msh51d75ac58fb44f9p14c5f0jsn7d95a150e08b"
-    }
+        headers = {
+            'x-rapidapi-host': "best-booking-com-hotel.p.rapidapi.com",
+            'x-rapidapi-key': "df17610e35msh51d75ac58fb44f9p14c5f0jsn7d95a150e08b"
+        }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        time.sleep(5)
+        print(city)
 
     print(response.text)
     dict = json.loads(response.text)
