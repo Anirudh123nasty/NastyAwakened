@@ -9,17 +9,10 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 app.register_blueprint(app_crud)
 
-
-# create a Flask instance
-app = Flask(__name__)
-
-
 # connects default URL to render index.html
 @app.route('/')
 def index():
     return render_template("nasty.html")
-
-
 
 @app.route('/michael/', methods=['GET', 'POST'])
 def michael():
