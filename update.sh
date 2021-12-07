@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function updates{
+function updates {
     # Update packages
     sudo apt-get update
     sudo apt-get install python3-pip nginx git
