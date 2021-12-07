@@ -16,12 +16,21 @@ def index():
 
 @app.route('/michael/', methods=['GET', 'POST'])
 def michael():
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("michael.html", name=name)
     # starting and empty input default
-    return render_template("michael.html", name="World")
+    url = "https://community-open-weather-map.p.rapidapi.com/weather"
+
+    querystring = {"q":"San Diego","lat":"32.7157","lon":"-117.161087","id":"2172797","lang":"null","units":"imperial","mode":"json"}
+
+    headers = {
+        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+        'x-rapidapi-key': "e2d0d1a7efmsh5668be741c711ffp1a3e44jsnfc9e0a91c2b2"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    print(response.text)
+    mydict = json.loads(response.text)
+    print(mydict)
+    return render_template("michael.html", weather=mydict)
 
 @app.route('/anirudh/', methods=['GET', 'POST'])
 def anirudh():
