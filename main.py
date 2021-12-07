@@ -109,5 +109,9 @@ def byron():
 def nasty():
     return render_template("nasty.html")
 
+@app.route('/calendar/')
+def calendar():
+    return render_template("calendar.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
