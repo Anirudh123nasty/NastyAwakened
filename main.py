@@ -80,8 +80,10 @@ def ethan():
 @app.route('/sahil/', methods=['GET', 'POST'])
 def sahil():
     url = "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation"
-
-    cities = ["San Diego"]
+    cities = [""]
+    if request.form:
+        city = request.form.get("city")
+        cities.append(city)
     for city in cities:
         querystring = {"cityName": city, "countryName": "United States"}
 
@@ -91,12 +93,14 @@ def sahil():
         }
 
         response = requests.request("GET", url, headers=headers, params=querystring)
-        time.sleep(5)
+        time.sleep(1)
         print(city)
 
     print(response.text)
     dict = json.loads(response.text)
-    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict)
+    res = requests.get('https://www.boredapi.com/api/activity')
+    activity = res.json()['activity']
+    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict, activity=activity)
 
 @app.route('/byron/')
 def byron():
