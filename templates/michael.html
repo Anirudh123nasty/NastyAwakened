@@ -13,6 +13,10 @@
         p {
             font-family: Cutive Mono;
         }
+        a.journal {
+            font-family: Cutive Mono;
+            color: white;
+        }
         .box {
             padding: 8px;
             margin: 25px;
@@ -23,9 +27,29 @@
         }
     </style>
     <div class="box" > <!-- idek what a box is tbh, might need to change - I just added it for the margin lul -->
-        <h1> Michael Chen</h1>
+
+        <div id="top" style="text-align: left" >
+            <h1> Michael Chen</h1>
+            <span style="float:right; font-family: 'Cutive Mono'; text-align: center">
+                WEATHER API:
+                <br>
+                Temperature: {{weather['main']['temp']}}°F
+                <br>
+                Pressure: {{ weather['main']['pressure']}} hPa
+                <br>
+                Clouds: {{ weather['clouds']['all']}}
+                <br>
+                Humidity: {{ weather['main']['humidity']}}%
+            </span>
+        </div>
         <p>Welcome to my page, here is some of my work:</p>
+        <p>Important Links:</p>
+        <ul>
+            <li><a class="journal" href="https://docs.google.com/document/u/1/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit?usp=sharing">Journal</a></li>
+        </ul>
+
         <img id="mask_img" style="width: 20%; height: 20%" onclick="mask()" src="/static/assets/michaelimages/michael_mask.jpg" alt="michael_mask">
+        <br>
     </div>
 
     <script>
