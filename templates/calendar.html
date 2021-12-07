@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- THE MAIN PROJECT -->
+{% set basename = "Nighthawk Coding" %}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive Mono"> <!-- a monospace -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue"> <!-- https://fonts.google.com/specimen/Bebas+Neue?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret One"> <!-- https://fonts.google.com/specimen/Poiret+One?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton"> <!-- https://fonts.google.com/specimen/Monoton?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredericka the Great"> <!-- https://fonts.google.com/specimen/Fredericka+the+Great?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Forum"> <!--https://fonts.google.com/specimen/Forum?category=Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        p {
+            font-family: Raleway;
+        }
+        body {
+            background-color: antiquewhite;
+        }
+        h1 {
+            font-family: Forum;
+            font-size: 90px;
+        }
+        table {
+            width: auto;
+            margin-top: 20px;
+            text-align: center;
+            /*column-rule: 4px dotted rgb(79, 185, 227);*/
+        }
+        .dark-mode {
+            background-color: #35363a;
+            color: #b3b3b3;
+
+        }
+
+        th, td{
+            font-family: Raleway;
+            border: 3px solid black;
+            column-rule: 4px dotted rgb(79, 185, 227);
+            padding: 10px;
+        }
+        button.task {
+            margin-top: 5px;
+            font-family: Raleway;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: #3D3D3D;
+            background: #fff;
+            border: 1px solid white;
+            box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            transition-deration: 0.4s;
+        }
+        button:hover {
+            background-color: floralwhite;
+            border: 1px solid black;
+        }
+        button {
+            margin-top: 5px;
+            font-family: Raleway;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: #3D3D3D;
+            background: #fff;
+            border: 1px solid black;
+            box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            transition-deration: 0.4s;
+        }
+        label {
+            font-family: Raleway;
+        }
+        iframe {
+            border: 0px;
+        }
+        input.checkbox {
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+        }
+        input.text {
+            font-family: Raleway;
+            border: 0;
+        }
+        input::placeholder {
+            color: gray;
+            padding-left: 10px;
+            font-size: small;
+            font-family: Raleway;
+        }
+        /*li {*/
+        /*    text-align: left;*/
+        /*}*/
+        ol {
+            margin-left: -40px;
+            list-style-position: inside;
+        }
+        #top {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <title>Nighthawk Coding | Planner</title>
+</head>
+
+<body onload="check()">
+{% include "layouts/navbar.html" %}
+<div style="margin-left: 50px; margin-right: 50px">
+    <div id="top" style="text-align: right" >
+        <h1>PLANNER</h1>
+        <p style="font-family: Courier New">{{mytime['LocalTime_Now']}} </p>
+    </div>
+    <p>This is the project's <i>WEEKLY</i> schedule - <b>a daily planner structured on a weekly basis.</b></p>
+
+  <button class="mode" onclick="toggleMode()">Toggle Dark Mode</button>
+    <input type="checkbox" class="checkbox" id="color" onclick="display(id)">
+    <label for="color">Use Colors?</label>
+
+
+    <table>
+        <tr>    <!-- tr is the table row and center aligns them  -->
+            <th>Sunday</th>      <!-- The days and aligning in the center th is the table header  -->
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+        </tr>
+        <tr>
+            {% for i in range(1, 8) %}
+                <td id="cell.{{i}}">
+                    <ol id="show_input.{{i}}">
+                    </ol>
+                    <input placeholder="Task" type="text" class="text" id="task.{{i}}">
+                    <button class="task" id="add_task.{{i}}" onclick="display('{{i}}')">Add Task</button>
+                    <br>
+                    <button class="task" onclick="remove('{{i}}')">Clear Task(s)</button>
+                </td>
+            {% endfor %}
+        </tr>
+    </table>
+
+    <br>
+
+
+    <button onclick="music()" id="Music">Want to Listen to Music?</button>
+    <button onclick="toggleMusic()" id="HideMusic">Toggle Show Music</button>
+    <iframe id="songs" src="about:blank" width="100%" height="280" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+
+
+    <script>
+        // converting string (task input) to hex
+        function conversion(i) {
+            const show_input = "show_input." + i;
+            const tasks_text = show_input + ".text"
+            // localStorage.setItem(task, document.getElementById(task).value);
+            localStorage.setItem(tasks_text, document.getElementById(show_input).innerText)
+            let text = localStorage.getItem(tasks_text);
+            let short = text.slice(-4) // takes last 4 characters of the task list
+            let arr1 = [];
+            for (let n = 0, l = short.length; n < l; n ++)
+            {
+                let hex = Number(short.charCodeAt(n)).toString(16); // algorithm from stack overflow, thanks
+                arr1.push(hex);
+            }
+            return "#" + arr1.join('')
+        }
+
+        function colorChange(i) {
+            let cell = "cell." + i;
+            let cellColor = cell + "." + "color";
+            localStorage.setItem(cellColor, conversion(i));
+            document.getElementById(cell).style.backgroundColor = localStorage.getItem(cellColor); // changes cell background color to the hex from conversion()
+        }
+
+
+        // displaying user input for their tasks
+        function display(i) {
+            let task = "task." + i;
+            // let task2 = "task." + id;
+            const show_input = "show_input." + i;
+            const cell = "cell." + i;
+            localStorage.setItem(task, document.getElementById(task).value); // stores value in session
+            const TASK = localStorage.getItem(task); // a new variable for the list
+            const list = document.createElement('list');
+            list.innerHTML = "<li>" + TASK + "</li>"; // list
+            document.getElementById(show_input).appendChild(list); // adding to list
+            localStorage.setItem(show_input, document.getElementById(show_input).innerHTML)
+
+            // whether or not checkbox is toggled, and uses color based on result
+
+            let checked = document.getElementById("color").checked;
+            if ( checked ) {
+                colorChange(i);
+                localStorage.setItem("checkbox", "true");
+            } else {
+                document.getElementById(cell).style.backgroundColor = null;
+                localStorage.setItem("checkbox", "false");
+            }
+            document.getElementById(task).value = null; // clears input box, QOL update
+        }
+
+        // enter key
+        for (let i = 1; i < 8; i++) {
+            const task = "task." + i;
+            const button = "add_task." + i;
+            document.getElementById(task)
+                .addEventListener("keyup", function (event) {
+                    event.preventDefault();
+                    if (event.keyCode === 13) { // maybe it's deprecated, but it works
+                        document.getElementById(button).click(); // button runs the display() code
+                    }
+                });
+        }
+
+        // checks stored web memory for tasks from a prev. session
+        function check() {
+            for (let i = 1; i < 8; i++) {
+                const task = "task." + i;
+                const show_input = "show_input." + i;
+                if (typeof localStorage.getItem(task) !== null) {
+                    // let tasks = "'" + str + "'".split(" "); // I really thought I needed the text...
+                    document.getElementById(show_input).innerHTML = localStorage.getItem(show_input);
+                    // alert(str.match(/.*?[\.\s]+?/g)) // nah bruh
+                }
+                // let cellColor = cell + "." + "color";
+                // if ( typeof localStorage.getItem(cellColor) !== "#" ) {
+                //     colorChange(i)
+                // }
+                // let checked = document.getElementById("color").checked
+                if (localStorage.getItem("checkbox")) {
+                    document.getElementById("color").checked = true;
+                    colorChange(i);
+                }
+            }
+        }
+
+        // clears task list and web storage
+        function remove(i) {
+            const task = "task." + i;
+            const show_input = "show_input." + i;
+            let cell = "cell." + i;
+            // clearing web storage
+            localStorage.removeItem(task);
+            localStorage.removeItem(show_input);
+            // clearing cell text
+            document.getElementById(show_input).innerHTML = null;
+            if ( typeof document.getElementById(cell).style.backgroundColor !== null ) { // checking for color
+                document.getElementById(cell).style.backgroundColor = null // removing color
+            }
+
+        }
+
+        // all personal playlists (from Michael), can add more public one's in the future
+        // playlist format: https://open.spotify.com/embed/playlist/ID
+        // make sure to include /embed/ and remove the ?:stuff
+        const a = "https://open.spotify.com/embed/playlist/18KrvqaSiubu6uPN9kYUw8";
+        const b = "https://open.spotify.com/embed/playlist/6WYQ7w1iQ4bsMXT50A6fCu";
+        const c = "https://open.spotify.com/embed/playlist/4qgfMmrc8XSF3P1fHmiuvf";
+        const d = "https://open.spotify.com/embed/playlist/5kYOn1V225bRpJ1CpwZPX8";
+        const e = "https://open.spotify.com/embed/playlist/2Ytk3eaNRNao1B0NJais5X";
+        const f = "https://open.spotify.com/embed/playlist/1qO45Esl7AIo6nsuM18tyy";
+        const h = "https://open.spotify.com/embed/playlist/7077oO7N4wtuxXbrcG1Ph7";
+        const playlists = [a, b, c, d, e, f, h];
+        const x = document.getElementById("songs");
+
+        function music() {
+            document.getElementById('songs').src = playlists[Math.floor(Math.random() * playlists.length)];
+            if (x.style.display === "none") {
+                x.style.display = 'block';
+            }
+        }
+
+        function toggleMusic() {
+            if (x.style.display === "none") {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+    </script>
+</div>
+</body>

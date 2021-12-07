@@ -1,13 +1,28 @@
 <!- This variable sets name of browser tab  -->
 {% extends "layouts/base.html" %}
 
+{% set project = "About" %}
+
 {% block background %}
     <body style="background-color: #5B3B8C;">  </body>
 {% endblock %}
 
 {% block body %}
-{% set project = "About" %}
     <style>
+        .grid-container {
+            display: grid;
+            grid-template-rows: 200px 50px;
+            grid-template-columns: auto auto auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            text-align: center;
+            padding: 10px;
+            font-size: 30px;
+        }
+
         h1 {
             font-family: "Bebas Neue";
             text-align: center;
@@ -55,43 +70,51 @@
     <h1>Nasty: About Us</h1>
     <br>
     <!-- TRY THIS https://stackoverflow.com/questions/42051528/how-do-i-make-an-image-clickable TY -->
-    <div class="container">
-        <div class="row justify-content-center" style="text-align: center">
-            <div class="col align-self-start">
-                <a href="http://127.0.0.1:5000/michael"><img src="/static/assets/michaelprofile.jpg" alt="Michael's picture" style="width: 200px; height: 200px; object-fit: cover" ></a>
-            </div>
-            <div class="col align-self-start">
-                <a href="http://127.0.0.1:5000/ethan"><img src="/static/assets/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px; object-fit: cover"></a>
-            </div>
-            <div class="col align-self-start">
-                <a href="http://127.0.0.1:5000/anirudh"><img src="/static/assets/anirudhprofile.jpg" alt="Anirudh's picture" style="width: 200px; height: 200px; object-fit: cover "></a>
-            </div>
-            <div class="col align-self-start">
-                <a href="http://127.0.0.1:5000/sahil"><img src="/static/assets/sahilimages/sahilnomask.JPG" alt="Sahil's picture" style="width: 200px; height: 200px; object-fit:cover"></a>
-            </div>
+
+
+    <div class="grid-container">
+        <div>
+            <a href={{ url_for('michael') }}><img src="/static/assets/profileimages/michaelprofile.jpg" alt="Michael's picture" style="width: 200px; height: 200px; object-fit: cover" ></a>
         </div>
-        <div class="row justify-content-center" style="text-align: center">
-            <div class="col align-self-start">
-                <a class="name" style="color:white" href="http://127.0.0.1:5000/michael"> Michael Chen </a>
-            </div>
-            <div class="col align-self-start">
-                <a class="name" style="color:white" href="http://127.0.0.1:5000/ethan">  Ethan Vo </a>
-            </div>
-            <div class="col align-self-start">
-                <a class="name" style="color:white" href="http://127.0.0.1:5000/anirudh"> Anirudh Ramachandran </a>
-            </div>
-            <div class="col align-self-start">
-                <a class="name" style="color:white" href="http://127.0.0.1:5000/sahil"> Sahil Samar </a>
-            </div>
+        <div>
+            <a href={{ url_for('ethan') }}"><img src="/static/assets/profileimages/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px; object-fit: cover"></a>
+        </div>
+        <div>
+            <a href={{ url_for('anirudh') }}><img src="/static/assets/profileimages/anirudhprofile.jpg" alt="Anirudh's picture" style="width: 200px; height: 200px; object-fit: cover "></a>
+        </div>
+        <div>
+            <a href={{ url_for('sahil') }}><img src="/static/assets/sahilimages/sahilnomask.JPG" alt="Sahil's picture" style="width: 200px; height: 200px; object-fit:cover"></a>
+        </div>
+        <div>
+            <a href={{ url_for('byron') }}><img src="/static/assets/byronimages/byronmaskoff.png" alt="Byron's picture" style="width: 200px; height: 200px; object-fit:cover"></a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href={{ url_for('michael') }}> Michael Chen </a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href={{ url_for('ethan') }}>  Ethan Vo </a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href={{ url_for('anirudh') }}> Anirudh  </a>
+            <br>
+            <a class="name" style="color:white" href={{ url_for('anirudh') }}> Ramachandran </a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href={{ url_for('sahil') }}> Sahil Samar </a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href={{ url_for('byron') }}> Byron Lu </a>
         </div>
     </div>
+
+
     <br>
     <br>
     <h2 class="text-center">Journals</h2>
     <div class="container">
         <div class="row justify-content-md-center" style="text-align: center; width: 100%">
             <div class="col-3">
-                <a href="https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit?usp=sharing" target="_blank" class="btn">Michael & James</a>
+                <a href="https://docs.google.com/document/d/1R43f8RuXc5HnxJAlKmvdIIxjIf3VF8rpTDBk7qxklEU/edit?usp=sharing" target="_blank" class="btn">Michael, Sahil, & Byron</a>
             </div>
             <div class="col-3">
                 <a href="https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit?usp=sharing" target="_blank" class="btn">Ethan & Anirudh</a>
