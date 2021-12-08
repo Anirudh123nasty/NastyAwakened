@@ -2,7 +2,6 @@ from flask import render_template, request
 from crud import app_crud
 from __init__ import app
 import requests
-import time
 import ssl
 import urllib.request, json
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -57,13 +56,16 @@ def anirudh():
 
 @app.route('/ethan/', methods=['GET', 'POST'])
 def ethan():
-    if request.form:
-        word = request.form.get("word")
-        with urllib.request.urlopen(f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}") as url:
-            data = json.loads(url.read().decode())
-            definition = data[0]["meanings"][0]["definitions"][0]["definition"]
-        return render_template("ethan.html", word=word, mydef=definition)
-    return render_template("ethan.html", word="Word appears here", mydef="Definition here")
+    try:
+        if request.form:
+            word = request.form.get("word")
+            with urllib.request.urlopen(f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}") as url:
+                data = json.loads(url.read().decode())
+                definition = data[0]["meanings"][0]["definitions"][0]["definition"]
+            return render_template("ethan.html", word=word, mydef=definition)
+        return render_template("ethan.html", word="Word appears here", mydef="Definition here")
+    except:
+        return render_template("ethan.html", word="Invalid Output", mydef="Error")
     # word = request.form.get("word")
     # if word is None:
     #     return render_template("ethan.html", mydef="Definition here")
@@ -112,6 +114,11 @@ def nasty():
 @app.route('/calendar/')
 def calendar():
     return render_template("calendar.html")
+
+
+@app.route('/classboard/')
+def classboard():
+    return render_template("classboard.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
