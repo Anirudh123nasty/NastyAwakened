@@ -100,6 +100,9 @@ def sahil():
     dict = json.loads(response.text)
     res = requests.get('https://www.boredapi.com/api/activity')
     activity = res.json()['activity']
+    if request.form.get("askActivity"):
+        res = requests.get('https://www.boredapi.com/api/activity')
+        activity = res.json()['activity']
     return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict, activity=activity)
 
 @app.route('/byron/')
