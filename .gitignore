@@ -6,4 +6,3 @@
 .vscode/launch.json
 algorithms/__pycache__/image.cpython-39.pyc
 *.pyc
-*.pyc

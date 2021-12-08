@@ -9,7 +9,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto">
             <li class="navbar-nav">
-                <a class="nav-link" href="http://127.0.0.1:5000/nasty">Nasty</a>
+                <a class="nav-link" href={{ url_for('nasty') }}>Nasty</a>
             </li>
             <li class="navbar-nav">
                 <a class="nav-link" href={{ url_for('crud.search') }}>SQL Search</a>
@@ -19,11 +19,11 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                     About Page
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/ethan">Ethan</a>
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/anirudh">Anirudh</a>
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/michael">Michael</a>
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/sahil">Sahil</a>
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/byron">Byron</a>
+                    <a class="dropdown-item" href={{ url_for('ethan') }}>Ethan</a>
+                    <a class="dropdown-item" href={{ url_for('anirudh') }}>Anirudh</a>
+                    <a class="dropdown-item" href={{ url_for('michael') }}>Michael</a>
+                    <a class="dropdown-item" href={{ url_for('sahil') }}>Sahil</a>
+                    <a class="dropdown-item" href={{ url_for('byron') }}>Byron</a>
                 </div>
             </li>
         </ul>
