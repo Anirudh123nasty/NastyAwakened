@@ -11,6 +11,9 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
             <li class="navbar-nav">
                 <a class="nav-link" href="http://127.0.0.1:5000/nasty">Nasty</a>
             </li>
+            <li class="navbar-nav">
+                <a class="nav-link" href={{ url_for('crud.search') }}>SQL Search</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About Page
@@ -20,6 +23,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                     <a class="dropdown-item" href="http://127.0.0.1:5000/anirudh">Anirudh</a>
                     <a class="dropdown-item" href="http://127.0.0.1:5000/michael">Michael</a>
                     <a class="dropdown-item" href="http://127.0.0.1:5000/sahil">Sahil</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/byron">Byron</a>
                 </div>
             </li>
         </ul>
