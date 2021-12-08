@@ -1,6 +1,7 @@
 {% extends "layouts/base.html" %}
 
 <!- This variable sets name of browser tab  -->
+{% set activity = activity %}
 {% set project = "Sahil" %}
 {% set imgMaskOn = pic1 %}
 {% set imgMaskOff = pic2 %}
@@ -13,6 +14,8 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
+            min-height: 100%;
+            height: fit-content;
         }
         .btn:link,
         .btn:visited {
@@ -46,6 +49,37 @@
     <div style="text-align:center">
         <a href="{{ journal }}" class="btn">Sahil's Journal</a>
     </div>
+    <p style="font-family:'Bebas Neue'; font-size:30px" > Find hotels for cities </p>
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td>{{myHotel['name']}}</td>
+        </tr>
+        <tr>
+            <td>Link: </td>
+            <td>{{myHotel['link']}}</td>
+        </tr>
+        <tr>
+            <td>Rating: </td>
+            <td>{{myHotel['rating']}}</td>
+
+        </tr>
+    </table>
+    <form action="{{ url_for('sahil') }}" id="inputHotel" method="POST" >
+        <label for="city">Enter a city:</label>
+        <input name="city" id="city">
+        <input type="submit" value="Find a hotel">
+    </form>
+    <p style="font-family:'Bebas Neue'; font-size:30px" > Activities if you are bored </p>
+    <table>
+        <tr>
+            <td>Activity: </td>
+            <td>{{ activity }}</td>
+        </tr>
+    </table>
+    <form method ="post" action="{{ url_for('sahil') }}">
+        <button type="submit" name="askActivity" value="submit_a"> Find a New Activity </button>
+    </form>
     <script>
         function toggleMask() {
             const image = document.getElementById('picture');
