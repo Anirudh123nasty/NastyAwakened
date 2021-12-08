@@ -8,6 +8,20 @@
 {% block body %}
 {% set project = "About" %}
     <style>
+        .grid-container {
+            display: grid;
+            grid-template-rows: 200px 50px;
+            grid-template-columns: auto auto auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            text-align: center;
+            padding: 10px;
+            font-size: 30px;
+        }
+
         h1 {
             font-family: "Bebas Neue";
             text-align: center;
@@ -55,36 +69,44 @@
     <h1>Nasty: About Us</h1>
     <br>
     <!-- TRY THIS https://stackoverflow.com/questions/42051528/how-do-i-make-an-image-clickable TY -->
-    <div class="container">
-        <div class="row justify-content-center" style="text-align: center">
-            <div class="col align-self-start">
-                <a href="http://127.0.0.1:5000/michael"><img src="/static/assets/michaelprofile.jpg" alt="Michael's picture" style="width: 200px; height: 200px; object-fit: cover" ></a>
-            </div>
-            <div class="col align-self-start">
-                <a href="http://127.0.0.1:5000/ethan"><img src="/static/assets/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px; object-fit: cover"></a>
-            </div>
-            <div class="col align-self-start">
-                <a href="http://127.0.0.1:5000/anirudh"><img src="/static/assets/anirudhprofile.jpg" alt="Anirudh's picture" style="width: 200px; height: 200px; object-fit: cover "></a>
-            </div>
-            <div class="col align-self-start">
-                <a href="http://127.0.0.1:5000/sahil"><img src="/static/assets/sahilimages/sahilnomask.JPG" alt="Sahil's picture" style="width: 200px; height: 200px; object-fit:cover"></a>
-            </div>
+
+
+    <div class="grid-container">
+        <div>
+            <a href="http://127.0.0.1:5000/michael"><img src="/static/assets/profileimages/michaelprofile.jpg" alt="Michael's picture" style="width: 200px; height: 200px; object-fit: cover" ></a>
         </div>
-        <div class="row justify-content-center" style="text-align: center">
-            <div class="col align-self-start">
-                <a class="name" style="color:white" href="http://127.0.0.1:5000/michael"> Michael Chen </a>
-            </div>
-            <div class="col align-self-start">
-                <a class="name" style="color:white" href="http://127.0.0.1:5000/ethan">  Ethan Vo </a>
-            </div>
-            <div class="col align-self-start">
-                <a class="name" style="color:white" href="http://127.0.0.1:5000/anirudh"> Anirudh Ramachandran </a>
-            </div>
-            <div class="col align-self-start">
-                <a class="name" style="color:white" href="http://127.0.0.1:5000/sahil"> Sahil Samar </a>
-            </div>
+        <div>
+            <a href="http://127.0.0.1:5000/ethan"><img src="/static/assets/profileimages/ethanprofile.jpg" alt="Ethan's picture" style="width: 200px; height: 200px; object-fit: cover"></a>
+        </div>
+        <div>
+            <a href="http://127.0.0.1:5000/anirudh"><img src="/static/assets/profileimages/anirudhprofile.jpg" alt="Anirudh's picture" style="width: 200px; height: 200px; object-fit: cover "></a>
+        </div>
+        <div>
+            <a href="http://127.0.0.1:5000/sahil"><img src="/static/assets/sahilimages/sahilnomask.JPG" alt="Sahil's picture" style="width: 200px; height: 200px; object-fit:cover"></a>
+        </div>
+        <div>
+            <a href="http://127.0.0.1:5000/byron"><img src="/static/assets/byronimages/byronmaskoff.png" alt="Byron's picture" style="width: 200px; height: 200px; object-fit:cover"></a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href="http://127.0.0.1:5000/michael"> Michael Chen </a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href="http://127.0.0.1:5000/ethan">  Ethan Vo </a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href="http://127.0.0.1:5000/anirudh"> Anirudhfix  </a>
+            <br>
+            <a class="name" style="color:white" href="http://127.0.0.1:5000/anirudh"> Ramachandran </a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href="http://127.0.0.1:5000/sahil"> Sahil Samar </a>
+        </div>
+        <div>
+            <a class="name" style="color:white" href="http://127.0.0.1:5000/byron"> Byron Lu </a>
         </div>
     </div>
+
+
     <br>
     <br>
     <h2 class="text-center">Journals</h2>
