@@ -107,10 +107,12 @@ def sahil():
     dict = json.loads(response.text)
     res = requests.get('https://www.boredapi.com/api/activity')
     activity = res.json()['activity']
+    type = res.json()['type']
     if request.form.get("askActivity"):
         res = requests.get('https://www.boredapi.com/api/activity')
         activity = res.json()['activity']
-    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict, activity=activity)
+        type = res.json()['type']
+    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict, activity=activity, type=type)
 
 @app.route('/byron/')
 def byron():

@@ -2,6 +2,7 @@
 
 <!- This variable sets name of browser tab  -->
 {% set activity = activity %}
+{% set type = type %}
 {% set project = "Sahil" %}
 {% set imgMaskOn = pic1 %}
 {% set imgMaskOff = pic2 %}
@@ -27,6 +28,9 @@
             color: white;
             font-size: 2.5em;
         }
+        td{
+            font-size: 20px;
+        }
 
         .btn:hover {
             transform: translateY(-3px);
@@ -42,54 +46,63 @@
             margin: 25px;
         }
     </style>
+    <p style="font-family:'Bebas Neue'; font-size:120px" > Sahil Samar </p>
     <div class="box">
-        <p style="font-family:'Bebas Neue'; font-size:120px" > Sahil Samar </p>
-        <div class="col-12" style="text-align:center">
-            <p style="font-family:'Bebas Neue'; font-size:40px"> Click the image to take off the mask! </p>
-            <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="400" height="Auto" onclick="toggleMask('{{i}}')">
-            <br>
-            <a href="{{ journal }}" class="btn">Sahil's Journal</a>
-            <a href="https://github.com/NastyEthan/NastyAwakened" class="btn">Github </a>
-            <a href="https://github.com/NastyEthan/NastyAwakened/commits?author=AD1616" class="btn">Commits  </a>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="col-12" style="text-align:center">
+                    <p style="font-family:'Bebas Neue'; font-size:40px"> Click the image to take off the mask! </p>
+                    <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="300" height="Auto" onclick="toggleMask('{{i}}')">
+                    <br>
+                    <a href="{{ journal }}" class="btn">Sahil's Journal</a>
+                    <br>
+                    <a href="https://github.com/NastyEthan/NastyAwakened" class="btn">Github </a>
+                    <br>
+                    <a href="https://github.com/NastyEthan/NastyAwakened/commits?author=AD1616" class="btn">Commits  </a>
 
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p style="font-family:'Bebas Neue'; font-size:40px" > Find hotels for cities </p>
+                <table>
+                    <tr>
+                        <td>Name: </td>
+                        <td>{{myHotel['name']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Link: </td>
+                        <td>{{myHotel['link']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Rating: </td>
+                        <td>{{myHotel['rating']}}</td>
+
+                    </tr>
+                </table>
+                <form action="{{ url_for('sahil') }}" id="inputHotel" method="POST" >
+                    <label for="city">Enter a city:</label>
+                    <input name="city" id="city">
+                    <input type="submit" value="Find a hotel">
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <p style="font-family:'Bebas Neue'; font-size:40px" > Activities if you are bored </p>
+                <table>
+                    <tr>
+                        <td>Activity: </td>
+                        <td>{{ activity }}</td>
+                    </tr>
+                    <tr>
+                        <td>Type: </td>
+                        <td>{{ type }}</td>
+                    </tr>
+                </table>
+                <form method ="post" action="{{ url_for('sahil') }}">
+                    <button type="submit" name="askActivity" value="submit_a"> Find a New Activity </button>
+                </form>
+            </div>
         </div>
-        <p style="font-family:'Bebas Neue'; font-size:30px" > Find hotels for cities </p>
-        <table>
-            <tr>
-                <td>Name: </td>
-                <td>{{myHotel['name']}}</td>
-            </tr>
-            <tr>
-                <td>Link: </td>
-                <td>{{myHotel['link']}}</td>
-            </tr>
-            <tr>
-                <td>Rating: </td>
-                <td>{{myHotel['rating']}}</td>
-
-            </tr>
-        </table>
-        <form action="{{ url_for('sahil') }}" id="inputHotel" method="POST" >
-            <label for="city">Enter a city:</label>
-            <input name="city" id="city">
-            <input type="submit" value="Find a hotel">
-        </form>
-        <p style="font-family:'Bebas Neue'; font-size:30px" > Activities if you are bored </p>
-        <table>
-            <tr>
-                <td>Activity: </td>
-                <td>{{ activity }}</td>
-            </tr>
-        </table>
-        <form method ="post" action="{{ url_for('sahil') }}">
-            <button type="submit" name="askActivity" value="submit_a"> Find a New Activity </button>
-        </form>
     </div>
-
-    <div style="text-align:center">
-
-    </div>
-
 
     <script>
         function toggleMask() {
