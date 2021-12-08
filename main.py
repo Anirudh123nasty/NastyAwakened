@@ -87,19 +87,30 @@ def ethan():
 @app.route('/sahil/', methods=['GET', 'POST'])
 def sahil():
     url = "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation"
+    cities = [""]
+    if request.form:
+        city = request.form.get("city")
+        cities.append(city)
+    for city in cities:
+        querystring = {"cityName": city, "countryName": "United States"}
 
-    querystring = {"cityName":"San Diego","countryName":"United States"}
+        headers = {
+            'x-rapidapi-host': "best-booking-com-hotel.p.rapidapi.com",
+            'x-rapidapi-key': "df17610e35msh51d75ac58fb44f9p14c5f0jsn7d95a150e08b"
+        }
 
-    headers = {
-        'x-rapidapi-host': "best-booking-com-hotel.p.rapidapi.com",
-        'x-rapidapi-key': "df17610e35msh51d75ac58fb44f9p14c5f0jsn7d95a150e08b"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        time.sleep(1)
+        print(city)
 
     print(response.text)
     dict = json.loads(response.text)
-    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict)
+    res = requests.get('https://www.boredapi.com/api/activity')
+    activity = res.json()['activity']
+    if request.form.get("askActivity"):
+        res = requests.get('https://www.boredapi.com/api/activity')
+        activity = res.json()['activity']
+    return render_template("sahil.html", pic1="/static/assets/sahilimages/sahilnomask.JPG", pic2="/static/assets/sahilimages/sahilmask.JPG", myHotel=dict, activity=activity)
 
 @app.route('/byron/')
 def byron():
