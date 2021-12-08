@@ -1,0 +1,19 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "classboard" %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
+
+{% block body %}
+<style>
+    body {
+        background-image: url("/static/assets/screenbackground.png");
+        background-size:     cover;
+    }
+</style>
+
+{% endblock %}

@@ -19,25 +19,23 @@
         p {
             font-family: Cutive Mono;
         }
-        .box {
-            padding: 8px;
-            margin: 25px;
-        }
         body {
-            background-image: url("/static/assets/michaelimages/field.jpg");
+            background-image: url("/static/assets/ethanimages/background1.jpg");
             background-size:     cover;
         }
     </style>
 
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-weight: 900; font-size:20px; color: antiquewhite">
-        <p>Hello, {{name}}! This is my about page</p>
-        <form action="{{ url_for('ethan') }}" id="greet" method="POST" >
-            <label for="name">Enter your name:</label>
-            <input name="name" id="name">
-            <input type="submit" value="Greetings!">
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-weight: 900; font-size:20px; color: black">
+        <p>Word: {{ word }}</p>
+        <p>Definition: {{mydef}}</p>
+        <form action="{{ url_for('ethan') }}" id="define" method="POST" >
+            <label for="word">Define a word:</label>
+            <input name="word" id="word">
+            <input type="submit" value="Define!">
             <img id="mask_img" style="width: 20%; height: 20%" onclick="mask()" src="/static/assets/ethanimages/maskedvo.png" alt="maskedvo">
         </form>
         <br>
+        <a href="https://github.com/NastyEthan/NastyAwakened/commits?author=NastyEthan" target="_blank" class="btn">COMMITS</a>
     </div>
 
     <script>

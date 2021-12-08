@@ -8,19 +8,56 @@
 {% set msgTurnOn = "Mask On" %}
 {% set msgTurnOff = "Mask Off" %}
 {% set repo = "https://github.com/NastyEthan/NastyAwakened" %}
+{% set journal = "https://docs.google.com/document/d/1-AS5NcpL8dvRFaj1oww0tR8XM1lf20oFSDFuEdq7OxQ/edit" %}
 
 
 {% block body %}
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-        <p style="font-family:'Bebas Neue'; font-size:120px" > Anirudh Ramachandran</p>
-    </div>
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: Raleway,serif;">
-
-
-
-    </div>
-    <div class="col-12" style="text-align:center">
+    <style>
+        body {
+            background-image: url("/static/assets/ethanimages/ankles.png");
+            background-size:     cover;
+        }
+        header {
+            font-family: "Bebas Neue";
+            font-size: 120px
+        }
+        table {
+            padding: 2px;
+            border-spacing: 5px;
+        }
+    </style>
+    <div style="padding: 8px; margin: 25px;">
+        <!-- for centering, add "text-align: center" to div style -->
+        <header> Anirudh Ramachandran</header>
+        <a style="color: white;" href="{{ journal }}" >Anirudh's Journal</a>
+        <br>
         <img class="img-responsive py-3" id="picture" src="{{ imgMaskOff }}" alt="" width="200" height="250" onclick="MaskOnMaskoff('{{i}}')">
+        <table>
+
+            <tr>
+                <th>Conditions</th>
+                <th>Values</th>
+            </tr>
+            <tr>
+                <td>Wind</td>
+                <td>{{myweather['wind']['speed']}}</td>
+            </tr>
+            <tr>
+                <td>Humidity</td>
+                <td>{{myweather['main']['humidity']}}</td>
+            </tr>
+            <tr>
+                <td>Feels Like</td>
+                <td>{{myweather['main']['feels_like']}}</td>
+
+            </tr>
+            <tr>
+                <td>Temperature</td>
+                <td>{{myweather['main']['temp']}}</td>
+
+            </tr>
+
+        </table>
     </div>
     <script>
         function MaskOnMaskoff() {
@@ -38,20 +75,5 @@
 {% endblock %}
 
 {% block background %}
-    <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vanta.halo.min.js') }}"></script>
-    <script>
-        VANTA.HALO({
-            el: "body",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color:0xbb62fa,
-            color2: 0x20ffb0
-        })
-    </script>
+
 {% endblock %}
