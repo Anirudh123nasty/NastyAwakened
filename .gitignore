@@ -6,3 +6,8 @@
 .vscode/launch.json
 algorithms/__pycache__/image.cpython-39.pyc
 *.pyc
+node_modules
+/node_modules/.package-lock.json
+/static/scss/custom.css.map
+/package.json
+/package-lock.json
